@@ -14,15 +14,15 @@ window.SEM = {
   halloysita:[
     {f:"33-HALL_2-adjusted.jpg",a:"M. Roe"},
     {f:"25-halloysite-BYD.jpg",a:"Evelyne Delbos"},
-    {f:"146-G490ps.jpg",a:"John Keeling y Peter Self (CSIRO)"}
+    {f:"146-G490ps.jpg",a:"John Keeling y Peter Self (CSIRO)",t:"TEM"}
   ],
   ilita:[
     {f:"38-ROTILL_5.jpg",a:"M. Roe"},
     {f:"42-illite_5000.jpg",a:"Evelyne Delbos"}
   ],
   montmorillonita:[
-    {f:"72-volcanic-egg-BGR.jpg",a:"Stephan Kaufhold y Reiner Dohrmann (BGR)"},
     {f:"143-1359895-16.jpg",a:"Laura-Jane Strachan",m:{es:"Ca-montmorillonita",en:"Ca-montmorillonite"}},
+    {f:"72-volcanic-egg-BGR.jpg",a:"Stephan Kaufhold y Reiner Dohrmann (BGR)"},
     {f:"75-Steve-A.jpg",a:"Emilia García-Romero",m:{es:"Esmectita dioctaédrica",en:"Dioctahedral smectite"}},
     {f:"105-11.jpg",a:"Ana María Fernández Díaz",m:{es:"Esmectita dioctaédrica",en:"Dioctahedral smectite"}}
   ],
@@ -53,7 +53,7 @@ window.SEM = {
 };
 
 /* Imágenes de la portada (en orden) */
-window.HEROE = [["caolinita",0],["halloysita",0],["sepiolita",0],["montmorillonita",0],["paligorskita",0],["vermiculita",0]];
+window.HEROE = [["caolinita",0],["halloysita",1],["sepiolita",0],["montmorillonita",0],["paligorskita",2],["ilita",1],["clorita",0]];
 
 window.GRUPOS = [
   {id:"1:1",es:"Caolinita-serpentina (1:1)",en:"Kaolinite-serpentine (1:1)"},

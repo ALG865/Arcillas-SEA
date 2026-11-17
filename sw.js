@@ -1,5 +1,5 @@
 /* Funciona sin conexión: guarda la web y las imágenes que se van viendo. */
-var CACHE = "arcillas-sea-v1";
+var CACHE = "arcillas-sea-v2";
 var BASE = ["./", "index.html", "estilo.css", "datos.js", "datos-mapa.js", "app.js", "icono.svg", "manifest.webmanifest", "img/lista.json"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) {
