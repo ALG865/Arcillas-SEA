@@ -1,0 +1,10 @@
+{
+  "name": "Los minerales de la arcilla · SEA",
+  "short_name": "Arcillas SEA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f1e6",
+  "theme_color": "#b4532a",
+  "lang": "es",
+  "icons": [{"src": "icono.svg", "sizes": "any", "type": "image/svg+xml"}]
+}
