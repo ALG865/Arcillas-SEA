@@ -86,30 +86,41 @@ Constructor.prototype.lamina=function(z0,tipo,oct){
 var MODELOS={
   caolinita:{lam:"TO",oct:"di",d:7.16,inter:"H"},
   halloysita:{lam:"TO",oct:"di",d:10.0,inter:"agua1"},
+  serpentina:{lam:"TO",oct:"tri",d:7.3,inter:"H"},
+  talco:{lam:"TOT",oct:"tri",d:9.35,inter:"nada"},
   pirofilita:{lam:"TOT",oct:"di",d:9.2,inter:"nada"},
-  ilita:{lam:"TOT",oct:"di",d:10.0,inter:"K"},
+  illita:{lam:"TOT",oct:"di",d:10.0,inter:"K"},
   montmorillonita:{lam:"TOT",oct:"di",d:15.0,inter:"agua"},
   saponita:{lam:"TOT",oct:"tri",d:15.0,inter:"agua"},
   vermiculita:{lam:"TOT",oct:"tri",d:14.4,inter:"Mg"},
-  clorita:{lam:"TOT",oct:"tri",d:14.2,inter:"hidroxido"}
+  clorita:{lam:"TOT",oct:"tri",d:14.2,inter:"hidroxido"},
+  sudoita:{lam:"TOT",oct:"di",d:14.1,inter:"hidroxido"},
+  /* interestratificados regulares: la interlámina alterna (alt) */
+  rectorita:{lam:"TOT",oct:"di",alt:[{inter:"K",d:9.6},{inter:"agua",d:15.0}]},
+  corrensita:{lam:"TOT",oct:"tri",alt:[{inter:"hidroxido",d:14.2},{inter:"agua",d:15.0}]},
+  tosudita:{lam:"TOT",oct:"di",alt:[{inter:"hidroxido",d:14.2},{inter:"agua",d:15.0}]},
+  aliettita:{lam:"TOT",oct:"tri",alt:[{inter:"nada",d:9.35},{inter:"agua",d:15.0}]},
+  hidrobiotita:{lam:"TOT",oct:"tri",alt:[{inter:"K",d:10.0},{inter:"Mg",d:14.4}]}
 };
 function construir(id,capas){
-  var m=MODELOS[id], c=new Constructor(), z=0, n=capas||2, grosor=m.lam==="TO"?(HT+TT):(2*TT+HT);
+  var m=MODELOS[id], c=new Constructor(), n=capas||2, grosor=m.lam==="TO"?(HT+TT):(2*TT+HT), z0=0;
+  if(m.alt&&n<3) n=3;
   for(var k=0;k<n;k++){
-    var z0=k*m.d, ztop=c.lamina(z0,m.lam,m.oct);
-    if(k<n-1){ var g0=ztop, g1=(k+1)*m.d;
-      if(m.inter==="K") c.esferas((g0+g1)/2,"K",0.95,1,[0,0]);
-      else if(m.inter==="agua"){ c.esferas((g0+g1)/2,"cat",0.75,0.35,[0,0]); c.agua(g0+0.9,g1-0.9); }
-      else if(m.inter==="Mg"){ c.esferas((g0+g1)/2,"Mg",0.7,0.4,[0,0]); c.agua(g0+0.9,g1-0.9); }
-      else if(m.inter==="agua1"){ c.agua((g0+g1)/2-0.3,(g0+g1)/2+0.3); }
-      else if(m.inter==="hidroxido"){ var zh=(g0+g1)/2+HT/2; c.capaO(zh,"tri",c.h,[A1[0]/3,A1[1]/3]); }
+    var ztop=c.lamina(z0,m.lam,m.oct), it=m.alt?m.alt[k%m.alt.length]:m;
+    if(k<n-1){ var g0=ztop, g1=z0+it.d;
+      if(it.inter==="K") c.esferas((g0+g1)/2,"K",0.95,1,[0,0]);
+      else if(it.inter==="agua"){ c.esferas((g0+g1)/2,"cat",0.75,0.35,[0,0]); c.agua(g0+0.9,g1-0.9); }
+      else if(it.inter==="Mg"){ c.esferas((g0+g1)/2,"Mg",0.7,0.4,[0,0]); c.agua(g0+0.9,g1-0.9); }
+      else if(it.inter==="agua1"){ c.agua((g0+g1)/2-0.3,(g0+g1)/2+0.3); }
+      else if(it.inter==="hidroxido"){ var zh=(g0+g1)/2+HT/2; c.capaO(zh,"tri",c.h,[A1[0]/3,A1[1]/3]); }
+      z0+=it.d;
     }
   }
-  return {c:c,altura:(n-1)*m.d+grosor,d:m.d};
+  return {c:c,altura:z0+grosor,d:m.d||m.alt[0].d};
 }
 /* Fibrosas: cintas 2:1 en tablero de ajedrez, con canales a lo largo de la fibra (eje x). */
 function construirFibra(id){
-  var anchoY = id==="paligorskita"?4.6:7.0, canal=id==="paligorskita"?3.7:5.6, c=new Constructor({x:13,y:30});
+  var anchoY = id==="palygorskita"?4.6:7.0, canal=id==="palygorskita"?3.7:5.6, c=new Constructor({x:13,y:30});
   var paso=anchoY+canal, filas=3, alto=2*TT+HT, dz=alto+0.3; var dentroOrig=c.dentro;
   for(var f=0;f<filas;f++) for(var k=-2;k<=2;k++){
     var y0=k*paso+(f%2?paso/2:0), z0=f*dz;
@@ -145,7 +156,7 @@ window.Visor3D=function(cont,opt){
   function limpiar(){ while(raiz.children.length){ var o=raiz.children.pop(); o.traverse(function(x){ if(x.geometry) x.geometry.dispose(); if(x.material) x.material.dispose(); }); } }
   function poner(id,capas){
     limpiar(); actual=id;
-    var r=(id==="sepiolita"||id==="paligorskita")?construirFibra(id):construir(id,capas||3), c=r.c;
+    var r=(id==="sepiolita"||id==="palygorskita")?construirFibra(id):construir(id,capas||3), c=r.c;
     var g=new THREE.Group();
     g.add(malla(THREE,c.t,COL.T,1)); g.add(malla(THREE,c.o,COL.O,1)); if(c.h.length) g.add(malla(THREE,c.h,COL.H,1));
     var geoE=new THREE.SphereGeometry(1,16,12);
