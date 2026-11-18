@@ -247,7 +247,7 @@ function limpiar3D(){ visores.forEach(function(v){ try{ v.destruir(); }catch(e){
 /* ---------------- estructura de página ---------------- */
 var main;
 function cabezaPagina(titulo,entrada,miga){
-  return '<div class="cabeza-pagina envoltorio">'+(miga?'<div class="miga"><a href="#'+miga[0]+'">'+esc(miga[1])+'</a></div>':'')+'<h1 style="font-size:clamp(2.2rem,5.5vw,3.8rem)">'+titulo+'</h1>'+(entrada?'<p class="entrada">'+entrada+'</p>':'')+'</div>';
+  return '<div class="cabeza-pagina envoltorio">'+(miga?'<div class="miga"><a href="#'+miga[0]+'">'+esc(miga[1])+'</a></div>':'')+'<h1>'+titulo+'</h1>'+(entrada?'<p class="entrada">'+entrada+'</p>':'')+'</div>';
 }
 function migaArcillas(){ return ["inicio",U("arcillas")]; }
 function migaSEA(){ return ["sociedad",U("sociedad")]; }
@@ -305,7 +305,7 @@ P.historia=function(id){
 P["que-es"]=function(){
   main.innerHTML=cabezaPagina(U("nav.arcillas")[0][1],U("queE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h3>'+U("tam")+'</h3><p>'+U("tamT")+'</p></div><div><h3>'+U("min")+'</h3><p>'+U("minT")+'</p></div></div>'+
    '<p class="entrada" style="margin:2rem 0">'+U("def")+'</p>'+
-   '<div class="panel" style="margin-top:2rem"><h3>'+U("escTit")+'</h3><p>'+U("escE")+'</p><input type="range" id="esc" min="0" max="100" value="20" style="width:100%;accent-color:#8f3f22" aria-label="'+U("escTit")+'"><div style="display:flex;justify-content:space-between;font-size:.8rem;color:#5d5248"><span>2 mm</span><span>63 µm</span><span>2 µm</span><span>'+num("0.1")+' µm</span></div><div id="vista" style="height:180px;background:#f6f3ee;border-radius:4px;margin-top:.6rem"></div><p id="analog" style="margin:1rem 0 0"></p></div>'+
+   '<div class="panel" style="margin-top:2rem"><h3>'+U("escTit")+'</h3><p>'+U("escE")+'</p><input type="range" id="esc" min="0" max="100" value="20" style="width:100%;accent-color:#8f3f22" aria-label="'+U("escTit")+'"><div style="display:flex;justify-content:space-between;font-size:var(--f-xs);color:#5d5248"><span>2 mm</span><span>63 µm</span><span>2 µm</span><span>'+num("0.1")+' µm</span></div><div id="vista" style="height:180px;background:#f6f3ee;border-radius:4px;margin-top:.6rem"></div><p id="analog" style="margin:1rem 0 0"></p></div>'+
    '<div class="mosaico" style="margin-top:2.5rem">'+imgSEA("montmorillonita").slice(0,2).concat(imgIOC("caolinita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div>'+
    '<p style="margin-top:2rem"><a class="boton" href="#estructura">'+U("nav.arcillas")[1][1]+'</a></p></div>';
   var inp=$("#esc");
@@ -357,7 +357,7 @@ function pintar(){ var lz=$("#lienzo"); if(!lz) return;
   $("#fibra").setAttribute("aria-pressed",!!est.fibra);
   var msg=$("#msg"),pi=$("#pasoInter"),r=$("#res"); msg.style.color="";
   if(est.fibra){ lz.innerHTML=svgFibra(est.fibra); msg.textContent=U("canal"); pi.innerHTML=""; }
-  else if(!est.seq){ lz.innerHTML='<p class="pequeno" style="font-size:1.1rem">'+U("empieza")+'</p>'; msg.textContent=""; pi.innerHTML=""; }
+  else if(!est.seq){ lz.innerHTML='<p class="pequeno" style="font-size:var(--f-l)">'+U("empieza")+'</p>'; msg.textContent=""; pi.innerHTML=""; }
   else { var res=resultadoEst();
     lz.innerHTML=svgLaminas({seq:est.seq,oct:est.oct,inter:est.inter||"nada"},{reps:est.seq==="T"?1:(est.inter?2:1),d:res?num(res.d):null});
     msg.textContent=est.seq==="T"?U("sig1"):(est.seq==="TO"?U("sig2"):U("completa"));
@@ -427,7 +427,7 @@ P.propiedades=function(){
 P.aplicaciones=function(){
   main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="indice">'+APLICACIONES.map(function(a){
     var im=null; for(var i=0;i<a.m.length&&!im;i++) im=primeraImg(a.m[i]);
-    return '<div style="display:grid;grid-template-columns:96px 1fr;gap:1.1rem;padding:1.2rem 0;border-bottom:1px solid var(--sepiolita2)"><span style="width:96px;height:96px;border-radius:3px;overflow:hidden;background:#1c1d1f">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="" style="width:100%;height:100%;object-fit:cover">':'')+'</span><span><h3 style="font-size:1.3rem;margin-bottom:.3rem">'+esc(L(a).n)+'</h3><p style="margin:0 0 .4rem">'+esc(L(a).t)+'</p><span class="pequeno">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</span></span></div>'; }).join("")+'</div>'+
+    return '<div style="display:grid;grid-template-columns:96px 1fr;gap:1.1rem;padding:1.2rem 0;border-bottom:1px solid var(--sepiolita2)"><span style="width:96px;height:96px;border-radius:3px;overflow:hidden;background:#1c1d1f">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="" style="width:100%;height:100%;object-fit:cover">':'')+'</span><span><h3 style="font-size:var(--f-l);margin-bottom:.3rem">'+esc(L(a).n)+'</h3><p style="margin:0 0 .4rem">'+esc(L(a).t)+'</p><span class="pequeno">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</span></span></div>'; }).join("")+'</div>'+
    '<p style="margin-top:2rem"><a class="boton claro" href="#historia/casa">'+esc(L(HISTORIAS.filter(function(x){return x.id==="casa";})[0]).n)+'</a></p></div>';
 };
 
@@ -473,7 +473,7 @@ P.estudio=function(){
   main.innerHTML=cabezaPagina(U("nav.arcillas")[6][1],U("estuE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h2>'+U("drxTit")+'</h2><p class="lectura">'+U("drxE")+'</p><div class="filtros">'+lista.map(function(id){ return '<button class="filtro" data-drx="'+id+'">'+(id==="mezcla"?U("mezcla"):esc(L(minById(id)).n))+'</button>'; }).join("")+'</div>'+
    '<div class="drx"><div id="graf"></div><div><div class="tratamientos">'+["AO","EG","C"].map(function(k){ return '<button class="trat" data-t="'+k+'" style="border-color:'+DRX_COL[k]+';color:'+DRX_COL[k]+'">'+U(k)+'</button>'; }).join("")+'</div><p id="drxTxt" style="margin-top:1rem"></p><p class="pequeno">'+U("marte")+' <a href="#historia/marte">'+esc(L(HISTORIAS[2]).n)+'</a></p></div></div>'+
    '<h2 style="margin-top:3.5rem">'+U("tecnicas")+'</h2><div class="indice">'+TECNICAS.filter(function(t){return t.id!=="drx";}).map(function(t){ var im=t.id==="sem"?imgSEA("caolinita")[0]:(t.id==="tem"?imgIOC("caolinita")[2]:null);
-     return '<div style="display:grid;grid-template-columns:'+(im?'96px ':'')+'1fr;gap:1.1rem;padding:1.2rem 0;border-bottom:1px solid var(--sepiolita2)">'+(im?'<span style="width:96px;height:96px;border-radius:3px;overflow:hidden;background:#1c1d1f"><img loading="lazy" src="'+im.mini+'" alt="" style="width:100%;height:100%;object-fit:cover"></span>':'')+'<span><h3 style="font-size:1.3rem;margin-bottom:.3rem">'+esc(L(t).n)+'</h3><p style="margin:0">'+esc(L(t).t)+'</p></span></div>'; }).join("")+'</div>'+
+     return '<div style="display:grid;grid-template-columns:'+(im?'96px ':'')+'1fr;gap:1.1rem;padding:1.2rem 0;border-bottom:1px solid var(--sepiolita2)">'+(im?'<span style="width:96px;height:96px;border-radius:3px;overflow:hidden;background:#1c1d1f"><img loading="lazy" src="'+im.mini+'" alt="" style="width:100%;height:100%;object-fit:cover"></span>':'')+'<span><h3 style="font-size:var(--f-l);margin-bottom:.3rem">'+esc(L(t).n)+'</h3><p style="margin:0">'+esc(L(t).t)+'</p></span></div>'; }).join("")+'</div>'+
    '<p style="margin-top:2rem"><a class="boton" href="#juego">'+U("nav.arcillas")[8][1]+'</a></p></div>';
   function pinta(){ $$("[data-drx]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-drx")===drxSel); }); $$("[data-t]").forEach(function(b){ b.setAttribute("aria-pressed",!!drxOn[b.getAttribute("data-t")]); });
     $("#graf").innerHTML=svgDRX(); cursorDRX();
@@ -548,7 +548,7 @@ P.noticias=function(){
 P.sociedad=function(){
   var hf=SEA.historiaFotos;
   main.innerHTML=cabezaPagina(U("nav.sociedad")[1][1],U("socE"))+
-   '<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h2>'+U("fines")+'</h2><p class="entrada" style="font-size:1.2rem">'+esc(L(SEA.fines))+'</p><p>'+esc(L(SEA.actividades))+'</p><p>'+esc(L(SEA.socios))+'</p></div><div><h2>'+U("campos")+'</h2><ul class="columnas-lista">'+L(SEA.campos).map(function(c){ return '<li>'+esc(c)+'</li>'; }).join("")+'</ul><h3 style="margin-top:2rem">'+U("enRed")+'</h3><p>'+esc(L(SEA.red))+'</p></div></div></div>'+
+   '<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h2>'+U("fines")+'</h2><p class="entrada">'+esc(L(SEA.fines))+'</p><p>'+esc(L(SEA.actividades))+'</p><p>'+esc(L(SEA.socios))+'</p></div><div><h2>'+U("campos")+'</h2><ul class="columnas-lista">'+L(SEA.campos).map(function(c){ return '<li>'+esc(c)+'</li>'; }).join("")+'</ul><h3 style="margin-top:2rem">'+U("enRed")+'</h3><p>'+esc(L(SEA.red))+'</p></div></div></div>'+
    '<section class="bloque arena"><div class="envoltorio"><h2>'+U("hitos")+'</h2><div class="dos-col" style="align-items:start"><div class="linea">'+SEA.hitos.map(function(x){ return '<div class="hito"><b>'+x.a+'</b>'+esc(L(x))+'</div>'; }).join("")+'</div><div>'+
      '<figure><img src="'+seaImg(hf[1])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"><figcaption>'+(lang==="es"?"J. L. Martín-Vivaldi en Estados Unidos, 1950.":"J. L. Martín-Vivaldi in the United States, 1950.")+'</figcaption></figure>'+
      '<figure style="margin-top:1.4rem"><img src="'+seaImg(hf[0])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"></figure></div></div></div></section>'+
@@ -563,7 +563,7 @@ P.junta=function(){
 P.premios=function(){
   var hoy=hoyISO();
   main.innerHTML=cabezaPagina(U("nav.sociedad")[3][1],U("premiosE"),migaSEA())+'<div class="envoltorio pagina-cuerpo">'+SEA.premios.map(function(p){ var ab=p.abierto&&p.abierto>=hoy;
-    return '<div class="premio"><div>'+(ab?'<span class="abierto">'+U("abierto")+'</span>':'<span class="pequeno">'+U("ultima")+'</span>')+'<h3>'+esc(L(p).n)+'</h3>'+(ab?'<p class="pequeno">'+U("plazo")+' '+fechaTxt(p.abierto)+'</p>':'')+'</div><div><p class="entrada" style="font-size:1.15rem">'+esc(L(p).r)+'</p><p>'+esc(L(p).t)+'</p><a href="'+p.url+'" target="_blank" rel="noopener">'+U("verBases")+'</a></div></div>'; }).join("")+
+    return '<div class="premio"><div>'+(ab?'<span class="abierto">'+U("abierto")+'</span>':'<span class="pequeno">'+U("ultima")+'</span>')+'<h3>'+esc(L(p).n)+'</h3>'+(ab?'<p class="pequeno">'+U("plazo")+' '+fechaTxt(p.abierto)+'</p>':'')+'</div><div><p class="entrada">'+esc(L(p).r)+'</p><p>'+esc(L(p).t)+'</p><a href="'+p.url+'" target="_blank" rel="noopener">'+U("verBases")+'</a></div></div>'; }).join("")+
    '<div class="dos-col" style="align-items:start;margin-top:3rem"><div><h2>'+U("distinciones")+'</h2><ul class="lista-simple">'+SEA.distinciones.map(function(d){ return '<li><b>'+d.a+'</b><span>'+esc(d.n)+'<br><span class="pequeno">'+esc(d.p)+'</span></span></li>'; }).join("")+'</ul></div><div><h2>'+U("honor")+'</h2><ul class="lista-simple">'+SEA.honor.map(function(d){ return '<li><b>'+d[0]+'</b><span>'+esc(d[1])+'</span></li>'; }).join("")+'</ul></div></div></div>';
 };
 P.reuniones=function(){

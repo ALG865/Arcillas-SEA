@@ -237,7 +237,7 @@ window.MINERALES = [
 
  /* ---------- Sepiolita-palygorskita ---------- */
  {id:"sepiolita",grupo:"fibrosa",lam:{t:"fibra",oct:"tri"},formula:"Mg₈Si₁₂O₃₀(OH)₄(OH₂)₄·8H₂O",d:"12,1 Å (110)",cic:[20,45],se:[200,400],hinch:0,plast:3,
-  es:{n:"Sepiolita",r:"La arcilla en fibras; la mayor parte de la del mundo sale de Madrid.",
+  es:{n:"Sepiolita",r:"La arcilla en fibras: Madrid produce la mayor parte de la sepiolita del mundo.",
    t:"En lugar de láminas continuas tiene cintas 2:1: los tetraedros invierten su vértice de una cinta a la siguiente y la capa octaédrica queda cortada en listones, con ocho posiciones octaédricas por fórmula. Entre las cintas quedan canales a lo largo de la fibra donde entran agua y moléculas; de ahí su enorme capacidad de absorción. Es magnésica. La cuenca de Madrid alberga el mayor yacimiento de sepiolita del mundo y de ella sale la mayor parte de la producción mundial; se usa en absorbentes, alimentación animal y lodos de perforación."},
   en:{n:"Sepiolite",r:"The fibrous clay; most of the world’s supply comes from Madrid.",
    t:"Instead of continuous layers it has 2:1 ribbons: the tetrahedra invert their apices from one ribbon to the next, and the octahedral sheet is cut into strips, with eight octahedral sites per formula. Between the ribbons there are channels along the fibre where water and molecules enter; hence its enormous absorption capacity. It is magnesian. The Madrid Basin hosts the world’s largest sepiolite deposit and supplies most of the world’s production; it is used in absorbents, animal feed and drilling muds."},
