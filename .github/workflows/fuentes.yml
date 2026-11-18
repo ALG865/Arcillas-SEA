@@ -1,0 +1,44 @@
+name: Traer fuentes
+on:
+  push:
+    branches: [datos-fuentes]
+permissions:
+  contents: write
+jobs:
+  traer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar
+        run: |
+          mkdir -p fuentes/bajado
+          while IFS=$'\t' read -r nombre url; do
+            [ -z "$nombre" ] && continue
+            [ -f "fuentes/bajado/$nombre" ] && continue
+            if curl -fsSL --retry 3 -A "Mozilla/5.0 (SEA-arcillas; divulgacion)" -o "fuentes/bajado/$nombre" "$url"; then echo "OK $nombre"; else echo "FALTA $nombre"; rm -f "fuentes/bajado/$nombre"; fi
+            sleep 1
+          done < fuentes/urls.tsv
+          # CIF: descargar los enlaces de cada página de AMCSD
+          python3 - <<'PY'
+          import re, glob, os, urllib.request, time
+          os.makedirs("fuentes/bajado/cif", exist_ok=True)
+          for f in glob.glob("fuentes/bajado/amcsd_*.html"):
+              s = open(f, encoding="latin-1").read()
+              ids = sorted(set(re.findall(r'download\.php\?id=(\d+)\.cif&(?:amp;)?down=cif', s)))
+              m = f.split("amcsd_")[1][:-5]
+              for i in ids[:12]:
+                  dst = f"fuentes/bajado/cif/{m}_{i}.cif"
+                  if os.path.exists(dst): continue
+                  try:
+                      req = urllib.request.Request(f"https://rruff.geo.arizona.edu/AMS/download.php?id={i}.cif&down=cif", headers={"User-Agent": "Mozilla/5.0"})
+                      open(dst, "wb").write(urllib.request.urlopen(req, timeout=60).read()); print("cif", m, i)
+                  except Exception as e: print("falta cif", m, i, e)
+                  time.sleep(0.5)
+          PY
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fuentes
+          git diff --cached --quiet || git commit -m "Fuentes descargadas"
+          git push origin HEAD:datos-fuentes
