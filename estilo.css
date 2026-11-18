@@ -10,13 +10,13 @@
   --caolin:#f6f3ee; --sepiolita:#e4d9c6; --sepiolita2:#d6c7ad; --ocre:#b88733; --terracota:#8f3f22; --terracota2:#6f2f18;
   --grafito:#1c1d1f; --grafito2:#2a2b2e; --tinta:#26201b; --tinta2:#5d5248; --T:#6f97bd; --Tb:#4b7398; --O:#7fae7a; --Ob:#57864f;
   --serif:"Spectral",Georgia,"Times New Roman",serif; --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --f-xs:.8rem; --f-s:.9rem; --f-m:1rem; --f-l:1.2rem; --f-xl:1.5rem; --f-2xl:clamp(1.75rem,3.2vw,2.25rem); --f-3xl:clamp(2.3rem,4.6vw,3.4rem);
+  --f-xs:.875rem; --f-s:.9375rem; --f-m:1.0625rem; --f-l:1.1875rem; --f-xl:1.375rem; --f-2xl:clamp(1.55rem,2.6vw,1.875rem); --f-3xl:clamp(1.9rem,3.4vw,2.5rem);
   --ancho:1200px; --texto:40rem; --r:3px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--caolin);color:var(--tinta);font:17px/1.6 var(--sans);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--caolin);color:var(--tinta);font:400 var(--f-m)/1.6 var(--sans);-webkit-text-size-adjust:100%}
 img{max-width:100%;display:block}
 a{color:var(--terracota);text-underline-offset:.18em;text-decoration-thickness:1px}
 a:hover{color:var(--terracota2)}
@@ -70,7 +70,7 @@ nav.menu{display:flex;gap:.2rem;align-items:center}
 .heroe .fotos img.ver{opacity:.78}
 .heroe::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,29,31,.92) 0,rgba(28,29,31,.55) 45%,rgba(28,29,31,.1) 80%),linear-gradient(0deg,rgba(28,29,31,.8),transparent 40%);z-index:1}
 .heroe .envoltorio{position:relative;z-index:2;width:100%;padding-top:5rem;padding-bottom:3.2rem}
-.heroe h1{font-size:clamp(2.6rem,6.5vw,4.6rem);color:#fff;max-width:11ch;margin-bottom:.35em}
+.heroe h1{font-size:clamp(2.2rem,4.8vw,3.4rem);color:#fff;max-width:11ch;margin-bottom:.35em}
 .heroe .entrada{color:rgba(255,255,255,.86)}
 .heroe .placa{position:absolute;right:clamp(1rem,4vw,2.5rem);bottom:3.2rem;z-index:2;text-align:right;font-size:var(--f-xs);color:rgba(255,255,255,.75);max-width:20rem}
 .heroe .placa b{display:block;font-family:var(--serif);font-weight:400;font-size:var(--f-l);color:#fff}
@@ -146,7 +146,7 @@ figcaption b{font-weight:600;color:var(--tinta)}
 .tabla-minerales td{padding:.6rem .6rem;font-size:var(--f-s);color:var(--tinta2);border-bottom:1px solid var(--sepiolita);vertical-align:middle}
 .tabla-minerales tbody tr.fila{cursor:pointer}
 .tabla-minerales tbody tr.fila:hover td{background:#fff}
-.tabla-minerales .mini{width:64px;height:64px;border-radius:var(--r);overflow:hidden;background:var(--grafito)}
+.tabla-minerales .mini{width:52px;height:52px;border-radius:var(--r);overflow:hidden;background:var(--grafito)}
 .tabla-minerales .mini img{width:100%;height:100%;object-fit:cover}
 .tabla-minerales .nombre a{font-family:var(--serif);font-size:var(--f-l);color:var(--tinta);text-decoration:none}
 .tabla-minerales .grupo-fila td{padding-top:2.6rem;padding-bottom:.5rem;font-family:var(--serif);font-style:italic;font-size:var(--f-l);color:var(--terracota);border-bottom:1px solid var(--sepiolita2)}
@@ -251,7 +251,7 @@ details.especialistas tr+tr th,details.especialistas tr+tr td{border-top:1px sol
 
 /* historia (página) */
 .portada-img{aspect-ratio:21/9;width:100%;object-fit:cover;background:var(--grafito);border-radius:var(--r)}
-.historia-texto{font-size:1.06rem;line-height:1.75;max-width:38rem}
+.historia-texto{font-size:var(--f-m);line-height:1.75;max-width:38rem}
 
 /* juego */
 .juego{max-width:640px}
