@@ -1,0 +1,8 @@
+total 612
+drwxr-xr-x 3 runner runner   4096 Nov 18 11:58 .
+drwxr-xr-x 3 runner runner   4096 Nov 18 11:58 ..
+drwxr-xr-x 6 runner runner   4096 Nov 18 11:58 .git
+-rw-r--r-- 1 runner runner      0 Nov 18 11:58 lista.txt
+-rw-r--r-- 1 runner runner 335508 Nov 18 11:58 pages_1.json
+-rw-r--r-- 1 runner runner 118231 Nov 18 11:58 portada.html
+-rw-r--r-- 1 runner runner 158725 Nov 18 11:58 posts_1.json
