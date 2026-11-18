@@ -46,7 +46,7 @@ p{margin:0 0 1em}
 #cabecera{position:sticky;top:0;z-index:30;background:rgba(246,243,238,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--sepiolita)}
 #cabecera .envoltorio{display:flex;align-items:center;gap:1rem;min-height:64px}
 .marca{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--tinta);margin-right:auto}
-.marca svg{width:34px;height:34px;flex:none}
+.marca img{width:48px;height:48px;flex:none}
 .marca b{font-family:var(--serif);font-weight:500;font-size:1.08rem;line-height:1.1;display:block}
 .marca span{font-size:.78rem;color:var(--tinta2);display:block}
 nav.menu{display:flex;gap:.2rem;align-items:center}
@@ -113,7 +113,7 @@ section.bloque.arena{background:var(--sepiolita)}
 .indice p{margin:0;font-size:.9rem;color:var(--tinta2)}
 
 /* convocatorias */
-.convocatorias{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:1.5rem}
+.convocatorias{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:1.5rem}
 .convocatoria{border-left:3px solid var(--ocre);padding:.2rem 0 .2rem 1.1rem}
 .convocatoria .fecha{font-weight:600;color:var(--terracota)}
 .convocatoria h3{font-size:1.3rem;margin:.2rem 0 .4rem}

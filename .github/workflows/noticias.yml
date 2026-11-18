@@ -1,0 +1,34 @@
+name: Noticias desde la hoja de cálculo
+# Lee la hoja de Google «SEA – Noticias y convocatorias de la web» y actualiza noticias.js.
+on:
+  schedule:
+    - cron: "17 5,11,17 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+jobs:
+  noticias:
+    runs-on: ubuntu-latest
+    env:
+      HOJA: "1-6BVU44HtjB2y2bO1ph0jT4Eu_6BfZHclCLoYWVdbN8"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer la hoja
+        run: |
+          if curl -fsSL "https://docs.google.com/spreadsheets/d/$HOJA/gviz/tq?tqx=out:csv&headers=1" -o /tmp/hoja.csv && head -1 /tmp/hoja.csv | grep -qi "titulo_es"; then
+            python3 tools/noticias.py /tmp/hoja.csv
+          else
+            echo "No se pudo leer la hoja (¿está compartida con «cualquier persona con el enlace»?). Se mantienen las noticias actuales."
+          fi
+      - name: Publicar si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add noticias.js
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -q -m "Noticias actualizadas desde la hoja"
+          git push origin HEAD:main
+          git push --force origin HEAD:gh-pages
