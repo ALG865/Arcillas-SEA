@@ -1,6 +1,6 @@
 /* Funciona sin conexión: guarda la web y las imágenes que se van viendo. */
-var CACHE = "arcillas-sea-v2";
-var BASE = ["./", "index.html", "estilo.css", "datos.js", "datos-mapa.js", "app.js", "icono.svg", "manifest.webmanifest", "img/lista.json"];
+var CACHE = "sea-v3";
+var BASE = ["./","index.html","estilo.css","datos.js","datos-mapa.js","sea.js","sea-textos.js","glosario.js","docs.js","vendor-three.min.js","modelos3d.js","app.js","icono.svg","manifest.webmanifest","img/lista.json","fuentes-tipo/spectral-latin-400-normal.woff2","fuentes-tipo/spectral-latin-400-italic.woff2","fuentes-tipo/spectral-latin-500-normal.woff2","fuentes-tipo/spectral-latin-600-normal.woff2","fuentes-tipo/instrument-sans-latin-400-normal.woff2","fuentes-tipo/instrument-sans-latin-500-normal.woff2","fuentes-tipo/instrument-sans-latin-600-normal.woff2"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) {
     return c.addAll(BASE).then(function () {

@@ -1,0 +1,1 @@
+window.DOCS_LOCALES=["GLOSARIO-17-01-2023.pdf"];

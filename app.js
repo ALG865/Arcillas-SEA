@@ -1,611 +1,614 @@
-/* «Los minerales de la arcilla» · Sociedad Española de Arcillas */
+/* Sociedad Española de Arcillas · web */
 (function(){
 "use strict";
-var lang = "es";
-try{ var g = localStorage.getItem("arcillas-lang"); if(g==="en"||g==="es") lang=g; }catch(e){}
+var lang="es";
+try{ var g=localStorage.getItem("sea-lang"); if(g==="en"||g==="es") lang=g; }catch(e){}
 if(/[?&]lang=en/.test(location.search)) lang="en";
+if(/[?&]lang=es/.test(location.search)) lang="es";
 
-var UI = {
- es:{titulo:"Los minerales de la arcilla",sea:"Sociedad Española de Arcillas",volver:"Volver",inicio:"Inicio",saber:"Saber más",cerrar:"Cerrar",
-  sello:"Sociedad Española de Arcillas",lema:"Láminas de pocos nanómetros que se apilan, se hinchan con agua, se enrollan en tubos o forman fibras. Con ellas se hace porcelana, papel y medicamentos, se sellan residuos y se pintó el azul maya.",
-  pila:"Toca la pila para separar sus capas",
-  b:[["¿Qué es una arcilla?","Tamaño y mineral"],["Estructura","Construye las láminas"],["Minerales","Grupos y fichas"],["Propiedades","Intercambio, hinchamiento, superficie"],["Aplicaciones","De la porcelana al azul maya"],["Yacimientos","España y el mundo"],["Cómo se estudian","Rayos X y microscopios"],["La SEA","Historia y créditos"]],
-  juego:"Juego: ¿qué arcilla es?",
-  foto:"Imagen: ",ioc:"Archivo «Images of Clay» (MinSoc y CMS)",
-  sinfoto:"Imagen de microscopio pendiente de descarga",
-  ficha:{formula:"Fórmula ideal",d:"Espaciado basal",cic:"Capacidad de intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad",grupo:"Grupo",micro:"Al microscopio electrónico",mano:"Muestras de mano",espana:"En España",estructura:"Su lámina",verMapa:"Ver en el mapa"},
-  niveles:["nulo","bajo","medio","alto","muy alto"],
-  cicU:"meq/100 g",seU:"m²/g",
-  colIACT:"Colección del IACT",colPriv:"Colección privada",
-  todos:"Todos",
-  /* estructura */
-  estTit:"Construye una arcilla",estIntro:"Los minerales de la arcilla se construyen con dos piezas: la capa tetraédrica (T), de silicio y oxígeno, y la capa octaédrica (O), de aluminio o magnesio con oxígeno e hidroxilos. Pulsa T y O para montar una lámina y elige qué hay entre las láminas.",
-  paso1:"1 · Monta la lámina",paso2:"2 · ¿Qué hay entre las láminas?",paso3:"3 · Capa octaédrica",
-  borrar:"Borrar",fibras:"Cintas invertidas (fibrosas)",
-  di:"Dioctaédrica (2 de cada 3 huecos)",tri:"Trioctaédrica (3 de 3)",
-  inter:{nada:"Nada",H:"Nada: puentes de hidrógeno",aguaH:"Una capa de agua",K:"Potasio (K⁺)",agua:"Cationes con agua (carga baja)",Mg:"Mg²⁺ y dos capas de agua (carga alta)",hidroxido:"Una lámina de hidróxido"},
-  empieza:"Empieza pulsando T.",siguiente1:"Ahora añade una capa O.",siguiente2:"Tienes una lámina 1:1. Puedes añadir otra T para hacer una 2:1.",completa:"Lámina 2:1 completa.",
-  noValida:"Esa combinación no forma un mineral de la arcilla. Prueba T, luego O y luego T.",
-  hincha:"Hincha con agua",nohincha:"No hincha",hinchaPoco:"Hincha poco",carga:"Carga de la lámina",verFicha:"Ver ficha",
-  leyT:"Tetraedros SiO₄",leyO:"Octaedros Al o Mg",leyVac:"Hueco vacío",leyK:"K⁺",leyCat:"Catión de cambio",leyH2O:"Agua",leyHid:"Lámina de hidróxido",
-  sepi:"Sepiolita",pali:"Paligorskita",canal:"Canales con agua",
-  /* propiedades */
-  propTit:"Propiedades comparadas",propIntro:"Toca una propiedad para comparar. Los valores son rangos típicos aproximados: cambian mucho de una muestra a otra.",
-  props:{cic:"Intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad"},
-  propTxt:{cic:"Cuántos cationes puede intercambiar la arcilla con el agua que la rodea (miliequivalentes por 100 g). Depende de la carga de la lámina y de si los cationes son accesibles.",
-   se:"Superficie de un gramo de arcilla. En las esmectitas cuenta también la superficie entre láminas: un gramo puede tener tanta superficie como una pista de tenis grande.",
-   hinch:"Cuánto aumenta de volumen al mojarse. Solo hinchan de verdad las esmectitas, sobre todo las sódicas, porque el agua entra entre sus láminas.",
-   plast:"Capacidad de moldearse mojada sin romperse y mantener la forma. Es la propiedad de la que vive la alfarería."},
-  aguaTit:"¿Qué pasa al añadir agua?",echarAgua:"Añadir agua",secar:"Secar",
-  /* aplicaciones */
-  aplTit:"Aplicaciones",aplIntro:"Las arcillas están en muchos objetos de casa, en la industria y en el patrimonio. Toca una tarjeta para saber más.",minerales:"Minerales",
-  /* yacimientos */
-  yacTit:"Yacimientos",yacIntro:"Principales yacimientos de minerales de la arcilla en España. Toca un punto.",
-  leyMapa:{fibrosa:"Sepiolita y paligorskita",bentonita:"Bentonita (esmectitas)",caolin:"Caolín",pasado:"Explotado en el pasado"},
-  mundo:"En el mundo",hoy:"En explotación",pasado:"Explotado en el pasado",
-  /* estudio */
-  estuTit:"Cómo se estudian",estuIntro:"Las partículas son demasiado pequeñas para el microscopio óptico. Se identifican con rayos X y se observan con microscopios electrónicos.",
-  drxTit:"Difracción de rayos X: los tres tratamientos",drxIntro:"Elige un mineral y compara sus difractogramas: agregado orientado seco al aire, tras etilenglicol y tras calentar a 550 °C.",
-  AO:"Seco al aire",EG:"Etilenglicol",C:"550 °C",mezcla:"Mezcla",grados:"°2θ (Cu Kα)",tecnicas:"Otras técnicas",
-  /* sea */
-  seaTit:"La Sociedad Española de Arcillas",seaIntro:"La SEA reúne a investigadores, docentes y empresas que trabajan con arcillas en España.",
-  hist:"Historia",premios:"Premios",premiosL:["Premio Martín-Vivaldi","Premio José María Serratosa","Premios Jóvenes Investigadores","Premio SEA de Fotografía Científica"],
-  red:"En red",redT:"Forma parte de la AIPEA (Association Internationale pour l’Étude des Argiles) y de la ECGA (European Clay Groups Association). Tiene más de un centenar de socios, y como socios colectivos a CIEMAT, Clariant, Sepiolsa y Tolsa.",
-  sede:"Sede",sedeT:"Av. de las Palmeras, 4, 18100 Armilla (Granada).",web:"Web de la SEA",
-  creditos:"Créditos",
-  credT:["Imágenes de microscopio electrónico: «Image reproduced from the ‘Images of Clay Archive’ of the Mineralogical Society of Great Britain & Ireland and The Clay Minerals Society (https://www.minersoc.org/images-of-clay.html)». El autor de cada imagen figura en su leyenda.","Muestras de mano: colección del IACT (CSIC-UGR), colecciones privadas y Wikimedia Commons, con el autor y la licencia en cada leyenda.","Mapa y yacimientos: exposición «Minerales estratégicos» (IACT-CSIC).","Coordinación: Alberto López Galindo (IACT-CSIC)."],
-  /* qué es */
-  queTit:"¿Qué es una arcilla?",queIntro:"La palabra «arcilla» tiene dos significados, y conviene no confundirlos.",
-  tam:"Arcilla como tamaño",tamT:"En sedimentología, arcilla es toda partícula menor de 2 micrómetros (0,002 mm), sea del mineral que sea. Puede haber «arcilla» de cuarzo o de calcita.",
-  min:"Arcilla como mineral",minT:"En mineralogía, los minerales de la arcilla son filosilicatos (silicatos en láminas) hidratados, de grano muy fino. Dan plasticidad a la arcilla cuando está húmeda y la endurecen al secarla o cocerla.",
-  def:"La AIPEA y la Clay Minerals Society definen la arcilla como un material natural formado sobre todo por minerales de grano fino, que suele ser plástico con la cantidad adecuada de agua y se endurece al secarse o cocerse.",
-  escTit:"Del tamaño de la arena al de la arcilla",escIntro:"Mueve el control para cambiar el tamaño de la partícula.",
-  clases:["Arena","Limo","Arcilla"],
-  analog:"Si una partícula de arcilla de 2 µm fuera un grano de arroz de 5 mm, esta partícula mediría",
-  irEst:"Ver cómo son por dentro",
-  /* juego */
-  jTit:"¿Qué arcilla es?",jIntro:"Ocho preguntas sobre lo que has visto.",empezar:"Empezar",otra:"Otra vez",sig:"Siguiente",
-  pregImg:"¿Qué mineral aparece en esta imagen de microscopio?",bien:"¡Correcto!",mal:"No: es ",fin:"Has acertado {n} de {t}.",
-  pie:"Sociedad Española de Arcillas · sea-arcillas.es · Funciona sin conexión una vez cargada."
- },
- en:{titulo:"Clay minerals",sea:"Spanish Clay Society",volver:"Back",inicio:"Home",saber:"Learn more",cerrar:"Close",
-  sello:"Spanish Clay Society (SEA)",lema:"Layers a few nanometres thick that stack, swell with water, roll into tubes or form fibres. With them we make porcelain, paper and medicines, seal waste, and the Maya painted their blue.",
-  pila:"Tap the stack to pull its sheets apart",
-  b:[["What is clay?","Size and mineral"],["Structure","Build the layers"],["Minerals","Groups and cards"],["Properties","Exchange, swelling, surface"],["Uses","From porcelain to Maya blue"],["Deposits","Spain and the world"],["How we study them","X-rays and microscopes"],["The SEA","History and credits"]],
-  juego:"Game: which clay is it?",
-  foto:"Image: ",ioc:"“Images of Clay” archive (MinSoc and CMS)",
-  sinfoto:"Microscope image waiting to be downloaded",
-  ficha:{formula:"Ideal formula",d:"Basal spacing",cic:"Cation exchange capacity",se:"Specific surface area",hinch:"Swelling",plast:"Plasticity",grupo:"Group",micro:"Under the electron microscope",mano:"Hand specimens",espana:"In Spain",estructura:"Its layer",verMapa:"See on the map"},
-  niveles:["none","low","medium","high","very high"],
-  cicU:"meq/100 g",seU:"m²/g",
-  colIACT:"IACT collection",colPriv:"Private collection",
-  todos:"All",
-  estTit:"Build a clay",estIntro:"Clay minerals are built from two pieces: the tetrahedral sheet (T), of silicon and oxygen, and the octahedral sheet (O), of aluminium or magnesium with oxygen and hydroxyls. Tap T and O to assemble a layer, then choose what sits between layers.",
-  paso1:"1 · Build the layer",paso2:"2 · What is between the layers?",paso3:"3 · Octahedral sheet",
-  borrar:"Clear",fibras:"Inverted ribbons (fibrous)",
-  di:"Dioctahedral (2 of every 3 sites)",tri:"Trioctahedral (3 of 3)",
-  inter:{nada:"Nothing",H:"Nothing: hydrogen bonds",aguaH:"One layer of water",K:"Potassium (K⁺)",agua:"Cations with water (low charge)",Mg:"Mg²⁺ and two water layers (high charge)",hidroxido:"A hydroxide sheet"},
-  empieza:"Start by tapping T.",siguiente1:"Now add an O sheet.",siguiente2:"You have a 1:1 layer. You can add another T to make a 2:1 layer.",completa:"2:1 layer complete.",
-  noValida:"That combination does not make a clay mineral. Try T, then O, then T.",
-  hincha:"Swells with water",nohincha:"Does not swell",hinchaPoco:"Swells a little",carga:"Layer charge",verFicha:"See card",
-  leyT:"SiO₄ tetrahedra",leyO:"Al or Mg octahedra",leyVac:"Empty site",leyK:"K⁺",leyCat:"Exchangeable cation",leyH2O:"Water",leyHid:"Hydroxide sheet",
-  sepi:"Sepiolite",pali:"Palygorskite",canal:"Water-filled channels",
-  propTit:"Properties compared",propIntro:"Tap a property to compare. Values are approximate typical ranges: they vary a lot from one sample to another.",
-  props:{cic:"Cation exchange",se:"Specific surface",hinch:"Swelling",plast:"Plasticity"},
-  propTxt:{cic:"How many cations the clay can swap with the surrounding water (milliequivalents per 100 g). It depends on the layer charge and on whether the cations can be reached.",
-   se:"The surface area of one gram of clay. In smectites the surface between layers counts too: one gram can have as much surface as a large tennis court.",
-   hinch:"How much its volume grows when wet. Only smectites really swell, especially sodium ones, because water enters between their layers.",
-   plast:"The ability to be shaped when wet without breaking and to keep that shape. Pottery depends on it."},
-  aguaTit:"What happens when water is added?",echarAgua:"Add water",secar:"Dry",
-  aplTit:"Uses",aplIntro:"Clays are in many things at home, in industry and in our heritage. Tap a card to learn more.",minerales:"Minerals",
-  yacTit:"Deposits",yacIntro:"Main clay-mineral deposits in Spain. Tap a point.",
-  leyMapa:{fibrosa:"Sepiolite and palygorskite",bentonita:"Bentonite (smectites)",caolin:"Kaolin",pasado:"Mined in the past"},
-  mundo:"Around the world",hoy:"Mined today",pasado:"Mined in the past",
-  estuTit:"How we study them",estuIntro:"The particles are too small for a light microscope. They are identified with X-rays and observed with electron microscopes.",
-  drxTit:"X-ray diffraction: the three treatments",drxIntro:"Choose a mineral and compare its diffractograms: oriented aggregate air-dried, after ethylene glycol and after heating to 550 °C.",
-  AO:"Air-dried",EG:"Ethylene glycol",C:"550 °C",mezcla:"Mixture",grados:"°2θ (Cu Kα)",tecnicas:"Other techniques",
-  seaTit:"The Spanish Clay Society",seaIntro:"The SEA brings together researchers, teachers and companies working with clays in Spain.",
-  hist:"History",premios:"Awards",premiosL:["Martín-Vivaldi Award","José María Serratosa Award","Young Researchers Awards","SEA Scientific Photography Award"],
-  red:"Networks",redT:"It is a member of AIPEA (Association Internationale pour l’Étude des Argiles) and of ECGA (European Clay Groups Association). It has more than a hundred members, and CIEMAT, Clariant, Sepiolsa and Tolsa as corporate members.",
-  sede:"Address",sedeT:"Av. de las Palmeras, 4, 18100 Armilla (Granada), Spain.",web:"SEA website",
-  creditos:"Credits",
-  credT:["Electron microscope images: “Image reproduced from the ‘Images of Clay Archive’ of the Mineralogical Society of Great Britain & Ireland and The Clay Minerals Society (https://www.minersoc.org/images-of-clay.html)”. Each image’s author is given in its caption.","Hand specimens: IACT collection (CSIC-UGR), private collections and Wikimedia Commons, with author and licence in each caption.","Map and deposits: “Strategic minerals” exhibition (IACT-CSIC).","Coordination: Alberto López Galindo (IACT-CSIC)."],
-  queTit:"What is clay?",queIntro:"The word “clay” has two meanings, and it helps not to mix them up.",
-  tam:"Clay as a size",tamT:"In sedimentology, clay is any particle smaller than 2 micrometres (0.002 mm), whatever its mineral. There can be quartz or calcite “clay”.",
-  min:"Clay as a mineral",minT:"In mineralogy, clay minerals are very fine-grained hydrous phyllosilicates (sheet silicates). They make clay plastic when wet and let it harden when dried or fired.",
-  def:"AIPEA and the Clay Minerals Society define clay as a naturally occurring material composed mainly of fine-grained minerals, generally plastic with the right amount of water, which hardens when dried or fired.",
-  escTit:"From sand size to clay size",escIntro:"Move the slider to change the particle size.",
-  clases:["Sand","Silt","Clay"],
-  analog:"If a 2 µm clay particle were a 5 mm grain of rice, this particle would measure",
-  irEst:"See what they are like inside",
-  jTit:"Which clay is it?",jIntro:"Eight questions about what you have seen.",empezar:"Start",otra:"Play again",sig:"Next",
-  pregImg:"Which mineral is shown in this microscope image?",bien:"Correct!",mal:"No: it is ",fin:"You got {n} out of {t}.",
-  pie:"Spanish Clay Society · sea-arcillas.es · Works offline once loaded."
- }
-};
-function U(k){ var o=UI[lang], p=k.split("."); for(var i=0;i<p.length;i++){ o=o&&o[p[i]]; } return o; }
-function L(o){ return o ? (o[lang]!==undefined?o[lang]:o.es) : ""; }
+/* ---------------- textos de la interfaz ---------------- */
+var UI={
+es:{
+ sea:"Sociedad Española de Arcillas", corto:"SEA", arcillas:"Las arcillas", sociedad:"La Sociedad", hazte:"Hazte socio", menu:"Menú", cerrar:"Cerrar", inicio:"Inicio",
+ nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["juego","Juego: ¿qué arcilla es?"]],
+   sociedad:[["sociedad","Quiénes somos"],["junta","Junta directiva"],["premios","Premios y ayudas"],["reuniones","Reuniones científicas"],["publicaciones","Publicaciones"],["glosario","Glosario"],["semblanzas","Semblanzas"],["estatutos","Estatutos"]] },
+ heroeT:"El mundo de las arcillas", heroeE:"Láminas de pocos nanómetros que se apilan, se hinchan con agua, se enrollan en tubos o forman fibras. Con ellas se hace porcelana, papel y medicamentos, se aíslan residuos y se pintó el azul maya.",
+ explorar:"Explorar las arcillas", conocer:"Conocer la SEA",
+ lamTit:"Una lámina, dos capas", lamTxt:"Casi todos los minerales de la arcilla están hechos de dos piezas: una capa de tetraedros de silicio y oxígeno, en azul, y una capa de octaedros de aluminio o magnesio, en verde. Según cómo se apilan y qué queda entre las láminas, hinchan, intercambian cationes o se convierten en fibras.", girar:"Arrastra para girar el modelo", verEstructura:"Construir una lámina",
+ histTit:"Historias de arcilla", histE:"Del centro de la península a Marte, pasando por los murales mayas.",
+ indiceTit:"Explorar", indice:{ "que-es":"Arcilla como tamaño y como mineral", estructura:"Modelos 3D y constructor de láminas", minerales:"Catorce fichas, del caolín a la sepiolita", propiedades:"Intercambio, hinchamiento y superficie", aplicaciones:"De la porcelana a las barreras de residuos", yacimientos:"España y el mundo", estudio:"Difracción de rayos X y microscopía", galeria:"Imágenes de microscopio electrónico" },
+ convTit:"Convocatorias y citas", plazo:"Plazo hasta el", verBases:"Ver las bases",
+ clayTit:"CLAY 2027 en Madrid", clayTxt:"La conferencia internacional de arcillas de la AIPEA se celebra en Madrid del 20 al 26 de junio de 2027, organizada con la SEA.", clayWeb:"Web del congreso",
+ galTit:"Galería", galE:"Imágenes de microscopio electrónico cedidas por socios de la SEA y del archivo «Images of Clay».", verGaleria:"Ver toda la galería",
+ sobreSEA:"La Sociedad Española de Arcillas reúne desde 1969 a quienes investigan, enseñan y trabajan con arcillas en España.",
+ imagen:"Imagen", ioc:"Archivo «Images of Clay» (Mineralogical Society y The Clay Minerals Society)", seaArch:"Archivo de imágenes de la Sociedad Española de Arcillas",
+ todos:"Todos", fuentes:{sea:"Archivo de la SEA",ioc:"Images of Clay"},
+ ficha:{formula:"Fórmula ideal",d:"Espaciado basal",cic:"Capacidad de intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad",micro:"Al microscopio electrónico",mano:"Muestras de mano",espana:"En España",estructura:"Su lámina",verMapa:"Ver en el mapa",modelo:"Modelo 3D"},
+ esp:{tit:"Para especialistas",lam:"Tipo de lámina",x:"Carga de la lámina (x, por fórmula unidad)",grupo:"Grupo",oct:"Carácter octaédrico",inter:"Material interlaminar",fuente:"Clasificación del Comité de Nomenclatura de la AIPEA (Guggenheim et al., 2006, Clays and Clay Minerals 54, 761–772)."},
+ niveles:["nulo","bajo","medio","alto","muy alto"], cicU:"meq/100 g", seU:"m²/g",
+ colIACT:"Colección del IACT", colPriv:"Colección privada",
+ tablaCols:["","Mineral","Espaciado basal","En pocas palabras"],
+ queE:"La palabra «arcilla» tiene dos significados, y conviene no confundirlos.",
+ tam:"Arcilla como tamaño", tamT:"En sedimentología, arcilla es toda partícula menor de 2 micrómetros (0,002 mm), sea del mineral que sea. Puede haber «arcilla» de cuarzo o de calcita.",
+ min:"Arcilla como mineral", minT:"En mineralogía, los minerales de la arcilla son filosilicatos, silicatos en láminas, y otros minerales que dan plasticidad a la arcilla y la endurecen al secarse o cocerse.",
+ def:"La AIPEA y la Clay Minerals Society definen la arcilla como un material natural formado sobre todo por minerales de grano fino, generalmente plástico con la cantidad adecuada de agua, que se endurece al secarse o cocerse.",
+ escTit:"Del grano de arena a la partícula de arcilla", escE:"Mueve el control para cambiar el tamaño de la partícula.", clases:["Arena","Limo","Arcilla"],
+ analog:"Si una partícula de arcilla de 2 µm fuera un grano de arroz de 5 mm, esta partícula mediría",
+ estE:"Gira los modelos, cambia de mineral y monta tu propia lámina con las dos piezas básicas.",
+ m3dTit:"Modelos en 3D", m3dNota:"Modelos idealizados con poliedros regulares; no son estructuras refinadas.", perfil:"De perfil", planta:"En planta", oblicua:"Oblicua",
+ nombres3d:{caolinita:"Caolinita",pirofilita:"Pirofilita",ilita:"Ilita",montmorillonita:"Montmorillonita",vermiculita:"Vermiculita",clorita:"Clorita",sepiolita:"Sepiolita",paligorskita:"Paligorskita"},
+ conTit:"Construye una lámina", conE:"Pulsa T y O para montar la lámina y elige qué hay entre las láminas.",
+ paso1:"1. Monta la lámina", paso2:"2. ¿Qué hay entre las láminas?", paso3:"3. Capa octaédrica", borrar:"Borrar", fibras:"Cintas invertidas (fibrosas)",
+ di:"Dioctaédrica: 2 de cada 3 huecos", tri:"Trioctaédrica: 3 de 3",
+ inter:{nada:"Nada",H:"Nada: puentes de hidrógeno",aguaH:"Una capa de agua",K:"Potasio (K⁺)",agua:"Cationes con agua (carga baja)",Mg:"Mg²⁺ con dos capas de agua (carga alta)",hidroxido:"Una capa de hidróxido"},
+ empieza:"Empieza pulsando T.", sig1:"Ahora añade una capa O.", sig2:"Tienes una lámina 1:1. Puedes añadir otra T para hacer una 2:1.", completa:"Lámina 2:1 completa.", noValida:"Esa combinación no forma un mineral de la arcilla. Prueba T, luego O y luego T.",
+ hincha:"Hincha con agua", nohincha:"No hincha", hinchaPoco:"Hincha poco", carga:"Carga de la lámina", verFicha:"Ver la ficha",
+ ley:{T:"Tetraedros SiO₄",O:"Octaedros de Al o Mg",vac:"Hueco vacío",K:"K⁺",cat:"Catión de cambio",agua:"Agua",hid:"Capa de hidróxido",Mg:"Mg²⁺"},
+ sepi:"Sepiolita", pali:"Paligorskita", canal:"Canales con agua a lo largo de la fibra",
+ propE:"Toca una propiedad para comparar. Son rangos típicos aproximados: cambian mucho de una muestra a otra.",
+ props:{cic:"Intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad"},
+ propTxt:{cic:"Cuántos cationes puede intercambiar la arcilla con el agua que la rodea, en miliequivalentes por 100 g. Depende de la carga de la lámina y de si los cationes son accesibles.",se:"Superficie de un gramo de arcilla. En las esmectitas cuenta también la superficie entre láminas: un gramo puede tener la superficie de una pista de tenis grande.",hinch:"Cuánto aumenta de volumen al mojarse. Solo hinchan de verdad las esmectitas, sobre todo las sódicas, porque el agua entra entre sus láminas.",plast:"Capacidad de moldearse mojada sin romperse y de mantener la forma. De ella vive la alfarería."},
+ aguaTit:"¿Qué pasa al añadir agua?", echarAgua:"Añadir agua", secar:"Secar",
+ aplE:"Las arcillas están en muchos objetos de casa, en la industria y en el patrimonio.", minerales:"Minerales",
+ yacE:"Principales yacimientos de minerales de la arcilla en España. Toca un punto.", leyMapa:{fibrosa:"Sepiolita y paligorskita",bentonita:"Bentonita (esmectitas)",caolin:"Caolín",pasado:"Explotado en el pasado"}, mundo:"En el mundo", hoy:"En explotación", pasado:"Explotado en el pasado",
+ estuE:"Las partículas son demasiado pequeñas para el microscopio óptico. Se identifican con rayos X y se observan con microscopios electrónicos.",
+ drxTit:"Difracción de rayos X: los tres tratamientos", drxE:"Elige un mineral y compara el agregado orientado seco al aire, tras etilenglicol y tras calentar a 550 °C. Pasa el dedo o el ratón por el gráfico para leer el espaciado.",
+ AO:"Seco al aire", EG:"Etilenglicol", C:"550 °C", mezcla:"Mezcla", grados:"°2θ (Cu Kα)", tecnicas:"Otras técnicas",
+ marte:"El rover Curiosity lleva un difractómetro de rayos X, CheMin, con el que ha identificado esmectitas en Marte.",
+ galPag:"Imágenes de microscopio electrónico. Toca una imagen para verla grande.",
+ jE:"Ocho preguntas sobre lo que has visto.", empezar:"Empezar", otra:"Jugar otra vez", sig:"Siguiente", pregImg:"¿Qué mineral aparece en esta imagen de microscopio?", bien:"¡Correcto!", mal:"No: es ", fin:"Has acertado {n} de {t}.",
+ socE:"La Sociedad Española de Arcillas reúne desde 1969 a quienes investigan, enseñan y trabajan con arcillas en España.",
+ fines:"Fines", campos:"Campos de actividad", enRed:"En red", hist:"Historia", hitos:"Hitos", sede:"Sede", contacto:"Contacto",
+ juntaE:"Junta directiva de la Sociedad Española de Arcillas.", relInt:"Relaciones internacionales",
+ premiosE:"La SEA impulsa a quienes empiezan a investigar en arcillas con premios y ayudas.", abierto:"Convocatoria abierta", ultima:"Última convocatoria", distinciones:"Socios de la SEA con distinciones internacionales", honor:"Socios de honor",
+ reunE:"La SEA organiza reuniones científicas nacionales y ha llevado a España algunos de los grandes congresos internacionales de arcillas.", nac:"Reuniones y jornadas de la SEA", int:"Congresos internacionales organizados o apoyados por la SEA",
+ pubE:"Glosario, libros de resúmenes, guías de campo e informes de actividad.", glosarioPub:"Glosario", resumenes:"Libros de resúmenes", guias:"Guías de campo y simposios", actividades:"Informes de actividad (en inglés)", interlab:"Análisis interlaboratorio",
+ gloE:"Términos de las arcillas y los minerales de la arcilla, del Glosario SEA (2023), traducción y adaptación del glosario de la Clay Minerals Society coordinada por Manuel Pozo Rodríguez.", buscar:"Buscar un término", sinRes:"No hay términos que coincidan. Prueba con otra palabra.", gloPdf:"Descargar el glosario completo (PDF)", gloPend:"El glosario se está incorporando. Mientras tanto puedes descargarlo en PDF.",
+ sembE:"Personas que construyeron la ciencia de las arcillas en España y fuera de ella.",
+ socioTit:"Hazte socio", socioE:"Pueden asociarse investigadores, docentes, estudiantes, empresas e instituciones interesados en las arcillas.", socioPasos:["Descarga la ficha de inscripción.","Rellénala y envíala a la secretaría de la SEA.","La junta directiva te dará la bienvenida."], fichaWord:"Ficha en Word", fichaPdf:"Ficha en PDF",
+ estatutosE:"Estatutos de la Sociedad Española de Arcillas.",
+ pie:"Funciona sin conexión una vez cargada.", creditos:"Créditos",
+ credT:"Imágenes de microscopio: archivo de imágenes de la SEA (cedidas por sus autores) y «Images of Clay» de la Mineralogical Society y The Clay Minerals Society. Muestras de mano: IACT y colecciones privadas. Tipografías Spectral e Instrument Sans (SIL Open Font License).",
+ otrasHist:"Otras historias"
+},
+en:{
+ sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
+ nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["juego","Game: which clay is it?"]],
+   sociedad:[["sociedad","About us"],["junta","Board"],["premios","Awards and grants"],["reuniones","Scientific meetings"],["publicaciones","Publications"],["glosario","Glossary"],["semblanzas","Profiles"],["estatutos","Statutes"]] },
+ heroeT:"The world of clays", heroeE:"Layers a few nanometres thick that stack, swell with water, roll into tubes or form fibres. With them we make porcelain, paper and medicines, isolate waste — and the Maya painted their blue.",
+ explorar:"Explore clays", conocer:"About the SEA",
+ lamTit:"One layer, two sheets", lamTxt:"Almost every clay mineral is built from two pieces: a sheet of silicon–oxygen tetrahedra, in blue, and a sheet of aluminium or magnesium octahedra, in green. How they stack, and what sits between the layers, decides whether they swell, exchange cations or become fibres.", girar:"Drag to rotate the model", verEstructura:"Build a layer",
+ histTit:"Clay stories", histE:"From the heart of Spain to Mars, by way of Maya murals.",
+ indiceTit:"Explore", indice:{ "que-es":"Clay as a size and as a mineral", estructura:"3D models and layer builder", minerales:"Fourteen mineral cards, from kaolin to sepiolite", propiedades:"Exchange, swelling and surface", aplicaciones:"From porcelain to waste barriers", yacimientos:"Spain and the world", estudio:"X-ray diffraction and microscopy", galeria:"Electron microscope images" },
+ convTit:"Calls and events", plazo:"Deadline", verBases:"Read the rules",
+ clayTit:"CLAY 2027 in Madrid", clayTxt:"AIPEA’s International Clay Conference takes place in Madrid on 20–26 June 2027, organised with the SEA.", clayWeb:"Conference website",
+ galTit:"Gallery", galE:"Electron microscope images contributed by SEA members and from the “Images of Clay” archive.", verGaleria:"See the whole gallery",
+ sobreSEA:"Since 1969 the Spanish Clay Society has brought together those who research, teach and work with clays in Spain.",
+ imagen:"Image", ioc:"“Images of Clay” archive (Mineralogical Society and The Clay Minerals Society)", seaArch:"Image archive of the Spanish Clay Society",
+ todos:"All", fuentes:{sea:"SEA archive",ioc:"Images of Clay"},
+ ficha:{formula:"Ideal formula",d:"Basal spacing",cic:"Cation exchange capacity",se:"Specific surface area",hinch:"Swelling",plast:"Plasticity",micro:"Under the electron microscope",mano:"Hand specimens",espana:"In Spain",estructura:"Its layer",verMapa:"See on the map",modelo:"3D model"},
+ esp:{tit:"For specialists",lam:"Layer type",x:"Layer charge (x, per formula unit)",grupo:"Group",oct:"Octahedral character",inter:"Interlayer material",fuente:"Classification of the AIPEA Nomenclature Committee (Guggenheim et al., 2006, Clays and Clay Minerals 54, 761–772)."},
+ niveles:["none","low","medium","high","very high"], cicU:"meq/100 g", seU:"m²/g",
+ colIACT:"IACT collection", colPriv:"Private collection",
+ tablaCols:["","Mineral","Basal spacing","In a few words"],
+ queE:"The word “clay” has two meanings, and it helps not to mix them up.",
+ tam:"Clay as a size", tamT:"In sedimentology, clay is any particle smaller than 2 micrometres (0.002 mm), whatever its mineral. There can be quartz or calcite “clay”.",
+ min:"Clay as a mineral", minT:"In mineralogy, clay minerals are phyllosilicates (sheet silicates) and other minerals that make clay plastic and let it harden when dried or fired.",
+ def:"AIPEA and the Clay Minerals Society define clay as a naturally occurring material composed mainly of fine-grained minerals, generally plastic at appropriate water contents, which hardens when dried or fired.",
+ escTit:"From a sand grain to a clay particle", escE:"Move the slider to change the particle size.", clases:["Sand","Silt","Clay"],
+ analog:"If a 2 µm clay particle were a 5 mm grain of rice, this particle would measure",
+ estE:"Rotate the models, switch minerals and build your own layer from the two basic pieces.",
+ m3dTit:"3D models", m3dNota:"Idealised models built with regular polyhedra; not refined structures.", perfil:"Side view", planta:"Top view", oblicua:"Oblique",
+ nombres3d:{caolinita:"Kaolinite",pirofilita:"Pyrophyllite",ilita:"Illite",montmorillonita:"Montmorillonite",vermiculita:"Vermiculite",clorita:"Chlorite",sepiolita:"Sepiolite",paligorskita:"Palygorskite"},
+ conTit:"Build a layer", conE:"Tap T and O to build the layer and choose what sits between layers.",
+ paso1:"1. Build the layer", paso2:"2. What is between the layers?", paso3:"3. Octahedral sheet", borrar:"Clear", fibras:"Inverted ribbons (fibrous)",
+ di:"Dioctahedral: 2 of every 3 sites", tri:"Trioctahedral: 3 of 3",
+ inter:{nada:"Nothing",H:"Nothing: hydrogen bonds",aguaH:"One layer of water",K:"Potassium (K⁺)",agua:"Cations with water (low charge)",Mg:"Mg²⁺ with two water layers (high charge)",hidroxido:"A hydroxide sheet"},
+ empieza:"Start by tapping T.", sig1:"Now add an O sheet.", sig2:"You have a 1:1 layer. Add another T to make a 2:1 layer.", completa:"2:1 layer complete.", noValida:"That combination does not make a clay mineral. Try T, then O, then T.",
+ hincha:"Swells with water", nohincha:"Does not swell", hinchaPoco:"Swells a little", carga:"Layer charge", verFicha:"See the card",
+ ley:{T:"SiO₄ tetrahedra",O:"Al or Mg octahedra",vac:"Empty site",K:"K⁺",cat:"Exchangeable cation",agua:"Water",hid:"Hydroxide sheet",Mg:"Mg²⁺"},
+ sepi:"Sepiolite", pali:"Palygorskite", canal:"Water-filled channels along the fibre",
+ propE:"Tap a property to compare. These are approximate typical ranges: they vary a lot from one sample to another.",
+ props:{cic:"Cation exchange",se:"Specific surface",hinch:"Swelling",plast:"Plasticity"},
+ propTxt:{cic:"How many cations the clay can swap with the surrounding water, in milliequivalents per 100 g. It depends on the layer charge and on whether the cations can be reached.",se:"The surface area of one gram of clay. In smectites the surface between layers counts too: one gram can have the area of a large tennis court.",hinch:"How much its volume grows when wet. Only smectites really swell, especially sodium ones, because water enters between their layers.",plast:"The ability to be shaped when wet without breaking and to keep that shape. Pottery depends on it."},
+ aguaTit:"What happens when water is added?", echarAgua:"Add water", secar:"Dry",
+ aplE:"Clays are in many things at home, in industry and in our heritage.", minerales:"Minerals",
+ yacE:"Main clay-mineral deposits in Spain. Tap a point.", leyMapa:{fibrosa:"Sepiolite and palygorskite",bentonita:"Bentonite (smectites)",caolin:"Kaolin",pasado:"Mined in the past"}, mundo:"Around the world", hoy:"Mined today", pasado:"Mined in the past",
+ estuE:"The particles are too small for a light microscope. They are identified with X-rays and observed with electron microscopes.",
+ drxTit:"X-ray diffraction: the three treatments", drxE:"Choose a mineral and compare the oriented aggregate air-dried, after ethylene glycol and after heating to 550 °C. Move your finger or mouse over the plot to read the spacing.",
+ AO:"Air-dried", EG:"Ethylene glycol", C:"550 °C", mezcla:"Mixture", grados:"°2θ (Cu Kα)", tecnicas:"Other techniques",
+ marte:"The Curiosity rover carries an X-ray diffractometer, CheMin, with which it has identified smectites on Mars.",
+ galPag:"Electron microscope images. Tap an image to see it full size.",
+ jE:"Eight questions about what you have seen.", empezar:"Start", otra:"Play again", sig:"Next", pregImg:"Which mineral is shown in this microscope image?", bien:"Correct!", mal:"No: it is ", fin:"You got {n} out of {t}.",
+ socE:"Since 1969 the Spanish Clay Society has brought together those who research, teach and work with clays in Spain.",
+ fines:"Aims", campos:"Fields of activity", enRed:"Networks", hist:"History", hitos:"Milestones", sede:"Address", contacto:"Contact",
+ juntaE:"Board of the Spanish Clay Society.", relInt:"International relations",
+ premiosE:"The SEA supports those starting out in clay research with awards and grants.", abierto:"Open call", ultima:"Latest call", distinciones:"SEA members with international distinctions", honor:"Honorary members",
+ reunE:"The SEA organises national scientific meetings and has brought some of the major international clay conferences to Spain.", nac:"SEA meetings and scientific days", int:"International conferences organised or supported by the SEA",
+ pubE:"Glossary, books of abstracts, field guides and activity reports.", glosarioPub:"Glossary", resumenes:"Books of abstracts", guias:"Field guides and symposia", actividades:"Activity reports", interlab:"Interlaboratory analysis",
+ gloE:"Terms used for clays and clay minerals, from the SEA Glossary (2023), a Spanish translation and adaptation of the Clay Minerals Society glossary coordinated by Manuel Pozo Rodríguez.", buscar:"Search a term", sinRes:"No terms match. Try another word.", gloPdf:"Download the full glossary (PDF)", gloPend:"The glossary is being added. Meanwhile you can download it as a PDF.",
+ sembE:"People who built clay science in Spain and beyond.",
+ socioTit:"Join the SEA", socioE:"Researchers, teachers, students, companies and institutions interested in clays are welcome to join.", socioPasos:["Download the membership form.","Fill it in and send it to the SEA secretary.","The board will welcome you."], fichaWord:"Form (Word)", fichaPdf:"Form (PDF)",
+ estatutosE:"Statutes of the Spanish Clay Society.",
+ pie:"Works offline once loaded.", creditos:"Credits",
+ credT:"Microscope images: SEA image archive (contributed by their authors) and “Images of Clay” of the Mineralogical Society and The Clay Minerals Society. Hand specimens: IACT and private collections. Typefaces Spectral and Instrument Sans (SIL Open Font License).",
+ otrasHist:"More stories"
+}};
+function U(k){ var o=UI[lang],p=k.split("."); for(var i=0;i<p.length;i++) o=o&&o[p[i]]; return o; }
+function L(o){ if(o==null) return ""; if(typeof o==="string") return o; return o[lang]!==undefined?o[lang]:o.es; }
 function $(s,c){ return (c||document).querySelector(s); }
 function $$(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); }
-function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
-function num(x){ return lang==="es" ? String(x).replace(/(\d)\.(\d)/g,"$1,$2") : String(x).replace(/(\d),(\d)/g,"$1.$2"); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+function num(x){ return lang==="es"?String(x).replace(/(\d)\.(\d)/g,"$1,$2"):String(x).replace(/(\d),(\d)/g,"$1.$2"); }
 function minById(id){ for(var i=0;i<MINERALES.length;i++) if(MINERALES[i].id===id) return MINERALES[i]; return null; }
 function grupoNombre(id){ for(var i=0;i<GRUPOS.length;i++) if(GRUPOS[i].id===id) return L(GRUPOS[i]); return ""; }
+function dTxt(m){ return lang==="en"?num(m.d).replace("al deshidratarse","when dehydrated").replace("con etilenglicol","with ethylene glycol"):m.d; }
+function fechaTxt(iso){ var d=new Date(iso+"T12:00:00"); return d.toLocaleDateString(lang==="es"?"es-ES":"en-GB",{day:"numeric",month:"long",year:"numeric"}); }
+function hoyISO(){ return new Date().toISOString().slice(0,10); }
 
-/* ---------- imágenes ---------- */
+/* ---------------- imágenes ---------------- */
 function semFile(f){ return f.replace(/\.(jpe?g|png|gif)$/i,".webp"); }
-function semImgs(id){
-  return (SEM[id]||[]).map(function(s){
-    var mm = minById(id), nombre = s.m ? L(s.m) : (mm?L(mm).n:id);
-    return {src:"img/sem/"+semFile(s.f), mini:"img/sem/mini/"+semFile(s.f), nombre:nombre, autor:s.a, tipo:s.t||"",
-      cap:"<b>"+esc(nombre)+"</b>"+(s.t?" · "+s.t:"")+"<br>"+U("foto")+esc(s.a)+" · "+U("ioc")};
-  });
+function seaSlug(p){ return p.replace(/\.(jpe?g|png|gif|webp)$/i,"").replace(/[\/]/g,"-"); }
+function seaImg(p,mini){ return "img/sea/"+(mini?"mini/":"")+seaSlug(p)+".webp"; }
+function imgIOC(id){
+  return (SEM[id]||[]).map(function(s){ var mm=minById(id), nombre=s.m?L(s.m):(mm?L(mm).n:id);
+    return {src:"img/sem/"+semFile(s.f),mini:"img/sem/mini/"+semFile(s.f),nombre:nombre,m:id,fuente:"ioc",autor:s.a,
+      cap:"<b>"+esc(nombre)+"</b>"+(s.t?" ("+s.t+")":"")+". "+U("imagen")+": "+esc(s.a)+". "+U("ioc")+"."}; });
 }
+function imgSEA(id){
+  return GALERIA_SEA.filter(function(g){ return !id||g.m===id; }).map(function(g){
+    return {src:seaImg(g.f),mini:seaImg(g.f,true),nombre:L(minById(g.m)).n,m:g.m,fuente:"sea",autor:"Emilia García-Romero",
+      cap:"<b>"+esc(L(g))+"</b> "+U("imagen")+": Emilia García-Romero (UCM-IGEO). "+U("seaArch")+"."}; });
+}
+function imgMicro(id){ return imgSEA(id).concat(imgIOC(id)); }
 function colTxt(c){ if(c==="del IACT") return U("colIACT"); if(c==="privada") return U("colPriv"); return c; }
-function manoImgs(id){
+function imgMano(id){
   return (MANO[id]||[]).map(function(x){ var v=x[lang]||x.es;
-    return {src:"img/mano/"+x.f, mini:"img/mano/mini/"+x.f, cap:"<b>"+esc(v.alt)+"</b>"+(v.cap?"<br>"+esc(v.cap):"")+"<br>"+esc(colTxt(v.col))};
-  });
+    return {src:"img/mano/"+x.f,mini:"img/mano/mini/"+x.f,nombre:v.alt,cap:"<b>"+esc(v.alt)+"</b>"+(v.cap?". "+esc(v.cap):"")+". "+esc(colTxt(v.col))+"."}; });
 }
-function figura(im,mini){
-  return '<figure><img loading="lazy" src="'+(mini?im.mini:im.src)+'" alt="" onerror="quitaFig(this)"><figcaption>'+im.cap+'</figcaption></figure>';
+function primeraImg(id){ var a=imgMicro(id); if(a.length) return a[0]; var b=imgMano(id); return b[0]||null; }
+function fig(im,opt){ opt=opt||{};
+  return '<figure><button type="button" data-ver="'+esc(im.src)+'" data-cap="'+esc(im.cap)+'" aria-label="'+esc(im.nombre||"")+'"><img loading="lazy" src="'+(opt.grande?im.src:im.mini)+'" alt="'+esc(im.nombre||"")+'" onerror="quitaFig(this)"></button>'+(opt.sinpie?'':'<figcaption>'+im.cap+'</figcaption>')+'</figure>';
 }
-function portadaImg(id){
-  var s=semImgs(id); if(s.length) return {src:s[0].mini,sem:true};
-  var m=manoImgs(id); if(m.length) return {src:m[0].mini,sem:false};
-  return null;
+window.quitaFig=function(img){ var f=img.closest("figure"); if(f) f.remove(); };
+var visor;
+function verImagen(src,cap){
+  if(!visor){ visor=document.createElement("dialog"); document.body.appendChild(visor); visor.addEventListener("click",function(e){ if(e.target===visor||e.target.classList.contains("cerrar")) visor.close(); }); }
+  visor.innerHTML='<button class="cerrar" aria-label="'+U("cerrar")+'">×</button><figure><img src="'+esc(src)+'" alt=""><figcaption>'+cap+'</figcaption></figure>';
+  if(visor.showModal) visor.showModal(); else visor.setAttribute("open","");
 }
 
-/* ---------- dibujos de láminas ---------- */
-var C = {T:"#7fa7c9",Tb:"#4f7ea6",O:"#8fbf8a",Ob:"#5c9457",vac:"#eef3ea",K:"#9b6fb0",cat:"#d1783f",agua:"#5aa9d6",hid:"#c9dfb4",hidb:"#86a96a",txt:"#3b2a1e"};
-function capaT(y,w,arriba,n){ // tetraedros: base hacia fuera, vértice hacia la capa O
-  var h=26, s="", paso=w/n;
-  for(var i=0;i<n;i++){ var x0=i*paso, xm=x0+paso/2;
-    if(arriba) s+='<polygon points="'+(x0+2)+','+y+' '+(x0+paso-2)+','+y+' '+xm+','+(y+h)+'" fill="'+C.T+'" stroke="'+C.Tb+'" stroke-width="1.5"/>';
-    else s+='<polygon points="'+(x0+2)+','+(y+h)+' '+(x0+paso-2)+','+(y+h)+' '+xm+','+y+'" fill="'+C.T+'" stroke="'+C.Tb+'" stroke-width="1.5"/>';
-  }
-  return {s:s,h:h};
-}
-function capaO(y,w,oct,n,hid){
-  var h=hid?24:32, s="", paso=w/n, r=Math.min(paso*0.48,h*0.62);
-  s+='<rect x="0" y="'+y+'" width="'+w+'" height="'+h+'" rx="4" fill="'+(hid?C.hid:"#e7f2e4")+'" opacity=".55"/>';
-  for(var i=0;i<n;i++){ var cx=i*paso+paso/2, cy=y+h/2, vacio=(oct==="di" && i%3===2 && !hid);
-    s+='<polygon points="'+cx+','+(cy-r)+' '+(cx+r*0.9)+','+cy+' '+cx+','+(cy+r)+' '+(cx-r*0.9)+','+cy+'" fill="'+(vacio?C.vac:(hid?C.hid:C.O))+'" stroke="'+(hid?C.hidb:C.Ob)+'" stroke-width="1.5"'+(vacio?' stroke-dasharray="3 3"':'')+'/>';
-  }
-  return {s:s,h:h};
-}
-function interCapa(y,w,tipo){
-  var s="",h=8,i,x;
-  if(tipo==="H"||!tipo){ h=10; for(i=0;i<12;i++){ x=12+i*(w-24)/11; s+='<line x1="'+x+'" y1="'+(y+2)+'" x2="'+x+'" y2="'+(y+h-2)+'" stroke="#b9a48c" stroke-width="1.5" stroke-dasharray="2 2"/>'; } }
-  else if(tipo==="nada"){ h=10; }
-  else if(tipo==="K"){ h=20; for(i=0;i<6;i++){ x=w/12+i*w/6; s+='<circle cx="'+x+'" cy="'+(y+10)+'" r="7" fill="'+C.K+'"/>'; } }
-  else if(tipo==="aguaH"){ h=24; for(i=0;i<14;i++){ x=10+i*(w-20)/13; s+='<circle cx="'+x+'" cy="'+(y+12)+'" r="4.5" fill="'+C.agua+'" opacity=".85"/>'; } }
-  else if(tipo==="agua"||tipo==="Mg"){ h=tipo==="agua"?40:34;
-    for(i=0;i<16;i++){ x=8+i*(w-16)/15; s+='<circle cx="'+x+'" cy="'+(y+9+(i%2)*2)+'" r="4" fill="'+C.agua+'" opacity=".85"/><circle cx="'+(x+6)+'" cy="'+(y+h-9-(i%2)*2)+'" r="4" fill="'+C.agua+'" opacity=".85"/>'; }
-    var nc = tipo==="agua"?3:5; for(i=0;i<nc;i++){ x=w/(nc*2)+i*w/nc; s+='<circle cx="'+x+'" cy="'+(y+h/2)+'" r="7" fill="'+(tipo==="Mg"?"#7a8f3a":C.cat)+'" stroke="#fff" stroke-width="1.5"/>'; } }
-  else if(tipo==="hidroxido"){ var o=capaO(y+4,w,"tri",9,true); s=o.s; h=o.h+8; }
-  return {s:s,h:h};
-}
-/* cfg: {seq:"TO"|"TOT", oct:"di"|"tri", inter:...} ; dibuja dos láminas */
-function svgLaminas(cfg,opt){
-  opt=opt||{}; var w=opt.w||340, n=9, y=14, s="", d0=null, d1=null;
-  var reps = opt.reps||2;
-  for(var r=0;r<reps;r++){
-    var top=y;
-    if(r===0) d0=top;
-    if(cfg.seq==="TO"||cfg.seq==="TOT"){ var t=capaT(y,w,true,n); s+=t.s; y+=t.h; }
+/* ---------------- dibujos 2D de láminas ---------------- */
+var C={T:"#6f97bd",Tb:"#4b7398",O:"#7fae7a",Ob:"#57864f",vac:"#eef3ea",K:"#9b6fb0",cat:"#d1783f",agua:"#5aa9d6",hid:"#c9dfb4",hidb:"#86a96a",txt:"#26201b",Mg:"#7a8f3a"};
+function capaT(y,w,arriba,n){ var h=26,s="",p=w/n; for(var i=0;i<n;i++){ var x0=i*p,xm=x0+p/2;
+  s+=arriba?'<polygon points="'+(x0+2)+','+y+' '+(x0+p-2)+','+y+' '+xm+','+(y+h)+'" fill="'+C.T+'" stroke="'+C.Tb+'" stroke-width="1.5"/>':'<polygon points="'+(x0+2)+','+(y+h)+' '+(x0+p-2)+','+(y+h)+' '+xm+','+y+'" fill="'+C.T+'" stroke="'+C.Tb+'" stroke-width="1.5"/>'; } return {s:s,h:h}; }
+function capaO(y,w,oct,n,hid){ var h=hid?24:32,s="",p=w/n,r=Math.min(p*.48,h*.62);
+  for(var i=0;i<n;i++){ var cx=i*p+p/2,cy=y+h/2,v=(oct==="di"&&i%3===2&&!hid);
+    s+='<polygon points="'+cx+','+(cy-r)+' '+(cx+r*.9)+','+cy+' '+cx+','+(cy+r)+' '+(cx-r*.9)+','+cy+'" fill="'+(v?C.vac:(hid?C.hid:C.O))+'" stroke="'+(hid?C.hidb:C.Ob)+'" stroke-width="1.5"'+(v?' stroke-dasharray="3 3"':'')+'/>'; } return {s:s,h:h}; }
+function interCapa(y,w,t){ var s="",h=8,i,x;
+  if(t==="H"||!t){ h=10; for(i=0;i<12;i++){ x=12+i*(w-24)/11; s+='<line x1="'+x+'" y1="'+(y+2)+'" x2="'+x+'" y2="'+(y+h-2)+'" stroke="#b9a48c" stroke-width="1.5" stroke-dasharray="2 2"/>'; } }
+  else if(t==="nada"){ h=10; }
+  else if(t==="K"){ h=20; for(i=0;i<6;i++){ x=w/12+i*w/6; s+='<circle cx="'+x+'" cy="'+(y+10)+'" r="7" fill="'+C.K+'"/>'; } }
+  else if(t==="aguaH"){ h=24; for(i=0;i<14;i++){ x=10+i*(w-20)/13; s+='<circle cx="'+x+'" cy="'+(y+12)+'" r="4.5" fill="'+C.agua+'" opacity=".85"/>'; } }
+  else if(t==="agua"||t==="Mg"){ h=t==="agua"?40:34; for(i=0;i<16;i++){ x=8+i*(w-16)/15; s+='<circle cx="'+x+'" cy="'+(y+9+(i%2)*2)+'" r="4" fill="'+C.agua+'" opacity=".85"/><circle cx="'+(x+6)+'" cy="'+(y+h-9-(i%2)*2)+'" r="4" fill="'+C.agua+'" opacity=".85"/>'; }
+    var nc=t==="agua"?3:5; for(i=0;i<nc;i++){ x=w/(nc*2)+i*w/nc; s+='<circle cx="'+x+'" cy="'+(y+h/2)+'" r="7" fill="'+(t==="Mg"?C.Mg:C.cat)+'" stroke="#fff" stroke-width="1.5"/>'; } }
+  else if(t==="hidroxido"){ var o=capaO(y+4,w,"tri",9,true); s=o.s; h=o.h+8; }
+  return {s:s,h:h}; }
+function svgLaminas(cfg,opt){ opt=opt||{}; var w=opt.w||340,n=9,y=14,s="",d0=null,d1=null,reps=opt.reps||2;
+  for(var r=0;r<reps;r++){ if(r===0) d0=y;
+    if(cfg.seq==="T"||cfg.seq==="TO"||cfg.seq==="TOT"){ var t=capaT(y,w,true,n); s+=t.s; y+=t.h; }
     if(cfg.seq.length>=2){ var o=capaO(y,w,cfg.oct,n); s+=o.s; y+=o.h; }
     if(cfg.seq==="TOT"){ var t2=capaT(y,w,false,n); s+=t2.s; y+=t2.h; }
-    if(r<reps-1){ var ic=interCapa(y,w,cfg.inter); s+=ic.s; y+=ic.h; d1=y; }
-  }
-  var H=y+14, flecha="";
-  if(reps>1 && opt.d){ var x=w+14; flecha='<line x1="'+x+'" y1="'+d0+'" x2="'+x+'" y2="'+d1+'" stroke="'+C.txt+'" stroke-width="1.5" marker-start="url(#fl)" marker-end="url(#fl)"/><text x="'+(x+6)+'" y="'+((d0+d1)/2+5)+'" font-size="15" font-family="Georgia,serif" fill="'+C.txt+'">'+esc(opt.d)+'</text>'; }
-  return '<svg viewBox="0 0 '+(w+(opt.d?90:0))+' '+H+'" role="img" aria-label="'+esc(opt.alt||"")+'"><defs><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="'+C.txt+'"/></marker></defs>'+s+flecha+'</svg>';
-}
-function svgFibra(tipo){
-  var w=360,h=240,s="",bw=tipo==="pali"?44:62,bh=46,gap=tipo==="pali"?18:24,row,col;
-  for(row=0;row<4;row++){
-    var off=(row%2)*((bw+gap)/2), y=12+row*(bh+8);
-    for(col=-1;col<6;col++){ var x=off+col*(bw+gap)+8;
-      s+='<g><rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+(bh*0.28)+'" rx="2" fill="'+C.T+'" stroke="'+C.Tb+'"/><rect x="'+x+'" y="'+(y+bh*0.30)+'" width="'+bw+'" height="'+(bh*0.40)+'" rx="2" fill="'+C.O+'" stroke="'+C.Ob+'"/><rect x="'+x+'" y="'+(y+bh*0.72)+'" width="'+bw+'" height="'+(bh*0.28)+'" rx="2" fill="'+C.T+'" stroke="'+C.Tb+'"/></g>';
-      var cx=x+bw+gap/2;
-      s+='<rect x="'+(x+bw+3)+'" y="'+(y+6)+'" width="'+(gap-6)+'" height="'+(bh-12)+'" rx="5" fill="#d7ecf7"/><circle cx="'+cx+'" cy="'+(y+bh/2-6)+'" r="3.5" fill="'+C.agua+'"/><circle cx="'+cx+'" cy="'+(y+bh/2+6)+'" r="3.5" fill="'+C.agua+'"/>';
-    }
-  }
-  return '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+esc(tipo==="pali"?U("pali"):U("sepi"))+'"><clipPath id="cf"><rect width="'+w+'" height="'+h+'" rx="10"/></clipPath><g clip-path="url(#cf)">'+s+'</g></svg>';
-}
-function svgInter(){
-  var w=340,y=10,s="",seqs=[["TOT","K"],["TOT","agua"],["TOT","K"],["TOT",null]];
-  for(var i=0;i<seqs.length;i++){
-    var t=capaT(y,w,true,9); s+=t.s; y+=t.h; var o=capaO(y,w,"di",9); s+=o.s; y+=o.h; var t2=capaT(y,w,false,9); s+=t2.s; y+=t2.h;
-    if(seqs[i][1]){ var ic=interCapa(y,w,seqs[i][1]); s+=ic.s; y+=ic.h; }
-  }
-  return '<svg viewBox="0 0 '+w+' '+(y+10)+'" role="img">'+s+'</svg>';
-}
-function dibujoMineral(m,opt){
-  var l=m.lam; opt=opt||{};
+    if(r<reps-1){ var ic=interCapa(y,w,cfg.inter); s+=ic.s; y+=ic.h; d1=y; } }
+  var H=y+14,fl="";
+  if(reps>1&&opt.d){ var x=w+14; fl='<line x1="'+x+'" y1="'+d0+'" x2="'+x+'" y2="'+d1+'" stroke="'+C.txt+'" stroke-width="1.5" marker-start="url(#fl)" marker-end="url(#fl)"/><text x="'+(x+6)+'" y="'+((d0+d1)/2+5)+'" font-size="15" font-family="Spectral,Georgia,serif" fill="'+C.txt+'">'+esc(opt.d)+'</text>'; }
+  return '<svg viewBox="0 0 '+(w+(opt.d?90:0))+' '+H+'" role="img" aria-label="'+esc(opt.alt||"")+'"><defs><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="'+C.txt+'"/></marker></defs>'+s+fl+'</svg>'; }
+function svgFibra(tipo){ var w=360,h=240,s="",bw=tipo==="pali"?44:62,bh=46,gap=tipo==="pali"?18:24;
+  for(var row=0;row<4;row++){ var off=(row%2)*((bw+gap)/2),y=12+row*(bh+8);
+    for(var col=-1;col<6;col++){ var x=off+col*(bw+gap)+8;
+      s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+(bh*.28)+'" rx="2" fill="'+C.T+'" stroke="'+C.Tb+'"/><rect x="'+x+'" y="'+(y+bh*.3)+'" width="'+bw+'" height="'+(bh*.4)+'" rx="2" fill="'+C.O+'" stroke="'+C.Ob+'"/><rect x="'+x+'" y="'+(y+bh*.72)+'" width="'+bw+'" height="'+(bh*.28)+'" rx="2" fill="'+C.T+'" stroke="'+C.Tb+'"/>';
+      var cx=x+bw+gap/2; s+='<rect x="'+(x+bw+3)+'" y="'+(y+6)+'" width="'+(gap-6)+'" height="'+(bh-12)+'" rx="5" fill="#d7ecf7"/><circle cx="'+cx+'" cy="'+(y+bh/2-6)+'" r="3.5" fill="'+C.agua+'"/><circle cx="'+cx+'" cy="'+(y+bh/2+6)+'" r="3.5" fill="'+C.agua+'"/>'; } }
+  return '<svg viewBox="0 0 '+w+' '+h+'" role="img"><clipPath id="cf"><rect width="'+w+'" height="'+h+'" rx="6"/></clipPath><g clip-path="url(#cf)">'+s+'</g></svg>'; }
+function svgInter(){ var w=340,y=10,s="",q=[["K"],["agua"],["K"],[null]];
+  for(var i=0;i<q.length;i++){ var t=capaT(y,w,true,9); s+=t.s; y+=t.h; var o=capaO(y,w,"di",9); s+=o.s; y+=o.h; var t2=capaT(y,w,false,9); s+=t2.s; y+=t2.h; if(q[i][0]){ var ic=interCapa(y,w,q[i][0]); s+=ic.s; y+=ic.h; } }
+  return '<svg viewBox="0 0 '+w+' '+(y+10)+'" role="img">'+s+'</svg>'; }
+function dibujoMineral(m,opt){ var l=m.lam; opt=opt||{};
   if(l.t==="fibra") return svgFibra(m.id==="paligorskita"?"pali":"sepi");
   if(l.t==="inter") return svgInter();
-  var inter = l.inter || (l.agua?"aguaH":"H");
-  return svgLaminas({seq:l.t,oct:l.oct,inter:inter},{d:opt.d,reps:2,alt:L(m).n});
-}
-function leyenda(tipos){
-  var it={T:[C.T,U("leyT")],O:[C.O,U("leyO")],vac:[C.vac,U("leyVac")],K:[C.K,U("leyK")],cat:[C.cat,U("leyCat")],agua:[C.agua,U("leyH2O")],hid:[C.hid,U("leyHid")]};
-  return '<div class="leyenda">'+tipos.map(function(k){return '<span><i style="background:'+it[k][0]+(k==="vac"?";border:1px dashed "+C.Ob:"")+'"></i>'+it[k][1]+'</span>';}).join("")+'</div>';
-}
+  return svgLaminas({seq:l.t,oct:l.oct,inter:l.inter||(l.agua?"aguaH":"H")},{d:opt.d,reps:2,alt:L(m).n}); }
+function leyenda(t){ var it={T:C.T,O:C.O,vac:C.vac,K:C.K,cat:C.cat,agua:C.agua,hid:C.hid,Mg:C.Mg};
+  return '<div class="leyenda">'+t.map(function(k){ return '<span><i style="background:'+it[k]+(k==="vac"?";border:1px dashed "+C.Ob:"")+'"></i>'+U("ley."+k)+'</span>'; }).join("")+'</div>'; }
 
-/* ---------- ficha ---------- */
-var dlg;
-function abrirDialogo(html){
-  if(!dlg){ dlg=document.createElement("dialog"); document.body.appendChild(dlg);
-    dlg.addEventListener("click",function(e){ if(e.target===dlg) dlg.close(); }); }
-  dlg.innerHTML='<div class="ficha"><button class="cerrar" aria-label="'+U("cerrar")+'">×</button>'+html+'</div>';
-  $(".cerrar",dlg).onclick=function(){dlg.close();};
-  $$("[data-ir]",dlg).forEach(function(b){ b.onclick=function(){ dlg.close(); location.hash=b.getAttribute("data-ir"); }; });
-  $$("[data-ficha]",dlg).forEach(function(b){ b.onclick=function(){ abrirFicha(b.getAttribute("data-ficha")); }; });
-  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
-  dlg.scrollTop=0;
+/* ---------------- 3D ---------------- */
+var visores=[];
+function crear3D(cont,id,opt){
+  if(!cont) return null;
+  function plano(){ cont.innerHTML='<div class="sin3d">'+dibujoMineral(minById(id)||minById("caolinita"))+'</div>'; return null; }
+  if(!window.Visor3D||!window.THREE) return plano();
+  var v; try{ v=window.Visor3D(cont,opt||{}); }catch(e){ v=null; }
+  if(!v) return plano();
+  v.poner(id,3); visores.push(v); return v;
 }
-function dTxt(m){ return lang==="en"?m.d.replace(/(\d),(\d)/g,"$1.$2").replace("con etilenglicol","with ethylene glycol").replace("hidratada","hydrated").replace("Variable","Variable").replace("p. ej.","e.g."):m.d; }
-function rango(r,u){ return num(r[0])+"–"+num(r[1])+" "+u; }
-function abrirFicha(id){
-  var m=minById(id); if(!m) return; var t=L(m);
-  var sem=semImgs(id), mano=manoImgs(id);
-  var h='<span class="grupo" style="color:var(--terracota2);text-transform:uppercase;font-size:.8rem;letter-spacing:.06em">'+esc(grupoNombre(m.grupo))+'</span><h2>'+esc(t.n)+'</h2><p class="intro">'+esc(t.r)+'</p>';
-  if(sem.length) h+='<h3>'+U("ficha.micro")+'</h3><div class="galeria">'+sem.map(function(x){return figura(x);}).join("")+'</div>';
-  h+='<p>'+esc(t.t)+'</p>';
-  h+='<div class="datos">'+
-    '<div class="dato"><small>'+U("ficha.formula")+'</small><b>'+esc(lang==="en"?m.formula.replace("p. ej.","e.g.").replace(/ilita\/esmectita, clorita\/esmectita/,"illite/smectite, chlorite/smectite"):m.formula)+'</b></div>'+
-    '<div class="dato"><small>'+U("ficha.d")+'</small><b>'+esc(dTxt(m))+'</b></div>'+
-    '<div class="dato"><small>'+U("ficha.cic")+'</small><b>'+rango(m.cic,U("cicU"))+'</b></div>'+
-    '<div class="dato"><small>'+U("ficha.se")+'</small><b>'+rango(m.se,U("seU"))+'</b></div>'+
-    '<div class="dato"><small>'+U("ficha.hinch")+'</small><b>'+U("niveles")[m.hinch]+'</b></div>'+
-    '<div class="dato"><small>'+U("ficha.plast")+'</small><b>'+U("niveles")[m.plast]+'</b></div></div>';
-  h+='<h3>'+U("ficha.estructura")+'</h3><div class="mini-estructura">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter")?null:num(m.d.split(" ")[0])+" Å"})+'</div>';
-  if(m.espana&&m.espana.length){
-    h+='<h3>'+U("ficha.espana")+'</h3><ul>'+m.espana.map(function(k){var p=MAPA.lugares[k]; return '<li>'+esc(L(p).n)+'</li>';}).join("")+'</ul><button class="boton sec" data-ir="#yacimientos">'+U("ficha.verMapa")+'</button>';
-  }
-  if(mano.length) h+='<h3>'+U("ficha.mano")+'</h3><div class="galeria">'+mano.map(function(x){return figura(x,true);}).join("")+'</div>';
-  abrirDialogo(h);
-}
+function limpiar3D(){ visores.forEach(function(v){ try{ v.destruir(); }catch(e){} }); visores=[]; }
 
-/* ---------- pantallas ---------- */
-var P = {};
+/* ---------------- estructura de página ---------------- */
 var main;
+function cabezaPagina(titulo,entrada,miga){
+  return '<div class="cabeza-pagina envoltorio">'+(miga?'<div class="miga"><a href="#'+miga[0]+'">'+esc(miga[1])+'</a></div>':'')+'<h1 style="font-size:clamp(2.2rem,5.5vw,3.8rem)">'+titulo+'</h1>'+(entrada?'<p class="entrada">'+entrada+'</p>':'')+'</div>';
+}
+function migaArcillas(){ return ["inicio",U("arcillas")]; }
+function migaSEA(){ return ["sociedad",U("sociedad")]; }
+var P={};
 
-P.inicio = function(){
-  var b=U("b"), ids=["arcilla","estructura","minerales","propiedades","aplicaciones","yacimientos","estudio","sea"];
-  var h='<section class="pantalla"><div class="portada"><div><span class="sello">'+U("sello")+'</span><h1>'+U("titulo")+'</h1><p class="intro">'+U("lema")+'</p>'+
-   '<div class="pila" id="pila" role="button" tabindex="0" aria-label="'+U("pila")+'">'+pilaSVG()+'<div class="ayuda">'+U("pila")+'</div></div></div>'+
-   '<div class="heroe" id="heroe"><div class="sinfoto">'+svgLaminas({seq:"TOT",oct:"di",inter:"agua"},{reps:3})+'</div></div></div>'+
-   '<div class="botones">'+ids.map(function(id,i){ return '<button class="boton-grande" data-ir="#'+id+'"><span class="num">'+(i+1)+'</span><b>'+b[i][0]+'</b><span>'+b[i][1]+'</span></button>'; }).join("")+'</div>'+
-   '<div class="juego-enlace"><button class="boton" data-ir="#juego">'+U("juego")+'</button></div></section>';
+/* ---- inicio ---- */
+var HEROE_IMG=[["sea","2018/02/3montmorillonita.jpg"],["ioc","caolinita",0],["sea","2018/02/14palygorskita.jpg"],["ioc","sepiolita",0],["ioc","halloysita",1],["sea","2018/02/24caolinita.jpg"]];
+function imgHistoria(s){ var a=imgIOC(s.img[0])[s.img[1]]; return a||primeraImg(s.m[0]); }
+P.inicio=function(){
+  var conv=SEA.premios.filter(function(p){ return p.abierto && p.abierto>=hoyISO(); });
+  var h='<section class="heroe"><div class="fotos" id="fotos"></div><div class="envoltorio"><h1>'+U("heroeT")+'</h1><p class="entrada">'+U("heroeE")+'</p><div class="acciones"><a class="boton" href="#minerales">'+U("explorar")+'</a><a class="boton claro" href="#sociedad">'+U("conocer")+'</a></div></div><div class="placa" id="placa"></div></section>'+
+   '<div class="estratos"></div>'+
+   '<section class="bloque"><div class="envoltorio dos-col"><div><h2>'+U("lamTit")+'</h2><p class="lectura">'+U("lamTxt")+'</p><a class="boton claro" href="#estructura">'+U("verEstructura")+'</a></div><div><div class="lienzo3d" id="l3d"><span class="aviso">'+U("girar")+'</span></div></div></div></section>'+
+   '<section class="bloque arena"><div class="envoltorio"><h2>'+U("histTit")+'</h2><p class="entrada">'+U("histE")+'</p><div class="historias">'+HISTORIAS.map(function(s,i){ var im=imgHistoria(s);
+     return '<a class="historia'+(i===0?' grande':'')+'" href="#historia/'+s.id+'"><div class="img">'+(im?'<img loading="lazy" src="'+(i===0?im.src:im.mini)+'" alt="">':'')+'</div><h3>'+esc(L(s).n)+'</h3><p>'+esc(L(s).r)+'</p></a>'; }).join("")+'</div></div></section>'+
+   '<section class="bloque"><div class="envoltorio"><h2>'+U("indiceTit")+'</h2><div class="indice">'+Object.keys(UI.es.indice).map(function(k){
+     var nom=U("nav.arcillas").filter(function(x){return x[0]===k;})[0][1];
+     return '<a href="#'+k+'"><span class="mini">'+indiceImg(k)+'</span><span><h4>'+esc(nom)+'</h4><p>'+esc(U("indice")[k])+'</p></span></a>'; }).join("")+'</div></div></section>'+
+   '<section class="bloque oscuro"><div class="envoltorio"><h2>'+U("galTit")+'</h2><p class="entrada">'+U("galE")+'</p><div class="tira">'+imgSEA().slice(0,10).concat(imgIOC("halloysita").slice(0,1),imgIOC("sepiolita").slice(0,1)).map(function(im){ return fig(im,{sinpie:true}); }).join("")+'</div><p style="margin-top:1.4rem"><a class="boton claro" href="#galeria">'+U("verGaleria")+'</a></p></div></section>'+
+   '<section class="bloque"><div class="envoltorio"><h2>'+U("convTit")+'</h2><div class="convocatorias">'+
+     '<div class="convocatoria"><span class="fecha">20–26 '+(lang==="es"?"de junio de":"June")+' 2027</span><h3>'+U("clayTit")+'</h3><p>'+U("clayTxt")+'</p><a href="https://clay.aipea.org/" target="_blank" rel="noopener">'+U("clayWeb")+'</a></div>'+
+     conv.map(function(p){ return '<div class="convocatoria"><span class="fecha">'+U("plazo")+' '+fechaTxt(p.abierto)+'</span><h3>'+esc(L(p).n)+'</h3><p>'+esc(L(p).r)+'</p><a href="#premios">'+U("verBases")+'</a></div>'; }).join("")+
+     '<div class="convocatoria"><span class="fecha">'+U("hazte")+'</span><h3>'+U("socioTit")+'</h3><p>'+U("socioE")+'</p><a href="#socio">'+U("hazte")+'</a></div>'+
+   '</div></div></section>';
   main.innerHTML=h;
-  var pila=$("#pila"); function tg(){ pila.classList.toggle("abierta"); }
-  pila.onclick=tg; pila.onkeydown=function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();tg();} };
   heroe();
+  crear3D($("#l3d"),"montmorillonita",{autoRotate:true});
 };
-function pilaSVG(){
-  return '<svg viewBox="0 0 340 120" aria-hidden="true"><g class="lam lam1">'+capaT(6,340,true,10).s+'</g><g class="lam lam2">'+capaO(34,340,"di",10).s+'</g><g class="lam lam3">'+capaT(68,340,false,10).s+'</g>'+
-   '</svg>';
+function indiceImg(k){
+  var mapa={"que-es":["sea","2018/02/1esmectita.jpg"],estructura:null,minerales:["ioc","caolinita",1],propiedades:["sea","2018/02/6estevensita.jpg"],aplicaciones:["mano","sepiolita"],yacimientos:["mano","montmorillonita"],estudio:["ioc","caolinita",2],galeria:["sea","2018/02/7opaloygorskita.jpg"]};
+  var e=mapa[k]; if(!e) return svgLaminas({seq:"TOT",oct:"di",inter:"K"},{reps:2,w:200});
+  var src=e[0]==="sea"?seaImg(e[1],true):(e[0]==="ioc"?(imgIOC(e[1])[e[2]]||{}).mini:(imgMano(e[1])[0]||{}).mini);
+  return '<img loading="lazy" src="'+src+'" alt="">';
 }
 var heroeTimer;
 function heroe(){
   clearInterval(heroeTimer);
-  var cont=$("#heroe"); if(!cont) return;
-  var lista=HEROE.map(function(p){ return semImgs(p[0])[p[1]]; }).filter(Boolean), ok=[], i=0;
-  lista.forEach(function(im){
-    var img=new Image(); img.alt=""; img.onload=function(){
-      if(!document.body.contains(cont)) return;
-      ok.push({img:img,im:im}); cont.appendChild(img);
-      if(ok.length===1){ var sf=$(".sinfoto",cont); if(sf) sf.remove(); mostrar(0); }
-    }; img.src=im.src;
-  });
-  var pie=document.createElement("div"); pie.className="pie"; cont.appendChild(pie);
-  function mostrar(k){ ok.forEach(function(o,j){ o.img.classList.toggle("ver",j===k); }); var o=ok[k]; if(o){ pie.innerHTML=o.im.cap; cont.appendChild(pie);} }
-  heroeTimer=setInterval(function(){ if(ok.length>1){ i=(i+1)%ok.length; mostrar(i);} },5500);
+  var cont=$("#fotos"), placa=$("#placa"); if(!cont) return;
+  var lista=HEROE_IMG.map(function(e){ if(e[0]==="sea"){ var g=GALERIA_SEA.filter(function(x){return x.f===e[1];})[0]; return {src:seaImg(e[1]),t:L(minById(g.m)).n,a:"Emilia García-Romero",f:U("seaArch")}; }
+    var im=imgIOC(e[1])[e[2]]; return im?{src:im.src,t:im.nombre,a:im.autor,f:"Images of Clay"}:null; }).filter(Boolean);
+  var ok=[],i=0;
+  lista.forEach(function(d){ var img=new Image(); img.alt=""; img.onload=function(){ if(!document.body.contains(cont)) return; ok.push({img:img,d:d}); cont.appendChild(img); if(ok.length===1) mostrar(0); }; img.src=d.src; });
+  function mostrar(k){ ok.forEach(function(o,j){ o.img.classList.toggle("ver",j===k); }); var o=ok[k]; if(o&&placa) placa.innerHTML='<b>'+esc(o.d.t)+'</b>'+esc(o.d.a)+'<br>'+esc(o.d.f); }
+  heroeTimer=setInterval(function(){ if(ok.length>1){ i=(i+1)%ok.length; mostrar(i); } },6000);
 }
 
-P.arcilla = function(){
-  var h='<section class="pantalla"><h2>'+U("queTit")+'</h2><p class="intro">'+U("queIntro")+'</p>'+
-   '<div class="dos"><div class="caja"><h3>'+U("tam")+'</h3><p>'+U("tamT")+'</p></div><div class="caja"><h3>'+U("min")+'</h3><p>'+U("minT")+'</p></div></div>'+
-   '<div class="caja"><p style="margin:0">'+U("def")+'</p></div>'+
-   '<div class="caja escala"><h3>'+U("escTit")+'</h3><p>'+U("escIntro")+'</p><input type="range" id="esc" min="0" max="100" value="20" aria-label="'+U("escTit")+'">'+
-   '<div class="regla"><span>2 mm</span><span>63 µm</span><span>2 µm</span><span>0,1 µm</span></div><div class="vista" id="vista"></div><p id="analog" style="margin-bottom:0"></p></div>'+
-   '<p style="margin-top:1.2rem"><button class="boton" data-ir="#estructura">'+U("irEst")+' →</button></p></section>';
-  main.innerHTML=h;
+/* ---- historias ---- */
+P.historia=function(id){
+  var s=HISTORIAS.filter(function(x){return x.id===id;})[0]||HISTORIAS[0], im=imgHistoria(s);
+  main.innerHTML=cabezaPagina(esc(L(s).n),esc(L(s).r),["inicio",U("histTit")])+'<div class="envoltorio pagina-cuerpo">'+(im?'<figure><img class="portada-img" src="'+im.src+'" alt=""><figcaption>'+im.cap+'</figcaption></figure>':'')+
+   '<div class="historia-texto" style="margin-top:2rem">'+L(s).t.map(function(p){ return '<p>'+esc(p)+'</p>'; }).join("")+'</div>'+
+   '<p>'+s.m.map(function(m){ return '<a class="boton claro" style="margin:0 .4rem .4rem 0" href="#mineral/'+m+'">'+esc(L(minById(m)).n)+'</a>'; }).join("")+'</p>'+
+   '<h3 style="margin-top:3rem">'+U("otrasHist")+'</h3><div class="historias" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">'+HISTORIAS.filter(function(x){return x.id!==s.id;}).map(function(x){ var i2=imgHistoria(x); return '<a class="historia" href="#historia/'+x.id+'"><div class="img">'+(i2?'<img loading="lazy" src="'+i2.mini+'" alt="">':'')+'</div><h3>'+esc(L(x).n)+'</h3></a>'; }).join("")+'</div></div>';
+};
+
+/* ---- qué es ---- */
+P["que-es"]=function(){
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[0][1],U("queE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h3>'+U("tam")+'</h3><p>'+U("tamT")+'</p></div><div><h3>'+U("min")+'</h3><p>'+U("minT")+'</p></div></div>'+
+   '<p class="entrada" style="margin:2rem 0">'+U("def")+'</p>'+
+   '<div class="panel" style="margin-top:2rem"><h3>'+U("escTit")+'</h3><p>'+U("escE")+'</p><input type="range" id="esc" min="0" max="100" value="20" style="width:100%;accent-color:#8f3f22" aria-label="'+U("escTit")+'"><div style="display:flex;justify-content:space-between;font-size:.8rem;color:#5d5248"><span>2 mm</span><span>63 µm</span><span>2 µm</span><span>'+num("0.1")+' µm</span></div><div id="vista" style="height:180px;background:#f6f3ee;border-radius:4px;margin-top:.6rem"></div><p id="analog" style="margin:1rem 0 0"></p></div>'+
+   '<div class="mosaico" style="margin-top:2.5rem">'+imgSEA("montmorillonita").slice(0,2).concat(imgIOC("caolinita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div>'+
+   '<p style="margin-top:2rem"><a class="boton" href="#estructura">'+U("nav.arcillas")[1][1]+'</a></p></div>';
   var inp=$("#esc");
-  function upd(){
-    var v=+inp.value, logd=Math.log10(2000)-v/100*(Math.log10(2000)-Math.log10(0.1)), d=Math.pow(10,logd); // µm
-    var clase = d>=63?0:(d>=2?1:2), col=["#c8902f","#b07c4f","#b4532a"][clase];
-    var px=Math.max(4,Math.min(160,20+ (logd+1)/(Math.log10(2000)+1)*140));
-    var txt = d>=1000? num((d/1000).toFixed(1))+" mm" : (d>=1? num(Math.round(d))+" µm" : num(d.toFixed(2))+" µm");
-    $("#vista").innerHTML='<svg viewBox="0 0 400 180" style="width:100%;height:100%"><circle cx="160" cy="90" r="'+(px/2)+'" fill="'+col+'" opacity=".85"/><text x="270" y="80" font-family="Georgia,serif" font-size="26" fill="#3b2a1e">'+txt+'</text><text x="270" y="110" font-size="18" fill="'+col+'" font-weight="700">'+U("clases")[clase]+'</text></svg>';
-    var escala=d*2500/1e6; // m
-    var e = escala>=1? num(escala.toFixed(1))+" m" : (escala>=0.01? num((escala*100).toFixed(1))+" cm" : num((escala*1000).toFixed(1))+" mm");
-    $("#analog").textContent=U("analog")+" "+e+".";
-  }
+  function upd(){ var v=+inp.value, ld=Math.log10(2000)-v/100*(Math.log10(2000)-Math.log10(.1)), d=Math.pow(10,ld), cl=d>=63?0:(d>=2?1:2), col=["#b88733","#a0703f","#8f3f22"][cl];
+    var px=Math.max(4,Math.min(160,20+(ld+1)/(Math.log10(2000)+1)*140)), txt=d>=1000?num((d/1000).toFixed(1))+" mm":(d>=1?num(Math.round(d))+" µm":num(d.toFixed(2))+" µm");
+    $("#vista").innerHTML='<svg viewBox="0 0 400 180" style="width:100%;height:100%"><circle cx="150" cy="90" r="'+(px/2)+'" fill="'+col+'"/><text x="260" y="82" font-family="Spectral,Georgia,serif" font-size="28" fill="#26201b">'+txt+'</text><text x="260" y="112" font-size="17" fill="'+col+'" font-weight="600">'+U("clases")[cl]+'</text></svg>';
+    var e=d*2500/1e6, et=e>=1?num(e.toFixed(1))+" m":(e>=.01?num((e*100).toFixed(1))+" cm":num((e*1000).toFixed(1))+" mm"); $("#analog").textContent=U("analog")+" "+et+"."; }
   inp.oninput=upd; upd();
 };
 
-var est={seq:"",oct:"di",inter:null,fibra:null};
-P.estructura = function(){
-  var h='<section class="pantalla"><h2>'+U("estTit")+'</h2><p class="intro">'+U("estIntro")+'</p><div class="constructor"><div class="panel"><div class="lienzo" id="lienzo"></div>'+
-   leyenda(["T","O","vac","K","cat","agua","hid"])+'</div><div class="panel"><div class="paso">'+U("paso1")+'</div><div class="controles">'+
-   '<button class="ctl T" id="addT">+ T</button><button class="ctl O" id="addO">+ O</button><button class="ctl" id="borrar">↺ '+U("borrar")+'</button><button class="ctl" id="fibra">'+U("fibras")+'</button></div>'+
-   '<p id="msg" class="nota"></p><div id="pasoInter"></div><div class="paso">'+U("paso3")+'</div><div class="controles"><button class="ctl" data-oct="di">'+U("di")+'</button><button class="ctl" data-oct="tri">'+U("tri")+'</button></div>'+
-   '<div class="resultado" id="res"></div></div></div></section>';
-  main.innerHTML=h;
-  $("#addT").onclick=function(){ est.fibra=null; if(est.seq===""||est.seq==="TO"){ est.seq+="T"; } else { flash(U("noValida")); return; } if(est.seq==="TOT"&&(est.inter==="H"||est.inter==="aguaH"))est.inter=null; pintar(); };
+/* ---- estructura: 3D + constructor ---- */
+var m3dSel="caolinita", est={seq:"",oct:"di",inter:null,fibra:null}, v3d=null;
+P.estructura=function(){
+  var ids=["caolinita","pirofilita","ilita","montmorillonita","vermiculita","clorita","sepiolita","paligorskita"];
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[1][1],U("estE"),migaArcillas())+
+   '<section class="bloque oscuro" style="padding-top:2.5rem"><div class="envoltorio"><h2>'+U("m3dTit")+'</h2><div class="filtros">'+ids.map(function(id){ return '<button class="filtro" data-m3d="'+id+'">'+U("nombres3d")[id]+'</button>'; }).join("")+'</div>'+
+   '<div class="dos-col" style="align-items:start"><div class="lienzo3d" id="v3d" style="aspect-ratio:1/1"><span class="aviso">'+U("girar")+'</span></div><div><div class="filtros"><button class="filtro" data-vista="oblicua">'+U("oblicua")+'</button><button class="filtro" data-vista="perfil">'+U("perfil")+'</button><button class="filtro" data-vista="planta">'+U("planta")+'</button></div><div id="info3d"></div>'+leyenda(["T","O","K","cat","agua","hid","Mg"])+'<p class="pequeno" style="margin-top:1rem">'+U("m3dNota")+'</p></div></div></div></section>'+
+   '<section class="bloque"><div class="envoltorio"><h2>'+U("conTit")+'</h2><p class="lectura">'+U("conE")+'</p><div class="estructura-rejilla"><div class="panel"><div class="lienzo2d" id="lienzo"></div>'+leyenda(["T","O","vac","K","cat","agua","hid"])+'</div>'+
+   '<div class="panel"><div class="paso" style="margin-top:0">'+U("paso1")+'</div><div class="controles"><button class="ctl T" id="addT">+ T</button><button class="ctl O" id="addO">+ O</button><button class="ctl" id="borrar">'+U("borrar")+'</button><button class="ctl" id="fibra">'+U("fibras")+'</button></div><p id="msg" class="pequeno"></p><div id="pasoInter"></div>'+
+   '<div class="paso">'+U("paso3")+'</div><div class="controles"><button class="ctl" data-oct="di">'+U("di")+'</button><button class="ctl" data-oct="tri">'+U("tri")+'</button></div><div class="resultado" id="res"></div></div></div></div></section>';
+  v3d=crear3D($("#v3d"),m3dSel,{autoRotate:true});
+  function pinta3d(){ $$("[data-m3d]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-m3d")===m3dSel); });
+    var mm=minById(m3dSel);
+    $("#info3d").innerHTML=mm?'<h3>'+esc(L(mm).n)+'</h3><p>'+esc(L(mm).r)+'</p><p><a href="#mineral/'+mm.id+'">'+U("verFicha")+'</a></p>':'<h3>'+U("nombres3d")[m3dSel]+'</h3><p>'+(lang==="es"?"Lámina 2:1 sin carga y sin nada entre láminas. Es la referencia para entender las demás láminas 2:1.":"An uncharged 2:1 layer with nothing between layers. It is the reference for understanding the other 2:1 layers.")+'</p>'; }
+  $$("[data-m3d]").forEach(function(b){ b.onclick=function(){ m3dSel=b.getAttribute("data-m3d"); if(v3d) v3d.poner(m3dSel,3); pinta3d(); }; });
+  $$("[data-vista]").forEach(function(b){ b.onclick=function(){ if(v3d) v3d.vista(b.getAttribute("data-vista")); }; });
+  pinta3d();
+  $("#addT").onclick=function(){ est.fibra=null; if(est.seq===""||est.seq==="TO"){ est.seq+="T"; } else { flash(U("noValida")); return; } if(est.seq==="TOT"&&(est.inter==="H"||est.inter==="aguaH")) est.inter=null; pintar(); };
   $("#addO").onclick=function(){ est.fibra=null; if(est.seq==="T"){ est.seq="TO"; est.inter="H"; } else { flash(U("noValida")); return; } pintar(); };
   $("#borrar").onclick=function(){ est={seq:"",oct:est.oct,inter:null,fibra:null}; pintar(); };
   $("#fibra").onclick=function(){ est.fibra=est.fibra==="sepi"?"pali":"sepi"; pintar(); };
   $$("[data-oct]").forEach(function(b){ b.onclick=function(){ est.oct=b.getAttribute("data-oct"); pintar(); }; });
   pintar();
 };
-function flash(t){ var m=$("#msg"); if(m){ m.textContent=t; m.style.color="var(--terracota2)"; } }
-function resultadoEst(){
-  var s=est.seq,o=est.oct,i=est.inter;
+function flash(t){ var m=$("#msg"); if(m){ m.textContent=t; m.style.color="var(--terracota)"; } }
+function resultadoEst(){ var s=est.seq,o=est.oct,i=est.inter;
   if(est.fibra) return est.fibra==="sepi"?{id:"sepiolita",d:"12,1 Å",h:0}:{id:"paligorskita",d:"10,5 Å",h:0};
-  if(s==="TO"&&i==="H") return o==="di"?{id:"caolinita",d:"7,2 Å",h:0,carga:"≈0",ej:{es:"Caolinita, dickita, nacrita",en:"Kaolinite, dickite, nacrite"}}:{id:"serpentina",d:"7,3 Å",h:0,carga:"≈0",n:{es:"Serpentina",en:"Serpentine"},ej:{es:"Lizardita, crisotilo, antigorita. No son arcillas en sentido estricto, pero comparten la lámina 1:1 con la caolinita.",en:"Lizardite, chrysotile, antigorite. Not clays in the strict sense, but they share the 1:1 layer with kaolinite."}};
-  if(s==="TO"&&i==="aguaH") return o==="di"?{id:"halloysita",d:"10 Å",h:0,carga:"≈0",ej:{es:"Halloysita-10 Å; al perder el agua pasa a 7 Å",en:"Halloysite-10 Å; it drops to 7 Å when dehydrated"}}:{id:"serpentina",d:"7,3 Å",h:0,n:{es:"Serpentina",en:"Serpentine"},ej:{es:"Con magnesio no hay un equivalente hidratado común: queda la serpentina.",en:"With magnesium there is no common hydrated equivalent: serpentine remains."}};
+  if(s==="TO"&&i==="H") return o==="di"?{id:"caolinita",d:"7,2 Å",h:0,carga:"≈ 0",ej:{es:"Caolinita, dickita, nacrita",en:"Kaolinite, dickite, nacrite"}}:{n:{es:"Serpentina",en:"Serpentine"},d:"7,3 Å",h:0,carga:"≈ 0",ej:{es:"Lizardita, crisotilo, antigorita. Comparten con la caolinita la lámina 1:1.",en:"Lizardite, chrysotile, antigorite. They share the 1:1 layer with kaolinite."}};
+  if(s==="TO"&&i==="aguaH") return o==="di"?{id:"halloysita",d:"10 Å",h:0,carga:"≈ 0",ej:{es:"Halloysita(10 Å); al perder el agua pasa a halloysita(7 Å)",en:"Halloysite(10 Å); it becomes halloysite(7 Å) when dehydrated"}}:{n:{es:"Serpentina",en:"Serpentine"},d:"7,3 Å",h:0,ej:{es:"Con magnesio no hay un equivalente hidratado común.",en:"With magnesium there is no common hydrated equivalent."}};
   if(s==="TOT"){
-    if(i==="nada") return {id:null,d:o==="di"?"9,2 Å":"9,3 Å",h:0,carga:"0",n:o==="di"?{es:"Pirofilita",en:"Pyrophyllite"}:{es:"Talco",en:"Talc"},ej:{es:"Lámina 2:1 sin carga: nada que sujetar ni intercambiar entre láminas.",en:"An uncharged 2:1 layer: nothing to hold or exchange between layers."}};
-    if(i==="K") return o==="di"?{id:"ilita",d:"10 Å",h:0,carga:"0,6–0,9",ej:{es:"Ilita, moscovita, glauconita",en:"Illite, muscovite, glauconite"}}:{id:null,d:"10 Å",h:0,carga:"≈1",n:{es:"Micas trioctaédricas",en:"Trioctahedral micas"},ej:{es:"Biotita, flogopita",en:"Biotite, phlogopite"}};
-    if(i==="agua") return o==="di"?{id:"montmorillonita",d:"12–15 Å",h:3,carga:"0,2–0,6",n:{es:"Esmectitas dioctaédricas",en:"Dioctahedral smectites"},ej:{es:"Montmorillonita, beidellita, nontronita",en:"Montmorillonite, beidellite, nontronite"}}:{id:"saponita",d:"12–15 Å",h:3,carga:"0,2–0,6",n:{es:"Esmectitas trioctaédricas",en:"Trioctahedral smectites"},ej:{es:"Saponita, hectorita",en:"Saponite, hectorite"}};
+    if(i==="nada") return {d:o==="di"?"9,2 Å":"9,3 Å",h:0,carga:"0",n:o==="di"?{es:"Pirofilita",en:"Pyrophyllite"}:{es:"Talco",en:"Talc"},ej:{es:"Lámina 2:1 sin carga: nada que sujetar ni intercambiar entre láminas.",en:"An uncharged 2:1 layer: nothing to hold or exchange between layers."}};
+    if(i==="K") return o==="di"?{id:"ilita",d:"10 Å",h:0,carga:"0,6–0,85",ej:{es:"Ilita, glauconita; con más carga, moscovita",en:"Illite, glauconite; with more charge, muscovite"}}:{n:{es:"Micas trioctaédricas",en:"Trioctahedral micas"},d:"10 Å",h:0,carga:"≈ 1",ej:{es:"Biotita, flogopita",en:"Biotite, phlogopite"}};
+    if(i==="agua") return o==="di"?{id:"montmorillonita",d:"12–15 Å",h:3,carga:"0,2–0,6",n:{es:"Esmectitas dioctaédricas",en:"Dioctahedral smectites"},ej:{es:"Montmorillonita, beidellita, nontronita",en:"Montmorillonite, beidellite, nontronite"}}:{id:"saponita",d:"12–15 Å",h:3,carga:"0,2–0,6",n:{es:"Esmectitas trioctaédricas",en:"Trioctahedral smectites"},ej:{es:"Saponita, hectorita, estevensita",en:"Saponite, hectorite, stevensite"}};
     if(i==="Mg") return {id:"vermiculita",d:"14,4 Å",h:1,carga:"0,6–0,9",ej:{es:"Casi siempre trioctaédrica",en:"Almost always trioctahedral"}};
-    if(i==="hidroxido") return {id:"clorita",d:"14,2 Å",h:0,carga:"variable",ej:o==="di"?{es:"Donbassita (di) y sudoita (di-tri) son raras; casi todas son trioctaédricas",en:"Donbassite (di) and sudoite (di-tri) are rare; most are trioctahedral"}:{es:"Clinocloro, chamosita",en:"Clinochlore, chamosite"}};
-  }
-  return null;
-}
-function pintar(){
-  var lz=$("#lienzo"); if(!lz) return;
+    if(i==="hidroxido") return {id:"clorita",d:"14,2 Å",h:0,carga:L({es:"variable",en:"variable"}),ej:o==="di"?{es:"Donbassita; las di,trioctaédricas son sudoíta y cookeíta",en:"Donbassite; di,trioctahedral ones are sudoite and cookeite"}:{es:"Clinocloro (Mg), chamosita (Fe²⁺)",en:"Clinochlore (Mg), chamosite (Fe²⁺)"}};
+  } return null; }
+function pintar(){ var lz=$("#lienzo"); if(!lz) return;
   $$("[data-oct]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-oct")===est.oct); });
   $("#fibra").setAttribute("aria-pressed",!!est.fibra);
-  var msg=$("#msg"); msg.style.color="";
-  var pi=$("#pasoInter"), r=$("#res");
-  if(est.fibra){ lz.innerHTML=svgFibra(est.fibra); msg.textContent=U("canal")+" · "+(est.fibra==="sepi"?U("sepi"):U("pali")); pi.innerHTML=""; }
-  else if(!est.seq){ lz.innerHTML='<p class="nota" style="font-size:1.1rem">'+U("empieza")+'</p>'; msg.textContent=""; pi.innerHTML=""; }
-  else {
-    var reps = est.seq==="T"||est.seq==="TO"&&!est.inter?1:2;
-    var res=resultadoEst();
-    lz.innerHTML = svgLaminas({seq:est.seq,oct:est.oct,inter:est.inter||"nada"},{reps:est.seq==="T"?1:(est.inter?2:1),d:res?res.d:null});
-    msg.textContent = est.seq==="T"?U("siguiente1"):(est.seq==="TO"?U("siguiente2"):U("completa"));
-    var ops = est.seq==="TO"?["H","aguaH"]:(est.seq==="TOT"?["nada","K","agua","Mg","hidroxido"]:[]);
-    pi.innerHTML = ops.length? '<div class="paso">'+U("paso2")+'</div><div class="controles">'+ops.map(function(k){return '<button class="ctl" data-inter="'+k+'" aria-pressed="'+(est.inter===k)+'">'+U("inter."+k)+'</button>';}).join("")+'</div>' : "";
-    $$("[data-inter]",pi).forEach(function(b){ b.onclick=function(){ est.inter=b.getAttribute("data-inter"); pintar(); }; });
-  }
-  var rr=resultadoEst();
-  if(!rr){ r.innerHTML=""; return; }
-  var mm=rr.id?minById(rr.id):null, nombre = rr.n?L(rr.n):(mm?L(mm).n:"");
-  var hin = rr.h>=2?U("hincha"):(rr.h===1?U("hinchaPoco"):U("nohincha"));
-  var foto = rr.id? semImgs(rr.id)[0] : null;
-  r.innerHTML='<h3>'+esc(nombre)+'</h3>'+(rr.ej?'<p style="margin:.1rem 0">'+esc(L(rr.ej))+'</p>':'')+
-    '<div class="datos"><div class="dato"><small>'+U("ficha.d")+'</small><b class="grande">'+num(rr.d)+'</b></div><div class="dato"><small>'+U("ficha.hinch")+'</small><b>'+hin+'</b></div>'+(rr.carga?'<div class="dato"><small>'+U("carga")+'</small><b>'+num(rr.carga)+'</b></div>':'')+'</div>'+
-    (foto?'<div class="galeria" style="grid-template-columns:1fr">'+figura(foto,true)+'</div>':'')+
-    (mm?'<button class="boton" data-ficha="'+mm.id+'">'+U("verFicha")+'</button>':'');
-  $$("[data-ficha]",r).forEach(function(b){ b.onclick=function(){ abrirFicha(b.getAttribute("data-ficha")); }; });
-}
+  var msg=$("#msg"),pi=$("#pasoInter"),r=$("#res"); msg.style.color="";
+  if(est.fibra){ lz.innerHTML=svgFibra(est.fibra); msg.textContent=U("canal"); pi.innerHTML=""; }
+  else if(!est.seq){ lz.innerHTML='<p class="pequeno" style="font-size:1.1rem">'+U("empieza")+'</p>'; msg.textContent=""; pi.innerHTML=""; }
+  else { var res=resultadoEst();
+    lz.innerHTML=svgLaminas({seq:est.seq,oct:est.oct,inter:est.inter||"nada"},{reps:est.seq==="T"?1:(est.inter?2:1),d:res?num(res.d):null});
+    msg.textContent=est.seq==="T"?U("sig1"):(est.seq==="TO"?U("sig2"):U("completa"));
+    var ops=est.seq==="TO"?["H","aguaH"]:(est.seq==="TOT"?["nada","K","agua","Mg","hidroxido"]:[]);
+    pi.innerHTML=ops.length?'<div class="paso">'+U("paso2")+'</div><div class="controles">'+ops.map(function(k){ return '<button class="ctl" data-inter="'+k+'" aria-pressed="'+(est.inter===k)+'">'+U("inter."+k)+'</button>'; }).join("")+'</div>':"";
+    $$("[data-inter]",pi).forEach(function(b){ b.onclick=function(){ est.inter=b.getAttribute("data-inter"); pintar(); }; }); }
+  var rr=resultadoEst(); if(!rr){ r.innerHTML=""; return; }
+  var mm=rr.id?minById(rr.id):null, nombre=rr.n?L(rr.n):(mm?L(mm).n:""), hin=rr.h>=2?U("hincha"):(rr.h===1?U("hinchaPoco"):U("nohincha")), foto=rr.id?primeraImg(rr.id):null;
+  r.innerHTML='<h3 style="margin-top:1rem">'+esc(nombre)+'</h3>'+(rr.ej?'<p>'+esc(L(rr.ej))+'</p>':'')+'<div class="datos"><div class="dato"><small>'+U("ficha.d")+'</small><b class="grande">'+num(rr.d)+'</b></div><div class="dato"><small>'+U("ficha.hinch")+'</small><b>'+hin+'</b></div>'+(rr.carga?'<div class="dato"><small>'+U("carga")+'</small><b>'+num(rr.carga)+'</b></div>':'')+'</div>'+
+   (foto?fig(foto):'')+(mm?'<p style="margin-top:1rem"><a class="boton" href="#mineral/'+mm.id+'">'+U("verFicha")+'</a></p>':''); }
 
-var filtroGrupo="";
-P.minerales = function(){
-  var h='<section class="pantalla"><h2>'+U("b")[2][0]+'</h2><div class="filtros"><button class="filtro" data-g="">'+U("todos")+'</button>'+GRUPOS.map(function(g){return '<button class="filtro" data-g="'+g.id+'">'+esc(L(g))+'</button>';}).join("")+'</div><div class="tarjetas" id="tj"></div></section>';
-  main.innerHTML=h;
-  function pinta(){
-    $$(".filtro").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-g")===filtroGrupo); });
-    $("#tj").innerHTML=MINERALES.filter(function(m){return !filtroGrupo||m.grupo===filtroGrupo;}).map(function(m){
-      var im=portadaImg(m.id), t=L(m);
-      return '<article class="tarjeta"><div class="foto">'+(im?'<img loading="lazy" src="'+im.src+'" alt="" onerror="this.replaceWith(dibujo(\''+m.id+'\'))">'+(im.sem?'<span class="marcaimg">SEM/TEM</span>':''):'<div style="padding:.5rem">'+dibujoMineral(m)+'</div>')+'</div>'+
-        '<div class="cuerpo"><span class="grupo">'+esc(grupoNombre(m.grupo))+'</span><h3>'+esc(t.n)+'</h3><p>'+esc(t.r)+'</p><div class="etiquetas"><span class="etq">'+esc(dTxt(m))+'</span></div>'+
-        '<button class="mas" data-ficha="'+m.id+'">'+U("saber")+'</button></div></article>';
-    }).join("");
-    $$("[data-ficha]",$("#tj")).forEach(function(b){ b.onclick=function(){ abrirFicha(b.getAttribute("data-ficha")); }; });
-  }
-  $$(".filtro").forEach(function(b){ b.onclick=function(){ filtroGrupo=b.getAttribute("data-g"); pinta(); }; });
-  pinta();
+/* ---- minerales ---- */
+P.minerales=function(){
+  var filas=""; GRUPOS.forEach(function(g){ var ms=MINERALES.filter(function(m){return m.grupo===g.id;}); if(!ms.length) return;
+    filas+='<tr class="grupo-fila"><td colspan="4">'+esc(L(g))+'</td></tr>'+ms.map(function(m){ var im=primeraImg(m.id);
+      return '<tr class="fila" data-ir="#mineral/'+m.id+'"><td style="width:80px"><div class="mini">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':'')+'</div></td><td class="nombre"><a href="#mineral/'+m.id+'">'+esc(L(m).n)+'</a></td><td>'+esc(dTxt(m))+'</td><td>'+esc(L(m).r)+'</td></tr>'; }).join(""); });
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[2][1],lang==="es"?"Los grupos de minerales de la arcilla y sus representantes más importantes.":"The clay mineral groups and their most important members.",migaArcillas())+
+   '<div class="envoltorio pagina-cuerpo" style="overflow-x:auto"><table class="tabla-minerales"><thead><tr>'+U("tablaCols").map(function(c){return '<th>'+c+'</th>';}).join("")+'</tr></thead><tbody>'+filas+'</tbody></table></div>';
+  $$("tr.fila").forEach(function(tr){ tr.onclick=function(e){ if(e.target.tagName!=="A") location.hash=tr.getAttribute("data-ir"); }; });
 };
-window.quitaFig=function(img){ var f=img.closest('figure'), g=f&&f.parentNode; if(f) f.remove(); if(g&&g.classList.contains('galeria')&&!g.querySelector('figure')){ var h=g.previousElementSibling; if(h&&h.tagName==='H3') h.remove(); g.remove(); } };
-window.dibujo=function(id){ var d=document.createElement("div"); d.style.padding=".5rem"; d.innerHTML=dibujoMineral(minById(id)); return d; };
+var M3D_DE={caolinita:"caolinita",halloysita:"caolinita",ilita:"ilita",montmorillonita:"montmorillonita",beidellita:"montmorillonita",nontronita:"montmorillonita",saponita:"saponita",hectorita:"saponita",vermiculita:"vermiculita",clorita:"clorita",sepiolita:"sepiolita",paligorskita:"paligorskita"};
+P.mineral=function(id){
+  var m=minById(id); if(!m){ P.minerales(); return; } var t=L(m), micro=imgMicro(id), mano=imgMano(id), e=ESPECIALISTAS[id], prin=micro[0]||mano[0];
+  var dat=[[U("ficha.formula"),esc(lang==="en"?m.formula.replace("p. ej.","e.g.").replace("ilita/esmectita, clorita/esmectita","illite/smectite, chlorite/smectite"):m.formula)],[U("ficha.d"),esc(dTxt(m))],[U("ficha.cic"),num(m.cic[0])+"–"+num(m.cic[1])+" "+U("cicU")],[U("ficha.se"),num(m.se[0])+"–"+num(m.se[1])+" "+U("seU")],[U("ficha.hinch"),U("niveles")[m.hinch]],[U("ficha.plast"),U("niveles")[m.plast]]];
+  var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",U("nav.arcillas")[2][1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d){ return '<div class="dato"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
+  if(e) h+='<details class="especialistas"><summary>'+U("esp.tit")+'</summary><div class="dentro"><table><tr><th>'+U("esp.lam")+'</th><td>'+esc(L(e.lam))+'</td></tr><tr><th>'+U("esp.x")+'</th><td>'+esc(num(L(e.x)))+'</td></tr><tr><th>'+U("esp.grupo")+'</th><td>'+esc(L(e.grupo))+'</td></tr><tr><th>'+U("esp.oct")+'</th><td>'+esc(L(e.oct))+'</td></tr><tr><th>'+U("esp.inter")+'</th><td>'+esc(L(e.inter))+'</td></tr></table><p style="margin:1rem 0 .4rem">'+esc(L(e.nota))+'</p><p class="pequeno" style="margin:0">'+U("esp.fuente")+'</p></div></details>';
+  if(micro.length>1) h+='<h2 style="margin-top:2.5rem">'+U("ficha.micro")+'</h2><div class="mosaico">'+micro.slice(1).map(function(i){return fig(i);}).join("")+'</div>';
+  h+='<h2 style="margin-top:2.5rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter")?null:num(m.d.split(" ")[0])+" Å"})+leyenda(["T","O","vac","K","cat","agua","hid"])+'</div></div>';
+  if(m.espana&&m.espana.length) h+='<h2 style="margin-top:2.5rem">'+U("ficha.espana")+'</h2><ul>'+m.espana.map(function(k){ return '<li>'+esc(L(MAPA.lugares[k]).n)+'</li>'; }).join("")+'</ul><a class="boton claro" href="#yacimientos">'+U("ficha.verMapa")+'</a>';
+  if(mano.length) h+='<h2 style="margin-top:2.5rem">'+U("ficha.mano")+'</h2><div class="mosaico">'+mano.map(function(i){return fig(i);}).join("")+'</div>';
+  h+='</div>'; main.innerHTML=h;
+  if(M3D_DE[id]) crear3D($("#vm3d"),M3D_DE[id],{autoRotate:true});
+};
 
-var propSel="cic";
-var PROP_MIN=["caolinita","halloysita","ilita","montmorillonita","saponita","vermiculita","clorita","sepiolita","paligorskita"];
-P.propiedades = function(){
+/* ---- propiedades ---- */
+var propSel="cic", PROP_MIN=["caolinita","halloysita","ilita","montmorillonita","saponita","vermiculita","clorita","sepiolita","paligorskita"];
+P.propiedades=function(){
   var ks=["cic","se","hinch","plast"];
-  var h='<section class="pantalla"><h2>'+U("propTit")+'</h2><p class="intro">'+U("propIntro")+'</p><div class="filtros">'+ks.map(function(k){return '<button class="filtro" data-p="'+k+'">'+U("props."+k)+'</button>';}).join("")+'</div>'+
-   '<div class="caja"><p id="ptxt" style="margin-top:0"></p><div class="barras" id="barras"></div><p class="nota">'+(lang==="es"?"Toca el nombre de un mineral para ver su ficha.":"Tap a mineral’s name to see its card.")+'</p></div>'+
-   '<div class="caja"><h3>'+U("aguaTit")+'</h3><div class="hinchamiento"><div><b>'+L(minById("caolinita")).n+'</b><div id="hk"></div></div><div><b>'+L(minById("montmorillonita")).n+'</b><div id="hm"></div></div></div><button class="boton" id="agua">'+U("echarAgua")+'</button></div></section>';
-  main.innerHTML=h;
-  function pinta(){
-    $$("[data-p]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-p")===propSel); });
-    $("#ptxt").textContent=U("propTxt."+propSel);
-    var max = propSel==="cic"?200:(propSel==="se"?800:4);
-    $("#barras").innerHTML=PROP_MIN.map(function(id){ var m=minById(id), a,b,val;
-      if(propSel==="cic"||propSel==="se"){ a=m[propSel][0]; b=m[propSel][1]; val=num(a)+"–"+num(b); }
-      else { a=0; b=m[propSel]; val=U("niveles")[b]; }
-      var izq=a/max*100, an=Math.max(1.5,(b-a)/max*100);
-      if(propSel!=="cic"&&propSel!=="se"){ izq=0; an=Math.max(1.5,b/max*100); }
-      return '<div class="fila-barra"><button data-ficha="'+id+'">'+esc(L(m).n)+'</button><div class="pista"><div class="rango" style="left:'+izq+'%;width:'+an+'%"></div></div><div class="valor">'+val+(propSel==="cic"?" "+U("cicU"):(propSel==="se"?" "+U("seU"):""))+'</div></div>';
-    }).join("");
-    $$("[data-ficha]",$("#barras")).forEach(function(b){ b.onclick=function(){ abrirFicha(b.getAttribute("data-ficha")); }; });
-  }
-  $$("[data-p]").forEach(function(b){ b.onclick=function(){ propSel=b.getAttribute("data-p"); pinta(); }; });
-  pinta();
-  var mojado=false;
-  function dib(){
-    $("#hk").innerHTML=svgLaminas({seq:"TO",oct:"di",inter:"H"},{reps:3,w:300});
-    $("#hm").innerHTML=svgLaminas({seq:"TOT",oct:"di",inter:mojado?"agua":"nada"},{reps:3,w:300});
-    $("#agua").textContent=mojado?U("secar"):U("echarAgua");
-  }
-  $("#agua").onclick=function(){ mojado=!mojado; dib(); };
-  dib();
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[3][1],U("propE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros">'+ks.map(function(k){ return '<button class="filtro" data-p="'+k+'">'+U("props."+k)+'</button>'; }).join("")+'</div><p id="ptxt" class="lectura"></p><div id="barras" style="max-width:56rem"></div>'+
+   '<h2 style="margin-top:3rem">'+U("aguaTit")+'</h2><div class="hinchamiento"><div class="panel"><h4>'+esc(L(minById("caolinita")).n)+'</h4><div id="hk"></div></div><div class="panel"><h4>'+esc(L(minById("montmorillonita")).n)+'</h4><div id="hm"></div></div></div><button class="boton" id="agua">'+U("echarAgua")+'</button>'+
+   '<div class="mosaico" style="margin-top:2.5rem">'+imgSEA("saponita").slice(0,1).concat(imgSEA("montmorillonita").slice(2,3),imgIOC("montmorillonita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div></div>';
+  function pinta(){ $$("[data-p]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-p")===propSel); }); $("#ptxt").textContent=U("propTxt."+propSel);
+    var max=propSel==="cic"?200:(propSel==="se"?800:4);
+    $("#barras").innerHTML=PROP_MIN.map(function(id){ var m=minById(id),a,b,val,iz,an;
+      if(propSel==="cic"||propSel==="se"){ a=m[propSel][0]; b=m[propSel][1]; val=num(a)+"–"+num(b)+" "+(propSel==="cic"?U("cicU"):U("seU")); iz=a/max*100; an=Math.max(1.5,(b-a)/max*100); }
+      else { b=m[propSel]; val=U("niveles")[b]; iz=0; an=Math.max(1.5,b/max*100); }
+      return '<div class="fila-barra"><a href="#mineral/'+id+'">'+esc(L(m).n)+'</a><div class="pista"><div class="rango" style="left:'+iz+'%;width:'+an+'%"></div></div><div class="valor">'+val+'</div></div>'; }).join(""); }
+  $$("[data-p]").forEach(function(b){ b.onclick=function(){ propSel=b.getAttribute("data-p"); pinta(); }; }); pinta();
+  var mojado=false; function dib(){ $("#hk").innerHTML=svgLaminas({seq:"TO",oct:"di",inter:"H"},{reps:3,w:300}); $("#hm").innerHTML=svgLaminas({seq:"TOT",oct:"di",inter:mojado?"agua":"nada"},{reps:3,w:300}); $("#agua").textContent=mojado?U("secar"):U("echarAgua"); }
+  $("#agua").onclick=function(){ mojado=!mojado; dib(); }; dib();
 };
 
-P.aplicaciones = function(){
-  var h='<section class="pantalla"><h2>'+U("aplTit")+'</h2><p class="intro">'+U("aplIntro")+'</p><div class="tarjetas">'+APLICACIONES.map(function(a){
-    var im=null; for(var i=0;i<a.m.length&&!im;i++){ var s=semImgs(a.m[i]); if(s.length) im=s[0]; }
-    return '<article class="tarjeta"><div class="foto">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="" onerror="this.parentNode.style.display=\'none\'">':'')+'</div><div class="cuerpo"><h3>'+esc(L(a).n)+'</h3><div class="etiquetas">'+a.m.map(function(id){return '<span class="etq">'+esc(L(minById(id)).n)+'</span>';}).join("")+'</div><button class="mas" data-apl="'+a.id+'">'+U("saber")+'</button></div></article>';
-  }).join("")+'</div></section>';
-  main.innerHTML=h;
-  $$("[data-apl]").forEach(function(b){ b.onclick=function(){ var a=APLICACIONES.filter(function(x){return x.id===b.getAttribute("data-apl");})[0];
-    abrirDialogo('<h2>'+esc(L(a).n)+'</h2><p class="intro">'+esc(L(a).t)+'</p><h3>'+U("minerales")+'</h3><div class="controles">'+a.m.map(function(id){return '<button class="boton sec" data-ficha="'+id+'">'+esc(L(minById(id)).n)+'</button>';}).join("")+'</div>'); }; });
+/* ---- aplicaciones ---- */
+P.aplicaciones=function(){
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="indice">'+APLICACIONES.map(function(a){
+    var im=null; for(var i=0;i<a.m.length&&!im;i++) im=primeraImg(a.m[i]);
+    return '<div style="display:grid;grid-template-columns:96px 1fr;gap:1.1rem;padding:1.2rem 0;border-bottom:1px solid var(--sepiolita2)"><span style="width:96px;height:96px;border-radius:3px;overflow:hidden;background:#1c1d1f">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="" style="width:100%;height:100%;object-fit:cover">':'')+'</span><span><h3 style="font-size:1.3rem;margin-bottom:.3rem">'+esc(L(a).n)+'</h3><p style="margin:0 0 .4rem">'+esc(L(a).t)+'</p><span class="pequeno">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</span></span></div>'; }).join("")+'</div>'+
+   '<p style="margin-top:2rem"><a class="boton claro" href="#historia/casa">'+esc(L(HISTORIAS.filter(function(x){return x.id==="casa";})[0]).n)+'</a></p></div>';
 };
 
-function tipoLugar(k){
-  if(["vicalvaro","toledosep","orera","bercimuel","torrejonrubio"].indexOf(k)>=0) return "fibrosa";
-  if(["gata","cuevas"].indexOf(k)>=0) return "bentonita";
-  return "caolin";
-}
-var COL_L={fibrosa:"#c8902f",bentonita:"#b4532a",caolin:"#ffffff"};
-function mineralesLugar(k){ return MINERALES.filter(function(m){ return m.espana&&m.espana.indexOf(k)>=0; }); }
-P.yacimientos = function(){
-  var M=MAPA, pts="";
-  Object.keys(M.lugares).forEach(function(k){ var p=M.lugares[k], t=tipoLugar(k), pas=p.estado==="pasado";
-    pts+='<g class="punto" data-l="'+k+'" tabindex="0" role="button" aria-label="'+esc(L(p).n)+'"><circle cx="'+p.xy[0]+'" cy="'+p.xy[1]+'" r="15" fill="'+(pas?"#f7f1e6":COL_L[t])+'" stroke="'+(t==="caolin"?"#6b5444":COL_L[t])+'" stroke-width="'+(pas?4:2.5)+'"/></g>';
-  });
-  var svg='<svg viewBox="0 0 '+M.W+' '+M.H+'" role="img" aria-label="'+U("yacTit")+'">'+(M.vecinos||[]).map(function(d){return '<path d="'+d+'" fill="#efe9de" stroke="#d9cdb8"/>';}).join("")+
-    '<path d="'+M.peninsula+'" fill="#e6d8c0" stroke="#b49c7c" stroke-width="2"/>'+M.islas.map(function(d){return '<path d="'+d+'" fill="#e6d8c0" stroke="#b49c7c" stroke-width="2"/>';}).join("")+pts+'</svg>';
-  var ley=U("leyMapa");
-  var h='<section class="pantalla"><h2>'+U("yacTit")+'</h2><p class="intro">'+U("yacIntro")+'</p><div class="mapa"><div class="panel">'+svg+
-   '<div class="leyenda"><span><i style="background:#c8902f;border-radius:50%"></i>'+ley.fibrosa+'</span><span><i style="background:#b4532a;border-radius:50%"></i>'+ley.bentonita+'</span><span><i style="background:#fff;border:2px solid #6b5444;border-radius:50%"></i>'+ley.caolin+'</span><span><i style="background:#f7f1e6;border:3px solid #b4532a;border-radius:50%"></i>'+ley.pasado+'</span></div></div>'+
-   '<div class="panel" id="info"></div></div><div class="caja"><h3>'+U("mundo")+'</h3><ul class="lista-mundo">'+MUNDO.map(function(x){return '<li>'+esc(L(x))+'</li>';}).join("")+'</ul></div></section>';
-  main.innerHTML=h;
-  function ver(k){ var p=M.lugares[k];
-    $$(".punto").forEach(function(g){ g.classList.toggle("activo",g.getAttribute("data-l")===k); });
-    var ms=mineralesLugar(k);
-    $("#info").innerHTML='<span class="grupo" style="color:var(--terracota2);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em">'+(p.estado==="pasado"?U("pasado"):U("hoy"))+'</span><h3>'+esc(L(p).n)+'</h3><p>'+esc(L(p).t)+'</p>'+(ms.length?'<div class="controles">'+ms.map(function(m){return '<button class="boton sec" data-ficha="'+m.id+'">'+esc(L(m).n)+'</button>';}).join("")+'</div>':'');
-    $$("[data-ficha]",$("#info")).forEach(function(b){ b.onclick=function(){ abrirFicha(b.getAttribute("data-ficha")); }; });
-  }
-  $$(".punto").forEach(function(g){ g.onclick=function(){ ver(g.getAttribute("data-l")); }; g.onkeydown=function(e){ if(e.key==="Enter"){ ver(g.getAttribute("data-l")); } }; });
+/* ---- yacimientos ---- */
+function tipoLugar(k){ if(["vicalvaro","toledosep","orera","bercimuel","torrejonrubio"].indexOf(k)>=0) return "fibrosa"; if(["gata","cuevas"].indexOf(k)>=0) return "bentonita"; return "caolin"; }
+var COL_L={fibrosa:"#b88733",bentonita:"#8f3f22",caolin:"#ffffff"};
+P.yacimientos=function(){
+  var M=MAPA,pts="";
+  Object.keys(M.lugares).forEach(function(k){ var p=M.lugares[k],t=tipoLugar(k),pas=p.estado==="pasado";
+    pts+='<g class="punto" data-l="'+k+'" tabindex="0" role="button" aria-label="'+esc(L(p).n)+'"><circle cx="'+p.xy[0]+'" cy="'+p.xy[1]+'" r="15" fill="'+(pas?"#f6f3ee":COL_L[t])+'" stroke="'+(t==="caolin"?"#5d5248":COL_L[t])+'" stroke-width="'+(pas?4:2.5)+'"/></g>'; });
+  var svg='<svg viewBox="0 0 '+M.W+' '+M.H+'" role="img" aria-label="'+U("nav.arcillas")[5][1]+'">'+(M.vecinos||[]).map(function(d){ return '<path d="'+d+'" fill="#efe9de" stroke="#d9cdb8"/>'; }).join("")+'<path d="'+M.peninsula+'" fill="#e4d9c6" stroke="#b49c7c" stroke-width="2"/>'+M.islas.map(function(d){ return '<path d="'+d+'" fill="#e4d9c6" stroke="#b49c7c" stroke-width="2"/>'; }).join("")+pts+'</svg>';
+  var ly=U("leyMapa");
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[5][1],U("yacE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="mapa"><div>'+svg+'<div class="leyenda"><span><i style="background:#b88733;border-radius:50%"></i>'+ly.fibrosa+'</span><span><i style="background:#8f3f22;border-radius:50%"></i>'+ly.bentonita+'</span><span><i style="background:#fff;border:2px solid #5d5248;border-radius:50%"></i>'+ly.caolin+'</span><span><i style="background:#f6f3ee;border:3px solid #8f3f22;border-radius:50%"></i>'+ly.pasado+'</span></div></div><div id="info"></div></div>'+
+   '<h2 style="margin-top:3rem">'+U("mundo")+'</h2><ul class="lista-mundo">'+MUNDO.map(function(x){ return '<li>'+esc(L(x))+'</li>'; }).join("")+'</ul></div>';
+  function ver(k){ var p=M.lugares[k]; $$(".punto").forEach(function(g){ g.classList.toggle("activo",g.getAttribute("data-l")===k); });
+    var ms=MINERALES.filter(function(m){ return m.espana&&m.espana.indexOf(k)>=0; });
+    $("#info").innerHTML='<p class="pequeno">'+(p.estado==="pasado"?U("pasado"):U("hoy"))+'</p><h3>'+esc(L(p).n)+'</h3><p>'+esc(L(p).t)+'</p>'+(ms.length?'<p>'+ms.map(function(m){ return '<a class="boton claro" style="margin:0 .4rem .4rem 0" href="#mineral/'+m.id+'">'+esc(L(m).n)+'</a>'; }).join("")+'</p>':''); }
+  $$(".punto").forEach(function(g){ g.onclick=function(){ ver(g.getAttribute("data-l")); }; g.onkeydown=function(e){ if(e.key==="Enter") ver(g.getAttribute("data-l")); }; });
   ver("vicalvaro");
 };
 
-var drxSel="montmorillonita", drxOn={AO:true,EG:true,C:true};
-var DRX_COL={AO:"#3b2a1e",EG:"#4f7ea6",C:"#b4532a"};
+/* ---- estudio (DRX) ---- */
+var drxSel="montmorillonita", drxOn={AO:true,EG:true,C:true}, DRX_COL={AO:"#26201b",EG:"#4b7398",C:"#8f3f22"};
 function dosTheta(d){ return 2*Math.asin(1.5406/(2*d))*180/Math.PI; }
-function picosMezcla(t){ var out=[]; ["caolinita","ilita","montmorillonita","clorita"].forEach(function(id){ var f={caolinita:.6,ilita:.5,montmorillonita:.8,clorita:.5}[id]; DRX[id][t].forEach(function(p){ out.push([p[0],p[1]*f]); }); }); return out; }
+function dDesde(t){ return 1.5406/(2*Math.sin(t/2*Math.PI/180)); }
+function picosMezcla(t){ var o=[]; [["caolinita",.6],["ilita",.5],["montmorillonita",.8],["clorita",.5]].forEach(function(e){ DRX[e[0]][t].forEach(function(p){ o.push([p[0],p[1]*e[1]]); }); }); return o; }
 function svgDRX(){
-  var W=640,H=380,x0=50,x1=620,y0=340,lo=2,hi=32;
-  function X(t){ return x0+(t-lo)/(hi-lo)*(x1-x0); }
-  var s='<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y0+'" stroke="#3b2a1e"/>';
-  for(var t=lo;t<=hi;t+=2){ s+='<line x1="'+X(t)+'" y1="'+y0+'" x2="'+X(t)+'" y2="'+(y0+5)+'" stroke="#3b2a1e"/><text x="'+X(t)+'" y="'+(y0+20)+'" font-size="12" text-anchor="middle" fill="#6b5444">'+t+'</text>'; }
-  s+='<text x="'+((x0+x1)/2)+'" y="'+(y0+36)+'" font-size="13" text-anchor="middle" fill="#3b2a1e">'+U("grados")+'</text>';
-  var orden=["AO","EG","C"], desp={AO:0,EG:100,C:200};
-  orden.forEach(function(k){
-    if(!drxOn[k]) return;
-    var picos = drxSel==="mezcla"?picosMezcla(k):DRX[drxSel][k], base=y0-8-desp[k], path="";
-    var anchoBase = (drxSel==="montmorillonita"||drxSel==="mezcla")?0.55:0.3;
-    for(var px=x0;px<=x1;px+=1.5){ var tt=lo+(px-x0)/(x1-x0)*(hi-lo), yv=0;
-      picos.forEach(function(p){ var c=dosTheta(p[0]), wd=(p[0]>11&&p[0]<18&&anchoBase>0.4)?0.8:anchoBase; yv+=p[1]*Math.exp(-Math.pow((tt-c)/wd,2)); });
-      yv+= 6*Math.exp(-(tt-lo)/3); // fondo a bajo ángulo
-      path+=(px===x0?"M":"L")+px.toFixed(1)+","+(base-yv*0.75).toFixed(1);
-    }
-    s+='<path d="'+path+'" fill="none" stroke="'+DRX_COL[k]+'" stroke-width="2"/><text x="'+(x1-4)+'" y="'+(base-8)+'" font-size="12" text-anchor="end" fill="'+DRX_COL[k]+'" font-weight="700">'+U(k)+'</text>';
-    var puestos=[]; picos.slice().sort(function(a,b){return b[1]-a[1];}).forEach(function(p){ var c=dosTheta(p[0]); if((p[1]>=45||drxSel!=="mezcla"&&p[1]>=30)&&puestos.every(function(q){return Math.abs(q-c)>1.2;})){ puestos.push(c); s+='<text x="'+X(c)+'" y="'+(base-p[1]*0.75-6)+'" font-size="11" text-anchor="middle" fill="'+DRX_COL[k]+'">'+num(p[0])+' Å</text>'; } });
-  });
-  return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+U("drxTit")+'">'+s+'</svg>';
+  var W=640,H=380,x0=50,x1=620,y0=340,lo=2,hi=32; function X(t){ return x0+(t-lo)/(hi-lo)*(x1-x0); }
+  var s='<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y0+'" stroke="#26201b"/>';
+  for(var t=lo;t<=hi;t+=2) s+='<line x1="'+X(t)+'" y1="'+y0+'" x2="'+X(t)+'" y2="'+(y0+5)+'" stroke="#26201b"/><text x="'+X(t)+'" y="'+(y0+20)+'" font-size="12" text-anchor="middle" fill="#5d5248">'+t+'</text>';
+  s+='<text x="'+((x0+x1)/2)+'" y="'+(y0+36)+'" font-size="13" text-anchor="middle" fill="#26201b">'+U("grados")+'</text>';
+  var desp={AO:0,EG:100,C:200};
+  ["AO","EG","C"].forEach(function(k){ if(!drxOn[k]) return;
+    var picos=drxSel==="mezcla"?picosMezcla(k):DRX[drxSel][k], base=y0-8-desp[k], path="", aB=(drxSel==="montmorillonita"||drxSel==="mezcla")?.55:.3;
+    for(var px=x0;px<=x1;px+=1.5){ var tt=lo+(px-x0)/(x1-x0)*(hi-lo),yv=0; picos.forEach(function(p){ var c=dosTheta(p[0]),wd=(p[0]>11&&p[0]<18&&aB>.4)?.8:aB; yv+=p[1]*Math.exp(-Math.pow((tt-c)/wd,2)); }); yv+=6*Math.exp(-(tt-lo)/3); path+=(px===x0?"M":"L")+px.toFixed(1)+","+(base-yv*.75).toFixed(1); }
+    s+='<path d="'+path+'" fill="none" stroke="'+DRX_COL[k]+'" stroke-width="2"/><text x="'+(x1-4)+'" y="'+(base-8)+'" font-size="12" text-anchor="end" fill="'+DRX_COL[k]+'" font-weight="600">'+U(k)+'</text>';
+    var pu=[]; picos.slice().sort(function(a,b){return b[1]-a[1];}).forEach(function(p){ var c=dosTheta(p[0]); if((p[1]>=45||drxSel!=="mezcla"&&p[1]>=30)&&pu.every(function(q){return Math.abs(q-c)>1.2;})){ pu.push(c); s+='<text x="'+X(c)+'" y="'+(base-p[1]*.75-6)+'" font-size="11" text-anchor="middle" fill="'+DRX_COL[k]+'">'+num(p[0])+' Å</text>'; } }); });
+  s+='<g id="cursor" style="display:none"><line id="cl" y1="20" y2="'+y0+'" stroke="#b88733" stroke-dasharray="3 3"/><rect id="cr" y="8" width="150" height="24" rx="12" fill="#26201b"/><text id="ct" y="25" font-size="12.5" fill="#fff" text-anchor="middle"></text></g>';
+  return '<svg id="drxsvg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+U("drxTit")+'">'+s+'</svg>';
 }
-P.estudio = function(){
+P.estudio=function(){
   var lista=Object.keys(DRX).concat(["mezcla"]);
-  var h='<section class="pantalla"><h2>'+U("estuTit")+'</h2><p class="intro">'+U("estuIntro")+'</p><div class="caja"><h3>'+U("drxTit")+'</h3><p>'+U("drxIntro")+'</p><div class="filtros">'+lista.map(function(id){return '<button class="filtro" data-drx="'+id+'">'+(id==="mezcla"?U("mezcla"):esc(L(minById(id)).n))+'</button>';}).join("")+'</div>'+
-   '<div class="drx"><div id="graf"></div><div><div class="tratamiento">'+["AO","EG","C"].map(function(k){return '<button class="trat" data-t="'+k+'" style="border-color:'+DRX_COL[k]+';color:'+DRX_COL[k]+'">'+U(k)+'</button>';}).join("")+'</div><p id="drxTxt"></p></div></div></div>'+
-   '<h3 style="margin-top:1.4rem">'+U("tecnicas")+'</h3><div class="tarjetas">'+TECNICAS.filter(function(t){return t.id!=="drx";}).map(function(t){ var im=t.id==="sem"?semImgs("halloysita")[0]:(t.id==="tem"?semImgs("caolinita")[2]:null);
-     return '<article class="tarjeta">'+(im?'<div class="foto"><img loading="lazy" src="'+im.mini+'" alt="" onerror="this.parentNode.remove()"></div>':'')+'<div class="cuerpo"><h3>'+esc(L(t).n)+'</h3><p>'+esc(L(t).t)+'</p></div></article>'; }).join("")+'</div>'+
-   '<p style="margin-top:1.2rem"><button class="boton" data-ir="#juego">'+U("juego")+' →</button></p></section>';
-  main.innerHTML=h;
-  function pinta(){
-    $$("[data-drx]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-drx")===drxSel); });
-    $$("[data-t]").forEach(function(b){ b.setAttribute("aria-pressed",!!drxOn[b.getAttribute("data-t")]); });
-    $("#graf").innerHTML=svgDRX();
-    $("#drxTxt").textContent = drxSel==="mezcla" ? (lang==="es"?"En una muestra real se mezclan varios minerales. Compara: el pico de 17 Å con etilenglicol delata la esmectita; a 550 °C desaparece el pico de 7 Å de la caolinita y queda el de 14 Å de la clorita; el de 10 Å de la ilita no se mueve.":"Real samples mix several minerals. Compare: the 17 Å peak with ethylene glycol gives the smectite away; at 550 °C kaolinite’s 7 Å peak disappears and chlorite’s 14 Å peak remains; illite’s 10 Å peak does not move.") : L(DRX[drxSel]);
-  }
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[6][1],U("estuE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h2>'+U("drxTit")+'</h2><p class="lectura">'+U("drxE")+'</p><div class="filtros">'+lista.map(function(id){ return '<button class="filtro" data-drx="'+id+'">'+(id==="mezcla"?U("mezcla"):esc(L(minById(id)).n))+'</button>'; }).join("")+'</div>'+
+   '<div class="drx"><div id="graf"></div><div><div class="tratamientos">'+["AO","EG","C"].map(function(k){ return '<button class="trat" data-t="'+k+'" style="border-color:'+DRX_COL[k]+';color:'+DRX_COL[k]+'">'+U(k)+'</button>'; }).join("")+'</div><p id="drxTxt" style="margin-top:1rem"></p><p class="pequeno">'+U("marte")+' <a href="#historia/marte">'+esc(L(HISTORIAS[2]).n)+'</a></p></div></div>'+
+   '<h2 style="margin-top:3.5rem">'+U("tecnicas")+'</h2><div class="indice">'+TECNICAS.filter(function(t){return t.id!=="drx";}).map(function(t){ var im=t.id==="sem"?imgSEA("caolinita")[0]:(t.id==="tem"?imgIOC("caolinita")[2]:null);
+     return '<div style="display:grid;grid-template-columns:'+(im?'96px ':'')+'1fr;gap:1.1rem;padding:1.2rem 0;border-bottom:1px solid var(--sepiolita2)">'+(im?'<span style="width:96px;height:96px;border-radius:3px;overflow:hidden;background:#1c1d1f"><img loading="lazy" src="'+im.mini+'" alt="" style="width:100%;height:100%;object-fit:cover"></span>':'')+'<span><h3 style="font-size:1.3rem;margin-bottom:.3rem">'+esc(L(t).n)+'</h3><p style="margin:0">'+esc(L(t).t)+'</p></span></div>'; }).join("")+'</div>'+
+   '<p style="margin-top:2rem"><a class="boton" href="#juego">'+U("nav.arcillas")[8][1]+'</a></p></div>';
+  function pinta(){ $$("[data-drx]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-drx")===drxSel); }); $$("[data-t]").forEach(function(b){ b.setAttribute("aria-pressed",!!drxOn[b.getAttribute("data-t")]); });
+    $("#graf").innerHTML=svgDRX(); cursorDRX();
+    $("#drxTxt").textContent=drxSel==="mezcla"?(lang==="es"?"En una muestra real se mezclan varios minerales. El pico de 17 Å con etilenglicol delata la esmectita; a 550 °C desaparece el de 7 Å de la caolinita y queda el de 14 Å de la clorita; el de 10 Å de la ilita no se mueve.":"Real samples mix several minerals. The 17 Å peak with ethylene glycol gives the smectite away; at 550 °C kaolinite’s 7 Å peak disappears and chlorite’s 14 Å peak remains; illite’s 10 Å peak does not move."):L(DRX[drxSel]); }
   $$("[data-drx]").forEach(function(b){ b.onclick=function(){ drxSel=b.getAttribute("data-drx"); pinta(); }; });
   $$("[data-t]").forEach(function(b){ b.onclick=function(){ var k=b.getAttribute("data-t"); drxOn[k]=!drxOn[k]; pinta(); }; });
   pinta();
 };
+function cursorDRX(){ var sv=$("#drxsvg"); if(!sv) return; var g=$("#cursor",sv),l=$("#cl",sv),r=$("#cr",sv),t=$("#ct",sv);
+  function mov(ev){ var p=ev.touches?ev.touches[0]:ev, rc=sv.getBoundingClientRect(), x=(p.clientX-rc.left)/rc.width*640; if(x<52||x>618){ g.style.display="none"; return; }
+    var tt=2+(x-50)/570*30, d=dDesde(tt); g.style.display=""; l.setAttribute("x1",x); l.setAttribute("x2",x); var rx=Math.min(Math.max(x-75,0),490); r.setAttribute("x",rx); t.setAttribute("x",rx+75); t.textContent=num(tt.toFixed(2))+"°  d = "+num(d.toFixed(2))+" Å"; }
+  sv.addEventListener("mousemove",mov); sv.addEventListener("touchmove",mov,{passive:true}); sv.addEventListener("touchstart",mov,{passive:true}); sv.addEventListener("mouseleave",function(){ g.style.display="none"; }); }
 
-P.sea = function(){
-  var h='<section class="pantalla"><h2>'+U("seaTit")+'</h2><p class="intro">'+U("seaIntro")+'</p><div class="dos"><div class="caja"><h3>'+U("hist")+'</h3><div class="linea">'+HITOS.map(function(x){return '<div class="hito"><b>'+x.a+'</b>'+esc(L(x))+'</div>';}).join("")+'</div></div>'+
-   '<div><div class="caja"><h3>'+U("premios")+'</h3><ul>'+U("premiosL").map(function(p){return '<li>'+p+'</li>';}).join("")+'</ul></div><div class="caja"><h3>'+U("red")+'</h3><p>'+U("redT")+'</p></div><div class="caja"><h3>'+U("sede")+'</h3><p>'+U("sedeT")+'</p><p><a href="https://www.sea-arcillas.es" target="_blank" rel="noopener">'+U("web")+' ↗</a></p></div></div></div>'+
-   '<div class="caja"><h3>'+U("creditos")+'</h3>'+U("credT").map(function(p){return '<p>'+esc(p)+'</p>';}).join("")+'</div></section>';
-  main.innerHTML=h;
+/* ---- galería ---- */
+var galM="", galF="";
+P.galeria=function(){
+  var todas=imgSEA().concat([].concat.apply([],Object.keys(SEM).filter(function(k){return minById(k);}).map(imgIOC)));
+  var mins=[]; todas.forEach(function(i){ if(mins.indexOf(i.m)<0) mins.push(i.m); });
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[7][1],U("galPag"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros"><button class="filtro" data-gm="">'+U("todos")+'</button>'+mins.map(function(m){ return '<button class="filtro" data-gm="'+m+'">'+esc(L(minById(m)).n)+'</button>'; }).join("")+'</div><div class="filtros" style="margin-top:-.6rem"><button class="filtro" data-gf="">'+U("todos")+'</button><button class="filtro" data-gf="sea">'+U("fuentes.sea")+'</button><button class="filtro" data-gf="ioc">'+U("fuentes.ioc")+'</button></div><div class="mosaico" id="gal"></div></div>';
+  function pinta(){ $$("[data-gm]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-gm")===galM); }); $$("[data-gf]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-gf")===galF); });
+    $("#gal").innerHTML=todas.filter(function(i){ return (!galM||i.m===galM)&&(!galF||i.fuente===galF); }).map(function(i){ return fig(i); }).join(""); }
+  $$("[data-gm]").forEach(function(b){ b.onclick=function(){ galM=b.getAttribute("data-gm"); pinta(); }; });
+  $$("[data-gf]").forEach(function(b){ b.onclick=function(){ galF=b.getAttribute("data-gf"); pinta(); }; });
+  pinta();
 };
 
-/* ---------- juego ---------- */
-var PREG = [
+/* ---- juego ---- */
+var PREG=[
  {es:"¿Qué mineral tiene una lámina 1:1 y no hincha?",en:"Which mineral has a 1:1 layer and does not swell?",ok:"caolinita",mal:["montmorillonita","vermiculita","ilita"]},
  {es:"¿Cuál se desplaza a 17 Å con etilenglicol?",en:"Which one shifts to 17 Å with ethylene glycol?",ok:"montmorillonita",mal:["clorita","ilita","caolinita"]},
  {es:"¿Qué mineral forma nanotubos?",en:"Which mineral forms nanotubes?",ok:"halloysita",mal:["caolinita","saponita","clorita"]},
  {es:"¿Con qué mineral se hizo el azul maya?",en:"Which mineral was used to make Maya blue?",ok:"paligorskita",mal:["sepiolita","caolinita","nontronita"]},
- {es:"España produce cerca de dos tercios de la producción mundial de…",en:"Spain produces about two thirds of the world’s…",ok:"sepiolita",mal:["caolinita","vermiculita","halloysita"]},
+ {es:"La cuenca de Madrid tiene el mayor yacimiento del mundo de…",en:"The Madrid Basin has the world’s largest deposit of…",ok:"sepiolita",mal:["caolinita","vermiculita","halloysita"]},
  {es:"¿Qué mineral tiene potasio entre sus láminas?",en:"Which mineral has potassium between its layers?",ok:"ilita",mal:["clorita","saponita","halloysita"]},
- {es:"¿Cuál tiene una lámina de hidróxido entre las láminas 2:1?",en:"Which one has a hydroxide sheet between its 2:1 layers?",ok:"clorita",mal:["vermiculita","ilita","montmorillonita"]},
+ {es:"¿Cuál tiene una capa de hidróxido entre las láminas 2:1?",en:"Which one has a hydroxide sheet between its 2:1 layers?",ok:"clorita",mal:["vermiculita","ilita","montmorillonita"]},
  {es:"¿Qué mineral se expande como un gusano al calentarlo de golpe?",en:"Which mineral expands like a worm when suddenly heated?",ok:"vermiculita",mal:["sepiolita","ilita","caolinita"]},
  {es:"¿Qué esmectita es verde y rica en hierro?",en:"Which smectite is green and iron-rich?",ok:"nontronita",mal:["saponita","hectorita","beidellita"]},
- {es:"¿Qué bentonita se ensayó en el proyecto FEBEX para aislar residuos radiactivos?",en:"Which bentonite was tested in the FEBEX project to isolate radioactive waste?",okTxt:{es:"La de Almería",en:"The one from Almería"},malTxt:[{es:"La de Wyoming",en:"The one from Wyoming"},{es:"La de Milos",en:"The one from Milos"},{es:"La de Cerdeña",en:"The one from Sardinia"}]}
+ {es:"¿Qué arcillas ha encontrado el rover Curiosity en Marte?",en:"Which clays has the Curiosity rover found on Mars?",okTxt:{es:"Esmectitas",en:"Smectites"},malTxt:[{es:"Caolín puro",en:"Pure kaolin"},{es:"Sepiolita",en:"Sepiolite"},{es:"Ninguna",en:"None"}]}
 ];
-function baraja(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
-var IMG_OK=[];
-function probarImagenes(cb){
-  var cand=[]; Object.keys(SEM).forEach(function(id){ if(minById(id)&&["beidellita","hectorita","interestratificados"].indexOf(id)<0){ var s=semImgs(id); s.forEach(function(x,i){ if(!(SEM[id][i].m)) cand.push({id:id,im:x}); }); } });
-  var pend=cand.length, ok=[]; if(!pend){ cb(ok); return; }
-  cand.forEach(function(c){ var im=new Image(); im.onload=function(){ ok.push(c); if(--pend===0) cb(ok); }; im.onerror=function(){ if(--pend===0) cb(ok); }; im.src=c.im.mini; });
-}
-P.juego = function(){
-  main.innerHTML='<section class="pantalla"><div class="juego"><h2>'+U("jTit")+'</h2><p class="intro" style="margin:0 auto">'+U("jIntro")+'</p><p><button class="boton" id="emp">'+U("empezar")+'</button></p><div id="zona"></div></div></section>';
-  $("#emp").onclick=function(){ $("#emp").disabled=true; probarImagenes(function(ok){ IMG_OK=ok; partida(); }); };
+function baraja(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)),t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+P.juego=function(){
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[8][1],U("jE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="juego"><button class="boton" id="emp">'+U("empezar")+'</button><div id="zona"></div></div></div>';
+  $("#emp").onclick=function(){ $("#emp").disabled=true; probar(function(ok){ $("#emp").style.display="none"; partida(ok); }); };
 };
-function partida(){
-  var preguntas=[], usados={};
-  baraja(IMG_OK).forEach(function(c){ if(preguntas.length<4&&!usados[c.id]){ usados[c.id]=1;
-    var otros=baraja(MINERALES.filter(function(m){return m.id!==c.id&&m.id!=="interestratificados";})).slice(0,3).map(function(m){return m.id;});
-    preguntas.push({img:c.im,ok:c.id,mal:otros}); } });
-  baraja(PREG).slice(0,8-preguntas.length).forEach(function(p){ preguntas.push(p); });
-  preguntas=baraja(preguntas);
-  var k=0, aciertos=0, z=$("#zona"); $("#emp").style.display="none";
-  function nom(id){ return L(minById(id)).n; }
-  function una(){
-    if(k>=preguntas.length){ z.innerHTML='<p class="pregunta">'+U("fin").replace("{n}",aciertos).replace("{t}",preguntas.length)+'</p><button class="boton" id="otra">'+U("otra")+'</button>'; $("#otra").onclick=partida; return; }
-    var p=preguntas[k], ops, okLabel;
-    if(p.okTxt){ okLabel=L(p.okTxt); ops=baraja([okLabel].concat(p.malTxt.map(L))); }
-    else { okLabel=nom(p.ok); ops=baraja([p.ok].concat(p.mal)).map(nom); }
-    z.innerHTML='<p class="marcador">'+(k+1)+' / '+preguntas.length+'</p>'+(p.img?'<div class="imagen"><img src="'+p.img.src+'" alt=""></div><p class="pregunta">'+U("pregImg")+'</p>':'<p class="pregunta">'+esc(L(p))+'</p>')+
-      '<div class="opciones">'+ops.map(function(o){return '<button class="opcion">'+esc(o)+'</button>';}).join("")+'</div><p id="fb"></p>';
-    $$(".opcion",z).forEach(function(b){ b.onclick=function(){
-      var bien=b.textContent===okLabel; if(bien) aciertos++;
-      $$(".opcion",z).forEach(function(x){ x.disabled=true; if(x.textContent===okLabel) x.classList.add("bien"); });
-      if(!bien) b.classList.add("mal");
-      $("#fb").innerHTML=(bien?U("bien"):U("mal")+esc(okLabel)+".")+(p.img?'<br><small>'+p.img.cap+'</small>':'')+'<br><button class="boton" id="sig" style="margin-top:.6rem">'+U("sig")+'</button>';
-      $("#sig").onclick=function(){ k++; una(); };
-    }; });
-  }
+function probar(cb){ var cand=imgSEA().concat([].concat.apply([],["caolinita","halloysita","ilita","montmorillonita","nontronita","saponita","clorita","sepiolita","paligorskita"].map(imgIOC))).filter(function(i){ return ["beidellita","hectorita","interestratificados"].indexOf(i.m)<0; });
+  var pend=cand.length,ok=[]; if(!pend){ cb(ok); return; } cand.forEach(function(c){ var im=new Image(); im.onload=function(){ ok.push(c); if(--pend===0) cb(ok); }; im.onerror=function(){ if(--pend===0) cb(ok); }; im.src=c.mini; }); }
+function partida(imgs){
+  var q=[],us={}; baraja(imgs).forEach(function(c){ if(q.length<4&&!us[c.m]){ us[c.m]=1; q.push({img:c,ok:c.m,mal:baraja(MINERALES.filter(function(m){return m.id!==c.m&&m.id!=="interestratificados";})).slice(0,3).map(function(m){return m.id;})}); } });
+  baraja(PREG).slice(0,8-q.length).forEach(function(p){ q.push(p); }); q=baraja(q);
+  var k=0,ac=0,z=$("#zona"); function nom(id){ return L(minById(id)).n; }
+  function una(){ if(k>=q.length){ z.innerHTML='<h3 style="margin-top:1rem">'+U("fin").replace("{n}",ac).replace("{t}",q.length)+'</h3><button class="boton" id="otra">'+U("otra")+'</button>'; $("#otra").onclick=function(){ partida(imgs); }; return; }
+    var p=q[k],ops,okL; if(p.okTxt){ okL=L(p.okTxt); ops=baraja([okL].concat(p.malTxt.map(L))); } else { okL=nom(p.ok); ops=baraja([p.ok].concat(p.mal)).map(nom); }
+    z.innerHTML='<p class="pequeno">'+(k+1)+' / '+q.length+'</p>'+(p.img?'<div class="imagen"><img src="'+p.img.src+'" alt=""></div><h3 style="margin-top:1rem">'+U("pregImg")+'</h3>':'<h3>'+esc(L(p))+'</h3>')+'<div class="opciones">'+ops.map(function(o){ return '<button class="opcion">'+esc(o)+'</button>'; }).join("")+'</div><div id="fb" style="margin-top:1rem"></div>';
+    $$(".opcion",z).forEach(function(b){ b.onclick=function(){ var bien=b.textContent===okL; if(bien) ac++; $$(".opcion",z).forEach(function(x){ x.disabled=true; if(x.textContent===okL) x.classList.add("bien"); }); if(!bien) b.classList.add("mal");
+      $("#fb").innerHTML='<p><b>'+(bien?U("bien"):U("mal")+esc(okL)+".")+'</b></p>'+(p.img?'<p class="pequeno">'+p.img.cap+'</p>':'')+'<button class="boton" id="sig">'+U("sig")+'</button>'; $("#sig").onclick=function(){ k++; una(); }; }; }); }
   una();
 }
 
-/* ---------- arranque ---------- */
-function ir(){
-  var id=(location.hash||"#inicio").slice(1).split("?")[0]; if(!P[id]) id="inicio";
-  if(dlg&&dlg.open) dlg.close();
-  clearInterval(heroeTimer);
-  P[id]();
-  $("#volver").classList.toggle("oculto",id==="inicio");
-  $$("[data-ir]",main).forEach(function(b){ b.onclick=function(){ location.hash=b.getAttribute("data-ir"); }; });
-  window.scrollTo(0,0);
-  document.title = U("titulo")+" · "+U("sea");
+/* ---------------- LA SOCIEDAD ---------------- */
+P.sociedad=function(){
+  var hf=SEA.historiaFotos;
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[0][1],U("socE"))+
+   '<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h2>'+U("fines")+'</h2><p class="entrada" style="font-size:1.2rem">'+esc(L(SEA.fines))+'</p><p>'+esc(L(SEA.actividades))+'</p><p>'+esc(L(SEA.socios))+'</p></div><div><h2>'+U("campos")+'</h2><ul class="columnas-lista">'+L(SEA.campos).map(function(c){ return '<li>'+esc(c)+'</li>'; }).join("")+'</ul><h3 style="margin-top:2rem">'+U("enRed")+'</h3><p>'+esc(L(SEA.red))+'</p></div></div></div>'+
+   '<section class="bloque arena"><div class="envoltorio"><h2>'+U("hitos")+'</h2><div class="dos-col" style="align-items:start"><div class="linea">'+SEA.hitos.map(function(x){ return '<div class="hito"><b>'+x.a+'</b>'+esc(L(x))+'</div>'; }).join("")+'</div><div>'+
+     '<figure><img src="'+seaImg(hf[1])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"><figcaption>'+(lang==="es"?"J. L. Martín-Vivaldi en Estados Unidos, 1950.":"J. L. Martín-Vivaldi in the United States, 1950.")+'</figcaption></figure>'+
+     '<figure style="margin-top:1.4rem"><img src="'+seaImg(hf[0])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"></figure></div></div></div></section>'+
+   '<section class="bloque"><div class="envoltorio"><h2>'+U("hist")+'</h2><div class="texto-largo">'+L(SEA_TEXTOS.textos.historia)+'</div></div></section>'+
+   '<section class="bloque oscuro"><div class="envoltorio dos-col" style="align-items:start"><div><h2>'+U("sede")+'</h2><p>'+esc(SEA.sede)+'</p><h3 style="margin-top:1.6rem">'+U("contacto")+'</h3><p><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a><br><a href="mailto:'+SEA.secretaria+'">'+SEA.secretaria+'</a></p></div><div><h2>'+U("socioTit")+'</h2><p>'+U("socioE")+'</p><a class="boton claro" href="#socio">'+U("hazte")+'</a></div></div></section>';
+};
+P.junta=function(){
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[1][1],U("juntaE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><div class="personas">'+SEA.junta.map(function(p){ var ini=p.n.split(" ").map(function(x){return x[0];}).slice(0,2).join("");
+    return '<div class="persona"><img src="'+seaImg(p.f)+'" alt="" onerror="this.outerHTML=\'<div class=sinfoto>'+ini+'</div>\'"><h4>'+esc(p.n)+'</h4><p class="cargo">'+esc(L(p.c))+'</p><p>'+esc(p.o)+'</p><p><a href="mailto:'+p.e+'">'+p.e+'</a></p></div>'; }).join("")+'</div>'+
+   '<h2 style="margin-top:3rem">'+U("relInt")+'</h2><ul class="lista-simple">'+SEA.relaciones.map(function(r){ return '<li style="grid-template-columns:1fr 1fr"><span>'+esc(L(r.c))+'</span><span>'+esc(r.n)+'</span></li>'; }).join("")+'</ul></div>';
+};
+P.premios=function(){
+  var hoy=hoyISO();
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[2][1],U("premiosE"),migaSEA())+'<div class="envoltorio pagina-cuerpo">'+SEA.premios.map(function(p){ var ab=p.abierto&&p.abierto>=hoy;
+    return '<div class="premio"><div>'+(ab?'<span class="abierto">'+U("abierto")+'</span>':'<span class="pequeno">'+U("ultima")+'</span>')+'<h3>'+esc(L(p).n)+'</h3>'+(ab?'<p class="pequeno">'+U("plazo")+' '+fechaTxt(p.abierto)+'</p>':'')+'</div><div><p class="entrada" style="font-size:1.15rem">'+esc(L(p).r)+'</p><p>'+esc(L(p).t)+'</p><a href="'+p.url+'" target="_blank" rel="noopener">'+U("verBases")+'</a></div></div>'; }).join("")+
+   '<div class="dos-col" style="align-items:start;margin-top:3rem"><div><h2>'+U("distinciones")+'</h2><ul class="lista-simple">'+SEA.distinciones.map(function(d){ return '<li><b>'+d.a+'</b><span>'+esc(d.n)+'<br><span class="pequeno">'+esc(d.p)+'</span></span></li>'; }).join("")+'</ul></div><div><h2>'+U("honor")+'</h2><ul class="lista-simple">'+SEA.honor.map(function(d){ return '<li><b>'+d[0]+'</b><span>'+esc(d[1])+'</span></li>'; }).join("")+'</ul></div></div></div>';
+};
+P.reuniones=function(){
+  function lista(a){ return '<ul class="lista-simple">'+a.map(function(r){ return '<li><b>'+r[0]+'</b><span>'+esc(r[1])+'<br><span class="pequeno">'+esc(r[2])+'</span></span></li>'; }).join("")+'</ul>'; }
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[3][1],U("reunE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><div class="convocatoria" style="margin-bottom:3rem"><span class="fecha">20–26 '+(lang==="es"?"de junio de":"June")+' 2027</span><h3>'+U("clayTit")+'</h3><p>'+U("clayTxt")+'</p><a href="https://clay.aipea.org/" target="_blank" rel="noopener">'+U("clayWeb")+'</a></div><div class="dos-col" style="align-items:start"><div><h2>'+U("nac")+'</h2>'+lista(SEA.reunionesNac)+'</div><div><h2>'+U("int")+'</h2>'+lista(SEA.reunionesInt)+'</div></div></div>';
+};
+function docURL(ruta){ var f=ruta.split("/").pop(); return (window.DOCS_LOCALES||[]).indexOf(f)>=0?"docs/"+f:"https://sea-arcillas.es/wp-content/uploads/"+ruta; }
+P.publicaciones=function(){
+  function li(p){ return '<li><a href="'+docURL(p.u)+'" target="_blank" rel="noopener">'+esc(L(p))+'</a></li>'; }
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[4][1],U("pubE"),migaSEA())+'<div class="envoltorio pagina-cuerpo">'+
+   '<h2>'+U("glosarioPub")+'</h2><ul class="documentos">'+SEA.publicaciones.filter(function(p){return p.g==="glosario";}).map(li).join("")+'</ul><p><a class="boton claro" href="#glosario">'+U("nav.sociedad")[5][1]+'</a></p>'+
+   '<h2 style="margin-top:2.5rem">'+U("resumenes")+'</h2><ul class="documentos">'+SEA.publicaciones.filter(function(p){return p.g==="resumenes";}).map(li).join("")+'</ul>'+
+   '<h2 style="margin-top:2.5rem">'+U("guias")+'</h2><ul class="documentos">'+SEA.publicaciones.filter(function(p){return p.g==="guias";}).map(li).join("")+'</ul>'+
+   '<h2 style="margin-top:2.5rem">'+U("actividades")+'</h2><p>'+SEA.informes.map(function(a){ var ruta=((+a>=2016)?"2018/06/":"2018/01/")+"Activities-of-the-SEA-in-"+a+".pdf"; return '<a href="'+docURL(ruta)+'" target="_blank" rel="noopener" style="margin-right:.8rem">'+a+'</a>'; }).join("")+'</p>'+
+   '<h2 style="margin-top:2.5rem">'+U("interlab")+'</h2><p class="lectura">'+esc(L(SEA.interlab))+'</p></div>';
+};
+var gloLetra="", gloQ="";
+function sinAcentos(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase(); }
+P.glosario=function(){
+  var G=window.GLOSARIO||[], pdf=SEA.publicaciones[0];
+  var enlace='<a href="'+docURL(pdf.u)+'" target="_blank" rel="noopener">'+U("gloPdf")+'</a>';
+  if(!G.length){ main.innerHTML=cabezaPagina(U("nav.sociedad")[5][1],U("gloE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><p>'+U("gloPend")+'</p><p>'+enlace+'</p></div>'; return; }
+  var letras=[]; G.forEach(function(t){ var l=sinAcentos(t.t[0]).toUpperCase(); if(/[A-Z]/.test(l)&&letras.indexOf(l)<0) letras.push(l); }); letras.sort();
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[5][1],U("gloE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><input class="buscador" id="gq" type="search" placeholder="'+U("buscar")+'" aria-label="'+U("buscar")+'" value="'+esc(gloQ)+'"><div class="abecedario">'+letras.map(function(l){ return '<button data-l="'+l+'">'+l+'</button>'; }).join("")+'</div><div id="gres"></div><p style="margin-top:2rem">'+enlace+'</p></div>';
+  function pinta(){ var q=sinAcentos(gloQ.trim());
+    $$("[data-l]").forEach(function(b){ b.setAttribute("aria-pressed",!q&&b.getAttribute("data-l")===gloLetra); });
+    var r=G.filter(function(t){ if(q) return sinAcentos(t.t+" "+(t.en||"")).indexOf(q)>=0; return sinAcentos(t.t[0]).toUpperCase()===gloLetra; });
+    $("#gres").innerHTML=r.length?r.slice(0,300).map(function(t){ return '<div class="termino"><h4>'+esc(t.t)+(t.en?' <span class="en">('+esc(t.en)+')</span>':'')+'</h4><p>'+esc(t.d)+'</p></div>'; }).join(""):'<p>'+U("sinRes")+'</p>'; }
+  $("#gq").oninput=function(e){ gloQ=e.target.value; pinta(); };
+  $$("[data-l]").forEach(function(b){ b.onclick=function(){ gloLetra=b.getAttribute("data-l"); gloQ=""; $("#gq").value=""; pinta(); }; });
+  if(!gloLetra) gloLetra=letras[0]; pinta();
+};
+P.semblanzas=function(){
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[6][1],U("sembE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><div class="semblanzas">'+SEA_TEXTOS.semblanzas.map(function(s){ return '<a href="#semblanza/'+s.id+'"><img loading="lazy" src="'+seaImg(SEA.semblanzasFoto[s.id])+'" alt="" onerror="this.style.visibility=\'hidden\'"><h4>'+esc(L(s).n)+'</h4></a>'; }).join("")+'</div></div>';
+};
+P.semblanza=function(id){
+  var s=SEA_TEXTOS.semblanzas.filter(function(x){return x.id===id;})[0]; if(!s){ P.semblanzas(); return; }
+  main.innerHTML=cabezaPagina(esc(L(s).n),"",["semblanzas",U("nav.sociedad")[6][1]])+'<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);align-items:start"><img src="'+seaImg(SEA.semblanzasFoto[id])+'" alt="" onerror="this.remove()" style="filter:grayscale(1);border-radius:3px"><div class="texto-largo">'+L(s).t+'</div></div></div>';
+};
+P.socio=function(){
+  main.innerHTML=cabezaPagina(U("socioTit"),U("socioE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><ol class="lista-simple">'+U("socioPasos").map(function(p,i){ return '<li><b>'+(i+1)+'</b><span>'+esc(p)+'</span></li>'; }).join("")+'</ol><p style="margin-top:1.6rem"><a class="boton" href="'+SEA.inscripcion.pdf+'" target="_blank" rel="noopener">'+U("fichaPdf")+'</a> <a class="boton claro" href="'+SEA.inscripcion.word+'" target="_blank" rel="noopener">'+U("fichaWord")+'</a></p><h3 style="margin-top:2.5rem">'+U("contacto")+'</h3><p><a href="mailto:'+SEA.secretaria+'">'+SEA.secretaria+'</a><br><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a></p><p>'+esc(SEA.sede)+'</p></div>';
+};
+P.estatutos=function(){
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[7][1],U("estatutosE"),migaSEA())+'<div class="envoltorio pagina-cuerpo"><div class="texto-largo">'+L(SEA_TEXTOS.textos.estatutos)+'</div></div>';
+};
+
+/* ---------------- cabecera, pie y rutas ---------------- */
+function marcaSVG(){ return '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 14h48l-6 9H14z" fill="#6f97bd" stroke="#4b7398" stroke-width="1.5"/><rect x="8" y="25" width="48" height="11" rx="2" fill="#7fae7a" stroke="#57864f" stroke-width="1.5"/><path d="M14 38h36l6 9H8z" fill="#6f97bd" stroke="#4b7398" stroke-width="1.5"/></svg>'; }
+function cabecera(){
+  var c=$("#cabecera");
+  c.innerHTML='<div class="envoltorio"><a class="marca" href="#inicio">'+marcaSVG()+'<span><b>'+U("sea")+'</b><span>'+(lang==="es"?"Spanish Clay Society":"Sociedad Española de Arcillas")+'</span></span></a>'+
+   '<nav class="menu" id="menu" aria-label="'+U("menu")+'">'+[["arcillas",U("arcillas")],["sociedad",U("sociedad")]].map(function(g){ return '<div class="grupo-menu"><button aria-expanded="false">'+g[1]+'</button><div class="desplegable">'+U("nav."+g[0]).map(function(x){ return '<a href="#'+x[0]+'">'+x[1]+'</a>'; }).join("")+'</div></div>'; }).join("")+
+   '<a class="enlace-menu" href="#socio">'+U("hazte")+'</a></nav>'+
+   '<div class="idioma" role="group" aria-label="Idioma / Language"><button data-lang="es" aria-pressed="'+(lang==="es")+'">ES</button><button data-lang="en" aria-pressed="'+(lang==="en")+'">EN</button></div><button id="abrirMenu" aria-expanded="false" aria-controls="menu">'+U("menu")+'</button></div>';
+  $$(".grupo-menu>button",c).forEach(function(b){ b.onclick=function(e){ e.stopPropagation(); var g=b.parentNode, ab=!g.classList.contains("abierto"); $$(".grupo-menu",c).forEach(function(x){ x.classList.remove("abierto"); x.firstChild.setAttribute("aria-expanded","false"); }); if(ab){ g.classList.add("abierto"); b.setAttribute("aria-expanded","true"); } }; });
+  $("#abrirMenu").onclick=function(){ var m=$("#menu"), ab=!m.classList.contains("abierto"); m.classList.toggle("abierto",ab); this.setAttribute("aria-expanded",ab); this.textContent=ab?U("cerrar"):U("menu"); };
+  $$("[data-lang]",c).forEach(function(b){ b.onclick=function(){ lang=b.getAttribute("data-lang"); try{ localStorage.setItem("sea-lang",lang); }catch(e){} cabecera(); pie(); ir(); }; });
 }
-function textosFijos(){
+document.addEventListener("click",function(e){
+  if(!e.target.closest(".grupo-menu")) $$(".grupo-menu").forEach(function(x){ x.classList.remove("abierto"); });
+  var v=e.target.closest("[data-ver]"); if(v){ verImagen(v.getAttribute("data-ver"),v.getAttribute("data-cap")); }
+});
+function pie(){
+  $("#pie").innerHTML='<div class="estratos sobre-oscuro"></div><div class="envoltorio"><div><h4>'+U("sea")+'</h4><p>'+U("sobreSEA")+'</p><p>'+esc(SEA.sede)+'<br><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a></p><p class="pequeno" style="color:#8f897f">'+U("creditos")+'. '+U("credT")+'</p></div><div><h4>'+U("arcillas")+'</h4><ul>'+U("nav.arcillas").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'</ul></div><div><h4>'+U("sociedad")+'</h4><ul>'+U("nav.sociedad").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'<li><a href="#socio">'+U("hazte")+'</a></li></ul><p class="pequeno" style="margin-top:1rem;color:#8f897f">'+U("pie")+'</p></div></div>';
+}
+function ir(){
+  var h=(location.hash||"#inicio").slice(1).split("?")[0], partes=h.split("/"), id=partes[0], arg=partes[1];
+  if(!P[id]) id="inicio";
+  clearInterval(heroeTimer); limpiar3D();
+  if(visor&&visor.open) visor.close();
+  var m=$("#menu"); if(m){ m.classList.remove("abierto"); var b=$("#abrirMenu"); if(b){ b.setAttribute("aria-expanded","false"); b.textContent=U("menu"); } }
+  $$(".grupo-menu").forEach(function(x){ x.classList.remove("abierto"); });
+  P[id](arg);
+  $$("[data-ir]",main).forEach(function(b){ if(b.tagName!=="TR") b.onclick=function(){ location.hash=b.getAttribute("data-ir"); }; });
+  $$(".desplegable a").forEach(function(a){ a.setAttribute("aria-current",a.getAttribute("href")==="#"+id?"page":"false"); });
+  window.scrollTo(0,0);
+  var tit=$("h1",main); document.title=(id==="inicio"?"":(tit?tit.textContent+" | ":""))+U("sea");
   document.documentElement.lang=lang;
-  $("#marca").innerHTML=U("titulo")+'<small>'+U("sea")+'</small>';
-  $("#volver").setAttribute("aria-label",U("volver")); $("#volver").title=U("volver");
-  $$(".idiomas button").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang); });
-  $("#pie").textContent=U("pie");
 }
 document.addEventListener("DOMContentLoaded",function(){
-  main=$("main");
-  $("#marca").onclick=function(){ location.hash="#inicio"; };
-  $("#volver").onclick=function(){ if(history.length>1) history.back(); else location.hash="#inicio"; };
-  $$(".idiomas button").forEach(function(b){ b.onclick=function(){ lang=b.getAttribute("data-lang"); try{localStorage.setItem("arcillas-lang",lang);}catch(e){} textosFijos(); ir(); }; });
-  window.addEventListener("hashchange",ir);
-  textosFijos(); ir();
-  if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js").catch(function(){});
+  main=$("main"); cabecera(); pie(); window.addEventListener("hashchange",ir); ir();
+  if("serviceWorker" in navigator&&location.protocol==="https:") navigator.serviceWorker.register("sw.js").catch(function(){});
 });
 })();
