@@ -1,3 +1,6 @@
+/* Variante tipográfica para comparar: ?tipo=3 (amplia) o ?tipo=1 (editorial, por defecto); se recuerda en este navegador. */
+(function(){ try{ var t=(location.search.match(/[?&]tipo=(\d)/)||[])[1]; if(t) localStorage.setItem("sea-tipo",t); else t=localStorage.getItem("sea-tipo");
+  if(t==="3") document.documentElement.classList.add("tipo3"); }catch(e){} })();
 /* Sociedad Española de Arcillas · web */
 (function(){
 "use strict";
@@ -372,7 +375,8 @@ function pintar(){ var lz=$("#lienzo"); if(!lz) return;
 /* ---- minerales ---- */
 P.minerales=function(){
   var filas=""; GRUPOS.forEach(function(g){ var ms=MINERALES.filter(function(m){return m.grupo===g.id;}); if(!ms.length) return;
-    filas+='<tr class="grupo-fila"><td colspan="4">'+esc(L(g))+'</td></tr>'+ms.map(function(m){ var im=primeraImg(m.id);
+    var gt=L(g), gi=gt.indexOf(" ("), gn=gi>0?gt.slice(0,gi):gt, gs=gi>0?gt.slice(gi+2,-1):"";
+    filas+='<tr class="grupo-fila"><td colspan="4"><span class="g-nom">'+esc(gn)+'</span>'+(gs?'<span class="g-nota">'+esc(num(gs))+'</span>':'')+'</td></tr>'+ms.map(function(m){ var im=primeraImg(m.id);
       return '<tr class="fila" data-ir="#mineral/'+m.id+'"><td style="width:66px"><div class="mini"'+(im?'':' style="background:#fff;padding:3px"')+'>'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':dibujoMineral(m))+'</div></td><td class="nombre"><a href="#mineral/'+m.id+'">'+esc(L(m).n)+'</a></td><td>'+esc(dTxt(m))+'</td><td>'+esc(L(m).r)+'</td></tr>'; }).join(""); });
   main.innerHTML=cabezaPagina(U("nav.arcillas")[2][1],lang==="es"?"Los grupos de minerales de la arcilla, ordenados según la clasificación de la AIPEA, y sus especies más importantes.":"The clay mineral groups, arranged according to the AIPEA classification, and their most important species.",migaArcillas())+
    '<div class="envoltorio pagina-cuerpo" style="overflow-x:auto"><table class="tabla-minerales"><thead><tr>'+U("tablaCols").map(function(c){return '<th>'+c+'</th>';}).join("")+'</tr></thead><tbody>'+filas+'</tbody></table>'+tablaAIPEA()+'</div>';
