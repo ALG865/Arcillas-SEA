@@ -1,0 +1,8 @@
+total 12808
+drwxr-xr-x 3 runner runner    4096 Nov 18 15:59 .
+drwxr-xr-x 3 runner runner    4096 Nov 18 15:59 ..
+drwxr-xr-x 6 runner runner    4096 Nov 18 15:59 .git
+-rw-r--r-- 1 runner runner 6351861 Nov 18 15:59 Libro-de-resúmenes-SEA-2021.pdf
+-rw-r--r-- 1 runner runner  396152 Nov 18 15:59 MSuárez.png
+-rw-r--r-- 1 runner runner 6351861 Nov 18 15:59 XXVII-Reunión-de-la-SEA_Madrid-2021_Libro-de-resúmenes-SEA-2021.pdf
+-rw-r--r-- 1 runner runner       0 Nov 18 15:59 lista.txt
