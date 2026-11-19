@@ -83,6 +83,11 @@ window.MINERALES = [
    t:"Tiene la misma lámina 1:1 y la misma composición que la caolinita, pero las láminas se apilan de otra manera: la posición vacante de la capa octaédrica alterna de una lámina a la siguiente, y la celda unidad contiene dos láminas. Se forma a temperaturas más altas que la caolinita, en la diagénesis de enterramiento profundo de areniscas y en la alteración hidrotermal, y suele dar cristales más gruesos y bien formados."},
   en:{n:"Dickite",r:"The kaolinite of hotter rocks.",
    t:"It has the same 1:1 layer and the same composition as kaolinite, but its layers are stacked differently: the vacant site of the octahedral sheet alternates from one layer to the next, and the unit cell contains two layers. It forms at higher temperatures than kaolinite, during deep burial diagenesis of sandstones and hydrothermal alteration, and usually gives thicker, well-formed crystals."}},
+ {id:"nacrita",grupo:"1:1",lam:{t:"TO",oct:"di"},formula:"Al₂Si₂O₅(OH)₄",d:"7,2 Å",hinch:0,
+  es:{n:"Nacrita",r:"El polimorfo más raro del caolín.",
+   t:"Tercer polimorfo del caolín, junto a la caolinita y la dickita, con un apilamiento distinto de las láminas 1:1. Es el menos frecuente de los tres y aparece sobre todo en filones y en rocas con alteración hidrotermal. Su nombre alude a su brillo nacarado."},
+  en:{n:"Nacrite",r:"The rarest kaolin polymorph.",
+   t:"The third kaolin polymorph, alongside kaolinite and dickite, with a different stacking of the 1:1 layers. It is the least common of the three and occurs mainly in veins and in hydrothermally altered rocks. Its name refers to its pearly lustre."}},
  {id:"halloysita",grupo:"1:1",lam:{t:"TO",oct:"di",agua:true},formula:"Al₂Si₂O₅(OH)₄·2H₂O",d:"10 Å; 7 Å deshidratada",den:"10 Å; 7 Å dehydrated",cic:[5,40],se:[20,60],hinch:0,plast:2,
   es:{n:"Halloysita",r:"La lámina del caolín enrollada en nanotubos.",
    t:"Tiene la misma lámina 1:1 que la caolinita, pero en su forma hidratada, la halloysita(10 Å), lleva una monocapa de moléculas de agua en la interlámina, que pierde con facilidad y de forma irreversible: halloysita(7 Å). Las láminas se curvan y suelen enrollarse en tubos huecos de pocas decenas de nanómetros de diámetro, a veces en esferas. Sus nanotubos se estudian para liberar fármacos de forma controlada y reforzar polímeros."},
@@ -284,6 +289,7 @@ window.HITOS = [
  window.ESPECIALISTAS = {
  caolinita:{lam:"1:1",x:"≈ 0",grupo:SC,oct:DI,inter:NADA,nota:KAOL},
  dickita:{lam:"1:1",x:"≈ 0",grupo:SC,oct:DI,inter:NADA,nota:KAOL},
+ nacrita:{lam:"1:1",x:"≈ 0",grupo:SC,oct:DI,inter:NADA,nota:KAOL},
  halloysita:{lam:"1:1",x:"≈ 0",grupo:SC,oct:DI,inter:{es:"H₂O",en:"H₂O"},nota:{es:"Se escribe halloysita(10 Å) o halloysita(7 Å) según el agua interlaminar; el término «endellita» está desechado. La halloysita plana está en la tabla de filosilicatos planos; la tubular o esferoidal, entre los filosilicatos no planos de estructura enrollada.",en:"Written halloysite(10 Å) or halloysite(7 Å) depending on interlayer water; the term “endellite” is discarded. Planar halloysite belongs with the planar phyllosilicates; tubular or spheroidal halloysite, with the non-planar rolled structures."}},
  lizardita:{lam:"1:1",x:"≈ 0",grupo:SC,oct:TRI,inter:NADA,nota:SERP},
  crisotilo:{lam:"1:1",x:"≈ 0",grupo:SC,oct:TRI,inter:NINGUNO,nota:{es:"Filosilicato no plano de estructura enrollada, de afinidad tradicional serpentina (tabla 3 de la AIPEA). La pecoraíta es un clinocrisotilo rico en Ni.",en:"A non-planar phyllosilicate with a rolled structure, traditionally affiliated with serpentine (AIPEA Table 3). Pecoraite is a Ni-rich clinochrysotile."}},
@@ -350,7 +356,7 @@ window.HISTORIAS = [
  window.CLASIF_PLANOS = [
   {lam:"1:1",inter:L2("Ninguno o solo H₂O (x ≈ 0)","None or H₂O only (x ≈ 0)"),g:L2("Serpentina-caolín","Serpentine-kaolin"),sp:[
     [TRI,[["lizardita","lizardite","lizardita"],["berthierina","berthierine"],["amesita","amesite"],["cronstedtita","cronstedtite"],["nepouita","nepouite"],["kellyíta","kellyite"],["fraipontita","fraipontite"],["brindleyíta","brindleyite"]]],
-    [DI,[["caolinita","kaolinite","caolinita"],["dickita","dickite","dickita"],["nacrita","nacrite"],["halloysita (plana)","halloysite (planar)","halloysita"]]],
+    [DI,[["caolinita","kaolinite","caolinita"],["dickita","dickite","dickita"],["nacrita","nacrite","nacrita"],["halloysita (plana)","halloysite (planar)","halloysita"]]],
     [DT,[["odinita","odinite"]]]]},
   {lam:"2:1",inter:L2("Ninguno (x ≈ 0)","None (x ≈ 0)"),g:L2("Talco-pirofilita","Talc-pyrophyllite"),sp:[
     [TRI,[["talco","talc","talco"],["willemseíta","willemseite"],["kerolita","kerolite"],["pimelita","pimelite"]]],
