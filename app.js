@@ -10,13 +10,13 @@ if(/[?&]lang=es/.test(location.search)) lang="es";
 var UI={
 es:{
  sea:"Sociedad Española de Arcillas", corto:"SEA", arcillas:"Las arcillas", sociedad:"La Sociedad", hazte:"Hazte socio", menu:"Menú", cerrar:"Cerrar", inicio:"Inicio",
- nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"]],
+ nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["afines","Materiales afines"]],
    sociedad:[["noticias","Noticias y convocatorias"],["sociedad","Quiénes somos"],["junta","Junta directiva"],["premios","Premios y ayudas"],["reuniones","Reuniones científicas"],["publicaciones","Publicaciones"],["glosario","Glosario"],["semblanzas","Semblanzas"],["estatutos","Estatutos"],["pubsocios","Publicaciones científicas recientes de los socios"]] },
  heroeT:"El mundo de las arcillas", heroeE:"Silicatos formados por láminas de un nanómetro que, con el agua, se vuelven plásticos y, al cocerse, se endurecen. Su diminuto tamaño les da una superficie enorme: hinchan, retienen agua e intercambian iones. Están en el suelo que pisamos, en la cerámica, el papel, los fármacos y las barreras que aíslan los residuos radiactivos, y en buena parte de la historia humana.",
  explorar:"Explorar las arcillas", conocer:"Conocer la SEA",
  lamTit:"Una lámina, dos capas", lamTxt:"Casi todos los minerales de la arcilla están hechos de dos piezas: una capa de tetraedros de silicio y oxígeno, en azul, y una capa de octaedros de aluminio o magnesio, en verde. Según cómo se apilan y qué queda entre las láminas, hinchan, intercambian cationes o se convierten en fibras.", girar:"Arrastra para girar el modelo", verEstructura:"Construir una lámina",
  histTit:"Historias de arcilla", histE:"Del centro de la península a Marte, pasando por los murales mayas.",
- indiceTit:"Explorar", indice:{ "que-es":"Arcilla como tamaño y como mineral", estructura:"Modelos 3D de las láminas", minerales:"Clasificación de la AIPEA y fichas de cada mineral", propiedades:"Intercambio, hinchamiento y superficie", aplicaciones:"De la porcelana a las barreras de residuos", yacimientos:"España y el mundo", estudio:"Difracción de rayos X, infrarrojo, análisis térmico y microscopía", galeria:"Imágenes de microscopio electrónico" },
+ indiceTit:"Explorar", indice:{ afines:"Arcillas aniónicas, zeolitas, organoarcillas, arcillas pilareadas y otros", "que-es":"Arcilla como tamaño y como mineral", estructura:"Modelos 3D de las láminas", minerales:"Clasificación de la AIPEA y fichas de cada mineral", propiedades:"Intercambio, hinchamiento y superficie", aplicaciones:"De la porcelana a las barreras de residuos", yacimientos:"España y el mundo", estudio:"Difracción de rayos X, infrarrojo, análisis térmico y microscopía", galeria:"Imágenes de microscopio electrónico" },
  convTit:"Convocatorias y citas", plazo:"Plazo hasta el", verBases:"Ver las bases",
  clayTit:"CLAY 2027 en Madrid", clayTxt:"La conferencia internacional de arcillas de la AIPEA se celebra en Madrid del 20 al 26 de junio de 2027, organizada con la SEA.", clayWeb:"Web del congreso",
  galTit:"Galería", galE:"Imágenes de microscopio electrónico cedidas por socios de la SEA y del archivo «Images of Clay».", verGaleria:"Ver toda la galería",
@@ -73,13 +73,13 @@ es:{
 },
 en:{
  sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
- nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"]],
+ nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["afines","Related materials"]],
    sociedad:[["noticias","News and calls"],["sociedad","About us"],["junta","Board"],["premios","Awards and grants"],["reuniones","Scientific meetings"],["publicaciones","Publications"],["glosario","Glossary"],["semblanzas","Profiles"],["estatutos","Statutes"],["pubsocios","Recent scientific publications by members"]] },
  heroeT:"The world of clays", heroeE:"Silicates built from layers one nanometre thick that turn plastic with water and harden when fired. Their tiny size gives them an enormous surface: they swell, hold water and exchange ions. They are in the soil beneath our feet, in ceramics, paper, medicines and the barriers that isolate radioactive waste, and in much of human history.",
  explorar:"Explore clays", conocer:"About the SEA",
  lamTit:"One layer, two sheets", lamTxt:"Almost every clay mineral is built from two pieces: a sheet of silicon–oxygen tetrahedra, in blue, and a sheet of aluminium or magnesium octahedra, in green. How they stack, and what sits between the layers, decides whether they swell, exchange cations or become fibres.", girar:"Drag to rotate the model", verEstructura:"Build a layer",
  histTit:"Clay stories", histE:"From the heart of Spain to Mars, by way of Maya murals.",
- indiceTit:"Explore", indice:{ "que-es":"Clay as a size and as a mineral", estructura:"3D models of the layers", minerales:"AIPEA classification and mineral cards", propiedades:"Exchange, swelling and surface", aplicaciones:"From porcelain to waste barriers", yacimientos:"Spain and the world", estudio:"X-ray diffraction, infrared, thermal analysis and microscopy", galeria:"Electron microscope images" },
+ indiceTit:"Explore", indice:{ afines:"Anionic clays, zeolites, organoclays, pillared clays and more", "que-es":"Clay as a size and as a mineral", estructura:"3D models of the layers", minerales:"AIPEA classification and mineral cards", propiedades:"Exchange, swelling and surface", aplicaciones:"From porcelain to waste barriers", yacimientos:"Spain and the world", estudio:"X-ray diffraction, infrared, thermal analysis and microscopy", galeria:"Electron microscope images" },
  convTit:"Calls and events", plazo:"Deadline", verBases:"Read the rules",
  clayTit:"CLAY 2027 in Madrid", clayTxt:"AIPEA’s International Clay Conference takes place in Madrid on 20–26 June 2027, organised with the SEA.", clayWeb:"Conference website",
  galTit:"Gallery", galE:"Electron microscope images contributed by SEA members and from the “Images of Clay” archive.", verGaleria:"See the whole gallery",
@@ -503,6 +503,10 @@ function cursorDRX(){ var sv=$("#drxsvg"); if(!sv) return; var g=$("#cursor",sv)
 
 /* ---- galería ---- */
 var galM="", galF="";
+P.afines=function(){ var es=lang==="es", A=window.AFINES||[];
+  var ent=es?"Materiales que no son minerales de la arcilla o que se obtienen a partir de ellos, con aplicaciones actuales y grupos españoles que trabajan en ellos.":"Materials that are not clay minerals or are made from them, with current uses and Spanish groups working on them.";
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[8][1],ent,migaArcillas())+'<div class="envoltorio pagina-cuerpo">'+A.map(function(g,gi){ return '<h2'+(gi?' style="margin-top:2.5rem"':'')+'>'+esc(g.g[lang])+'</h2><p>'+esc(g.i[lang])+'</p><div class="afines">'+g.items.map(function(m){ var x=m[lang];
+    return '<div class="afin"><h3>'+esc(x.n)+'</h3><p>'+esc(x.t)+'</p><p><b>'+(es?"Aplicaciones: ":"Uses: ")+'</b>'+esc(x.u)+'</p>'+(m.r.length?'<details class="aport"><summary>'+U("aportT")+' ('+m.r.length+')</summary><ul>'+m.r.map(function(z){ return '<li>'+esc(es?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.d+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.j)+'</i>. <span class="citas">'+z.c.toLocaleString(es?"es-ES":"en-GB")+' '+(es?"citas":"citations")+'</span></li>'; }).join("")+'</ul></details>':'')+'</div>'; }).join("")+'</div>'; }).join("")+'</div>'; };
 P.galeria=function(){
   var todas=imgSEA().concat([].concat.apply([],Object.keys(SEM).filter(function(k){return minById(k);}).map(imgIOC)));
   var mins=[]; todas.forEach(function(i){ if(mins.indexOf(i.m)<0) mins.push(i.m); });
