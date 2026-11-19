@@ -9,13 +9,18 @@ G={
 "alteracion":["hydrothermal alteration clay minerals","bentonite genesis","kaolin deposit genesis","sepiolite genesis","palygorskite genesis"],
 "suelos":["soil clay mineralogy","weathering clay minerals"],
 "geoarqueologia":["archaeological ceramics clay provenance","archaeometry clay"],
-"marte":["Mars clay minerals","phyllosilicates Mars"]}
+"marte":["Mars clay minerals","phyllosilicates Mars"],
+"clasicos":["sepiolite","palygorskite","montmorillonite","kaolinite","illite","smectite","vermiculite","clay minerals"]}
 src=open("tools/aportaciones.py",encoding="utf-8").read()
 Q=eval(src[src.index("Q={")+2:src.index("\nout={}")])
 def get(q,orden,extra):
     url="https://api.openalex.org/works?per-page=50&sort="+orden+"&mailto=sea.arcillas.web@gmail.com&filter="+urllib.parse.quote(f"institutions.country_code:ES,title_and_abstract.search:{q}"+extra)
-    try: return json.load(urllib.request.urlopen(url,timeout=60))["results"]
-    except Exception as e: print("ERR",q,e); return []
+    for intento in range(6):
+        try:
+            time.sleep(1.2); return json.load(urllib.request.urlopen(url,timeout=60))["results"]
+        except Exception as e:
+            print("ERR",q,e); time.sleep(10*(intento+1))
+    return []
 def reg(w):
     src=((w.get("primary_location") or {}).get("source") or {}).get("display_name","") or ""
     au=[]
@@ -43,4 +48,5 @@ for k,qs in Q.items():
         time.sleep(0.2)
     out["pioneros_aplicaciones"][k]=sorted(p.values(),key=lambda x:(x["y"] or 0))
     print("pion",k,len(p))
+out["fecha"]=time.strftime("%Y-%m-%d %H:%M")
 json.dump(out,open("tools/geologia-candidatos.json","w"),ensure_ascii=False,indent=0)
