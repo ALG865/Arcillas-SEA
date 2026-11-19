@@ -15,11 +15,11 @@ src=open("tools/aportaciones.py",encoding="utf-8").read()
 Q=eval(src[src.index("Q={")+2:src.index("\nout={}")])
 def get(q,orden,extra):
     url="https://api.openalex.org/works?per-page=50&sort="+orden+"&mailto=sea.arcillas.web@gmail.com&filter="+urllib.parse.quote(f"institutions.country_code:ES,title_and_abstract.search:{q}"+extra)
-    for intento in range(6):
+    for intento in range(4):
         try:
-            time.sleep(1.2); return json.load(urllib.request.urlopen(url,timeout=60))["results"]
+            time.sleep(3); return json.load(urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"SEA-web (mailto:sea.arcillas.web@gmail.com)"}),timeout=60))["results"]
         except Exception as e:
-            print("ERR",q,e); time.sleep(10*(intento+1))
+            print("ERR",q,e); time.sleep(30*(intento+1))
     return []
 def reg(w):
     src=((w.get("primary_location") or {}).get("source") or {}).get("display_name","") or ""
@@ -42,7 +42,7 @@ for k,qs in G.items():
     print(k,len(v),len(p))
 for k,qs in Q.items():
     p={}
-    for q in qs:
+    for q in qs[:2]:
         for w in get(q,"publication_date",",to_publication_date:1999-12-31,cited_by_count:>9"):
             if w.get("doi"): p.setdefault(w["doi"],reg(w))
         time.sleep(0.2)
