@@ -1,4 +1,4 @@
-"""Publicaciones recientes de los socios de la SEA (artículos en revistas, últimos 3 años) desde OpenAlex.
+"""Publicaciones recientes de los socios de la SEA (artículos en revistas, año actual y anterior) desde OpenAlex.
 Lee tools/socios.json y escribe publicaciones.js. Se ejecuta en GitHub Actions."""
 import json, urllib.request, urllib.parse, datetime, sys, unicodedata
 MAIL="sea.arcillas.web@gmail.com"
@@ -7,7 +7,7 @@ def get(url):
     with urllib.request.urlopen(url+sep+"mailto="+MAIL, timeout=60) as r: return json.load(r)
 def norm(s): return unicodedata.normalize("NFKD",s or "").encode("ascii","ignore").decode().lower()
 socios=json.load(open("tools/socios.json",encoding="utf-8"))
-desde=f"{datetime.date.today().year-3}-01-01"
+desde=f"{datetime.date.today().year-1}-01-01"
 obras={}
 idsocio={}
 for s in socios:

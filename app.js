@@ -534,12 +534,12 @@ function tarjetaNoticia(n){
   return '<div class="convocatoria"><span class="fecha">'+esc(U("tipos")[n.tipo]||n.tipo)+'. '+esc(meta)+'</span><h3>'+esc(L(n).n)+'</h3>'+(n.img?'<img src="'+esc(n.img)+'" alt="" loading="lazy" style="margin:.4rem 0 .8rem;border-radius:3px;max-height:220px;object-fit:cover;width:100%">':'')+'<p>'+esc(L(n).t)+'</p>'+(n.url?'<a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+U("masInfo")+'</a>':'')+'</div>';
 }
 P.pubsocios=function(){ var D=window.PUBLICACIONES_SOCIOS||{obras:[]}, es=lang==="es";
-  var entrada=es?"Artículos recientes de los socios de la SEA en revistas científicas, desde "+D.desde+". La lista se actualiza automáticamente cada mes a partir de OpenAlex.":"Recent journal articles by SEA members since "+D.desde+". The list is updated automatically every month from OpenAlex.";
-  var anios={}; D.obras.forEach(function(o){ (anios[o.y]=anios[o.y]||[]).push(o); });
+  var entrada=es?"Artículos de los socios de la SEA en revistas científicas publicados en "+(new Date().getFullYear()-1)+" y "+new Date().getFullYear()+". La lista se actualiza automáticamente cada mes a partir de OpenAlex.":"Journal articles by SEA members published in "+(new Date().getFullYear()-1)+" and "+new Date().getFullYear()+". The list is updated automatically every month from OpenAlex.";
+  var y0=new Date().getFullYear()-1, anios={}; D.obras.filter(function(o){ return o.y>=y0; }).forEach(function(o){ (anios[o.y]=anios[o.y]||[]).push(o); });
   var h=Object.keys(anios).sort().reverse().map(function(y){ return '<h2 style="margin-top:2rem">'+y+'</h2><ul class="lista-pub">'+anios[y].map(function(o){
-    var au=o.a.join(", ")+(o.na>o.a.length?" et al.":""), ref='<i>'+esc(o.r)+'</i>'+(o.v?' '+esc(o.v)+(o.n?' ('+esc(o.n)+')':''):'')+(o.p?', '+esc(o.p):'')+' ('+o.y+')';
+    var fal=o.s.filter(function(n){ return o.a.indexOf(n)<0; }), au=o.a.join(", ")+(fal.length?", … "+fal.join(", "):"")+(o.na>o.a.length?" et al.":""), ref='<i>'+esc(o.r)+'</i>'+(o.v?' '+esc(o.v)+(o.n?' ('+esc(o.n)+')':''):'')+(o.p?', '+esc(o.p):'')+' ('+o.y+')';
     var d=(o.doi||"").replace(/^https?:\/\/doi.org\//,"");
-    return '<li><a href="'+esc(o.doi||"#")+'" target="_blank" rel="noopener">'+esc(o.t)+'</a><div class="pub-meta">'+esc(au)+'. '+ref+'.'+(d?' DOI: <a class="doi" href="https://doi.org/'+esc(d)+'" target="_blank" rel="noopener">'+esc(d)+'</a>':'')+'</div><div class="pub-socio">'+esc(o.s.join(", "))+'</div></li>'; }).join("")+'</ul>'; }).join("");
+    return '<li><a href="'+esc(o.doi||"#")+'" target="_blank" rel="noopener">'+esc(o.t)+'</a><div class="pub-meta">'+esc(au)+'. '+ref+'.'+(d?' DOI: <a class="doi" href="https://doi.org/'+esc(d)+'" target="_blank" rel="noopener">'+esc(d)+'</a>':'')+'</div></li>'; }).join("")+'</ul>'; }).join("");
   main.innerHTML=cabezaPagina(U("nav.sociedad")[9][1],entrada,migaSEA())+'<div class="envoltorio pagina-cuerpo">'+h+'<p class="pequeno" style="margin-top:2rem">'+(es?"Actualizado el ":"Updated ")+esc(D.actualizado||"")+'. '+(es?"Fuente: OpenAlex. Solo artículos en revistas.":"Source: OpenAlex. Journal articles only.")+'</p></div>'; };
 P.noticias=function(){
   var N=window.NOTICIAS||[], vig=N.filter(vigente), resto=N.filter(function(n){ return !vigente(n); });
