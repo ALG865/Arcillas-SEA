@@ -366,3 +366,11 @@ details.aport{margin-top:.5rem;font-size:var(--f-xs)}
 details.aport summary{cursor:pointer;font-weight:500}
 details.aport ul{margin:.4rem 0 0;padding-left:1.1rem}
 details.aport li{margin:.25rem 0;line-height:1.4}
+
+.tn-grupo{margin:2rem 0 .75rem;font-size:var(--f-l)}
+.tn{display:grid;grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));gap:1rem 2rem}
+.tn-it{padding:.9rem 0;border-top:1px solid var(--sepiolita2)}
+.tn-it h4{margin:0 0 .35rem;font-size:var(--f-m,1.05rem)}
+.tn-it p{margin:0 0 .4rem}
+.tn-infra{margin-top:2rem}
+.citas{color:var(--gris,#6b625a);white-space:nowrap}
