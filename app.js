@@ -201,7 +201,7 @@ function svgLaminas(cfg,opt){ opt=opt||{}; var w=opt.w||340,n=9,y=14,s="",d0=nul
     if(cfg.seq==="TOT"){ var t2=capaT(y,w,false,n); s+=t2.s; y+=t2.h; }
     if(r<reps-1){ var ic=interCapa(y,w,Array.isArray(cfg.inter)?cfg.inter[r%cfg.inter.length]:cfg.inter); s+=ic.s; y+=ic.h; d1=y; } }
   var H=y+14,fl="";
-  if(reps>1&&opt.d){ var x=w+14; fl='<line x1="'+x+'" y1="'+d0+'" x2="'+x+'" y2="'+d1+'" stroke="'+C.txt+'" stroke-width="1.5" marker-start="url(#fl)" marker-end="url(#fl)"/><text x="'+(x+6)+'" y="'+((d0+d1)/2+5)+'" font-size="15" font-family="Spectral,Georgia,serif" fill="'+C.txt+'">'+esc(opt.d)+'</text>'; }
+  if(reps>1&&opt.d){ var x=w+14; fl='<line x1="'+x+'" y1="'+d0+'" x2="'+x+'" y2="'+d1+'" stroke="'+C.txt+'" stroke-width="1.5" marker-start="url(#fl)" marker-end="url(#fl)"/><text x="'+(x+6)+'" y="'+((d0+d1)/2+5)+'" font-size="15" font-family="Instrument Sans,Arial,sans-serif" fill="'+C.txt+'">'+esc(opt.d)+'</text>'; }
   return '<svg viewBox="0 0 '+(w+(opt.d?90:0))+' '+H+'" role="img" aria-label="'+esc(opt.alt||"")+'"><defs><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="'+C.txt+'"/></marker></defs>'+s+fl+'</svg>'; }
 function svgFibra(tipo){ var w=360,h=240,s="",bw=tipo==="pali"?44:62,bh=46,gap=tipo==="pali"?18:24;
   for(var row=0;row<4;row++){ var off=(row%2)*((bw+gap)/2),y=12+row*(bh+8);
@@ -386,7 +386,7 @@ P.mineral=function(id){
 var propSel="cic", PROP_MIN=["caolinita","halloysita","illita","montmorillonita","saponita","vermiculita","clorita","sepiolita","palygorskita"];
 P.propiedades=function(){
   var ks=["cic","se","hinch","plast"];
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[3][1],U("propE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros">'+ks.map(function(k){ return '<button class="filtro" data-p="'+k+'">'+U("props."+k)+'</button>'; }).join("")+'</div><p id="ptxt" class="lectura"></p><div id="barras" style="max-width:56rem"></div><div id="pmas" class="lectura" style="margin-top:1.6rem"></div>'+
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[3][1],U("propE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros">'+ks.map(function(k){ return '<button class="filtro" data-p="'+k+'">'+U("props."+k)+'</button>'; }).join("")+'</div><p id="ptxt" class="lectura"></p><div id="barras" style=""></div><div id="pmas" class="lectura" style="margin-top:1.6rem"></div>'+
    '<div class="mosaico" style="margin-top:2rem">'+imgSEA("estevensita").slice(0,1).concat(imgSEA("montmorillonita").slice(2,3),imgIOC("montmorillonita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div></div>';
   function pinta(){ $$("[data-p]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-p")===propSel); }); $("#ptxt").textContent=U("propTxt."+propSel); $("#pmas").innerHTML=L(PROP_TXT[propSel]).map(function(x){ return '<p>'+esc(x)+'</p>'; }).join("");
     var max=propSel==="cic"?200:(propSel==="se"?800:4);
