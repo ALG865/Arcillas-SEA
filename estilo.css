@@ -375,3 +375,4 @@ details.aport li{margin:.25rem 0;line-height:1.4}
 .tn-infra{margin-top:2rem}
 .citas{color:var(--gris,#6b625a);white-space:nowrap}
 .infra{padding-left:1.1rem;margin:.3rem 0 0}.infra li{margin:.35rem 0}
+sup,sub{line-height:0}
