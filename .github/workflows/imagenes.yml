@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: publicar
+  group: imagenes
   cancel-in-progress: true
 
 jobs:
@@ -48,4 +48,4 @@ jobs:
             git commit -m "Imágenes de microscopio de «Images of Clay»"
             git pull --rebase origin main && git push origin HEAD:main
           fi
-          git push --force origin HEAD:gh-pages
+          git fetch -q origin main && git push --force origin origin/main:gh-pages

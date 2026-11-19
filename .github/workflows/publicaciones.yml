@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths: ["tools/socios.json","tools/publicaciones.py",".github/workflows/publicaciones.yml"]
 concurrency:
-  group: publicar
+  group: publicaciones
   cancel-in-progress: false
 permissions:
   contents: write
@@ -26,4 +26,4 @@ jobs:
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git commit -q -m "Publicaciones de los socios actualizadas"
           git pull --rebase -q origin main && git push origin HEAD:main
-          git push --force origin HEAD:gh-pages
+          git fetch -q origin main && git push --force origin origin/main:gh-pages
