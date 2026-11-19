@@ -338,3 +338,19 @@ footer li{margin:.3rem 0}
 .aviso-clay p{margin:0;max-width:44rem;color:#fbeee6}
 .aviso-clay .fecha{font-size:var(--f-s);color:#fbeee6}
 .aviso-clay .boton{background:#fff;color:var(--terracota);border-color:#fff;white-space:nowrap}
+
+/* Aplicaciones: rejilla compacta */
+.aplic{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,30rem),1fr));gap:0 2.5rem}
+.apl{display:grid;grid-template-columns:56px 1fr;gap:.9rem;padding:.8rem 0;border-bottom:1px solid var(--sepiolita)}
+.apl img,.apl>span{width:56px;height:56px;border-radius:3px;object-fit:cover;background:#1c1d1f;margin-top:.2rem}
+.apl h3{font-size:var(--f-l);margin:0 0 .2rem}
+.apl p{margin:0;font-size:var(--f-s);line-height:1.5}
+.apl .apl-min{margin-top:.25rem;font-size:var(--f-xs)}
+
+/* Mapa del mundo */
+svg.mundo{width:100%;height:auto;display:block;margin-top:.8rem}
+.pmundo circle{cursor:help}
+.lista-mundo2{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.5rem 2rem;margin-top:1.4rem}
+.lista-mundo2 h4{font-size:var(--f-m);margin:0 0 .3rem}
+.lista-mundo2 ul{margin:0 0 .8rem;padding-left:1.1rem;font-size:var(--f-s)}
+.lista-mundo2 li{margin:.15rem 0}
