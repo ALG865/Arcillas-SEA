@@ -52,9 +52,7 @@ window.TEC_NUEVAS = [
    en:{n:"Diffraction pattern modelling",p:"Software that calculates the whole diffraction pattern from a structural model, including stacking faults and mixed layers (Rietveld method with disorder models).",o:"Quantification of the minerals in a mixture, proportion and ordering of layers in an illite-smectite mixed-layer mineral."}},
   {es:{n:"Simulación atomística y aprendizaje automático",p:"Cálculos cuánticos (DFT) y dinámica molecular. Los potenciales entrenados con aprendizaje automático alcanzan la precisión cuántica en sistemas grandes y durante más tiempo.",o:"Cómo se colocan el agua y los iones en la interlámina, acidez de los bordes, adsorción de contaminantes, propiedades mecánicas; predicciones que guían los experimentos."},
    en:{n:"Atomistic simulation and machine learning",p:"Quantum calculations (DFT) and molecular dynamics. Machine-learned potentials reach quantum accuracy in larger systems and over longer times.",o:"How water and ions arrange in the interlayer, edge acidity, contaminant adsorption, mechanical properties; predictions that guide experiments."},
-   ref:{t:"Feng et al. 2025, arXiv:2508.15401",u:"https://arxiv.org/abs/2508.15401"}},
-  {es:{n:"Inteligencia artificial en el análisis",p:"Redes neuronales entrenadas con difractogramas, espectros e imágenes.",o:"Identificación y cuantificación automática de fases, segmentación de imágenes de tomografía y de microscopía, análisis de miles de muestras."},
-   en:{n:"Artificial intelligence in analysis",p:"Neural networks trained on diffraction patterns, spectra and images.",o:"Automatic phase identification and quantification, segmentation of tomography and microscopy images, analysis of thousands of samples."}}
+   ref:{t:"Feng et al. 2025, arXiv:2508.15401",u:"https://arxiv.org/abs/2508.15401"}}
  ]}
 ];
 window.TEC_INFRA = {
