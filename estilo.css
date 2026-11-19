@@ -355,3 +355,8 @@ svg.mundo{width:100%;height:auto;display:block;margin-top:.8rem}
 .lista-mundo2 ul{margin:0 0 .8rem;padding-left:1.1rem;font-size:var(--f-s)}
 .lista-mundo2 li{margin:.15rem 0}
 .valor{white-space:nowrap;text-align:right}
+
+.internac{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,20rem),1fr));gap:.5rem 2.5rem;margin-top:1rem}
+.internac h3{font-size:var(--f-l);margin:0 0 .4rem}
+.internac ul{margin:0 0 1rem;padding-left:1.1rem}
+.internac li{margin:.25rem 0}

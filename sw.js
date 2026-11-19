@@ -1,5 +1,5 @@
 /* Funciona sin conexión: guarda la web y las imágenes que se van viendo. */
-var CACHE = "sea-v21";
+var CACHE = "sea-v22";
 var BASE = ["./","index.html","estilo.css","datos.js","datos-mapa.js","datos-mundo.js","sea.js","sea-textos.js","glosario.js","docs.js","vendor-three.min.js","modelos3d.js","app.js","icono-192.png","logo-sea.png","logo-sea-negativo.png","noticias.js","publicaciones.js","manifest.webmanifest","img/lista.json","fuentes-tipo/spectral-latin-400-normal.woff2","fuentes-tipo/spectral-latin-400-italic.woff2","fuentes-tipo/spectral-latin-500-normal.woff2","fuentes-tipo/spectral-latin-600-normal.woff2","fuentes-tipo/instrument-sans-latin-400-normal.woff2","fuentes-tipo/instrument-sans-latin-500-normal.woff2","fuentes-tipo/instrument-sans-latin-600-normal.woff2"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) {

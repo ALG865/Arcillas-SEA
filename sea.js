@@ -107,3 +107,24 @@ window.GALERIA_SEA = [
  {f:"2018/02/16palygorskita.jpg",m:"palygorskita",es:"Cemento de palygorskita sobre granos detríticos. Arenisca de Villamayor (Salamanca).",en:"Palygorskite cement on detrital grains. Villamayor sandstone (Salamanca)."},
  {f:"2018/02/14palygorskita.jpg",m:"palygorskita",es:"Palygorskita creciendo sobre una mica detrítica y entre sus láminas abiertas. Arenisca de Villamayor (Salamanca).",en:"Palygorskite growing on detrital mica and between its opened layers. Villamayor sandstone (Salamanca)."}
 ];
+
+/* Presencia internacional de socios de la SEA (fuentes: aipea.org, boletines de la AIPEA, semblanzas de la SEA) */
+SEA.internacional = [
+ {g:{es:"Asociación Internacional para el Estudio de las Arcillas (AIPEA)",en:"International Association for the Study of Clays (AIPEA)"},it:[
+  {es:"José María Serratosa, presidente (1989–1993) y AIPEA Fellow (2005).",en:"José María Serratosa, President (1989–1993) and AIPEA Fellow (2005)."},
+  {es:"Mercedes Suárez, presidenta (2025–2029).",en:"Mercedes Suárez, President (2025–2029)."},
+  {es:"Alberto López Galindo, tesorero (2017–2025).",en:"Alberto López Galindo, Treasurer (2017–2025)."},
+  {es:"F. Javier Huertas, tesorero (2025–2029).",en:"F. Javier Huertas, Treasurer (2025–2029)."},
+  {es:"Jaime Cuevas, representante de CLAY 2027 en el Consejo.",en:"Jaime Cuevas, CLAY 2027 representative on the Council."},
+  {es:"Medalla de la AIPEA: Eduardo Ruiz-Hitzky (2005) y Emilio Galán (2017).",en:"AIPEA Medal: Eduardo Ruiz-Hitzky (2005) and Emilio Galán (2017)."}]},
+ {g:{es:"Congresos internacionales organizados en España",en:"International conferences held in Spain"},it:[
+  {es:"Primera reunión Euroclay, Madrid, 1970.",en:"First Euroclay meeting, Madrid, 1970."},
+  {es:"IV International Clay Conference, Madrid, 1972, presidida por E. Gutiérrez Ríos.",en:"4th International Clay Conference, Madrid, 1972, chaired by E. Gutiérrez Ríos."},
+  {es:"XVI International Clay Conference, Granada, 2017, presidida por Alberto López Galindo.",en:"16th International Clay Conference, Granada, 2017, chaired by Alberto López Galindo."},
+  {es:"CLAY 2027, Madrid, primer congreso de la nueva serie CLAY de la AIPEA.",en:"CLAY 2027, Madrid, the first conference of AIPEA’s new CLAY series."}]},
+ {g:{es:"Revistas científicas",en:"Scientific journals"},it:[
+  {es:"María Victoria Villar, editora jefe de Applied Clay Science.",en:"María Victoria Villar, Editor-in-Chief of Applied Clay Science."},
+  {es:"Alberto López Galindo, editor asociado de Applied Clay Science.",en:"Alberto López Galindo, Associate Editor of Applied Clay Science."},
+  {es:"Emilio Galán, editor asociado de Clay Minerals y de Applied Clay Science.",en:"Emilio Galán, Associate Editor of Clay Minerals and Applied Clay Science."},
+  {es:"La SEA es una de las sociedades coeditoras de la revista Clay Minerals.",en:"The SEA is one of the co-publishing societies of the journal Clay Minerals."}]}
+];
