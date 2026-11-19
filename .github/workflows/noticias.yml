@@ -33,5 +33,5 @@ jobs:
           git add noticias.js
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git commit -q -m "Noticias actualizadas desde la hoja"
-          git push origin HEAD:main
+          git pull --rebase -q origin main && git push origin HEAD:main
           git push --force origin HEAD:gh-pages

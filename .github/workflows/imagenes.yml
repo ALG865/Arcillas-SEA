@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: publicar
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   imagenes:
@@ -44,6 +44,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add img
-          git diff --cached --quiet || git commit -m "Imágenes de microscopio de «Images of Clay»"
-          git push origin HEAD:main
+          if ! git diff --cached --quiet; then
+            git commit -m "Imágenes de microscopio de «Images of Clay»"
+            git pull --rebase origin main && git push origin HEAD:main
+          fi
           git push --force origin HEAD:gh-pages
