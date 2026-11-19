@@ -25,7 +25,7 @@ es:{
  todos:"Todos", fuentes:{sea:"Archivo de la SEA",ioc:"Images of Clay"},
  ficha:{formula:"Fórmula ideal",comp:"Composición",d:"Espaciado basal",cic:"Capacidad de intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad",micro:"Al microscopio electrónico",mano:"Muestras de mano",espana:"En España",estructura:"Su lámina",verMapa:"Ver en el mapa",modelo:"Modelo 3D"},
  esp:{tit:"Para especialistas",lam:"Tipo de lámina",x:"Carga de la lámina (x, por fórmula unidad)",grupo:"Grupo",oct:"Carácter octaédrico",inter:"Material interlaminar",fuente:"Clasificación del Comité de Nomenclatura de la AIPEA (Guggenheim et al., 2006, Clays and Clay Minerals 54, 761–772)."},
- niveles:["nulo","bajo","medio","alto","muy alto"], cicU:"meq/100 g", seU:"m²/g",
+ niveles:["nulo","bajo","medio","alto","muy alto"], nivelesF:["nula","baja","media","alta","muy alta"], cicU:"meq/100 g", seU:"m²/g",
  colIACT:"Colección del IACT", colPriv:"Colección privada",
  tablaCols:["","Mineral","Espaciado basal","En pocas palabras"],
  queE:"La palabra «arcilla» tiene dos significados, y conviene no confundirlos.",
@@ -88,7 +88,7 @@ en:{
  todos:"All", fuentes:{sea:"SEA archive",ioc:"Images of Clay"},
  ficha:{formula:"Ideal formula",comp:"Composition",d:"Basal spacing",cic:"Cation exchange capacity",se:"Specific surface area",hinch:"Swelling",plast:"Plasticity",micro:"Under the electron microscope",mano:"Hand specimens",espana:"In Spain",estructura:"Its layer",verMapa:"See on the map",modelo:"3D model"},
  esp:{tit:"For specialists",lam:"Layer type",x:"Layer charge (x, per formula unit)",grupo:"Group",oct:"Octahedral character",inter:"Interlayer material",fuente:"Classification of the AIPEA Nomenclature Committee (Guggenheim et al., 2006, Clays and Clay Minerals 54, 761–772)."},
- niveles:["none","low","medium","high","very high"], cicU:"meq/100 g", seU:"m²/g",
+ niveles:["none","low","medium","high","very high"], nivelesF:["none","low","medium","high","very high"], cicU:"meq/100 g", seU:"m²/g",
  colIACT:"IACT collection", colPriv:"Private collection",
  tablaCols:["","Mineral","Basal spacing","In a few words"],
  queE:"The word “clay” has two meanings, and it helps not to mix them up.",
@@ -271,7 +271,7 @@ var HEROE_IMG=[["sea","2018/02/3montmorillonita.jpg"],["ioc","caolinita",0],["se
 function imgHistoria(s){ var a=imgIOC(s.img[0])[s.img[1]]; return a||primeraImg(s.m[0]); }
 P.inicio=function(){
   var N=window.NOTICIAS||[], vig=N.filter(vigente).sort(function(a,b){ return (a.plazo||a.fecha)<(b.plazo||b.fecha)?-1:1; }), ult=N.filter(function(n){ return !vigente(n); }).slice(0,Math.max(0,3-vig.length)), port=vig.concat(ult).slice(0,3);
-  var h='<section class="heroe"><div class="fotos" id="fotos"></div><div class="envoltorio"><h1>'+U("heroeT")+'</h1><p class="entrada">'+U("heroeE")+'</p><div class="acciones"><a class="boton" href="#minerales">'+U("explorar")+'</a><a class="boton claro" href="#sociedad">'+U("conocer")+'</a></div></div><div class="placa" id="placa"></div></section>'+
+  var h='<section class="heroe"><div class="fotos" id="fotos"></div><div class="envoltorio"><h1>'+U("heroeT")+'</h1><p class="entrada">'+U("heroeE")+'</p><div class="acciones"><a class="boton" href="#sociedad">'+U("conocer")+'</a><a class="boton claro" href="#minerales">'+U("explorar")+'</a></div></div><div class="placa" id="placa"></div></section>'+
    '<div class="estratos"></div>'+
    '<section class="bloque"><div class="envoltorio dos-col"><div><h2>'+U("lamTit")+'</h2><p class="lectura">'+U("lamTxt")+'</p><a class="boton claro" href="#estructura">'+U("verEstructura")+'</a></div><div><div class="lienzo3d" id="l3d"><span class="aviso">'+U("girar")+'</span></div></div></div></section>'+
    '<section class="bloque arena"><div class="envoltorio"><h2>'+U("histTit")+'</h2><p class="entrada">'+U("histE")+'</p><div class="historias">'+HISTORIAS.map(function(s,i){ var im=imgHistoria(s);
@@ -408,8 +408,8 @@ P.mineral=function(id){
   if(m.cic) dat.push([U("ficha.cic"),num(m.cic[0])+"–"+num(m.cic[1])+" "+U("cicU")]);
   if(m.se) dat.push([U("ficha.se"),num(m.se[0])+"–"+num(m.se[1])+" "+U("seU")]);
   if(m.hinch!=null) dat.push([U("ficha.hinch"),U("niveles")[m.hinch]]);
-  if(m.plast!=null) dat.push([U("ficha.plast"),U("niveles")[m.plast]]);
-  var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",U("nav.arcillas")[2][1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d){ return '<div class="dato"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
+  if(m.plast!=null) dat.push([U("ficha.plast"),U("nivelesF")[m.plast]]);
+  var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",U("nav.arcillas")[2][1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d,k){ return '<div class="dato'+(k===0?' ancho':'')+'"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
   if(e) h+='<details class="especialistas"><summary>'+U("esp.tit")+'</summary><div class="dentro"><table><tr><th>'+U("esp.lam")+'</th><td>'+esc(L(e.lam))+'</td></tr><tr><th>'+U("esp.x")+'</th><td>'+esc(num(L(e.x)))+'</td></tr><tr><th>'+U("esp.grupo")+'</th><td>'+esc(L(e.grupo))+'</td></tr><tr><th>'+U("esp.oct")+'</th><td>'+esc(L(e.oct))+'</td></tr><tr><th>'+U("esp.inter")+'</th><td>'+esc(L(e.inter))+'</td></tr></table><p style="margin:1rem 0 .4rem">'+esc(L(e.nota))+'</p><p class="pequeno" style="margin:0">'+U("esp.fuente")+'</p></div></details>';
   if(micro.length>1) h+='<h2 style="margin-top:2rem">'+U("ficha.micro")+'</h2><div class="mosaico">'+micro.slice(1).map(function(i){return fig(i);}).join("")+'</div>';
   h+='<h2 style="margin-top:2rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter"||m.lam.t==="rollo"||m.lam.t==="onda"||Array.isArray(m.lam.inter))?null:num(m.d.split(/[ ;(]/)[0])+" Å"})+leyenda(clavesLeyenda(m))+'</div></div>';

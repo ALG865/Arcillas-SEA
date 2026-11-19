@@ -143,7 +143,7 @@ figcaption b{font-weight:600;color:var(--tinta)}
 
 /* minerales */
 .tabla-minerales{width:100%;border-collapse:collapse}
-.tabla-minerales th{text-align:left;font-weight:500;font-size:var(--f-xs);letter-spacing:.02em;color:var(--tinta2);padding:.5rem .6rem;border-bottom:1px solid var(--sepiolita2)}
+.tabla-minerales th{text-align:left;font-weight:600;font-size:var(--f-m);color:var(--tinta);padding:.5rem .6rem;border-bottom:1px solid var(--sepiolita2)}
 .tabla-minerales td{padding:.35rem .6rem;font-size:var(--f-s);color:var(--tinta2);border-bottom:1px solid var(--sepiolita);vertical-align:middle}
 .tabla-minerales tbody tr.fila{cursor:pointer}
 .tabla-minerales tbody tr.fila:hover td{background:#fff}
@@ -326,3 +326,7 @@ footer li{margin:.3rem 0}
 /* «Hazte socio»: enlace discreto en la cabecera */
 .enlace-menu.discreto{font-weight:400;font-size:var(--f-s);color:var(--tinta2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--sepiolita2)}
 .enlace-menu.discreto:hover{background:none;color:var(--terracota)}
+
+.dato.ancho{grid-column:1/-1}
+.dato b{overflow-wrap:anywhere}
+.cabeza-pagina .entrada{max-width:64rem}
