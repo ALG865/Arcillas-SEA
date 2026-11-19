@@ -1,0 +1,4574 @@
+{
+"geologia": {
+"paleoclima": [
+{
+"t": "Sedimentary petrology and geochemistry of siliciclastic rocks from the upper Jurassic Tordillo Formation (Neuquén Basin, western Argentina): Implications for provenance and tectonic setting",
+"y": 2007,
+"r": "Journal of South American Earth Sciences",
+"c": 111,
+"doi": "https://doi.org/10.1016/j.jsames.2007.08.005",
+"a": [
+"Luís A. Spalletti",
+"I. Queralt *",
+"Sergio D. Matheos",
+"Ferrán Colombo Piñol *",
+"Jorge Maggi"
+]
+},
+{
+"t": "Clay mineral distribution patterns as influenced by depositional processes in the Southeastern Levantine Sea",
+"y": 1981,
+"r": "Sedimentology",
+"c": 46,
+"doi": "https://doi.org/10.1111/j.1365-3091.1981.tb01659.x",
+"a": [
+"Andrés Maldonado *",
+"Daniel Jean Stanley"
+]
+},
+{
+"t": "Diagenesis of the Central Basque-Cantabrian Basin (Iberian Peninsula) based on illite-smectite distribution",
+"y": 1991,
+"r": "Clay Minerals",
+"c": 31,
+"doi": "https://doi.org/10.1180/claymin.1991.026.4.08",
+"a": [
+"J. Aróstegui *",
+"María Cruz Zuluaga Ibargallartu *",
+"Francisco Velasco *",
+"M. Ortega‐Huertas *",
+"Fernando Nieto *"
+]
+},
+{
+"t": "Paleogene evolution of the External Rif Zone (Morocco) and comparison with other western Tethyan margins",
+"y": 2023,
+"r": "Sedimentary Geology",
+"c": 27,
+"doi": "https://doi.org/10.1016/j.sedgeo.2023.106367",
+"a": [
+"Manuél Martín-Martín *",
+"Francesco Guerrera",
+"Juan Carlos Cañaveras *",
+"Francisco J. Alcalá *",
+"Francisco Serrano *",
+"Alí Maaté",
+"Rachid Hlila",
+"Soufian Maaté",
+"Mario Tramontana",
+"Antonio Sánchez‐Navas *",
+"Eline Le Breton"
+]
+},
+{
+"t": "Clayey materials for traditional bricks production in North-Eastern Italy through a combined compositional study: From firing dynamics to provenance",
+"y": 2024,
+"r": "Journal of Archaeological Science Reports",
+"c": 11,
+"doi": "https://doi.org/10.1016/j.jasrep.2024.104400",
+"a": [
+"Elena Mercedes Pérez-Monserrat",
+"Laura Crespo-López *",
+"Giuseppe Cultrone *",
+"Paolo Mozzi",
+"Lara Maritan"
+]
+},
+{
+"t": "Clay minerals as provenance indicators in continental lacustrine sequences: the Leza Formation, early Cretaceous, Cameros Basin, northern Spain",
+"y": 2005,
+"r": "Clay Minerals",
+"c": 9,
+"doi": "https://doi.org/10.1180/0009855054010157",
+"a": [
+"Jacinto Alonso‐Azcárate *",
+"Magdalena Rodas *",
+"José F. Barrenechea *",
+"José Ramón Mas Mayoral *"
+]
+},
+{
+"t": "Hydroclimate-driven variability in Middle Miocene deep-marine deposits of the Eastern Equatorial Pacific of Colombia: a multi-proxy sedimentological, ichnological, and geochemical reconstruction",
+"y": 2026,
+"r": "Palaeogeography Palaeoclimatology Palaeoecology",
+"c": 1,
+"doi": "https://doi.org/10.1016/j.palaeo.2026.113730",
+"a": [
+"Sergio A. Celis",
+"Raúl Trejos-Tamayo",
+"Francisco J. Rodríguez‐Tovar *",
+"Juliana Velandia"
+]
+},
+{
+"t": "Origin of the Scotia Sea Magnetic Susceptibility Signal Across the MIS6-MIS5 Transition",
+"y": 2020,
+"r": "",
+"c": 0,
+"doi": "https://doi.org/10.5194/egusphere-egu2020-12027",
+"a": [
+"Stefanie Brachfeld",
+"Brendan T. Reilly",
+"Lisa Tauxe",
+"Bridget G. Lee",
+"Michael E Weber",
+"Maureen E. Raymo",
+"Trevor Williams",
+"Ian Bailey",
+"Marga García *",
+"Michelle Guitard",
+"Sidney R. Hemming",
+"Yasmina M. Martos"
+]
+}
+],
+"diagenesis": [
+{
+"t": "Experimental kinetic study of the smectite-to-illite transformation",
+"y": 1996,
+"r": "Geochimica et Cosmochimica Acta",
+"c": 187,
+"doi": "https://doi.org/10.1016/0016-7037(95)00407-6",
+"a": [
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "Geochemistry of Spanish sepiolite-palygorskite deposits: Genetic considerations based on trace elements and isotopes",
+"y": 1994,
+"r": "Chemical Geology",
+"c": 109,
+"doi": "https://doi.org/10.1016/0009-2541(94)90026-4",
+"a": [
+"J. Torres-Ruíz *",
+"Alberto López-Galindo *",
+"J. M. González-López *",
+"Antonio Delgado‐Huertas *"
+]
+},
+{
+"t": "New insights into the nature of glauconite",
+"y": 2020,
+"r": "American Mineralogist",
+"c": 93,
+"doi": "https://doi.org/10.2138/am-2020-7341",
+"a": [
+"Adrián López‐Quirós *",
+"Antonio Sánchez‐Navas *",
+"Fernando Nieto *",
+"Carlota Escutia *"
+]
+},
+{
+"t": "Fibrous-clay mineral formation and soil evolution in Aridisols of northeastern Patagonia, Argentina",
+"y": 2007,
+"r": "Geoderma",
+"c": 88,
+"doi": "https://doi.org/10.1016/j.geoderma.2007.01.001",
+"a": [
+"Pablo José Bouza",
+"M. Simón *",
+"J. Aguilar *",
+"H. del Valle",
+"Mario Rostagno"
+]
+},
+{
+"t": "Alkaline treatment of clay minerals from the Alhambra Formation: Implications for the conservation of earthen architecture",
+"y": 2007,
+"r": "Applied Clay Science",
+"c": 85,
+"doi": "https://doi.org/10.1016/j.clay.2007.05.003",
+"a": [
+"Kerstin Elert *",
+"E. Sebastián *",
+"Ignacio Valverde-Espinosa *",
+"Carlos Manuel Rodriguez-Navarro *"
+]
+},
+{
+"t": "Characterization of mixed-layer illite-smectite from bentonites using microscopic, chemical, and X-ray methods; constraints on the smectite-to-illite transformation mechanism",
+"y": 1998,
+"r": "American Mineralogist",
+"c": 80,
+"doi": "https://doi.org/10.2138/am-1998-7-808",
+"a": [
+"Javier Cuadros *",
+"Stephen P. Altaner"
+]
+},
+{
+"t": "TEM study of mineral transformations in fired carbonated clays: relevance to brick making",
+"y": 2004,
+"r": "Clay Minerals",
+"c": 66,
+"doi": "https://doi.org/10.1180/0009855043930138",
+"a": [
+"Blanca Bauluz *",
+"María José Mayayo Burillo *",
+"Alfonso Yuste *",
+"Constanza Fernández-Nieto *",
+"José Manuel González López *"
+]
+},
+{
+"t": "Kaolinite and dickite formation during shale diagenesis: isotopic data",
+"y": 1998,
+"r": "Applied Geochemistry",
+"c": 54,
+"doi": "https://doi.org/10.1016/s0883-2927(97)00056-5",
+"a": [
+"María Dolores Ruiz Cruz *",
+"Emilio Reyes *"
+]
+},
+{
+"t": "Relationship of clay minerals to depositional environment in the non-marine Eocene Pontils Group, SE Ebro Basin (Spain)",
+"y": 1991,
+"r": "Journal of Sedimentary Research",
+"c": 51,
+"doi": "https://doi.org/10.1306/d426780c-2b26-11d7-8648000102c1865d",
+"a": [
+"M. Inglés *",
+"Pere Anadón *"
+]
+},
+{
+"t": "Electron Microscopy Study of Volcanic Tuff Alteration to Illite-Smectite Under Hydrothermal Conditions",
+"y": 2000,
+"r": "Clays and Clay Minerals",
+"c": 50,
+"doi": "https://doi.org/10.1346/ccmn.2000.0480305",
+"a": [
+"S. de la Fuente *",
+"Javier Cuadros *",
+"Saverio Fiore",
+"J. Linares *"
+]
+},
+{
+"t": "Chemical composition of smectites formed in clastic sediments. Implications for the smectite-illite transformation",
+"y": 2000,
+"r": "Clay Minerals",
+"c": 47,
+"doi": "https://doi.org/10.1180/000985500547124",
+"a": [
+"Ahmed Drief *",
+"Fernando Nieto *"
+]
+},
+{
+"t": "Role of sandstone provenance in the diagenetic albitization of feldspars",
+"y": 2010,
+"r": "Sedimentary Geology",
+"c": 41,
+"doi": "https://doi.org/10.1016/j.sedgeo.2010.06.005",
+"a": [
+"Laura González‐Acebrón *",
+"José Arribas *",
+"José Ramón Mas Mayoral *"
+]
+},
+{
+"t": "Palygorskite genesis through silicate transformation in Tunisian continental Eocene deposits",
+"y": 2003,
+"r": "Clay Minerals",
+"c": 40,
+"doi": "https://doi.org/10.1180/0009855033820088",
+"a": [
+"Fakher Jamoussi",
+"A. Ben Aboud *",
+"Alberto López-Galindo *"
+]
+},
+{
+"t": "Tectonic–palaeoenvironmental forcing of clay-mineral assemblages in nonmarine settings: the Oligocene–Miocene As Pontes Basin (Spain)",
+"y": 2003,
+"r": "Sedimentary Geology",
+"c": 40,
+"doi": "https://doi.org/10.1016/s0037-0738(02)00333-0",
+"a": [
+"Alberto Sáez *",
+"M. Inglés *",
+"Lluís Cabrera *",
+"A. de las Heras *"
+]
+},
+{
+"t": "Evolution of clay mineral assemblages in the Tinguiririca geothermal field, Andean Cordillera of central Chile: an XRD and HRTEM-AEM study",
+"y": 2014,
+"r": "Journal of Volcanology and Geothermal Research",
+"c": 37,
+"doi": "https://doi.org/10.1016/j.jvolgeores.2014.05.022",
+"a": [
+"M. Vázquez",
+"Fernando Nieto *",
+"Diego Morata",
+"Bárbara Droguett",
+"Javier Carrillo-Rosúa *",
+"S. Morales *"
+]
+},
+{
+"t": "Origin of fibrous clays in Tunisian Paleogene continental deposits",
+"y": 2005,
+"r": "Journal of African Earth Sciences",
+"c": 35,
+"doi": "https://doi.org/10.1016/j.jafrearsci.2005.08.013",
+"a": [
+"Noureddine Zaaboub",
+"Saâdi Abdeljaouad",
+"Alberto López-Galindo *"
+]
+},
+{
+"t": "Early Stages of Volcanic Tuff Alteration in Hydrothermal Experiments: Formation of Mixed-Layer Illite-Smectite",
+"y": 2002,
+"r": "Clays and Clay Minerals",
+"c": 35,
+"doi": "https://doi.org/10.1346/000986002320679468",
+"a": [
+"Sandra de la Fuente *",
+"Javier Cuadros *",
+"José Linares *"
+]
+},
+{
+"t": "Kaolinite and Halloysite Derived from Sequential Transformation of Pedogenic Smectite and Kaolinite-Smectite in a 120 ka Tropical Soil Chronosequence",
+"y": 2016,
+"r": "Clays and Clay Minerals",
+"c": 33,
+"doi": "https://doi.org/10.1346/ccmn.2016.064030",
+"a": [
+"Peter C. Ryan *",
+"F. Javier Huertas *",
+"Franklin Hobbs",
+"Lauren N. Pincus"
+]
+},
+{
+"t": "Electron Microscopic Study of the Illite-Smectite Transformation in the Bentonites from Cerro Del Aguila (Toledo, Spain)",
+"y": 1998,
+"r": "Clay Minerals",
+"c": 31,
+"doi": "https://doi.org/10.1180/claymin.1998.033.3.12",
+"a": [
+"Cristina de Santiago Buey *",
+"M. Suarez Barrios *",
+"E. Garcia Romero *",
+"M. C. Dominguez Diaz *",
+"M. Doval Montoya *"
+]
+},
+{
+"t": "Diagenesis of the Central Basque-Cantabrian Basin (Iberian Peninsula) based on illite-smectite distribution",
+"y": 1991,
+"r": "Clay Minerals",
+"c": 31,
+"doi": "https://doi.org/10.1180/claymin.1991.026.4.08",
+"a": [
+"J. Aróstegui *",
+"María Cruz Zuluaga Ibargallartu *",
+"Francisco Velasco *",
+"M. Ortega‐Huertas *",
+"Fernando Nieto *"
+]
+},
+{
+"t": "Clay transformation and pedogenic calcite formation on a lithosequence of igneous rocks in northwestern Iran",
+"y": 2015,
+"r": "CATENA",
+"c": 30,
+"doi": "https://doi.org/10.1016/j.catena.2015.05.014",
+"a": [
+"Maryam Yousefifard",
+"Shamsollah Ayoubi",
+"Rosa Maria Poch *",
+"Ahmad Jalalian",
+"Hossein Khademi",
+"Farhad Khormali"
+]
+},
+{
+"t": "Active mud volcanism in the West Alboran Basin: Geochemical evidence of hydrocarbon seepage",
+"y": 2011,
+"r": "Marine and Petroleum Geology",
+"c": 30,
+"doi": "https://doi.org/10.1016/j.marpetgeo.2011.06.001",
+"a": [
+"V. Blinova",
+"M. C. Comas *",
+"M.K. Ivanov",
+"Елена Николаевна Полудеткина",
+"Tatiana V. Matveeva"
+]
+},
+{
+"t": "Chemical and structural variability of illitic phases formed from kaolinite in hydrothermal conditions",
+"y": 2006,
+"r": "Applied Clay Science",
+"c": 28,
+"doi": "https://doi.org/10.1016/j.clay.2005.12.003",
+"a": [
+"María Bentabol *",
+"María Dolores Ruiz-Cruz *",
+"F. Javier Huertas *",
+"J LINARES *"
+]
+},
+{
+"t": "The effect of furnace and flash heating on COx argillite for the synthesis of alkali-activated binders",
+"y": 2017,
+"r": "Journal of Cleaner Production",
+"c": 27,
+"doi": "https://doi.org/10.1016/j.jclepro.2017.04.056",
+"a": [
+"Ameni Gharzouni",
+"C. Dupuy",
+"Isabel Sobrados *",
+"Emmanuel Joussein",
+"Nathalie Texier-Mandoki",
+"Xavier Bourbon",
+"Sylvie Rossignol"
+]
+},
+{
+"t": "Influence of organic matter on the reactivity of clay minerals in highly alkaline environments",
+"y": 2015,
+"r": "Applied Clay Science",
+"c": 27,
+"doi": "https://doi.org/10.1016/j.clay.2015.03.006",
+"a": [
+"Kerstin Elert *",
+"Eduardo Sebastián Pardo *",
+"Carlos Manuel Rodriguez-Navarro *"
+]
+},
+{
+"t": "Illite-smectite patterns in sheared Pleistocene mudstones of the Southern Apennines and their implications regarding the process of illitization: A multiscale analysis",
+"y": 2011,
+"r": "Journal of Structural Geology",
+"c": 25,
+"doi": "https://doi.org/10.1016/j.jsg.2011.08.002",
+"a": [
+"Emilio Casciello *",
+"John Cosgrove",
+"Massimo Cesarano",
+"Enrique E. Romero *",
+"I. Queralt *",
+"Jaume Vergés *"
+]
+},
+{
+"t": "Iron oxides and rare earth elements in the clay fractions of a soil chronosequence in southern S pain",
+"y": 2016,
+"r": "European Journal of Soil Science",
+"c": 24,
+"doi": "https://doi.org/10.1111/ejss.12377",
+"a": [
+"Juan Manuel Martín‐García *",
+"Manuel Sánchez‐Marañón *",
+"Julio Calero *",
+"Víctor Aranda *",
+"Gabriel Delgado *",
+"Rafael Delgado *"
+]
+},
+{
+"t": "An approach to the genesis of palygorskite in a Neogene-Quaternary continental basin using principal factor analysis",
+"y": 1995,
+"r": "Clay Minerals",
+"c": 23,
+"doi": "https://doi.org/10.1180/claymin.1995.030.3.06",
+"a": [
+"C.J. Sánchez *",
+"E. Galán *"
+]
+},
+{
+"t": "Some Evidence Supporting the Existence of Polar Layers in Mixed-Layer Illite/Smectite",
+"y": 1995,
+"r": "Clays and Clay Minerals",
+"c": 22,
+"doi": "https://doi.org/10.1346/ccmn.1995.0430410",
+"a": [
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "Diverse mineral assemblages of acidic alteration in the Rio Tinto area (southwest Spain): Implications for Mars",
+"y": 2018,
+"r": "American Mineralogist",
+"c": 20,
+"doi": "https://doi.org/10.2138/am-2018-6330",
+"a": [
+"Christian Mavris",
+"Javier Cuadros",
+"José Miguel Nieto *",
+"J. L. Bishop",
+"Joseph Ryan Michalski"
+]
+},
+{
+"t": "CHEMICAL AND STRUCTURAL EVOLUTION OF \"METAMORPHIC VERMICULITE\" IN METACLASTIC ROCKS OF THE BETIC CORDILLERA, MALAGA, SPAIN: A SYNTHESIS",
+"y": 2006,
+"r": "The Canadian Mineralogist",
+"c": 20,
+"doi": "https://doi.org/10.2113/gscanmin.44.1.249",
+"a": [
+"María Dolores Ruiz Cruz *",
+"José Miguel Nieto *"
+]
+},
+{
+"t": "Petrology and Geochemistry of Diagenetically Altered Tuffaceous Rocks from the Middle Triassic of Central Spain",
+"y": 1998,
+"r": "Journal of Sedimentary Research",
+"c": 19,
+"doi": "https://doi.org/10.2110/jsr.68.391",
+"a": [
+"R. Marfil *",
+"Anthony Hall",
+"Soledad García‐Gil *",
+"Michael G. Stamatakis"
+]
+},
+{
+"t": "Lithological Control on the Occurrence of Chlorite in the Diagenetic Wealden Complex of the Bilbao Anticlinorium (Basco-Cantabrian Basin, Northern Spain)",
+"y": 1998,
+"r": "Clay Minerals",
+"c": 18,
+"doi": "https://doi.org/10.1180/claymin.1998.033.2.13",
+"a": [
+"Danièle Bartier",
+"Martine D. Buatier",
+"Michel Lopez",
+"Jean‐Luc Potdevin",
+"Hervé Chamley",
+"J. Aróstegui *"
+]
+},
+{
+"t": "Sepiolite and Other Authigenic Mg-Clay Minerals Formation in Different Palustrine Environments (Madrid Basin, Spain)",
+"y": 2022,
+"r": "Minerals",
+"c": 17,
+"doi": "https://doi.org/10.3390/min12080987",
+"a": [
+"Juan Emilio Herranz-Luque *",
+"Manuel Pozo *"
+]
+},
+{
+"t": "Palygorskite Formation Under the Influence of Saline and Alkaline Groundwater in Central Iranian Soils",
+"y": 2010,
+"r": "Soil Science",
+"c": 16,
+"doi": "https://doi.org/10.1097/ss.0b013e3181e0cbac",
+"a": [
+"Saeid Hojati",
+"Hossein Khademi",
+"Ángel Faz Cano *"
+]
+},
+{
+"t": "Origin of Fe-rich clay minerals in Early Devonian volcanic rocks of the Northern Minusa basin, Eastern Siberia",
+"y": 2023,
+"r": "Applied Clay Science",
+"c": 14,
+"doi": "https://doi.org/10.1016/j.clay.2023.107014",
+"a": [
+"Maxim A. Rudmin",
+"Adrián López‐Quirós *",
+"Santanu Banerjee",
+"Alexey Ruban",
+"M.V. Shaldybin",
+"Pavel Bernatonis",
+"Pragya Singh",
+"Айгерим Бауыржановна Даулетова",
+"Prokopy Maximov"
+]
+},
+{
+"t": "A nano‐scale study in a soil chronosequence from s outhern S pain",
+"y": 2013,
+"r": "European Journal of Soil Science",
+"c": 14,
+"doi": "https://doi.org/10.1111/ejss.12031",
+"a": [
+"Julio Calero *",
+"Juan Manuel Martín‐García *",
+"Gabriel Delgado *",
+"Víctor Aranda *",
+"Rafael Delgado *"
+]
+},
+{
+"t": "Mixed-Layer Illite-Smectite Illitization under Supercritical CO2 Conditions",
+"y": 2022,
+"r": "Applied Sciences",
+"c": 13,
+"doi": "https://doi.org/10.3390/app122211477",
+"a": [
+"Domingo Martín *",
+"Patricia Aparicio *",
+"Susana García",
+"M. Mercedes Maroto‐Valer"
+]
+},
+{
+"t": "Clay mineral transformations in anthropic organic matter-rich sediments under saline water environment. Effect on the detrital mineral assemblages in the Upper Chicamocha River Basin, Colombia",
+"y": 2020,
+"r": "Applied Clay Science",
+"c": 13,
+"doi": "https://doi.org/10.1016/j.clay.2020.105776",
+"a": [
+"Claudia Patricia Quevedo",
+"Juan Jiménez‐Millán *",
+"Gabriel Ricardo Cifuentes",
+"Rosario Jiménez‐Espinosa *"
+]
+},
+{
+"t": "Modelling of potassium exchange in a natural, polyionic montmorillonite under hydrothermal conditions",
+"y": 1995,
+"r": "Applied Geochemistry",
+"c": 13,
+"doi": "https://doi.org/10.1016/0883-2927(95)00005-5",
+"a": [
+"F. Javier Huertas *",
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "Illitization of montmorillonite in ammonium solutions under hydrothermal conditions",
+"y": 2024,
+"r": "Applied Clay Science",
+"c": 11,
+"doi": "https://doi.org/10.1016/j.clay.2024.107478",
+"a": [
+"María Bentabol *",
+"Daniel Lamarca-Irisarri *",
+"Alexander E. S. Van Driessche *",
+"Peter C. Ryan",
+"F. Javier Huertas *"
+]
+},
+{
+"t": "High-Temperature Mineral Formation after Firing Clay Materials Associated with Mined Coal in Teruel (Spain)",
+"y": 2020,
+"r": "Applied Sciences",
+"c": 11,
+"doi": "https://doi.org/10.3390/app10093114",
+"a": [
+"Manuel Miguel Jordán Vidal *",
+"Sergi Meseguer *",
+"Francisco Pardo Fabregat *",
+"M.A. Montero *"
+]
+},
+{
+"t": "Characterization and distribution of clay minerals in the soils of Fildes Peninsula and Ardley Island (King George Island, Maritime Antarctica)",
+"y": 2022,
+"r": "Clay Minerals",
+"c": 9,
+"doi": "https://doi.org/10.1180/clm.2022.46",
+"a": [
+"Marta Pelayo *",
+"Thomas Schmid *",
+"Francisco Javier Díaz-Puente *",
+"Jerónimo López-Martínez *"
+]
+},
+{
+"t": "Micro- and nano-scale study of deformation induced mineral transformations in Mg-phyllosilicate-rich fault gouges from the Galera Fault Zone (Betic Cordillera, SE Spain)",
+"y": 2018,
+"r": "American Mineralogist",
+"c": 9,
+"doi": "https://doi.org/10.2138/am-2018-6316",
+"a": [
+"C. Sanchez Roa *",
+"Blanca Bauluz *",
+"Fernando Nieto *",
+"Isabel Abad *",
+"Juan Jiménez‐Millán *",
+"Daniel Roy Faulkner"
+]
+},
+{
+"t": "Clay mineral occurrence and burial transformations: reservoir potential of the P ermo‐ T riassic sediments of the I berian Range",
+"y": 2014,
+"r": "Basin Research",
+"c": 9,
+"doi": "https://doi.org/10.1111/bre.12074",
+"a": [
+"R. Marfil *",
+"Á. La Iglesia *",
+"M.J. Herrero *",
+"M. Scherer",
+"Antonio Delgado‐Huertas *"
+]
+},
+{
+"t": "Conversion time from smectite to illite. A preliminary study",
+"y": 1992,
+"r": "Applied Clay Science",
+"c": 8,
+"doi": "https://doi.org/10.1016/0169-1317(92)90034-k",
+"a": [
+"J. Linares *",
+"F. Javier Huertas *",
+"E. Barahona *"
+]
+},
+{
+"t": "Clay saline diagenesis in lake Plio-Pleistocene sediments rich in organic matter from the Guadix-Baza Basin (Betic Cordillera, SE Spain)",
+"y": 2020,
+"r": "Applied Clay Science",
+"c": 7,
+"doi": "https://doi.org/10.1016/j.clay.2020.105739",
+"a": [
+"Juan Jiménez‐Millán *",
+"Isabel Abad *",
+"Francisco Juan García-Tortosa *",
+"Fernando Nieto *",
+"Rosario Jiménez‐Espinosa *"
+]
+},
+{
+"t": "XRD-TEM-AEM comparative study of n -alkylammonium smectites and interstratified minerals in shallow-diagenetic carbonate sediments of the Basque-Cantabrian Basin",
+"y": 2016,
+"r": "American Mineralogist",
+"c": 7,
+"doi": "https://doi.org/10.2138/am-2016-5301",
+"a": [
+"Fernando Nieto *",
+"Xabier Arroyo *",
+"J. Aróstegui *"
+]
+},
+{
+"t": "HRTEM evidences of Tajo Basin mineralogical complexity: Crystal chemistry and genetic relationship",
+"y": 2022,
+"r": "Applied Clay Science",
+"c": 6,
+"doi": "https://doi.org/10.1016/j.clay.2022.106515",
+"a": [
+"Emilia García Romero *",
+"Mercedes Suárez *"
+]
+}
+],
+"datacion": [],
+"fallas": [
+{
+"t": "Microtectonic and geochemical characterization of thrusting in a foreland basin: Example of the South-Pyrenean orogenic wedge (Spain)",
+"y": 2011,
+"r": "Journal of Structural Geology",
+"c": 75,
+"doi": "https://doi.org/10.1016/j.jsg.2011.06.006",
+"a": [
+"Brice J. Lacroix",
+"Martine D. Buatier",
+"Pierre Labaume",
+"Anna Travé *",
+"Michel Dubois",
+"Delphine Charpentier",
+"Sandra Ventalon",
+"D. Convert-Gaubier"
+]
+},
+{
+"t": "Formation of chlorite during thrust fault reactivation. Record of fluid origin and P–T conditions in the Monte Perdido thrust fault (southern Pyrenees)",
+"y": 2012,
+"r": "Contributions to Mineralogy and Petrology",
+"c": 59,
+"doi": "https://doi.org/10.1007/s00410-011-0718-0",
+"a": [
+"Brice J. Lacroix",
+"Delphine Charpentier",
+"Martine D. Buatier",
+"Torsten Walter Vennemann",
+"Pierre Labaume",
+"Thierry Adatte",
+"Anna Travé *",
+"Michel Dubois"
+]
+},
+{
+"t": "The uranium ore from Mina Fe (Salamanca, Spain) as a natural analogue of processes in a spent fuel repository",
+"y": 2002,
+"r": "Chemical Geology",
+"c": 36,
+"doi": "https://doi.org/10.1016/s0009-2541(02)00127-4",
+"a": [
+"Luis Villar *",
+"Jordi Bruno",
+"R. Campos *",
+"Paloma Gómez *",
+"J.S. Cózar *",
+"Antonio Garralón *",
+"Belén Buil *",
+"David Arcos",
+"G Carretero *",
+"Javier Ruiz Sánchez-Porro",
+"Pedro Hernán *"
+]
+},
+{
+"t": "Hypogene Sulfuric Acid Speleogenesis and rare sulfate minerals in Baume Galinière Cave (Alpes-de-Haute-Provence, France). Record of uplift, correlative cover retreat and valley dissection",
+"y": 2015,
+"r": "Geomorphology",
+"c": 35,
+"doi": "https://doi.org/10.1016/j.geomorph.2015.03.031",
+"a": [
+"Philippe Audra",
+"Fernando Gázquez",
+"F. Rull *",
+"Jean-Yves Bigot",
+"Hubert Camus"
+]
+},
+{
+"t": "Structural controls and metallogenic model of polyphase uranium mineralization in the Kiggavik area (Nunavut, Canada)",
+"y": 2020,
+"r": "Mineralium Deposita",
+"c": 32,
+"doi": "https://doi.org/10.1007/s00126-020-00957-x",
+"a": [
+"Alexis Grare",
+"Antonio Benedicto",
+"Julien Mercadier",
+"Olivier Lacombe",
+"Anna Travé *",
+"Marie Guilcher",
+"Antonin Richard",
+"Patrick Ledru",
+"Mario Blain",
+"John Robbins",
+"Philippe Lach"
+]
+},
+{
+"t": "Strain indicators and magnetic fabric in intraplate fault zones: Case study of Daroca thrust, Iberian Chain, Spain",
+"y": 2018,
+"r": "Tectonophysics",
+"c": 28,
+"doi": "https://doi.org/10.1016/j.tecto.2018.02.013",
+"a": [
+"Antonio María Casas Sáinz *",
+"A. Gil-Imaz *",
+"José L. Simón *",
+"Esther Izquierdo‐Llavall *",
+"Luca Aldega",
+"Teresa Román‐Berdiel *",
+"María Cinta Osácar *",
+"Ó. Pueyo-Anchuela *",
+"Miguel Ansón *",
+"Cristina García‐Lasanta *",
+"Sveva Corrado",
+"Chiara Invernizzi"
+]
+},
+{
+"t": "Fibrous clay mineral authigenesis induced by fluid-rock interaction in the Galera fault zone (Betic Cordillera, SE Spain) and its influence on fault gouge frictional properties",
+"y": 2016,
+"r": "Applied Clay Science",
+"c": 27,
+"doi": "https://doi.org/10.1016/j.clay.2016.06.023",
+"a": [
+"C. Sanchez Roa *",
+"Juan Jiménez‐Millán *",
+"Isabel Abad *",
+"Daniel Roy Faulkner",
+"Fernando Nieto *",
+"Francisco Juan García-Tortosa *"
+]
+},
+{
+"t": "Ironstone deposits hosted in Eocene carbonates from Bahariya (Egypt)—New perspective on cherty ironstone occurrences",
+"y": 2015,
+"r": "Sedimentary Geology",
+"c": 25,
+"doi": "https://doi.org/10.1016/j.sedgeo.2015.09.010",
+"a": [
+"Adel Mady Afify *",
+"María Esther Sanz‐Montero *",
+"J.P. Calvo *"
+]
+},
+{
+"t": "Illite-smectite patterns in sheared Pleistocene mudstones of the Southern Apennines and their implications regarding the process of illitization: A multiscale analysis",
+"y": 2011,
+"r": "Journal of Structural Geology",
+"c": 25,
+"doi": "https://doi.org/10.1016/j.jsg.2011.08.002",
+"a": [
+"Emilio Casciello *",
+"John Cosgrove",
+"Massimo Cesarano",
+"Enrique E. Romero *",
+"I. Queralt *",
+"Jaume Vergés *"
+]
+},
+{
+"t": "The Contact uranium prospect, Kiggavik project, Nunavut (Canada): Tectonic history, structural constraints and timing of mineralization",
+"y": 2017,
+"r": "Ore Geology Reviews",
+"c": 22,
+"doi": "https://doi.org/10.1016/j.oregeorev.2017.12.015",
+"a": [
+"Alexis Grare",
+"Antonio Benedicto",
+"Olivier Lacombe",
+"Anna Travé *",
+"Patrick Ledru",
+"Mario Blain",
+"John Robbins"
+]
+},
+{
+"t": "Using python libraries and k-Nearest neighbors algorithms to delineate syn-sedimentary faults in sedimentary porous media",
+"y": 2023,
+"r": "Marine and Petroleum Geology",
+"c": 19,
+"doi": "https://doi.org/10.1016/j.marpetgeo.2023.106283",
+"a": [
+"Manuél Martín-Martín *",
+"Manuel Bullejos *",
+"David Cabezas *",
+"Francisco J. Alcalá *"
+]
+},
+{
+"t": "Microtextural investigation (SEM and TEM study) of phyllosilicates in a major thrust fault zone (Monte Perdido, southern Pyrenees): impact on fault reactivation",
+"y": 2012,
+"r": "Swiss Journal of Geosciences",
+"c": 17,
+"doi": "https://doi.org/10.1007/s00015-012-0098-0",
+"a": [
+"Martine D. Buatier",
+"Brice J. Lacroix",
+"Pierre Labaume",
+"Virginie Moutarlier",
+"Delphine Charpentier",
+"Jean‐Pierre Sizun",
+"Anna Travé *"
+]
+},
+{
+"t": "Effect of Mineral Processes and Deformation on the Petrophysical Properties of Soft Rocks during Active Faulting",
+"y": 2020,
+"r": "Minerals",
+"c": 16,
+"doi": "https://doi.org/10.3390/min10050444",
+"a": [
+"Anita Torabi",
+"Juan Jiménez‐Millán *",
+"Rosario Jiménez‐Espinosa *",
+"Francisco Juan García-Tortosa *",
+"Isabel Abad *",
+"T. S. S. Ellingsen"
+]
+},
+{
+"t": "Applicability of magnetic fabrics in rocks associated with the emplacement of salt structures (the Bicorb–Quesa and Navarrés salt walls, Prebetics, SE Spain)",
+"y": 2014,
+"r": "Tectonophysics",
+"c": 15,
+"doi": "https://doi.org/10.1016/j.tecto.2014.07.004",
+"a": [
+"Ruth Soto *",
+"Elisabet Beamud *",
+"Belén Oliva‐Urcia *",
+"Eduard Roca *",
+"M. Rubinat *",
+"Juan José Villalaín *"
+]
+},
+{
+"t": "Genetic model for Jurassic shale-hosted Zn-Pb deposits of the Arak Mining District, Malayer-Esfahan metallogenic belt: Insight from sedimentological, textural, and stable isotope characteristics",
+"y": 2021,
+"r": "Ore Geology Reviews",
+"c": 13,
+"doi": "https://doi.org/10.1016/j.oregeorev.2021.104262",
+"a": [
+"Pouria Mahmoodi",
+"Ebrahim Rastad",
+"Abdorrahman Rajabi",
+"Pura Alfonso *",
+"Carles Canet",
+"Jan M. Peter"
+]
+},
+{
+"t": "Mineral characterization, clay quantification and Ar–Ar dating of faulted schists in the Carboneras and Palomares Faults (Betic Cordillera, SE Spain)",
+"y": 2017,
+"r": "European Journal of Mineralogy",
+"c": 10,
+"doi": "https://doi.org/10.1127/ejm/2017/0029-2580",
+"a": [
+"Isabel Abad *",
+"Juan Jiménez‐Millán *",
+"Anja Maria Schleicher",
+"Ben A. van der Pluijm"
+]
+},
+{
+"t": "Proposition d'un modele de silicification superficielle des gres neogenes de Montjuic, Barcelone (Espagne); parageneses minerales, environments geochimiques et circulation des fluides",
+"y": 2001,
+"r": "Bulletin de la Société Géologique de France",
+"c": 10,
+"doi": "https://doi.org/10.2113/172.6.751",
+"a": [
+"David Parcerisa Duocastella *",
+"Médard Thiry",
+"David Gómez‐Gras",
+"F. Calvet"
+]
+},
+{
+"t": "Micro- and nano-scale study of deformation induced mineral transformations in Mg-phyllosilicate-rich fault gouges from the Galera Fault Zone (Betic Cordillera, SE Spain)",
+"y": 2018,
+"r": "American Mineralogist",
+"c": 9,
+"doi": "https://doi.org/10.2138/am-2018-6316",
+"a": [
+"C. Sanchez Roa *",
+"Blanca Bauluz *",
+"Fernando Nieto *",
+"Isabel Abad *",
+"Juan Jiménez‐Millán *",
+"Daniel Roy Faulkner"
+]
+},
+{
+"t": "Identification and Investigation of Subsidence Areas to Mitigate Karstic Risks in Urbanized Areas of Madrid, Spain: A Case Study",
+"y": 2021,
+"r": "Sustainability",
+"c": 7,
+"doi": "https://doi.org/10.3390/su13147716",
+"a": [
+"Eugenio Sanz Pérez *",
+"Cesar Sanz Riaguas"
+]
+},
+{
+"t": "Linking Faults, Fractures, and Clay Mineral Occurrence With Fluid Transport in the Accretionary Prism of the Nankai Trough, Japan",
+"y": 2019,
+"r": "Geochemistry Geophysics Geosystems",
+"c": 6,
+"doi": "https://doi.org/10.1029/2019gc008430",
+"a": [
+"Anja Maria Schleicher",
+"María José Jurado *"
+]
+},
+{
+"t": "Implications of sepiolite dehydration for earthquake nucleation in the Galera Fault Zone: A thermodynamic approach",
+"y": 2017,
+"r": "Applied Geochemistry",
+"c": 6,
+"doi": "https://doi.org/10.1016/j.apgeochem.2017.11.013",
+"a": [
+"C. Sanchez Roa *",
+"Olivier Vidal",
+"Juan Jiménez‐Millán *",
+"Fernando Nieto *",
+"Daniel Roy Faulkner"
+]
+},
+{
+"t": "Dolomite–magnesite formation and polymetallic mineralization in a rift-sag basin on the western margin of the Red Sea: Paleoenvironmental, hydrothermal, and tectonic implications",
+"y": 2022,
+"r": "Journal of Sedimentary Research",
+"c": 5,
+"doi": "https://doi.org/10.2110/jsr.2021.100",
+"a": [
+"Adel Mady Afify *",
+"María Esther Sanz‐Montero *",
+"Laura González‐Acebrón *"
+]
+},
+{
+"t": "Characterization of tar-like material and producible oil in Misoa C2 and C3 reservoir sands of the Area 2 South (Ceuta Field, Venezuela)",
+"y": 2017,
+"r": "Marine and Petroleum Geology",
+"c": 5,
+"doi": "https://doi.org/10.1016/j.marpetgeo.2017.02.006",
+"a": [
+"G. Márquez *",
+"Marcos E. Escobar",
+"Noemi Esquinas *",
+"L. Duno",
+"Juan Diego Martín‐Martín *",
+"A. Permanyer *"
+]
+},
+{
+"t": "Unraveling the key factors controlling active faulting in Tertiary and Quaternary sequences",
+"y": 2025,
+"r": "Earth and Planetary Science Letters",
+"c": 4,
+"doi": "https://doi.org/10.1016/j.epsl.2025.119268",
+"a": [
+"Abhisek Basa",
+"Anita Torabi",
+"Juan Jiménez-Millán *",
+"Behzad Alaei",
+"Francisco Juan García-Tortosa *"
+]
+},
+{
+"t": "Water–Rock Interaction Processes in Tíscar and Larva Active Faults (Betic Cordillera, SE Spain)",
+"y": 2024,
+"r": "Water",
+"c": 4,
+"doi": "https://doi.org/10.3390/w16060897",
+"a": [
+"Rosario Jiménez‐Espinosa *",
+"Pilar Hernández-Puentes *",
+"Juan Jiménez‐Millán *"
+]
+},
+{
+"t": "The Kaolin and Bentonite Deposit of Tamame De Sayago (Zamora, Spain): Mineralogy, Geochemistry, and Genesis",
+"y": 2023,
+"r": "Clays and Clay Minerals",
+"c": 4,
+"doi": "https://doi.org/10.1007/s42860-023-00256-2",
+"a": [
+"E. Manchado *",
+"Mercedes Suárez *",
+"Emilia García Romero *"
+]
+},
+{
+"t": "Deformation conditions and 40Ar/39Ar dating of thrusting recorded by clay minerals: An example of the Lakora thrust (west-central Pyrenees)",
+"y": 2022,
+"r": "Journal of Structural Geology",
+"c": 4,
+"doi": "https://doi.org/10.1016/j.jsg.2022.104744",
+"a": [
+"Ahmed Abd Elmola",
+"Patrick Monié",
+"Pierre Labaume",
+"Antonio Teixell *",
+"Delphine Charpentier",
+"Martine D. Buatier"
+]
+},
+{
+"t": "Petalite alteration products from the Bajoca pegmatite (Central Portugal): a multiapproach for lithium exploration",
+"y": 2021,
+"r": "EGU General Assembly Conference Abstracts",
+"c": 3,
+"doi": "https://doi.org/10.5194/egusphere-egu21-2364",
+"a": [
+"Joana Cardoso-Fernandes",
+"Filipa Dias",
+"ALEXANDRE ANTÔNIO DE LIMA JUNIOR",
+"Maria dos Anjos Ribeiro",
+"Mônica Mazzini Perrotta",
+"Encarnación Roda-Robles *",
+"Ana Cláudia Teodoro"
+]
+},
+{
+"t": "Retrograde crystallization of clay minerals in metamorphic rocks linked to fluid circulation related to fault activity",
+"y": 2026,
+"r": "European Journal of Mineralogy",
+"c": 0,
+"doi": "https://doi.org/10.5194/ejm-38-263-2026",
+"a": [
+"Isabel Abad *",
+"Matías Reolid *",
+"Juan Jiménez‐Millán *",
+"Fernando Nieto *"
+]
+},
+{
+"t": "Pore-water geochemistry of Kumano Basin mud volcanoes reveals multi-source fluids from sedimentary and crustal dehydration",
+"y": 2026,
+"r": "EGU General Assembly Conference Abstracts",
+"c": 0,
+"doi": "https://doi.org/10.5194/egusphere-egu26-18471",
+"a": [
+"Walter Menapace *",
+"A. Hüpers",
+"Achim Kopf",
+"Anette Meixner",
+"Simone A. Kasemann"
+]
+},
+{
+"t": "Advancing Paleoseismology with Integrated Hyperspectral and Multi-Sensor Approaches: Enhanced Interpretation of Trenches and Active Fault Scarps in Spain and Italy",
+"y": 2026,
+"r": "EGU General Assembly Conference Abstracts",
+"c": 0,
+"doi": "https://doi.org/10.5194/egusphere-egu26-19397",
+"a": [
+"John Jairo Gallego-Montoya *",
+"María Ortuño *",
+"Lucilla C. Benedetti",
+"Moritz Kirsch",
+"Samuel T. Thiele",
+"D. García-Sellés *",
+"Magali Riesner",
+"Eduardo García‐Meléndez *",
+"Marc Ollé-López *"
+]
+},
+{
+"t": "Reverse fault propagation in shales and associated decametric deformation gradients.",
+"y": 2022,
+"r": "EGU General Assembly Conference Abstracts",
+"c": 0,
+"doi": "https://doi.org/10.5194/egusphere-egu22-5905",
+"a": [
+"Francho Gracia-Puzo *",
+"Charles Aubourg",
+"Antonio María Casas Sáinz *"
+]
+}
+],
+"alteracion": [],
+"suelos": [],
+"geoarqueologia": [
+{
+"t": "Rock-magnetic and color characteristics of archaeological samples from burnt clay from destructions and ceramics in relation to their firing temperature",
+"y": 2019,
+"r": "Archaeological and Anthropological Sciences",
+"c": 39,
+"doi": "https://doi.org/10.1007/s12520-019-00782-y",
+"a": [
+"Neli Jordanova",
+"Diana Jordanova",
+"Vidal Barrón *",
+"Dejan Lesigyarski",
+"Maria Kostadinova‐Avramova"
+]
+},
+{
+"t": "Raman spectroscopy in art and archaeology",
+"y": 2010,
+"r": "Journal of Raman Spectroscopy",
+"c": 38,
+"doi": "https://doi.org/10.1002/jrs.2850",
+"a": [
+"Juan Manuel Madariaga *"
+]
+},
+{
+"t": "Assembling the puzzle pieces: Integrating pottery and kiln analysis to reconstruct pyrotechnology at the Dinka Settlement Complex (Iraqi Kurdistan)",
+"y": 2025,
+"r": "Journal of Archaeological Science",
+"c": 1,
+"doi": "https://doi.org/10.1016/j.jas.2025.106425",
+"a": [
+"Silvia Rita Amicone",
+"Ada Dinçkal *",
+"Shira Gur-Arieh",
+"Baptiste Solard",
+"Marcel Frenken",
+"Andrea Squitieri",
+"Jean-Jacques Herr",
+"Christoph Berthold",
+"Christopher E. Miller",
+"Karen Radner"
+]
+}
+],
+"marte": []
+},
+"pioneros_geologia": {
+"paleoclima": [],
+"diagenesis": [
+{
+"t": "Diagenesis of the Central Basque-Cantabrian Basin (Iberian Peninsula) based on illite-smectite distribution",
+"y": 1991,
+"r": "Clay Minerals",
+"c": 31,
+"doi": "https://doi.org/10.1180/claymin.1991.026.4.08",
+"a": [
+"J. Aróstegui *",
+"María Cruz Zuluaga Ibargallartu *",
+"Francisco Velasco *",
+"M. Ortega‐Huertas *",
+"Fernando Nieto *"
+]
+},
+{
+"t": "Relationship of clay minerals to depositional environment in the non-marine Eocene Pontils Group, SE Ebro Basin (Spain)",
+"y": 1991,
+"r": "Journal of Sedimentary Research",
+"c": 51,
+"doi": "https://doi.org/10.1306/d426780c-2b26-11d7-8648000102c1865d",
+"a": [
+"M. Inglés *",
+"Pere Anadón *"
+]
+},
+{
+"t": "Influence of tectonic factors on illite crystallinity: a case study in the iberian pyrite belt",
+"y": 1992,
+"r": "Clay Minerals",
+"c": 19,
+"doi": "https://doi.org/10.1180/claymin.1992.027.3.12",
+"a": [
+"Juan Carlos Fernández Caliani *",
+"E. Galán *"
+]
+},
+{
+"t": "Geochemistry of Spanish sepiolite-palygorskite deposits: Genetic considerations based on trace elements and isotopes",
+"y": 1994,
+"r": "Chemical Geology",
+"c": 109,
+"doi": "https://doi.org/10.1016/0009-2541(94)90026-4",
+"a": [
+"J. Torres-Ruíz *",
+"Alberto López-Galindo *",
+"J. M. González-López *",
+"Antonio Delgado‐Huertas *"
+]
+},
+{
+"t": "Modelling of potassium exchange in a natural, polyionic montmorillonite under hydrothermal conditions",
+"y": 1995,
+"r": "Applied Geochemistry",
+"c": 13,
+"doi": "https://doi.org/10.1016/0883-2927(95)00005-5",
+"a": [
+"F. Javier Huertas *",
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "Some Evidence Supporting the Existence of Polar Layers in Mixed-Layer Illite/Smectite",
+"y": 1995,
+"r": "Clays and Clay Minerals",
+"c": 22,
+"doi": "https://doi.org/10.1346/ccmn.1995.0430410",
+"a": [
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "An approach to the genesis of palygorskite in a Neogene-Quaternary continental basin using principal factor analysis",
+"y": 1995,
+"r": "Clay Minerals",
+"c": 23,
+"doi": "https://doi.org/10.1180/claymin.1995.030.3.06",
+"a": [
+"C.J. Sánchez *",
+"E. Galán *"
+]
+},
+{
+"t": "Experimental kinetic study of the smectite-to-illite transformation",
+"y": 1996,
+"r": "Geochimica et Cosmochimica Acta",
+"c": 187,
+"doi": "https://doi.org/10.1016/0016-7037(95)00407-6",
+"a": [
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "Lithological Control on the Occurrence of Chlorite in the Diagenetic Wealden Complex of the Bilbao Anticlinorium (Basco-Cantabrian Basin, Northern Spain)",
+"y": 1998,
+"r": "Clay Minerals",
+"c": 18,
+"doi": "https://doi.org/10.1180/claymin.1998.033.2.13",
+"a": [
+"Danièle Bartier",
+"Martine D. Buatier",
+"Michel Lopez",
+"Jean‐Luc Potdevin",
+"Hervé Chamley",
+"J. Aróstegui *"
+]
+},
+{
+"t": "Kaolinite and dickite formation during shale diagenesis: isotopic data",
+"y": 1998,
+"r": "Applied Geochemistry",
+"c": 54,
+"doi": "https://doi.org/10.1016/s0883-2927(97)00056-5",
+"a": [
+"María Dolores Ruiz Cruz *",
+"Emilio Reyes *"
+]
+},
+{
+"t": "Petrology and Geochemistry of Diagenetically Altered Tuffaceous Rocks from the Middle Triassic of Central Spain",
+"y": 1998,
+"r": "Journal of Sedimentary Research",
+"c": 19,
+"doi": "https://doi.org/10.2110/jsr.68.391",
+"a": [
+"R. Marfil *",
+"Anthony Hall",
+"Soledad García‐Gil *",
+"Michael G. Stamatakis"
+]
+},
+{
+"t": "Electron Microscopic Study of the Illite-Smectite Transformation in the Bentonites from Cerro Del Aguila (Toledo, Spain)",
+"y": 1998,
+"r": "Clay Minerals",
+"c": 31,
+"doi": "https://doi.org/10.1180/claymin.1998.033.3.12",
+"a": [
+"Cristina de Santiago Buey *",
+"M. Suarez Barrios *",
+"E. Garcia Romero *",
+"M. C. Dominguez Diaz *",
+"M. Doval Montoya *"
+]
+},
+{
+"t": "Characterization of mixed-layer illite-smectite from bentonites using microscopic, chemical, and X-ray methods; constraints on the smectite-to-illite transformation mechanism",
+"y": 1998,
+"r": "American Mineralogist",
+"c": 80,
+"doi": "https://doi.org/10.2138/am-1998-7-808",
+"a": [
+"Javier Cuadros *",
+"Stephen P. Altaner"
+]
+}
+],
+"datacion": [],
+"fallas": [],
+"alteracion": [
+{
+"t": "Saponitic clays from the Madrid basin: Accessory-minerals influence in hydrothermal reactivity",
+"y": 1992,
+"r": "Applied Clay Science",
+"c": 10,
+"doi": "https://doi.org/10.1016/0169-1317(92)90039-p",
+"a": [
+"Jaime Cuevas *",
+"J.A. Medina *",
+"Santiago Leguey *"
+]
+},
+{
+"t": "Geology, mineralogy, origin and possible applications of some Argentinian kaolins in the Neuquen basin",
+"y": 1997,
+"r": "Applied Clay Science",
+"c": 29,
+"doi": "https://doi.org/10.1016/s0169-1317(96)00035-x",
+"a": [
+"F. Cravero",
+"Isabel Gónzalez *",
+"E. Galan *",
+"E. Dominguez"
+]
+}
+],
+"suelos": [],
+"geoarqueologia": [],
+"marte": []
+},
+"pioneros_aplicaciones": {
+"ceramica": [
+{
+"t": "Texture and color features for tile classification",
+"y": 1999,
+"r": "Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE",
+"c": 15,
+"doi": "https://doi.org/10.1117/12.364318",
+"a": [
+"Ramon Baldrich *",
+"María Vanrell *",
+"Juan J. Villanueva *"
+]
+}
+],
+"estructural": [],
+"azulejos": [
+{
+"t": "Porcelainized stoneware: architectural, processing and physico-mechanical properties",
+"y": 1996,
+"r": "Materiales de Construcción",
+"c": 10,
+"doi": "https://doi.org/10.3989/mc.1996.v46.i242-243.533",
+"a": [
+"Tiziano Manfredini",
+"Marcello Romagnoli *",
+"J. María Rincón *"
+]
+},
+{
+"t": "Characterization of a waste washing solid product of mining granitic tin-bearing sands and its application as ceramic raw material",
+"y": 1996,
+"r": "Resources Conservation and Recycling",
+"c": 33,
+"doi": "https://doi.org/10.1016/0921-3449(96)01108-1",
+"a": [
+"M. Raigón Pichardo",
+"G. García-Ramos *",
+"Pedro José Sánchez-Soto *"
+]
+},
+{
+"t": "Use of coal fly ash for ceramics: a case study for a large Spanish power station",
+"y": 1997,
+"r": "Fuel",
+"c": 102,
+"doi": "https://doi.org/10.1016/s0016-2361(97)00024-0",
+"a": [
+"I. Queralt *",
+"Xavier Querol *",
+"Angel Lopez-Soler *",
+"F. Plana *"
+]
+}
+],
+"refractarios": [],
+"cemento": [],
+"papel": [],
+"cargas": [],
+"perforacion": [],
+"fundicion": [
+{
+"t": "Characterization and technical properties of a Mg-rich bentonite",
+"y": 1986,
+"r": "Applied Clay Science",
+"c": 27,
+"doi": "https://doi.org/10.1016/0169-1317(86)90006-2",
+"a": [
+"E. Galán *",
+"A. Alvarez *",
+"M.A. Esteban *"
+]
+}
+],
+"pelets": [],
+"ingenieria": [
+{
+"t": "A constitutive model for partially saturated soils",
+"y": 1990,
+"r": "Géotechnique",
+"c": 2904,
+"doi": "https://doi.org/10.1680/geot.1990.40.3.405",
+"a": [
+"Eduardo Alonso Pérez de Ágreda *",
+"Antonio Gens *",
+"Alejandro Josa *"
+]
+}
+],
+"barreras": [
+{
+"t": "Effects of heat/water flow interaction on compacted bentonite: Preliminary results",
+"y": 1996,
+"r": "Engineering Geology",
+"c": 32,
+"doi": "https://doi.org/10.1016/0013-7952(95)00037-2",
+"a": [
+"María Victoria Villar *",
+"Jaime Cuevas *",
+"Pedro Luis Martín *"
+]
+},
+{
+"t": "Experimental kinetic study of the smectite-to-illite transformation",
+"y": 1996,
+"r": "Geochimica et Cosmochimica Acta",
+"c": 187,
+"doi": "https://doi.org/10.1016/0016-7037(95)00407-6",
+"a": [
+"Javier Cuadros *",
+"J. Linares *"
+]
+},
+{
+"t": "Suction-controlled experiments on Boom clay",
+"y": 1997,
+"r": "Engineering Geology",
+"c": 77,
+"doi": "https://doi.org/10.1016/s0013-7952(96)00127-5",
+"a": [
+"Frédéric Bernier",
+"G. Volckaert",
+"Eduardo Alonso Pérez de Ágreda *",
+"María Victoria Villar *"
+]
+},
+{
+"t": "Use of a carbon paste modified electrode for the determination of 2-nitrophenol in a flow system by differential pulse voltammetry",
+"y": 1997,
+"r": "Analytica Chimica Acta",
+"c": 47,
+"doi": "https://doi.org/10.1016/s0003-2670(97)00043-3",
+"a": [
+"Ignacio Naranjo-Rodríguez *",
+"Juan A. Muñoz Leyva *",
+"JoséL. Hidalgo *",
+"Hidalgo de Cisneros *"
+]
+},
+{
+"t": "Analysis of a full scalein situ test simulating repository conditions",
+"y": 1998,
+"r": "International Journal for Numerical and Analytical Methods in Geomechanics",
+"c": 189,
+"doi": "https://doi.org/10.1002/(sici)1096-9853(199807)22:7<515::aid-nag926>3.0.co;2-8",
+"a": [
+"Antonio Gens *",
+"A. Garcia-Molina *",
+"S. Olivella *",
+"Eduardo Alonso Pérez de Ágreda *",
+"Fernando Huertas *"
+]
+},
+{
+"t": "Investigation of the behaviour of bentonite by means of suction-controlled oedometer tests",
+"y": 1999,
+"r": "Engineering Geology",
+"c": 61,
+"doi": "https://doi.org/10.1016/s0013-7952(99)00062-9",
+"a": [
+"María Victoria Villar *"
+]
+}
+],
+"absorbentes": [
+{
+"t": "Interlamellar Sorption Complexes of Graphitic Acid with Organic Substances",
+"y": 1955,
+"r": "Nature",
+"c": 35,
+"doi": "https://doi.org/10.1038/1761222a0",
+"a": [
+"J. CANO RUIZ *",
+"Douglas M. C. MacEwan *"
+]
+},
+{
+"t": "Evolution of surface area in a sepiolite as a function of acid and heat treatments",
+"y": 1978,
+"r": "Clay Minerals",
+"c": 84,
+"doi": "https://doi.org/10.1180/claymin.1978.013.4.03",
+"a": [
+"A. Jiménez-López *",
+"J. de D. López-González *",
+"A. Ramīrez-Sāenz *",
+"Francisco Rodríguez-Reinoso *",
+"Crist�bal Valenzuela-Calahorro *",
+"L. Zurita-Herrera *"
+]
+},
+{
+"t": "Surface Properties of Fibrous Clay Minerals (Palygorskite and Sepiolite)",
+"y": 1979,
+"r": "Developments in sedimentology",
+"c": 76,
+"doi": "https://doi.org/10.1016/s0070-4571(08)70706-4",
+"a": [
+"J.M. Serratosa *"
+]
+},
+{
+"t": "Activation of a sepiolite with dilute solutions of HNO3and subsequent heat treatments: III. Development of porosity",
+"y": 1981,
+"r": "Clay Minerals",
+"c": 28,
+"doi": "https://doi.org/10.1180/claymin.1981.016.4.01",
+"a": [
+"Francisco Rodríguez-Reinoso *",
+"A. Ramīrez-Sāenz *",
+"J. de D. López-González *",
+"Crist�bal Valenzuela-Calahorro *",
+"L. Zurita-Herrera *"
+]
+},
+{
+"t": "Surfactant Adsorption and Rheological Behavior of Surface-Modified Sepiolite",
+"y": 1985,
+"r": "Clay Minerals Society eBooks",
+"c": 19,
+"doi": "https://doi.org/10.1346/cms-icc-1.53",
+"a": [
+"A. Álvarez *",
+"Julio Santarén *",
+"R. Pérez‐Castells *",
+"Blanca Casal *",
+"Eduardo Ruiz‐Hitzky *",
+"Pierre Levitz",
+"José Jean Fripiat"
+]
+},
+{
+"t": "Adsorption of Collagen by Sepiolite",
+"y": 1985,
+"r": "Clay Minerals Society eBooks",
+"c": 14,
+"doi": "https://doi.org/10.1346/cms-icc-1.51",
+"a": [
+"R. Pérez‐Castells *",
+"A. Alvarez *",
+"José G. Gavilanes *",
+"María Antonia Lizarbe *",
+"Álvaro Martínez‐del‐Pozo *",
+"Nieves Olmo *",
+"Julio Santarén *"
+]
+},
+{
+"t": "Particle size determination of palladium supported on sepiolite and aluminum phosphate",
+"y": 1985,
+"r": "Journal of Colloid and Interface Science",
+"c": 19,
+"doi": "https://doi.org/10.1016/0021-9797(85)90206-1",
+"a": [
+"M.A. Martín-Luengo *",
+"Jesús Alberto Pajares *",
+"Luis González Tejuca *"
+]
+},
+{
+"t": "Adsorption of thiram from aqueous solution on activated carbon and sepiolite",
+"y": 1987,
+"r": "Journal of Chemical Technology & Biotechnology",
+"c": 36,
+"doi": "https://doi.org/10.1002/jctb.280390104",
+"a": [
+"E. Gonzáiez‐Pradas",
+"Matilde Villafranca-Sánchez",
+"María M. Socías-Viciana",
+"F. Del Rey‐Bueno *",
+"A. García‐Rodriguez *"
+]
+},
+{
+"t": "Mechanism of Acid Activation of Magnesic Palygorskite",
+"y": 1989,
+"r": "Clays and Clay Minerals",
+"c": 48,
+"doi": "https://doi.org/10.1346/ccmn.1989.0370309",
+"a": [
+"Fernando González *",
+"C. Pesquera *",
+"Inmaculada Benito *",
+"S. Mendioroz *",
+"Jesús Alberto Pajares *"
+]
+},
+{
+"t": "Optimization of the selective semi-hydrogenation of phenylacetylene with supported palladium systems",
+"y": 1990,
+"r": "Applied Catalysis",
+"c": 41,
+"doi": "https://doi.org/10.1016/s0166-9834(00)81726-1",
+"a": [
+"Maite Aramendía *",
+"Víctor Borau *",
+"C. Jiménez *",
+"J. M. Marinas *",
+"M. E. Sempere *",
+"Francisco José Urbano *"
+]
+},
+{
+"t": "Removal of aromatic amines from aqueous solution by activated sepiolite",
+"y": 1990,
+"r": "Journal of Chemical Technology & Biotechnology",
+"c": 22,
+"doi": "https://doi.org/10.1002/jctb.280470103",
+"a": [
+"Emilio González-Pradas *",
+"Antonio Valverde *",
+"Matilde Villafranca-Sánchez *"
+]
+},
+{
+"t": "New AlPO4-sepiolite systems as acid catalysts, I. Preparation, texture, surface-chemical properties and cyclohexene skeletal isomerization conversion",
+"y": 1990,
+"r": "Journal of Materials Science",
+"c": 32,
+"doi": "https://doi.org/10.1007/bf00638052",
+"a": [
+"Juan Manuel Campelo *",
+"A. García *",
+"Diego Luna *",
+"Jose Maria Marinas *"
+]
+},
+{
+"t": "Structural and textural evolution under thermal treatment of natural and acid-activated Al-rich and Mg-rich palygorskites",
+"y": 1990,
+"r": "Applied Clay Science",
+"c": 42,
+"doi": "https://doi.org/10.1016/0169-1317(90)90004-9",
+"a": [
+"Fernando González *",
+"C. Pesquera *",
+"C. Blanco *",
+"Inmaculada Benito *",
+"S. Mendioroz *",
+"Jesús Alberto Pajares *"
+]
+},
+{
+"t": "Maleic hydrazide interaction with soil clay surfaces",
+"y": 1991,
+"r": "Chemosphere",
+"c": 10,
+"doi": "https://doi.org/10.1016/0045-6535(91)90198-m",
+"a": [
+"María C. Hermosín *",
+"Isabel Roldán *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Mercury Adsorption by Sulfurized Fibrous Silicates",
+"y": 1991,
+"r": "Clays and Clay Minerals",
+"c": 55,
+"doi": "https://doi.org/10.1346/ccmn.1991.0390102",
+"a": [
+"Loreto Daza *",
+"S. Mendioroz *",
+"Jesús Alberto Pajares *"
+]
+},
+{
+"t": "Adsorption-desorption of maleic hydrazide on mineral soil components",
+"y": 1991,
+"r": "Journal of Environmental Science and Health Part B",
+"c": 24,
+"doi": "https://doi.org/10.1080/03601239109372729",
+"a": [
+"María C. Hermosín *",
+"Isabel Roldán *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Surface Acidity of Palygorskite-Supported Rhodium Catalysts",
+"y": 1991,
+"r": "Clays and Clay Minerals",
+"c": 10,
+"doi": "https://doi.org/10.1346/ccmn.1991.0390611",
+"a": [
+"Juana Herrero *",
+"Jesús Alberto Pajares *",
+"C. Blanco *"
+]
+},
+{
+"t": "Adsorption of methylene blue on sepiolite gels: spectroscopic and rheological studies",
+"y": 1992,
+"r": "Clay Minerals",
+"c": 77,
+"doi": "https://doi.org/10.1180/claymin.1992.027.1.10",
+"a": [
+"A. J. Aznar *",
+"Blanca Casal *",
+"Eduardo Ruiz‐Hitzky *",
+"Íñigo López‐Arbeloa *",
+"F. López Arbeloa *",
+"Julio Santarén *",
+"A. Alvarez *"
+]
+},
+{
+"t": "Naturally-Occurring Silicates as Carriers for Copper Catalysts used in Methanol Conversion",
+"y": 1992,
+"r": "Clays and Clay Minerals",
+"c": 20,
+"doi": "https://doi.org/10.1346/ccmn.1992.0400205",
+"a": [
+"María del Rosario Sun Kou *",
+"S. Mendioroz *",
+"J.L.G. Fierro *",
+"Inmaculada Rodríguez-Ramos *",
+"José Palacios *",
+"Antonio Ricardo Guerrero-Ruiz *",
+"A. M. De Andres *"
+]
+},
+{
+"t": "Saponitic clays from the Madrid basin: Accessory-minerals influence in hydrothermal reactivity",
+"y": 1992,
+"r": "Applied Clay Science",
+"c": 10,
+"doi": "https://doi.org/10.1016/0169-1317(92)90039-p",
+"a": [
+"Jaime Cuevas *",
+"J.A. Medina *",
+"Santiago Leguey *"
+]
+},
+{
+"t": "Removing 2,4-D from water by organo-clays",
+"y": 1992,
+"r": "Chemosphere",
+"c": 89,
+"doi": "https://doi.org/10.1016/0045-6535(92)90270-2",
+"a": [
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Characterization of Mg-clays from the Neogene of the Madrid Basin and their potential as backfilling and sealing material in high level radioactive waste disposal",
+"y": 1993,
+"r": "Applied Clay Science",
+"c": 30,
+"doi": "https://doi.org/10.1016/0169-1317(93)90004-k",
+"a": [
+"Jaime Cuevas *",
+"Marta Pelayo *",
+"P RIVAS *",
+"Santiago Leguey *"
+]
+},
+{
+"t": "Interaction of N-methyl 8-hydroxy quinoline methyl sulphate with sepiolite",
+"y": 1993,
+"r": "Applied Clay Science",
+"c": 12,
+"doi": "https://doi.org/10.1016/0169-1317(93)90024-u",
+"a": [
+"Carmen del Hoyo *",
+"V. Rives *",
+"M.A. Vicente *"
+]
+},
+{
+"t": "Metal—support interaction effects in the liquid-phase selective hydrogenation of 1,4-butynediol with nickel catalysts supported on AlPO4 and on other conventional non-reducible compounds",
+"y": 1993,
+"r": "Journal of Molecular Catalysis",
+"c": 20,
+"doi": "https://doi.org/10.1016/0304-5102(93)80058-3",
+"a": [
+"Juan Manuel Campelo *",
+"R. Guardeño *",
+"Diego Luna *",
+"J. M. Marinas *",
+"Julián Morales *",
+"José Luis Tirado *"
+]
+},
+{
+"t": "Acid activation of a Spanish sepiolite: physico-chemical characterization, free silica content and surface area of products obtained",
+"y": 1994,
+"r": "Clay Minerals",
+"c": 99,
+"doi": "https://doi.org/10.1180/claymin.1994.029.3.07",
+"a": [
+"M. A. Vicente Rodriguez *",
+"J. DE D. Lopez Gonzalez *",
+"M. A. Bañares Muñoz *"
+]
+},
+{
+"t": "Kinetic study of the selective reduction of nitric oxide over vanadia—tungsta—titania/sepiolite catalyst",
+"y": 1994,
+"r": "Applied Catalysis B: Environmental",
+"c": 48,
+"doi": "https://doi.org/10.1016/0926-3373(94)00031-x",
+"a": [
+"C.U. Ingemar Odenbrand",
+"A. Bahamonde *",
+"Pedro Avila *",
+"J. Blanco *"
+]
+},
+{
+"t": "The use of sepiolite in the preparation of titania monoliths for the manufacture of industrial catalysts",
+"y": 1995,
+"r": "Studies in surface science and catalysis",
+"c": 15,
+"doi": "https://doi.org/10.1016/s0167-2991(06)81816-1",
+"a": [
+"J. Blanco *",
+"Pedro Avila *",
+"M. Yates *",
+"A. Bahamonde *"
+]
+},
+{
+"t": "Carbonation process and properties of a new lime mortar with added sepiolite",
+"y": 1995,
+"r": "Cement and Concrete Research",
+"c": 65,
+"doi": "https://doi.org/10.1016/0008-8846(94)00110-k",
+"a": [
+"Sagrario Martínez-Ramírez *",
+"F. Puertas *",
+"María Teresa Blanco‐Varela *"
+]
+},
+{
+"t": "Immobilization of alkaline phosphatase by sorption on Na-sepiolite",
+"y": 1995,
+"r": "Bioresource Technology",
+"c": 37,
+"doi": "https://doi.org/10.1016/0960-8524(94)00115-h",
+"a": [
+"M.S. Carrasco *",
+"Carlos Rad *",
+"Salvador González‐Carcedo *"
+]
+},
+{
+"t": "Removal of salts from granite by sepiolite",
+"y": 1995,
+"r": "Applied Clay Science",
+"c": 14,
+"doi": "https://doi.org/10.1016/0169-1317(95)00005-o",
+"a": [
+"Raquel Trujillano *",
+"Jacinta García Talegón *",
+"Adolfo C. Iñigo *",
+"Maria A. Vicente *",
+"V. Rives *",
+"Eloy Molina *"
+]
+},
+{
+"t": "Acid activation of a palygorskite with HCl: Development of physico-chemical, textural and surface properties",
+"y": 1995,
+"r": "Applied Clay Science",
+"c": 220,
+"doi": "https://doi.org/10.1016/0169-1317(95)00007-q",
+"a": [
+"M.Suárez Barrios *",
+"L.V.Flores González *",
+"M.A.Vicente Rodríguez *",
+"José María Martín Pozas *"
+]
+},
+{
+"t": "Zinc sorption by acid tropical soils as affected by cultivation",
+"y": 1995,
+"r": "European Journal of Soil Science",
+"c": 40,
+"doi": "https://doi.org/10.1111/j.1365-2389.1995.tb01838.x",
+"a": [
+"M.E. Guadalix *",
+"M. T. Pardo *"
+]
+},
+{
+"t": "Intestinal absorption of zearalenone and in vitro study of non-nutritive sorbent materials",
+"y": 1996,
+"r": "International Journal of Pharmaceutics",
+"c": 118,
+"doi": "https://doi.org/10.1016/0378-5173(95)04239-3",
+"a": [
+"Antonio Javier Ramos *",
+"E. Hernández *",
+"José María Pla-Delfina *",
+"M. Merino *"
+]
+},
+{
+"t": "Characterization, Surface Area, and Porosity Analyses of the Solids Obtained by Acid Leaching of a Saponite",
+"y": 1996,
+"r": "Langmuir",
+"c": 117,
+"doi": "https://doi.org/10.1021/la950501b",
+"a": [
+"Miguel Angel Vicente *",
+"Mercedes Suárez *",
+"J. de D. López-González *",
+"Miguel Angel Bañares-Muñoz *"
+]
+},
+{
+"t": "Influence of NiCu alloying on Sepiolite-supported nickel catalysts in the liquid-phase selective hydrogenation of fatty acid ethyl esters",
+"y": 1996,
+"r": "Journal of Molecular Catalysis A Chemical",
+"c": 31,
+"doi": "https://doi.org/10.1016/1381-1169(95)00203-0",
+"a": [
+"Felipa M. Bautista *",
+"Juan Manuel Campelo *",
+"A. García *",
+"R. Guardeño *",
+"Diego Luna *",
+"J. M. Marinas *"
+]
+},
+{
+"t": "Measurement of the effective diffusivity for a vanadia-tungsta-titania/sepiolite catalyst for SCR of NO",
+"y": 1996,
+"r": "Applied Catalysis B: Environmental",
+"c": 18,
+"doi": "https://doi.org/10.1016/0926-3373(95)00056-9",
+"a": [
+"Aurora Santos *",
+"A. Bahamonde *",
+"Pedro Avila *",
+"Félix García‐Ochoa *"
+]
+},
+{
+"t": "Reversible folding in sepiolite: study by thermal and textural analysis",
+"y": 1996,
+"r": "Thermochimica Acta",
+"c": 44,
+"doi": "https://doi.org/10.1016/s0040-6031(96)90068-4",
+"a": [
+"R RUIZ *",
+"J.C. del Moral *",
+"C. Pesquera *",
+"Inmaculada Benito *",
+"Fernando González *"
+]
+},
+{
+"t": "Factors influencing phosphorus adsorption in mine soils in Galicia, Spain",
+"y": 1996,
+"r": "The Science of The Total Environment",
+"c": 30,
+"doi": "https://doi.org/10.1016/0048-9697(95)04934-7",
+"a": [
+"Carmen Monterroso *",
+"María Luisa Fernández Marcos *",
+"Esperanza Álvarez‐Rodríguez *"
+]
+},
+{
+"t": "Sorption of metamitron on soils with low organic matter content",
+"y": 1996,
+"r": "Chemosphere",
+"c": 25,
+"doi": "https://doi.org/10.1016/0045-6535(96)00048-3",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Retention of Metamitron by Model and Natural Particulate Matter",
+"y": 1996,
+"r": "International Journal of Environmental & Analytical Chemistry",
+"c": 30,
+"doi": "https://doi.org/10.1080/03067319608045559",
+"a": [
+"Rafael Celis *",
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Spectroscopy of Rhodamine 6G Adsorbed on Sepiolite Aqueous Suspensions",
+"y": 1997,
+"r": "Journal of Colloid and Interface Science",
+"c": 56,
+"doi": "https://doi.org/10.1006/jcis.1996.4672",
+"a": [
+"F. López Arbeloa *",
+"Teresa Arbeloa *",
+"I.López Arbeloa *"
+]
+},
+{
+"t": "Effect of organic matter and clays on the biodegradation of Phenanthrene in soils",
+"y": 1997,
+"r": "International Biodeterioration & Biodegradation",
+"c": 58,
+"doi": "https://doi.org/10.1016/s0964-8305(97)00045-0",
+"a": [
+"J. J. Ortega Calvo *",
+"Mohammed Lahlou *",
+"C. Sáiz-Jiménez *"
+]
+},
+{
+"t": "Sorption‐Desorption of Atrazine and Simazine by Model Soil Colloidal Components",
+"y": 1997,
+"r": "Soil Science Society of America Journal",
+"c": 132,
+"doi": "https://doi.org/10.2136/sssaj1997.03615995006100020010x",
+"a": [
+"Rafael Celis *",
+"Juan Cornejo *",
+"María C. Hermosín",
+"William C. Koskinen"
+]
+},
+{
+"t": "Sorption of Thiazafluron by Iron‐ and Humic Acid‐Coated Montmorillonite",
+"y": 1997,
+"r": "Journal of Environmental Quality",
+"c": 52,
+"doi": "https://doi.org/10.2134/jeq1997.00472425002600020019x",
+"a": [
+"Rafael Celis *",
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Sorption−Desorption of Imazamethabenz on Three Spanish Soils",
+"y": 1997,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 17,
+"doi": "https://doi.org/10.1021/jf960694o",
+"a": [
+"Ángel Cartón *",
+"Tomás Isla *",
+"Javier Álvarez‐Benedí *"
+]
+},
+{
+"t": "Sorption of two polar herbicides in soils and soil clays suspensions",
+"y": 1997,
+"r": "Water Research",
+"c": 81,
+"doi": "https://doi.org/10.1016/s0043-1354(96)00337-5",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Rafael Celis *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Porosity and herbicide leaching in soils amended with olive-mill wastewater",
+"y": 1997,
+"r": "Agriculture Ecosystems & Environment",
+"c": 162,
+"doi": "https://doi.org/10.1016/s0167-8809(97)00063-7",
+"a": [
+"Lucía Cox *",
+"Rafael Celis *",
+"María C. Hermosín *",
+"Analía Rosa Becker",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Adsorption of Monovalent Organic Cations on Sepiolite: Experimental Results and Model Calculations",
+"y": 1998,
+"r": "Clays and Clay Minerals",
+"c": 131,
+"doi": "https://doi.org/10.1346/ccmn.1998.0460313",
+"a": [
+"Giora Rytwo",
+"Shlomo Nir",
+"Leon Margulies",
+"Blanca Casal *",
+"Jesús Merino *",
+"Eduardo Ruiz‐Hitzky *",
+"Jose Maria Serratosa *"
+]
+},
+{
+"t": "Influence of surface support properties on the liquid-phase selective hydrogenation of phenylacetylene on supported nickel catalysts",
+"y": 1998,
+"r": "Catalysis Letters",
+"c": 27,
+"doi": "https://doi.org/10.1023/a:1019008528391",
+"a": [
+"Felipa M. Bautista *",
+"Juan Manuel Campelo *",
+"A. García *",
+"Diego Luna *",
+"Jose Maria Marinas *",
+"Rafael A. Quiros *",
+"Antonio A. Romero *"
+]
+},
+{
+"t": "Sorption isotherms and kinetics in the primary biodegradation of anionic surfactants by immobilized bacteria",
+"y": 1998,
+"r": "Journal of Molecular Catalysis B Enzymatic",
+"c": 13,
+"doi": "https://doi.org/10.1016/s1381-1177(98)00005-8",
+"a": [
+"Manuel G. Roig *",
+"M.A. Pedraz *",
+"J.M. Sanchez *"
+]
+},
+{
+"t": "Modification of Sepiolite by Treatment with Fluorides: Structural and Textural Changes",
+"y": 1998,
+"r": "Clays and Clay Minerals",
+"c": 28,
+"doi": "https://doi.org/10.1346/ccmn.1998.0460601",
+"a": [
+"María Jesús Belzunce *",
+"S. Mendioroz *",
+"Jerzy Haber"
+]
+},
+{
+"t": "PHOSPHORUS AND IRON MOBILIZATION IN FLOODED SOILS FROM BRAZIL",
+"y": 1998,
+"r": "Soil Science",
+"c": 50,
+"doi": "https://doi.org/10.1097/00010694-199802000-00006",
+"a": [
+"Jaime Wilson Vargas de Mello",
+"Vidal Barrón *",
+"José Torrent *"
+]
+},
+{
+"t": "Sorption of Tribenuron-methyl, Chlorsulfuron, and Imazamethabenz-methyl by Soils",
+"y": 1998,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 31,
+"doi": "https://doi.org/10.1021/jf970710x",
+"a": [
+"Javier Álvarez‐Benedí *",
+"A. Cartón *",
+"J. C. Fernández *"
+]
+},
+{
+"t": "Sorption of Imidacloprid on Soil Clay Mineral and Organic Components",
+"y": 1998,
+"r": "Soil Science Society of America Journal",
+"c": 135,
+"doi": "https://doi.org/10.2136/sssaj1998.03615995006200040009x",
+"a": [
+"Lucía Cox",
+"William C. Koskinen",
+"Rafael Celis *",
+"María C. Hermosín *",
+"Juan Cornejo *",
+"Pau Yong Yen"
+]
+},
+{
+"t": "Removing prometrone from water by clays and organic clays",
+"y": 1998,
+"r": "Chemosphere",
+"c": 44,
+"doi": "https://doi.org/10.1016/s0045-6535(98)00047-2",
+"a": [
+"María M. Socías-Viciana *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Mercury Retrieval from Flue Gas by Monolithic Adsorbents Based on Sulfurized Sepiolite",
+"y": 1999,
+"r": "Environmental Science & Technology",
+"c": 33,
+"doi": "https://doi.org/10.1021/es980417t",
+"a": [
+"S. Mendioroz *",
+"M. Isabel Guijarro *",
+"Pedro J. Bermejo *",
+"Vicenta Muñoz *"
+]
+},
+{
+"t": "Sorption of Heavy Metals from Industrial Waste Water by Low-Cost Mineral Silicates",
+"y": 1999,
+"r": "Clay Minerals",
+"c": 147,
+"doi": "https://doi.org/10.1180/claymin.1999.034.3.08",
+"a": [
+"Antonio García Sánchez *",
+"E. Álvarez‐Ayuso *",
+"O. Jimenez de Blas *"
+]
+},
+{
+"t": "Pharmaceutical applications of some spanish clays (sepiolite, palygorskite, bentonite): some preformulation studies",
+"y": 1999,
+"r": "Applied Clay Science",
+"c": 145,
+"doi": "https://doi.org/10.1016/s0169-1317(98)00050-7",
+"a": [
+"César Viseras *",
+"Alberto López-Galindo *"
+]
+},
+{
+"t": "Preliminary studies in removing atrazine, isoproturon and imidacloprid from water by natural sepiolite",
+"y": 1999,
+"r": "Journal of Chemical Technology & Biotechnology",
+"c": 38,
+"doi": "https://doi.org/10.1002/(sici)1097-4660(199905)74:5<417::aid-jctb58>3.0.co;2-q",
+"a": [
+"Emilio González-Pradas *",
+"Matilde Villafranca-Sánchez *",
+"María M. Socías-Viciana *",
+"Manuel Fernández‐Pérez *",
+"María Dolores Ureña-Amate *"
+]
+},
+{
+"t": "Adsorption–desorption of water vapor by natural and heat-treated sepiolite in ambient air",
+"y": 1999,
+"r": "Applied Clay Science",
+"c": 79,
+"doi": "https://doi.org/10.1016/s0169-1317(99)00030-7",
+"a": [
+"Francisco Caturla *"
+]
+},
+{
+"t": "Heavy metal adsorption by different minerals: application to the remediation of polluted soils",
+"y": 1999,
+"r": "The Science of The Total Environment",
+"c": 245,
+"doi": "https://doi.org/10.1016/s0048-9697(99)00383-6",
+"a": [
+"Antonio García-Sánchez *",
+"Andrés Alástuey *",
+"Xavier Querol *"
+]
+},
+{
+"t": "Sorption and Desorption of Triadimefon by Soils and Model Soil Colloids",
+"y": 1999,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 37,
+"doi": "https://doi.org/10.1021/jf980618g",
+"a": [
+"Rafael Celis",
+"William C. Koskinen",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Leaching of simazine in organic‐amended soils",
+"y": 1999,
+"r": "Communications in Soil Science and Plant Analysis",
+"c": 21,
+"doi": "https://doi.org/10.1080/00103629909370322",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Mobility of imidacloprid from alginate-bentonite controlled-release formulations in greenhouse soils",
+"y": 1999,
+"r": "Pesticide Science",
+"c": 36,
+"doi": "https://doi.org/10.1002/ps.2780551110",
+"a": [
+"Emilio González-Pradas *",
+"Manuel Fernández‐Pérez *",
+"Matilde Villafranca-Sánchez *",
+"Francisco Flores‐Céspedes *"
+]
+},
+{
+"t": "Sorption of the ionizable pesticide imazamox by organo‐clays and organohydrotalcites",
+"y": 1999,
+"r": "Journal of Environmental Science and Health Part B",
+"c": 85,
+"doi": "https://doi.org/10.1080/03601239909373237",
+"a": [
+"Rafael Celis *",
+"William C. Koskinen",
+"A. M. Cecchi",
+"Gail A. Bresnahan",
+"M. J. Carrisoza *",
+"Maria Angeles Ulibarri *",
+"I. Pavlović *",
+"María C. Hermosín *"
+]
+}
+],
+"agricultura": [
+{
+"t": "Predicting phosphate sorption in soils of mediterranean regions",
+"y": 1990,
+"r": "Nutrient Cycling in Agroecosystems",
+"c": 68,
+"doi": "https://doi.org/10.1007/bf01073433",
+"a": [
+"F. Pe�a *",
+"José Torrent *"
+]
+},
+{
+"t": "Growth, Yield, and Yield Components of Lupin Cultivars",
+"y": 1990,
+"r": "Agronomy Journal",
+"c": 26,
+"doi": "https://doi.org/10.2134/agronj1990.00021962008200060004x",
+"a": [
+"Luis López‐Bellido *",
+"Mariano Fuentes *"
+]
+},
+{
+"t": "Maleic hydrazide interaction with soil clay surfaces",
+"y": 1991,
+"r": "Chemosphere",
+"c": 10,
+"doi": "https://doi.org/10.1016/0045-6535(91)90198-m",
+"a": [
+"María C. Hermosín *",
+"Isabel Roldán *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Adsorption of Chloridazon by Soils and their Components",
+"y": 1991,
+"r": "Weed Science",
+"c": 29,
+"doi": "https://doi.org/10.1017/s0043174500073161",
+"a": [
+"María J. Sánchez‐Martín *",
+"Maria Sáanchez-Camazano *"
+]
+},
+{
+"t": "Removing 2,4-D from water by organo-clays",
+"y": 1992,
+"r": "Chemosphere",
+"c": 89,
+"doi": "https://doi.org/10.1016/0045-6535(92)90270-2",
+"a": [
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Binding Mechanism of 2,4‐Dichlorophenoxyacetic Acid by Organo‐Clays",
+"y": 1993,
+"r": "Journal of Environmental Quality",
+"c": 120,
+"doi": "https://doi.org/10.2134/jeq1993.00472425002200020013x",
+"a": [
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Influence of soil properties on ethofumesate mobility",
+"y": 1993,
+"r": "Journal of Environmental Science and Health Part B",
+"c": 12,
+"doi": "https://doi.org/10.1080/03601239309372836",
+"a": [
+"M. Sanchez-Camazano *",
+"J. M. Gonzalez-Pozuelo *",
+"María J. Sánchez‐Martín *"
+]
+},
+{
+"t": "Adsorption of ethofumesate by agricultural and natural soils",
+"y": 1993,
+"r": "Weed Research",
+"c": 13,
+"doi": "https://doi.org/10.1111/j.1365-3180.1993.tb01964.x",
+"a": [
+"María J. Sánchez‐Martín *",
+"J. M. Gonzalez-Pozuelo *",
+"María Sánchez-Camazano *"
+]
+},
+{
+"t": "Adsorption and Desorption of the Herbicide Thiazafluron as A Function of Soil Properties",
+"y": 1995,
+"r": "International Journal of Environmental & Analytical Chemistry",
+"c": 37,
+"doi": "https://doi.org/10.1080/03067319508033132",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Adsorption mechanisms of thiazafluron in mineral soil clay components",
+"y": 1995,
+"r": "European Journal of Soil Science",
+"c": 40,
+"doi": "https://doi.org/10.1111/j.1365-2389.1995.tb01339.x",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Long-term energy use and economic evaluation of three tillage systems for cereal and legume production in central Spain",
+"y": 1995,
+"r": "Soil and Tillage Research",
+"c": 125,
+"doi": "https://doi.org/10.1016/0167-1987(95)00490-4",
+"a": [
+"J. L. Hernanz *",
+"V. Sánchez-Girón *",
+"Cecilia Cerisola *"
+]
+},
+{
+"t": "Influence of soil properties on the adsorption and mobility of metamitron",
+"y": 1995,
+"r": "Communications in Soil Science and Plant Analysis",
+"c": 13,
+"doi": "https://doi.org/10.1080/00103629509369524",
+"a": [
+"María J. Sánchez‐Martín *",
+"Laura Lorenzo *",
+"Teresa Crisanto *",
+"Michele Arienzo *",
+"María Sánchez-Camazano *"
+]
+},
+{
+"t": "Sorption of metamitron on soils with low organic matter content",
+"y": 1996,
+"r": "Chemosphere",
+"c": 25,
+"doi": "https://doi.org/10.1016/0045-6535(96)00048-3",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Interaction of the herbicide glyphosate with copper in humic complexes",
+"y": 1996,
+"r": "Chemosphere",
+"c": 24,
+"doi": "https://doi.org/10.1016/0045-6535(96)00036-7",
+"a": [
+"Tomás Undabeytia López *",
+"Martin V. Cheshire",
+"D. Mephail"
+]
+},
+{
+"t": "Interaction of metamitron and metolachlor with organic and inorganic smectites",
+"y": 1996,
+"r": "Toxicological & Environmental Chemistry Reviews",
+"c": 10,
+"doi": "https://doi.org/10.1080/02772249609358346",
+"a": [
+"María Sánchez-Camazano *",
+"María J. Sánchez‐Martín *"
+]
+},
+{
+"t": "Measurement and simulation of the movement of thiazafluron, clopyralid and metamitron in soil columns",
+"y": 1996,
+"r": "Weed Research",
+"c": 20,
+"doi": "https://doi.org/10.1111/j.1365-3180.1996.tb01671.x",
+"a": [
+"Lucía Cox *",
+"Allan Walker",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Photolysis of metamitron in water in the presence of soils and soil components",
+"y": 1996,
+"r": "Chemosphere",
+"c": 36,
+"doi": "https://doi.org/10.1016/0045-6535(96)00297-4",
+"a": [
+"Lucía Cox *"
+]
+},
+{
+"t": "Land treatment of olive oil mill wastewater",
+"y": 1996,
+"r": "International Biodeterioration & Biodegradation",
+"c": 186,
+"doi": "https://doi.org/10.1016/s0964-8305(96)00054-6",
+"a": [
+"Francisco Cabrera *",
+"Rafael López Núñez *",
+"A Martinez-Bordiu",
+"E. de Dupuy Lome",
+"J.M. Murillo *"
+]
+},
+{
+"t": "Sorption‐Desorption of Atrazine and Simazine by Model Soil Colloidal Components",
+"y": 1997,
+"r": "Soil Science Society of America Journal",
+"c": 132,
+"doi": "https://doi.org/10.2136/sssaj1997.03615995006100020010x",
+"a": [
+"Rafael Celis *",
+"Juan Cornejo *",
+"María C. Hermosín",
+"William C. Koskinen"
+]
+},
+{
+"t": "Sorption of Thiazafluron by Iron‐ and Humic Acid‐Coated Montmorillonite",
+"y": 1997,
+"r": "Journal of Environmental Quality",
+"c": 52,
+"doi": "https://doi.org/10.2134/jeq1997.00472425002600020019x",
+"a": [
+"Rafael Celis *",
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Sorption−Desorption of Imazamethabenz on Three Spanish Soils",
+"y": 1997,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 17,
+"doi": "https://doi.org/10.1021/jf960694o",
+"a": [
+"Ángel Cartón *",
+"Tomás Isla *",
+"Javier Álvarez‐Benedí *"
+]
+},
+{
+"t": "Sorption of two polar herbicides in soils and soil clays suspensions",
+"y": 1997,
+"r": "Water Research",
+"c": 81,
+"doi": "https://doi.org/10.1016/s0043-1354(96)00337-5",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Rafael Celis *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Porosity and herbicide leaching in soils amended with olive-mill wastewater",
+"y": 1997,
+"r": "Agriculture Ecosystems & Environment",
+"c": 162,
+"doi": "https://doi.org/10.1016/s0167-8809(97)00063-7",
+"a": [
+"Lucía Cox *",
+"Rafael Celis *",
+"María C. Hermosín *",
+"Analía Rosa Becker",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Adsorption of Glyphosate on the Clay Mineral Montmorillonite: Effect of Cu(II) in Solution and Adsorbed on the Mineral",
+"y": 1997,
+"r": "Environmental Science & Technology",
+"c": 152,
+"doi": "https://doi.org/10.1021/es970341l",
+"a": [
+"Esmeralda Morillo González *",
+"Tomás Undabeytia López *",
+"Celia Maqueda *"
+]
+},
+{
+"t": "Clay minerals and soil fertility loss on Petric Calcisol under a semiarid Mediterranean environment",
+"y": 1997,
+"r": "Soil Technology",
+"c": 22,
+"doi": "https://doi.org/10.1016/0933-3630(95)00044-5",
+"a": [
+"L.J. Alías *",
+"F. López‐Bermúdez *",
+"Purificación Marín Sanleandro *",
+"María Asunción Romero Díaz *",
+"J. Martínez *"
+]
+},
+{
+"t": "Adsorption of mecoprop and dichlorprop on calcareous and organic matter amended soils: Comparative adsorption of racemic and pure enantiomeric forms",
+"y": 1998,
+"r": "Journal of Environmental Science and Health Part B",
+"c": 29,
+"doi": "https://doi.org/10.1080/03601239809373129",
+"a": [
+"Marcus Barifouse Matallo",
+"Esperanza Romero *",
+"Francisco Sánchez-Rasero *",
+"Aránzazu Peña *",
+"Gonzalo Dios *"
+]
+},
+{
+"t": "Sorption of Atrazine and Simazine by Model Associations of Soil Colloids",
+"y": 1998,
+"r": "Soil Science Society of America Journal",
+"c": 85,
+"doi": "https://doi.org/10.2136/sssaj1998.03615995006200010022x",
+"a": [
+"Rafael Celis *",
+"Juan Cornejo *",
+"María C. Hermosín",
+"William C. Koskinen"
+]
+},
+{
+"t": "Effect of flow rate on the adsorption and desorption of glyphosate, simazine and atrazine in columns of sandy soils",
+"y": 1998,
+"r": "European Journal of Soil Science",
+"c": 60,
+"doi": "https://doi.org/10.1046/j.1365-2389.1998.00132.x",
+"a": [
+"Joaquin Beltran *",
+"Robert G. Gerritse",
+"Felix J. Hernández *"
+]
+},
+{
+"t": "Sorption of Tribenuron-methyl, Chlorsulfuron, and Imazamethabenz-methyl by Soils",
+"y": 1998,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 31,
+"doi": "https://doi.org/10.1021/jf970710x",
+"a": [
+"Javier Álvarez‐Benedí *",
+"A. Cartón *",
+"J. C. Fernández *"
+]
+},
+{
+"t": "Removing prometrone from water by clays and organic clays",
+"y": 1998,
+"r": "Chemosphere",
+"c": 44,
+"doi": "https://doi.org/10.1016/s0045-6535(98)00047-2",
+"a": [
+"María M. Socías-Viciana *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Sorption of 2,4-Dichlorophenoxyacetic Acid by Model Particles Simulating Naturally Occurring Soil Colloids",
+"y": 1999,
+"r": "Environmental Science & Technology",
+"c": 145,
+"doi": "https://doi.org/10.1021/es980659t",
+"a": [
+"Rafael Celis *",
+"María C. Hermosín *",
+"Lucía Cox *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Leaching of simazine in organic‐amended soils",
+"y": 1999,
+"r": "Communications in Soil Science and Plant Analysis",
+"c": 21,
+"doi": "https://doi.org/10.1080/00103629909370322",
+"a": [
+"Lucía Cox *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Sorption of the ionizable pesticide imazamox by organo‐clays and organohydrotalcites",
+"y": 1999,
+"r": "Journal of Environmental Science and Health Part B",
+"c": 85,
+"doi": "https://doi.org/10.1080/03601239909373237",
+"a": [
+"Rafael Celis *",
+"William C. Koskinen",
+"A. M. Cecchi",
+"Gail A. Bresnahan",
+"M. J. Carrisoza *",
+"Maria Angeles Ulibarri *",
+"I. Pavlović *",
+"María C. Hermosín *"
+]
+}
+],
+"pienso": [
+{
+"t": "Stabilization‐activation of pancreatic enzymes adsorbed on to a sepiolite clay",
+"y": 1991,
+"r": "Journal of Chemical Technology & Biotechnology",
+"c": 40,
+"doi": "https://doi.org/10.1002/jctb.280520213",
+"a": [
+"M.J. Cabezas *",
+"Domingo Martín Salvador *",
+"José Vicente Sinisterra *"
+]
+},
+{
+"t": "New silica-alumina-magnesia FCC active matrix and its possibilities as a basic nitrogen passivating compound",
+"y": 1992,
+"r": "Applied Catalysis A General",
+"c": 27,
+"doi": "https://doi.org/10.1016/0926-860x(92)80337-c",
+"a": [
+"Avelino Corma *",
+"F. A. Mocholí *"
+]
+},
+{
+"t": "Effect of sepiolite on pellet durability in feeds differing in fat and fibre content",
+"y": 1995,
+"r": "Animal Feed Science and Technology",
+"c": 70,
+"doi": "https://doi.org/10.1016/0377-8401(94)00749-y",
+"a": [
+"E. Angulo *",
+"Joaquim Brufau *",
+"Enric Esteve-Garcia *"
+]
+},
+{
+"t": "Prevention of Toxic Effects of Mycotoxins by Means of Nonnutritive Adsorbent Compounds",
+"y": 1996,
+"r": "Journal of Food Protection",
+"c": 283,
+"doi": "https://doi.org/10.4315/0362-028x-59.6.631",
+"a": [
+"Antonio Javier Ramos *",
+"J Fink-Gremmels",
+"Enrique Hernández *"
+]
+},
+{
+"t": "An Experimental and Theoretical Investigation of the Behavior of a Monolithic Ti−V−W−Sepiolite Catalyst in the Reduction of NOx with NH3",
+"y": 1996,
+"r": "Industrial & Engineering Chemistry Research",
+"c": 26,
+"doi": "https://doi.org/10.1021/ie9507179",
+"a": [
+"A. Bahamonde *",
+"Alessandra Beretta *",
+"Pedro Avila *",
+"Enrico Tronconi *"
+]
+},
+{
+"t": "Effect of a sepiolite product on pellet durability in pig diets differing in particle size and in broiler starter and finisher diets",
+"y": 1996,
+"r": "Animal Feed Science and Technology",
+"c": 74,
+"doi": "https://doi.org/10.1016/s0377-8401(96)01036-x",
+"a": [
+"E. Angulo *",
+"Joaquim Brufau *",
+"Enric Esteve-Garcia *"
+]
+},
+{
+"t": "Protein and energy retention in pigs fed diets containing sepiolite",
+"y": 1999,
+"r": "Animal Feed Science and Technology",
+"c": 53,
+"doi": "https://doi.org/10.1016/s0377-8401(99)00008-5",
+"a": [
+"Paolo Parisini",
+"Giovanna Martelli",
+"Luca Sardi",
+"Fernando Escribano *"
+]
+}
+],
+"farmacia": [
+{
+"t": "Chert occurrences in carbonate turbidites: examples from the Upper Jurassic of the Betic Mountains (southern Spain)",
+"y": 1987,
+"r": "Sedimentology",
+"c": 34,
+"doi": "https://doi.org/10.1111/j.1365-3091.1987.tb00790.x",
+"a": [
+"M. A. Bustillo *",
+"Pedro Alejandro Ruiz-Ortiz *"
+]
+},
+{
+"t": "Oolite stromatolites and thrombolites, Miocene, Spain: analogues of Recent giant Bahamian examples",
+"y": 1991,
+"r": "Sedimentary Geology",
+"c": 83,
+"doi": "https://doi.org/10.1016/0037-0738(91)90096-v",
+"a": [
+"Robert Riding",
+"Juan Carlos Braga *",
+"José Manuel Martín *"
+]
+},
+{
+"t": "Coral‐stromatolite reef framework, Upper Miocene, Almería, Spain",
+"y": 1991,
+"r": "Sedimentology",
+"c": 179,
+"doi": "https://doi.org/10.1111/j.1365-3091.1991.tb01873.x",
+"a": [
+"Robert Riding",
+"José Manuel Martín *",
+"Juan Carlos Braga *"
+]
+},
+{
+"t": "Assessment of two Spanish bentonites for pharmaceutical uses",
+"y": 1992,
+"r": "Applied Clay Science",
+"c": 43,
+"doi": "https://doi.org/10.1016/0169-1317(92)90003-6",
+"a": [
+"Encarnación Gámiz *",
+"J LINARES *",
+"Rafael Delgado *"
+]
+},
+{
+"t": "Siliciclastic stromatolites and thrombolites, late Miocene, S.E. Spain",
+"y": 1993,
+"r": "Journal of Sedimentary Research",
+"c": 86,
+"doi": "https://doi.org/10.1306/d4267aaa-2b26-11d7-8648000102c1865d",
+"a": [
+"José Manuel Martín *",
+"Juan Carlos Braga *",
+"Robert Riding *"
+]
+},
+{
+"t": "Thermal studies of pharmaceutical-clay systems Part I. Montmorillonite-based systems",
+"y": 1996,
+"r": "Thermochimica Acta",
+"c": 17,
+"doi": "https://doi.org/10.1016/0040-6031(96)02946-2",
+"a": [
+"Carmen del Hoyo *",
+"V. Rives *",
+"Miguel Angel Vicente *"
+]
+},
+{
+"t": "Properties and applications of palygorskite-sepiolite clays",
+"y": 1996,
+"r": "Clay Minerals",
+"c": 711,
+"doi": "https://doi.org/10.1180/claymin.1996.031.4.01",
+"a": [
+"E. Galan *"
+]
+},
+{
+"t": "Temperate carbonates on a modern, low-energy, isolated ramp; the Balearic Platform, Spain",
+"y": 1997,
+"r": "Journal of Sedimentary Research",
+"c": 157,
+"doi": "https://doi.org/10.1306/d4268572-2b26-11d7-8648000102c1865d",
+"a": [
+"Joan J. Fornós *",
+"Wayne M. Ahr"
+]
+},
+{
+"t": "Calcareous tempestites in pelagic facies (Jurassic, Betic Cordilleras, Southern Spain)",
+"y": 1997,
+"r": "Sedimentary Geology",
+"c": 83,
+"doi": "https://doi.org/10.1016/s0037-0738(96)00057-7",
+"a": [
+"José Miguel Molina *",
+"Pedro Alejandro Ruiz-Ortiz *",
+"Juan A. Vera *"
+]
+},
+{
+"t": "Clay mineral and heavy metal distributions in the lower estuary of Huelva and adjacent Atlantic shelf, SW Spain",
+"y": 1997,
+"r": "The Science of The Total Environment",
+"c": 114,
+"doi": "https://doi.org/10.1016/s0048-9697(97)05450-8",
+"a": [
+"Juan Carlos Fernández Caliani *",
+"Francisco Ruiz Muñoz *",
+"E. Galán *"
+]
+},
+{
+"t": "Viruses in Mussels: Public Health Implications and Depuration",
+"y": 1997,
+"r": "Journal of Food Protection",
+"c": 88,
+"doi": "https://doi.org/10.4315/0362-028x-60.6.677",
+"a": [
+"F. Xavier Abad *",
+"Rosa M Pintó *",
+"Rodrigo Gajardo *",
+"Albert Bosch *"
+]
+},
+{
+"t": "Delaminated zeolite precursors as selective acidic catalysts",
+"y": 1998,
+"r": "Nature",
+"c": 992,
+"doi": "https://doi.org/10.1038/24592",
+"a": [
+"Avelino Corma *",
+"V. Fornés *",
+"Sibele B. C. Pergher *",
+"Th. L. M. Maesen",
+"J. G. Buglass"
+]
+},
+{
+"t": "Glauconite and Phosphate Peloids in Mesozoic Carbonate Sediments (Eastern Subbetic Zone, Betic Cordilleras, SE Spain)",
+"y": 1998,
+"r": "Clay Minerals",
+"c": 32,
+"doi": "https://doi.org/10.1180/claymin.1998.033.4.03",
+"a": [
+"Juan Jiménez‐Millán *"
+]
+},
+{
+"t": "Shallowing-upward cycles in pelagic troughs (Upper Jurassic, Subbetic, Southern Spain)",
+"y": 1998,
+"r": "Sedimentary Geology",
+"c": 26,
+"doi": "https://doi.org/10.1016/s0037-0738(98)00052-9",
+"a": [
+"Juan A. Vera *",
+"José Miguel Molina *"
+]
+},
+{
+"t": "Pharmaceutical applications of some spanish clays (sepiolite, palygorskite, bentonite): some preformulation studies",
+"y": 1999,
+"r": "Applied Clay Science",
+"c": 145,
+"doi": "https://doi.org/10.1016/s0169-1317(98)00050-7",
+"a": [
+"César Viseras *",
+"Alberto López-Galindo *"
+]
+},
+{
+"t": "Pharmaceutical grade phyllosilicate dispersions: the influence of shear history on floc structure",
+"y": 1999,
+"r": "International Journal of Pharmaceutics",
+"c": 67,
+"doi": "https://doi.org/10.1016/s0378-5173(99)00075-7",
+"a": [
+"César Viseras *",
+"G H Meeten",
+"A Lopez-Galindo"
+]
+}
+],
+"alimentos": [
+{
+"t": "Kinetic study of anaerobic digestion of wine distillery wastewater",
+"y": 1993,
+"r": "Process Biochemistry",
+"c": 59,
+"doi": "https://doi.org/10.1016/0032-9592(93)80011-5",
+"a": [
+"Rafael Borja *",
+"Alejandro M. Martin *",
+"M. Luque *",
+"María de la Montaña Durán-Barrantes *"
+]
+},
+{
+"t": "Characteristics of Sparkling Base Wines Affecting Foam Behavior",
+"y": 1996,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 74,
+"doi": "https://doi.org/10.1021/jf9504879",
+"a": [
+"Cristina Andrés‐Lacueva *",
+"Elvira López‐Tamames *",
+"Rosa Maria Lamuela-Raventós *",
+"Susana Buxaderas *",
+"M. Carmen de la Torre-Boronat *"
+]
+},
+{
+"t": "Changes in phenolic compounds and colour in pale Sherry wines subjected to fining treatments",
+"y": 1997,
+"r": "Zeitschrift für Lebensmittel-Untersuchung und -Forschung. B, Referate und Lebensmittelrecht",
+"c": 19,
+"doi": "https://doi.org/10.1007/s002170050202",
+"a": [
+"R. Barón *",
+"Manuel Mayen *",
+"Julieta Mérida *",
+"Manuel Medina *"
+]
+},
+{
+"t": "Evolution of Residual Levels of Six Pesticides during Elaboration of Red Wines. Effect of Wine-Making Procedures in Their Dissappearance",
+"y": 1998,
+"r": "Journal of Agricultural and Food Chemistry",
+"c": 108,
+"doi": "https://doi.org/10.1021/jf980801+",
+"a": [
+"Simón Navarro *",
+"A. Barba *",
+"Jose Miguel Oliva *",
+"Ginés Navarro *",
+"Francisco Pardo *"
+]
+},
+{
+"t": "Quality of base and sparkling wines as influenced by the type of fining agent added pre-fermentation",
+"y": 1999,
+"r": "Food Chemistry",
+"c": 47,
+"doi": "https://doi.org/10.1016/s0308-8146(98)00093-4",
+"a": [
+"M. Puig-Deu *",
+"Elvira López‐Tamames *",
+"Susana Buxaderas *",
+"M. Carmen de la Torre-Boronat *"
+]
+}
+],
+"agua": [
+{
+"t": "Enhancement of the anaerobic digestion of wine distillery wastewater by the removal of phenolic inhibitors",
+"y": 1993,
+"r": "Bioresource Technology",
+"c": 89,
+"doi": "https://doi.org/10.1016/0960-8524(93)90097-u",
+"a": [
+"Rafael Borja *",
+"A. Martín *",
+"R. Maestro *",
+"M. Luque *",
+"María de la Montaña Durán-Barrantes *"
+]
+},
+{
+"t": "On the Monomeric and Dimeric States of Rhodamine 6G Adsorbed on Laponite B Surfaces",
+"y": 1994,
+"r": "Journal of Colloid and Interface Science",
+"c": 36,
+"doi": "https://doi.org/10.1006/jcis.1994.1055",
+"a": [
+"M.J. Tapia Estévez *",
+"F. López Arbeloa *",
+"Teresa Arbeloa *",
+"I.López Arbeloa *"
+]
+},
+{
+"t": "Spectroscopic Study of the Adsorption of Rhodamine 6G on Laponite B for Low Loadings",
+"y": 1994,
+"r": "Clay Minerals",
+"c": 65,
+"doi": "https://doi.org/10.1180/claymin.1994.029.1.12",
+"a": [
+"M. J. Tapia Estévez *",
+"F. López Arbeloa *",
+"Teresa Arbeloa *",
+"I. López Arbeloa *",
+"Robert A. Schoonheydt"
+]
+},
+{
+"t": "Characterization of Rhodamine 6G Adsorbed onto Hectorite by Electronic Spectroscopy",
+"y": 1995,
+"r": "Journal of Colloid and Interface Science",
+"c": 30,
+"doi": "https://doi.org/10.1006/jcis.1995.1200",
+"a": [
+"M.J.Tapia Estévez *",
+"F. López Arbeloa *",
+"Teresa Arbeloa *",
+"I.López Arbeloa *"
+]
+},
+{
+"t": "Effect of organic matter and clays on the biodegradation of Phenanthrene in soils",
+"y": 1997,
+"r": "International Biodeterioration & Biodegradation",
+"c": 58,
+"doi": "https://doi.org/10.1016/s0964-8305(97)00045-0",
+"a": [
+"J. J. Ortega Calvo *",
+"Mohammed Lahlou *",
+"C. Sáiz-Jiménez *"
+]
+},
+{
+"t": "Spectroscopy of Rhodamine 6G Adsorbed on Sepiolite Aqueous Suspensions",
+"y": 1997,
+"r": "Journal of Colloid and Interface Science",
+"c": 56,
+"doi": "https://doi.org/10.1006/jcis.1996.4672",
+"a": [
+"F. López Arbeloa *",
+"Teresa Arbeloa *",
+"I.López Arbeloa *"
+]
+},
+{
+"t": "Spectroscopic study of the adsorption of rhodamine 6G on clay minerals in aqueous suspensions",
+"y": 1997,
+"r": "Clay Minerals",
+"c": 51,
+"doi": "https://doi.org/10.1180/claymin.1997.032.1.11",
+"a": [
+"F. López Arbeloa *",
+"M. J. Tapia Estevez *",
+"Teresa Arbeloa *",
+"I. Lopez Arbeloa *"
+]
+},
+{
+"t": "Removing prometrone from water by clays and organic clays",
+"y": 1998,
+"r": "Chemosphere",
+"c": 44,
+"doi": "https://doi.org/10.1016/s0045-6535(98)00047-2",
+"a": [
+"María M. Socías-Viciana *",
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "The Hydrophobic Effect on the Adsorption of Rhodamines in Aqueous Suspensions of Smectites. The Rhodamine 3B/Laponite B System",
+"y": 1998,
+"r": "Langmuir",
+"c": 66,
+"doi": "https://doi.org/10.1021/la971350a",
+"a": [
+"F. López Arbeloa *",
+"J. M. Martínez *",
+"Teresa Arbeloa *",
+"I. López Arbeloa *"
+]
+},
+{
+"t": "Adsorption−Desorption of Chlordimeform on Montmorillonite: Effect of Clay Aggregation and Competitive Adsorption with Cadmium",
+"y": 1999,
+"r": "Environmental Science & Technology",
+"c": 31,
+"doi": "https://doi.org/10.1021/es980822k",
+"a": [
+"Tomás Undabeytia López *",
+"Shlomo Nir *",
+"Tamara Polubesova *",
+"Giora Rytwo *",
+"Esmeralda Morillo González *",
+"Celia Maqueda *"
+]
+},
+{
+"t": "Spectroscopic Characterization of the Adsorption of Rhodamine 3B in Hectorite",
+"y": 1999,
+"r": "Langmuir",
+"c": 56,
+"doi": "https://doi.org/10.1021/la990772c",
+"a": [
+"Riddha Chaudhuri *",
+"F. López Arbeloa *",
+"I. López Arbeloa *"
+]
+}
+],
+"catalisis": [
+{
+"t": "Synthesis and characterization of pillared montmorillonite catalysts",
+"y": 1991,
+"r": "Applied Catalysis",
+"c": 59,
+"doi": "https://doi.org/10.1016/s0166-9834(00)83294-7",
+"a": [
+"C. Pesquera *",
+"Fernando González *",
+"Inmaculada Benito *",
+"S. Mendioroz *",
+"Jesús Alberto Pajares *"
+]
+},
+{
+"t": "Porous chromia-pillared α-tin phosphate materials",
+"y": 1991,
+"r": "Journal of Solid State Chemistry",
+"c": 35,
+"doi": "https://doi.org/10.1016/0022-4596(91)90203-t",
+"a": [
+"Pedro Maireles‐Torres *",
+"Pascual Olivera‐Pastor *",
+"Enrique Rodríguez-Castellón *",
+"Antonio Jiménez‐López *",
+"Anthony A. G. Tomlinson"
+]
+},
+{
+"t": "Removing 2,4-D from water by organo-clays",
+"y": 1992,
+"r": "Chemosphere",
+"c": 89,
+"doi": "https://doi.org/10.1016/0045-6535(92)90270-2",
+"a": [
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Alumina-pillared montmorillonite: effect of thermal and hydrothermal treatment on the accessible micropore volume",
+"y": 1993,
+"r": "Journal of Materials Science",
+"c": 22,
+"doi": "https://doi.org/10.1007/bf00357811",
+"a": [
+"Jos� M. Trillo *",
+"María D. Alba *",
+"M. A. Castro *",
+"J. Poyato *",
+"M. M. Tob�as *"
+]
+},
+{
+"t": "Pillared Clays Prepared from the Reaction of Chromium Acetate with Montmorillonite",
+"y": 1993,
+"r": "Clays and Clay Minerals",
+"c": 32,
+"doi": "https://doi.org/10.1346/ccmn.1993.0410307",
+"a": [
+"Antonio Jiménez‐López *",
+"J. Maza-Rodríguez *",
+"Pascual Olivera‐Pastor *",
+"Pedro Maireles‐Torres *",
+"Enrique Rodríguez-Castellón *"
+]
+},
+{
+"t": "Preparation of PILC-Al through dialysis bags: a comparative study",
+"y": 1994,
+"r": "Applied Clay Science",
+"c": 15,
+"doi": "https://doi.org/10.1016/0169-1317(94)90019-1",
+"a": [
+"A DELRIEGO *",
+"Ingrid Violeta Poggio Herrero *",
+"C. Pesquera *",
+"C. Blanco *",
+"Inmaculada Benito *",
+"Fernando González *"
+]
+},
+{
+"t": "Characterization of the microporosity of pillared clays by nitrogen adsorption — application of the Horvath-Kawazoe approach",
+"y": 1994,
+"r": "Journal of Materials Science",
+"c": 27,
+"doi": "https://doi.org/10.1007/bf00356545",
+"a": [
+"Antonio Gil *",
+"Aránzazu Díaz‐Cuenca *",
+"Mario Montes *",
+"Dwight Acosta"
+]
+},
+{
+"t": "Evolution of the microporous accessibility with the hydrolysis degree and the intercalation solution ageing time conditions in aluminium-pillared clays",
+"y": 1994,
+"r": "Microporous Materials",
+"c": 13,
+"doi": "https://doi.org/10.1016/0927-6513(94)00048-4",
+"a": [
+"Antonio Gil *",
+"Mario Montes *"
+]
+},
+{
+"t": "Selectivity in the conversion of n-heptane on an Al-PILC modified with Ga",
+"y": 1995,
+"r": "Reaction Kinetics and Catalysis Letters",
+"c": 11,
+"doi": "https://doi.org/10.1007/bf02073060",
+"a": [
+"C. Pesquera *",
+"Fernando González *",
+"M. J. Hernando *",
+"C. Blanco *",
+"Inmaculada Benito *"
+]
+},
+{
+"t": "Catalytic Air Oxidation of Thiols Mediated at a Mo(VI)O2 Complex Center Intercalated in a Zn(II)-Al(III) Layered Double Hydroxide Host",
+"y": 1995,
+"r": "Journal of Catalysis",
+"c": 88,
+"doi": "https://doi.org/10.1006/jcat.1995.1078",
+"a": [
+"Avelino Corma *",
+"V. Fornés *",
+"Fernando Rey *",
+"Antonio Cervilla *",
+"Elisa Llopis *",
+"Antonio Ribera *"
+]
+},
+{
+"t": "Pillaring of a High Iron Content Saponite with Aluminum Polycations: Surface and Catalytic Properties",
+"y": 1996,
+"r": "Langmuir",
+"c": 24,
+"doi": "https://doi.org/10.1021/la960295n",
+"a": [
+"Miguel Angel Vicente *",
+"Miguel Angel Bañares-Muñoz *",
+"Mercedes Suárez *",
+"José María Martín Pozas *",
+"J. de D. López-González *",
+"José Santamaría *",
+"Antonio Jiménez‐López *"
+]
+},
+{
+"t": "Preparation and Study of Decavanadate-Pillared Hydrotalcite-like Anionic Clays Containing Cobalt and Chromium",
+"y": 1996,
+"r": "Inorganic Chemistry",
+"c": 40,
+"doi": "https://doi.org/10.1021/ic9601551",
+"a": [
+"Margarita del Arco *",
+"M. V. G. Galiano *",
+"V. Rives *",
+"Raquel Trujillano *",
+"Pilar Malet *"
+]
+},
+{
+"t": "Proton conductivity in Al-montmorillonite pillared clays",
+"y": 1996,
+"r": "Solid State Ionics",
+"c": 21,
+"doi": "https://doi.org/10.1016/0167-2738(96)00075-6",
+"a": [
+"Eduardo Ruiz‐Hitzky *"
+]
+},
+{
+"t": "Characterization, Surface Area, and Porosity Analyses of the Solids Obtained by Acid Leaching of a Saponite",
+"y": 1996,
+"r": "Langmuir",
+"c": 117,
+"doi": "https://doi.org/10.1021/la950501b",
+"a": [
+"Miguel Angel Vicente *",
+"Mercedes Suárez *",
+"J. de D. López-González *",
+"Miguel Angel Bañares-Muñoz *"
+]
+},
+{
+"t": "Comparative FT-IR study of the removal of octahedral cations and structural modifications during acid treatment of several silicates",
+"y": 1996,
+"r": "Spectrochimica Acta Part A Molecular and Biomolecular Spectroscopy",
+"c": 192,
+"doi": "https://doi.org/10.1016/s0584-8539(96)01771-0",
+"a": [
+"Miguel Angel Vicente-Rodríguez *",
+"Mercedes Suárez *",
+"Miguel Angel Bañares-Muñoz *",
+"J. de D. López-González *"
+]
+},
+{
+"t": "Catalytic behavior of chromia and chromium-doped alumina pillared clay materials for the vapor phase deep oxidation of chlorinated hydrocarbons",
+"y": 1997,
+"r": "Journal of Molecular Catalysis A Chemical",
+"c": 74,
+"doi": "https://doi.org/10.1016/s1381-1169(96)00287-7",
+"a": [
+"Loretta Storaro",
+"Renzo Ganzerla",
+"Maurizio Lenarda",
+"R. Zanoni",
+"Antonio Jiménez López *",
+"Pascual Olivera‐Pastor *",
+"Enrique Rodríguez-Castellón *"
+]
+},
+{
+"t": "Metathesis of Propene on Molybdenum−Alumina-Pillared Montmorillonite",
+"y": 1997,
+"r": "Industrial & Engineering Chemistry Research",
+"c": 14,
+"doi": "https://doi.org/10.1021/ie960578a",
+"a": [
+"Antonio Gil *",
+"Mario Montes *"
+]
+},
+{
+"t": "Tantalum-Pillared Montmorillonite",
+"y": 1997,
+"r": "Journal of Catalysis",
+"c": 21,
+"doi": "https://doi.org/10.1006/jcat.1997.1637",
+"a": [
+"Garbine Guiu",
+"Antonio Gil",
+"Mario Montes *",
+"P. Grange"
+]
+},
+{
+"t": "Influence of the nature of titanium alkoxide and of the acid of hydrolysis in the preparation of titanium-pillared montmorillonites",
+"y": 1997,
+"r": "Journal of Physics and Chemistry of Solids",
+"c": 45,
+"doi": "https://doi.org/10.1016/s0022-3697(97)00006-1",
+"a": [
+"Hector L. Del Castillo",
+"Antonio Gil *",
+"P. Grange"
+]
+},
+{
+"t": "Characterization of the Solids Obtained by Pillaring of Griffithite (High Iron Content Saponite) with Al-Oligomers",
+"y": 1997,
+"r": "Clays and Clay Minerals",
+"c": 12,
+"doi": "https://doi.org/10.1346/ccmn.1997.0450514",
+"a": [
+"Miguel Angel Vicente *",
+"Mercedes Suárez *",
+"Miguel Angel Bañares-Muñoz *",
+"José María Martín Pozas *"
+]
+},
+{
+"t": "Al-pillared clays: from lab syntheses to pilot scale production characterisation and catalytic properties",
+"y": 1997,
+"r": "Applied Catalysis A General",
+"c": 58,
+"doi": "https://doi.org/10.1016/s0926-860x(97)00194-4",
+"a": [
+"Sonia Moreno",
+"E. Gutierrez *",
+"A. Alvarez *",
+"Nikos G. Papayannakos",
+"Georges Poncelet"
+]
+},
+{
+"t": "Influence of the preparation parameters (particle size and aluminium concentration) on the textural properties of Al-pillared clays for a scale-up process",
+"y": 1998,
+"r": "Microporous and Mesoporous Materials",
+"c": 32,
+"doi": "https://doi.org/10.1016/s1387-1811(97)00057-7",
+"a": [
+"Alberto Sánchez *",
+"Mario Montes *"
+]
+},
+{
+"t": "Pillaring of saponite with zirconium oligomers",
+"y": 1998,
+"r": "Microporous and Mesoporous Materials",
+"c": 42,
+"doi": "https://doi.org/10.1016/s1387-1811(98)00158-9",
+"a": [
+"R. Toranzo *",
+"Miguel Angel Vicente *",
+"Miguel Angel Bañares-Muñoz *",
+"Luis M. Gandía *",
+"Andoni Gil *"
+]
+},
+{
+"t": "A thermal study of Zr-pillared montmorillonite",
+"y": 1998,
+"r": "Thermochimica Acta",
+"c": 49,
+"doi": "https://doi.org/10.1016/s0040-6031(98)00540-1",
+"a": [
+"María del Rosario Sun Kou *",
+"S. Mendioroz *",
+"M. Isabel Guijarro *"
+]
+},
+{
+"t": "Synthesis of pillared clays assisted by microwaves",
+"y": 1999,
+"r": "Materials Research Bulletin",
+"c": 32,
+"doi": "https://doi.org/10.1016/s0025-5408(99)00053-7",
+"a": [
+"A.M de Andrés *",
+"Jesús Merino *",
+"J.C. Galván *",
+"Eduardo Ruiz‐Hitzky *"
+]
+},
+{
+"t": "Toluene methylation on Al13- and GaAl12-pillared clay catalysts",
+"y": 1999,
+"r": "Applied Catalysis A General",
+"c": 42,
+"doi": "https://doi.org/10.1016/s0926-860x(98)00328-7",
+"a": [
+"Inmaculada Benito *",
+"A. del Riego *",
+"M. Martínez *",
+"C. Blanco *",
+"C. Pesquera *",
+"Fernando González *"
+]
+},
+{
+"t": "Pillared clays: catalytic evaluation in heavy oil cracking using a microactivity test",
+"y": 1999,
+"r": "Applied Catalysis A General",
+"c": 27,
+"doi": "https://doi.org/10.1016/s0926-860x(98)00391-3",
+"a": [
+"Fernando González *",
+"C. Pesquera *",
+"Inmaculada Benito *",
+"Eduardo Herrero",
+"Carlos E. Poncio",
+"Sandra G. Casuscelli"
+]
+},
+{
+"t": "Synthesis and characterization of PILCs with single and mixed oxide pillars prepared from two different bentonites. A comparative study",
+"y": 1999,
+"r": "Microporous and Mesoporous Materials",
+"c": 138,
+"doi": "https://doi.org/10.1016/s1387-1811(98)00295-9",
+"a": [
+"Pablo Cañizares *",
+"José Luis Valverde *",
+"María del Rosario Sun Kou",
+"Carmen B. Molina *"
+]
+},
+{
+"t": "Non-aggressive pillaring of clays with zirconium acetate. Comparison with alumina pillared clays",
+"y": 1999,
+"r": "Applied Catalysis A General",
+"c": 26,
+"doi": "https://doi.org/10.1016/s0926-860x(99)00041-1",
+"a": [
+"Luis M. Gandía *",
+"R. Toranzo *",
+"Miguel Angel Vicente *",
+"Antonio Gil *"
+]
+},
+{
+"t": "Materiales laminares pilareados: preparación y propiedades",
+"y": 1999,
+"r": "Química Nova",
+"c": 58,
+"doi": "https://doi.org/10.1590/s0100-40421999000500013",
+"a": [
+"Sibele B. C. Pergher",
+"Avelino Corma *",
+"Vicente Fornés *"
+]
+},
+{
+"t": "Preparación y propiedades de una arcilla montmorillonita pilareada con polihidroxicationes de aluminio",
+"y": 1999,
+"r": "Química Nova",
+"c": 15,
+"doi": "https://doi.org/10.1590/s0100-40421999000500004",
+"a": [
+"Sibele B. C. Pergher",
+"Avelino Corma *",
+"Vicente Fornés *"
+]
+}
+],
+"nanocompuestos": [
+{
+"t": "Polymer‐salt intercalation complexes in layer silicates",
+"y": 1990,
+"r": "Advanced Materials",
+"c": 221,
+"doi": "https://doi.org/10.1002/adma.19900021108",
+"a": [
+"Eduardo Ruiz‐Hitzky *",
+"Pîlar Aranda *"
+]
+},
+{
+"t": "Ionic conductivity in layer silicates controlled by intercalation of macrocyclic and polymeric oxyethylene compounds",
+"y": 1992,
+"r": "Electrochimica Acta",
+"c": 62,
+"doi": "https://doi.org/10.1016/0013-4686(92)80114-2",
+"a": [
+"Pîlar Aranda *",
+"J.C. Galván *",
+"Blanca Casal *",
+"Eduardo Ruiz‐Hitzky *"
+]
+},
+{
+"t": "Comparison of the catalytic properties of protonic zeolites and exchanged clays for Diels-Alder synthesis",
+"y": 1993,
+"r": "Applied Catalysis A General",
+"c": 55,
+"doi": "https://doi.org/10.1016/0926-860x(93)80273-s",
+"a": [
+"Carlos Cativiela *",
+"François Figueras",
+"José María Fraile *",
+"José Ignacio García *",
+"Jose Antonio Mayoral *",
+"Louis C. de Mènorval",
+"Elísabet Pires *"
+]
+},
+{
+"t": "Clay-catalyzed Friedel-Crafts alkylation of anisole with dienes",
+"y": 1995,
+"r": "Applied Catalysis A General",
+"c": 25,
+"doi": "https://doi.org/10.1016/0926-860x(94)00240-1",
+"a": [
+"Carlos Cativiela *",
+"José Ignacio García *",
+"María García-Matres *",
+"Jose Antonio Mayoral *",
+"François Figueras",
+"José María Fraile",
+"Tivadar Cseri",
+"Bisch Chiche"
+]
+},
+{
+"t": "A thermal study of Zr-pillared montmorillonite",
+"y": 1998,
+"r": "Thermochimica Acta",
+"c": 49,
+"doi": "https://doi.org/10.1016/s0040-6031(98)00540-1",
+"a": [
+"María del Rosario Sun Kou *",
+"S. Mendioroz *",
+"M. Isabel Guijarro *"
+]
+},
+{
+"t": "Bis(oxazoline)–Copper Complexes, Supported by Electrostatic Interactions, as Heterogeneous Catalysts for Enantioselective Cyclopropanation Reactions: Influence of the Anionic Support",
+"y": 1999,
+"r": "Journal of Catalysis",
+"c": 83,
+"doi": "https://doi.org/10.1006/jcat.1999.2556",
+"a": [
+"José María Fraile *",
+"José Ignacio García *",
+"Jose Antonio Mayoral *",
+"Tibor Tarnai",
+"Mark A. Harmer"
+]
+},
+{
+"t": "Poly(ethylene oxide)/NH4+-smectite nanocomposites",
+"y": 1999,
+"r": "Applied Clay Science",
+"c": 129,
+"doi": "https://doi.org/10.1016/s0169-1317(99)00015-0",
+"a": [
+"Pîlar Aranda *"
+]
+},
+{
+"t": "Non-aggressive pillaring of clays with zirconium acetate. Comparison with alumina pillared clays",
+"y": 1999,
+"r": "Applied Catalysis A General",
+"c": 26,
+"doi": "https://doi.org/10.1016/s0926-860x(99)00041-1",
+"a": [
+"Luis M. Gandía *",
+"R. Toranzo *",
+"Miguel Angel Vicente *",
+"Antonio Gil *"
+]
+}
+],
+"aislamiento": [
+{
+"t": "A Discussion of the Water Content of Vermiculite",
+"y": 1958,
+"r": "Clays and clay minerals (National Conference on Clays and Clay Minerals)",
+"c": 38,
+"doi": "https://doi.org/10.1346/ccmn.1958.0070116",
+"a": [
+"W. F. Bradley",
+"J. M. Serratosa *"
+]
+},
+{
+"t": "I.R. Study of Alkyl-Ammonium Vermiculite Complexes",
+"y": 1970,
+"r": "Clays and Clay Minerals",
+"c": 50,
+"doi": "https://doi.org/10.1346/ccmn.1970.0180206",
+"a": [
+"J. M. Serratosa *",
+"William D. Johns",
+"Akira Shimoyama"
+]
+},
+{
+"t": "Complexes vermiculite—aminoacides",
+"y": 1971,
+"r": "Clay Minerals",
+"c": 18,
+"doi": "https://doi.org/10.1180/claymin.1971.009.1.10",
+"a": [
+"J. A. Rausell-Colom *",
+"P. S. Salvador *"
+]
+},
+{
+"t": "Infrared Absorption and X-Ray Diffraction Study of Butylammonium Complexes of Phyllosilicates",
+"y": 1974,
+"r": "Clays and Clay Minerals",
+"c": 31,
+"doi": "https://doi.org/10.1346/ccmn.1974.0220112",
+"a": [
+"Juan Antonio Martín Rubí *",
+"J. A. Rausell-Colom *",
+"J. M. Serratosa *"
+]
+},
+{
+"t": "Formation of aluminium hydroxy vermiculite (intergrade) and smectite from mica under acidic conditions",
+"y": 1977,
+"r": "Clay Minerals",
+"c": 81,
+"doi": "https://doi.org/10.1180/claymin.1977.012.02.01",
+"a": [
+"M. A. Vicente *",
+"M. Razzaghe",
+"Michel Robert"
+]
+},
+{
+"t": "Crown ether intercalations with phyllosilicates",
+"y": 1978,
+"r": "Nature",
+"c": 77,
+"doi": "https://doi.org/10.1038/276596a0",
+"a": [
+"Eduardo Ruiz‐Hitzky *",
+"Blanca Casal *"
+]
+},
+{
+"t": "Organisation de l'espace interlamellaire dans les vermiculites monocouches et anhydres",
+"y": 1980,
+"r": "Clay Minerals",
+"c": 38,
+"doi": "https://doi.org/10.1180/claymin.1980.015.1.04",
+"a": [
+"J. A. Rausell-Colom *",
+"M. Fernandez *",
+"J. M. Serratosa *",
+"J. F. Alcover",
+"Lucien Gatineau"
+]
+},
+{
+"t": "Interaction of Chlordimeform with Clay Minerals",
+"y": 1981,
+"r": "Clays and Clay Minerals",
+"c": 36,
+"doi": "https://doi.org/10.1346/ccmn.1981.0290209",
+"a": [
+"María C. Hermosín *",
+"José Luis Pérez Rodríguez *"
+]
+},
+{
+"t": "Evolution des biotites en fonction des conditions d'oxydo-reduction du milieu",
+"y": 1983,
+"r": "Clay Minerals",
+"c": 13,
+"doi": "https://doi.org/10.1180/claymin.1983.018.3.04",
+"a": [
+"J. Vicente-Hernández *",
+"M. A. Vicente *",
+"Michel Robert",
+"Bernard Albert Goodman"
+]
+},
+{
+"t": "Si, Al distribution in micas; analysis by high-resolution29Si NMR spectroscopy",
+"y": 1985,
+"r": "Journal of Physics C Solid State Physics",
+"c": 54,
+"doi": "https://doi.org/10.1088/0022-3719/18/1/009",
+"a": [
+"Carlos P. Herrero *",
+"Jesús Sanz *",
+"J M Serratosa *"
+]
+},
+{
+"t": "INTERACTION OF CHLORDIMEFORM WITH THE CLAY FRACTION OF A VARIABLE-CHARGE SOIL",
+"y": 1986,
+"r": "Soil Science",
+"c": 15,
+"doi": "https://doi.org/10.1097/00010694-198602000-00006",
+"a": [
+"Celia Maqueda *",
+"José Luis Pérez Rodríguez *",
+"M P Eugenio *"
+]
+},
+{
+"t": "Effect of phosphate-solubilizing bacteria and vesicular-arbuscular mycorrhizal fungi on the utilization of Bayovar rock phosphate by alfalfa plants using a sand-vermiculite medium",
+"y": 1987,
+"r": "Plant and Soil",
+"c": 75,
+"doi": "https://doi.org/10.1007/bf02371029",
+"a": [
+"D. Piccini *",
+"Rosario Azcón *"
+]
+},
+{
+"t": "An unusually expandable low-charge vermiculite",
+"y": 1987,
+"r": "Clay Minerals",
+"c": 14,
+"doi": "https://doi.org/10.1180/claymin.1987.022.3.06",
+"a": [
+"A. Justo *",
+"Celia Maqueda *",
+"Alejandro Pérez-Rodríguez *",
+"G. Lagaly"
+]
+},
+{
+"t": "29Si MAS-NMR spectroscopy of mica-type silicates: Observed and predicted distribution of tetrahedral Al-Si",
+"y": 1987,
+"r": "Physics and Chemistry of Minerals",
+"c": 70,
+"doi": "https://doi.org/10.1007/bf00307613",
+"a": [
+"Carlos P. Herrero *",
+"Michele Gregorkiewitz *",
+"Jesús Sanz *",
+"J. M. Serratosa *"
+]
+},
+{
+"t": "Uptake of Lanthanides by Vermiculite",
+"y": 1988,
+"r": "Clays and Clay Minerals",
+"c": 30,
+"doi": "https://doi.org/10.1346/ccmn.1988.0360109",
+"a": [
+"Pascual Olivera‐Pastor *",
+"Enrique Rodríguez-Castellón *",
+"Aurora Rodríguez García *"
+]
+},
+{
+"t": "Possible influence of Rhizobium on VA mycorrhiza metabolic activity in double symbiosis of alfalfa plants (Medicago sativa L.) grown in a pot experiment",
+"y": 1988,
+"r": "Biology and Fertility of Soils",
+"c": 20,
+"doi": "https://doi.org/10.1007/bf00257923",
+"a": [
+"D. Piccini",
+"Juan Antonio Ocampo *",
+"Eulogio J. Bedmar *"
+]
+},
+{
+"t": "Stacking Order in a 14.30-Å Mg-Vermiculite",
+"y": 1988,
+"r": "Clays and Clay Minerals",
+"c": 48,
+"doi": "https://doi.org/10.1346/ccmn.1988.0360601",
+"a": [
+"C. DE LA CALLE *",
+"H. Suquet",
+"Charles-Henri Pons"
+]
+},
+{
+"t": "Selective interaction between free-living rhizosphere bacteria and vesiculararbuscular mycorrhizal fungi",
+"y": 1989,
+"r": "Soil Biology and Biochemistry",
+"c": 92,
+"doi": "https://doi.org/10.1016/0038-0717(89)90057-6",
+"a": [
+"Rosario Azcón *"
+]
+},
+{
+"t": "Behaviour of sepiolite, vermiculite and montmorillonite as supports in anaerobic digesters",
+"y": 1989,
+"r": "Applied Clay Science",
+"c": 39,
+"doi": "https://doi.org/10.1016/0169-1317(89)90015-x",
+"a": [
+"José Luis Pérez Rodríguez *",
+"María Isabel Carretero *",
+"Celia Maqueda *"
+]
+},
+{
+"t": "Influence of non-host plants on vesicular-arbuscular mycorrhizal infection of host plants and on spore germination",
+"y": 1989,
+"r": "Soil Biology and Biochemistry",
+"c": 50,
+"doi": "https://doi.org/10.1016/0038-0717(89)90026-6",
+"a": [
+"F. El-Atrach *",
+"Horst Vierheilig *",
+"Juan Antonio Ocampo *"
+]
+},
+{
+"t": "Mecanisme de passage de l'etat hydrate a une couche a l'etat ‘zero couche’ d'une vermiculite-Li de Santa-Olalla",
+"y": 1989,
+"r": "Clay Minerals",
+"c": 11,
+"doi": "https://doi.org/10.1180/claymin.1989.024.3.02",
+"a": [
+"C. H. Pons",
+"A. Pozzuoli",
+"J. A. Rausell-Colom *",
+"C. DE LA CALLE *"
+]
+},
+{
+"t": "Vermiculite gelation: structural and textural evolution",
+"y": 1989,
+"r": "Clay Minerals",
+"c": 23,
+"doi": "https://doi.org/10.1180/claymin.1989.024.3.01",
+"a": [
+"J. A. Rausell-Colom *",
+"Jesús Sáez Auñón *",
+"C. H. Pons"
+]
+},
+{
+"t": "Effect of some clay minerals on the growing of sulphate-reducing bacteria in anaerobic reactors",
+"y": 1989,
+"r": "Applied Clay Science",
+"c": 14,
+"doi": "https://doi.org/10.1016/0169-1317(89)90022-7",
+"a": [
+"Alejandro Pérez-Rodríguez *",
+"Celia Maqueda *",
+"María Isabel Carretero *"
+]
+},
+{
+"t": "Expansibility of some vermiculites",
+"y": 1989,
+"r": "Applied Clay Science",
+"c": 57,
+"doi": "https://doi.org/10.1016/0169-1317(89)90027-6",
+"a": [
+"A. Justo *",
+"Celia Maqueda *",
+"Alejandro Pérez-Rodríguez *",
+"E. Morillo *"
+]
+},
+{
+"t": "Interstratification in Malawi Vermiculite: Effect of Bi-Ionic K-Mg Solutions",
+"y": 1990,
+"r": "Clays and Clay Minerals",
+"c": 11,
+"doi": "https://doi.org/10.1346/ccmn.1990.0380508",
+"a": [
+"J. L. Martín de Vidales *",
+"Eladio Vila *",
+"Antonio Ruiz-Amil *",
+"C. DE LA CALLE *",
+"Charles-Henri Pons"
+]
+},
+{
+"t": "Clays in paleoweathering processes: study of a typical weathering profile in the Hercynian basement in the Montes de Toledo (Spain)",
+"y": 1991,
+"r": "Clay Minerals",
+"c": 16,
+"doi": "https://doi.org/10.1180/claymin.1991.026.1.08",
+"a": [
+"M. A. Vicente *",
+"E. Molina *",
+"Rafael Espejo Serrano"
+]
+},
+{
+"t": "Susceptibility and effectiveness of vesicular-arbuscular mycorrhizae in wheat cultivars under different growing conditions",
+"y": 1991,
+"r": "Biology and Fertility of Soils",
+"c": 33,
+"doi": "https://doi.org/10.1007/bf00335850",
+"a": [
+"Horst Vierheilig *",
+"Juan Antonio Ocampo *"
+]
+},
+{
+"t": "Kinetics and structural effects of the extraction of non‐exchangeable potassium from the clay fraction of soils of Galicia (N.W. Spain)",
+"y": 1992,
+"r": "Communications in Soil Science and Plant Analysis",
+"c": 17,
+"doi": "https://doi.org/10.1080/00103629209368577",
+"a": [
+"Fernando Gil-Sotres *",
+"Belén Rubio *"
+]
+},
+{
+"t": "In vitro propagation of Helianthemum almeriense Pau (Cistaceae)",
+"y": 1992,
+"r": "Agronomie",
+"c": 35,
+"doi": "https://doi.org/10.1051/agro:19921011",
+"a": [
+"Asunción Morte *",
+"Mario Honrubia *"
+]
+},
+{
+"t": "Influence of clay minerals, used as supports in anaerobic digesters, in the precipitation of struvite",
+"y": 1992,
+"r": "Water Research",
+"c": 31,
+"doi": "https://doi.org/10.1016/0043-1354(92)90051-5",
+"a": [
+"Alejandro Pérez-Rodríguez *",
+"Celia Maqueda *",
+"Julián Lebrato Martínez *",
+"María Isabel Carretero *"
+]
+},
+{
+"t": "Removing 2,4-D from water by organo-clays",
+"y": 1992,
+"r": "Chemosphere",
+"c": 89,
+"doi": "https://doi.org/10.1016/0045-6535(92)90270-2",
+"a": [
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Study of a material from Libby, Montana, containing vermiculite and hydrobiotite: intercalation with aliphatic amines",
+"y": 1992,
+"r": "Clay Minerals",
+"c": 15,
+"doi": "https://doi.org/10.1180/claymin.1992.027.2.11",
+"a": [
+"Antonio Ruiz-Amil *",
+"F. Aragon de la Cruz *",
+"Eladio Vila *",
+"A. Ruiz Conde *"
+]
+},
+{
+"t": "Weathering of biotite to vermiculite in Quaternary lahars from Monti Ernici, Central Italy",
+"y": 1992,
+"r": "Clay Minerals",
+"c": 34,
+"doi": "https://doi.org/10.1180/claymin.1992.027.2.03",
+"a": [
+"A. Pozzuoli",
+"Eladio Vila *",
+"E. Franco",
+"Antonio Ruiz-Amil *",
+"C. DE LA CALLE"
+]
+},
+{
+"t": "Chemical and mineralogical characteristics of Pleistocene caliche deposits from the Central Ebro Basin, NE Spain",
+"y": 1992,
+"r": "Clay Minerals",
+"c": 35,
+"doi": "https://doi.org/10.1180/claymin.1992.027.3.03",
+"a": [
+"Carlos Sancho *",
+"Alfonso Meléndez *",
+"M. Signes *",
+"Joaquín Bastida *"
+]
+},
+{
+"t": "Palaeogeography and clay mineralogy of mid-Cretaceous flysches in the Gibraltar Arc area",
+"y": 1992,
+"r": "Cretaceous Research",
+"c": 11,
+"doi": "https://doi.org/10.1016/0195-6671(92)90008-e",
+"a": [
+"Alberto López-Galindo *",
+"Agustín Martín-Algarra *"
+]
+},
+{
+"t": "Binding Mechanism of 2,4‐Dichlorophenoxyacetic Acid by Organo‐Clays",
+"y": 1993,
+"r": "Journal of Environmental Quality",
+"c": 120,
+"doi": "https://doi.org/10.2134/jeq1993.00472425002200020013x",
+"a": [
+"María C. Hermosín *",
+"Juan Cornejo *"
+]
+},
+{
+"t": "Coinoculation of aseptically grown Douglas fir with pairs of ectomycorrhizal fungi",
+"y": 1993,
+"r": "Mycorrhiza",
+"c": 50,
+"doi": "https://doi.org/10.1007/bf00210699",
+"a": [
+"Javier Parladé *",
+"Isabel F. Álvarez *"
+]
+},
+{
+"t": "Thermal study of vermiculites and mica-vermiculite interstratifications",
+"y": 1993,
+"r": "Journal of Thermal Analysis and Calorimetry",
+"c": 33,
+"doi": "https://doi.org/10.1007/bf02546555",
+"a": [
+"A. Justo *",
+"Alejandro Pérez-Rodríguez *",
+"Pedro José Sánchez-Soto *"
+]
+},
+{
+"t": "Effect of cadmium on nitrogen fixing pea plants grown in perlite and vermiculite1",
+"y": 1995,
+"r": "Journal of Plant Nutrition",
+"c": 31,
+"doi": "https://doi.org/10.1080/01904169509364902",
+"a": [
+"Luis Eduardo Hernández *",
+"A. Gárate *",
+"Ramón O. Carpena‐Ruiz *"
+]
+},
+{
+"t": "Interaction between Aspergillus niger van Tiegh. and Glomus mosseae. (Nicol. & Gerd.) Gerd. & Trappe",
+"y": 1995,
+"r": "New Phytologist",
+"c": 48,
+"doi": "https://doi.org/10.1111/j.1469-8137.1995.tb04301.x",
+"a": [
+"C. McAllister",
+"Inmaculada García-Romera *",
+"J. MARTIN *",
+"Alicia Margarita Godeas",
+"Juan Antonio Ocampo *"
+]
+},
+{
+"t": "Plantlet regeneration from mature embryos of Juniperus cedrus",
+"y": 1995,
+"r": "Plant Cell Tissue and Organ Culture (PCTOC)",
+"c": 15,
+"doi": "https://doi.org/10.1007/bf00124090",
+"a": [
+"Indra S. Harry",
+"Carolina Martínez Pulido *",
+"Trevor A. Thorpe"
+]
+},
+{
+"t": "Colonization by lichens of granite churches in Galicia (northwest Spain)",
+"y": 1995,
+"r": "The Science of The Total Environment",
+"c": 52,
+"doi": "https://doi.org/10.1016/0048-9697(95)04594-q",
+"a": [
+"Beatriz Prieto *",
+"M.T. Rivas Brea *",
+"B.M. Silva Hermo *"
+]
+},
+{
+"t": "Salinity effects on growth analysis and nutrient composition in four grain legumes‐rhizobiumsymbiosis",
+"y": 1995,
+"r": "Journal of Plant Nutrition",
+"c": 102,
+"doi": "https://doi.org/10.1080/01904169509365006",
+"a": [
+"María del Pilar Cordovilla *",
+"A. Ocaña *",
+"Francisco Ligero *",
+"Carmen Lluch *"
+]
+},
+{
+"t": "Technical properties of compounded kaolin sample from Griva (Macedonia, Greece)",
+"y": 1996,
+"r": "Applied Clay Science",
+"c": 44,
+"doi": "https://doi.org/10.1016/0169-1317(95)00041-0",
+"a": [
+"Emilio Galán Huertos *",
+"Patricia Aparicio *",
+"Adolfo Miras *",
+"Kleopas Michailidis",
+"A. Tsirambides"
+]
+},
+{
+"t": "Morphological and Chemical Features of Bioweathered Granitic Biotite Induced by Lichen Activity",
+"y": 1996,
+"r": "Clays and Clay Minerals",
+"c": 82,
+"doi": "https://doi.org/10.1346/ccmn.1996.0440507",
+"a": [
+"Jacek Wierzchoś *",
+"Carmen Ascaso *"
+]
+},
+{
+"t": "Mineralogical transformation and neoformation in granite caused by the lichens Tephromela atra and Ochrolechia parella",
+"y": 1997,
+"r": "International Biodeterioration & Biodegradation",
+"c": 58,
+"doi": "https://doi.org/10.1016/s0964-8305(97)00052-8",
+"a": [
+"Beatriz Prieto *",
+"B. Silva *",
+"Teresa Rivas *",
+"Jacek Wierzchoś *",
+"Carmen Ascaso *"
+]
+},
+{
+"t": "Improving micropropagation conditions for adult-phase shoots of chestnut",
+"y": 1997,
+"r": "Journal of Horticultural Science",
+"c": 58,
+"doi": "https://doi.org/10.1080/14620316.1997.11515531",
+"a": [
+"Conchi Sánchez *",
+"M. Carmen San José *",
+"E. Ferro *",
+"Antonio Ballester *",
+"A. M. Viéitez"
+]
+},
+{
+"t": "Interaction of Vermiculite with Aliphatic Amides (Formamide, Acetamide and Propionamide): Formation and Study of Interstratified Phases in the Transformation of Mg- to NH4-Vermiculite",
+"y": 1997,
+"r": "Clays and Clay Minerals",
+"c": 13,
+"doi": "https://doi.org/10.1346/ccmn.1997.0450302",
+"a": [
+"Antonio Ruíz-Conde *",
+"Antonio Ruiz-Amil *",
+"José Luís Pérez-Rodríguez *",
+"Pedro José Sánchez-Soto *",
+"Francisco Aragon de la Cruz *"
+]
+},
+{
+"t": "Mineralogical and chemical modifications in soils affected by a forest fire in the Mediterranean area",
+"y": 1997,
+"r": "The Science of The Total Environment",
+"c": 77,
+"doi": "https://doi.org/10.1016/s0048-9697(97)00173-3",
+"a": [
+"T. Iglesias *",
+"Victoria Cala Rivero *",
+"Julio González *"
+]
+}
+],
+"litio": [
+{
+"t": "Limit dilution method: determination of correction factors for resolving matrix effects in X-ray fluorescence analysis",
+"y": 1988,
+"r": "Spectrochimica Acta Part B Atomic Spectroscopy",
+"c": 11,
+"doi": "https://doi.org/10.1016/0584-8547(88)80114-9",
+"a": [
+"F. Bosch Reig *",
+"Teresa Doménech Carbó *",
+"V. Peris Martínez *",
+"José Vicente Gimeno-Adelantado *"
+]
+},
+{
+"t": "Flow injection flame atomic spectrometric determination of iron, calcium, magnesium, sodium and potassium in ceramic materials by using a variable-volume injector",
+"y": 1993,
+"r": "Fresenius Journal of Analytical Chemistry",
+"c": 14,
+"doi": "https://doi.org/10.1007/bf00325803",
+"a": [
+"Miguel de la Guárdia *",
+"Ángel Morales‐Rubio *",
+"Vanessa Martín Carbonell *",
+"Amparo Salvador *",
+"Jose Luis Burguera",
+"M. Burguera"
+]
+}
+],
+"azulmaya": [
+{
+"t": "Analysis of Archaeological Ceramics by TXRF and Contrasted with NAA",
+"y": 1997,
+"r": "Journal of Archaeological Science",
+"c": 49,
+"doi": "https://doi.org/10.1006/jasc.1996.0178",
+"a": [
+"Manuel García Heras *",
+"Ramón Fernández‐Ruiz *",
+"Jesús D. Tornero *"
+]
+},
+{
+"t": "The colours of Ca-rich ceramic pastes: origin and characterization",
+"y": 1998,
+"r": "Applied Clay Science",
+"c": 190,
+"doi": "https://doi.org/10.1016/s0169-1317(98)00024-6",
+"a": [
+"Judit Molera *"
+]
+}
+]
+}
+}
