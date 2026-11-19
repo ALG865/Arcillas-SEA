@@ -391,11 +391,11 @@ window.HISTORIAS = [
     [TRI,[["vermiculita trioctaédrica","trioctahedral vermiculite","vermiculita"]]],
     [DI,[["vermiculita dioctaédrica","dioctahedral vermiculite"]]]]},
   {lam:"2:1",inter:L2("Cationes monovalentes no hidratados (≥ 50 % monovalentes; x ≈ 0,85–1,0 en las dioctaédricas)","Non-hydrated monovalent cations (≥ 50% monovalent; x ≈ 0.85–1.0 for dioctahedral)"),g:L2("Mica verdadera (flexible)","True (flexible) mica"),sp:[
-    [TRI,[["annita","annite"],["flogopita","phlogopite"],["lepidolita","lepidolite"],["aspidolita","aspidolite"]]],
+    [TRI,[["annita","annite"],["flogopita","phlogopite"],["lepidolita (nombre de serie)","lepidolite (series name)"],["aspidolita","aspidolite"]]],
     [DI,[["moscovita","muscovite","moscovita"],["celadonita","celadonite"],["paragonita","paragonite"]]]]},
   {lam:"2:1",inter:L2("Cationes mono- o divalentes no hidratados (x ≈ 0,6–0,85)","Non-hydrated mono- or divalent cations (x ≈ 0.6–0.85)"),g:L2("Mica con déficit interlaminar","Interlayer-deficient mica"),sp:[
     [TRI,[["wonesita (carga que puede ser < 0,6, excepción)","wonesite (charge may be < 0.6, an exception)"]]],
-    [DI,[["illita","illite","illita"],["glauconita","glauconite","glauconita"],["brammallita","brammallite"]]]]},
+    [DI,[["illita (nombre de serie)","illite (series name)","illita"],["glauconita (nombre de serie)","glauconite (series name)","glauconita"],["brammallita (nombre de serie)","brammallite (series name)"]]]]},
   {lam:"2:1",inter:L2("Cationes divalentes no hidratados (≥ 50 % divalentes; x ≈ 1,8–2,0)","Non-hydrated divalent cations (≥ 50% divalent; x ≈ 1.8–2.0)"),g:L2("Mica frágil","Brittle mica"),sp:[
     [TRI,[["clintonita","clintonite"],["kinoshitalita","kinoshitalite"],["bityíta","bityite"],["anandita","anandite"]]],
     [DI,[["margarita","margarite"],["chernykhita","chernykhite"]]]]},
