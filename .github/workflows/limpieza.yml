@@ -1,0 +1,13 @@
+name: Limpieza (temporal)
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/limpieza.yml"]
+permissions:
+  contents: write
+jobs:
+  borrar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: git push origin --delete aipea-news || true

@@ -11,7 +11,7 @@
   --grafito:#1c1d1f; --grafito2:#2a2b2e; --tinta:#26201b; --tinta2:#5d5248; --T:#6f97bd; --Tb:#4b7398; --O:#7fae7a; --Ob:#57864f;
   --serif:"Spectral",Georgia,"Times New Roman",serif; --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --f-xs:.8125rem; --f-s:.9375rem; --f-m:1.0625rem; --f-l:1.125rem; --f-xl:1.4375rem; --f-2xl:clamp(1.6rem,2.8vw,1.875rem); --f-3xl:clamp(2rem,3.6vw,2.5rem);
-  --f-ent:1.125rem; --f-nom:1.125rem; --f-grupo:1.4375rem; --mini:44px;
+  --f-ent:1.125rem; --f-nom:1.125rem; --f-grupo:1.4375rem; --mini:36px;
   --ancho:1200px; --texto:40rem; --r:3px;
 }
 *{box-sizing:border-box}
@@ -78,7 +78,7 @@ nav.menu{display:flex;gap:.2rem;align-items:center}
 .heroe .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
 .heroe .boton.claro{color:#fff;border-color:rgba(255,255,255,.55)}
 
-section.bloque{padding:clamp(3rem,7vw,5.5rem) 0}
+section.bloque{padding:clamp(2.25rem,5vw,3.75rem) 0}
 section.bloque.oscuro{background:var(--grafito);color:#e9e6e1}
 .oscuro h2,.oscuro h3,.oscuro h4{color:#fff}
 .oscuro .pequeno,.oscuro .entrada{color:#bdb6ad}
@@ -126,10 +126,10 @@ section.bloque.arena{background:var(--sepiolita)}
 .tira button{border:0;padding:0;background:none;text-align:left;width:100%}
 
 /* páginas interiores */
-.cabeza-pagina{padding-top:clamp(2.5rem,6vw,4.5rem);padding-bottom:2rem}
+.cabeza-pagina{padding-top:clamp(1.75rem,4vw,3rem);padding-bottom:1.25rem}
 .miga{font-size:var(--f-s);color:var(--tinta2);margin-bottom:.8rem}
 .miga a{color:var(--tinta2)}
-.pagina-cuerpo{padding-bottom:4rem}
+.pagina-cuerpo{padding-bottom:3rem}
 figure{margin:0}
 figure img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--grafito);border-radius:var(--r)}
 figcaption{font-size:var(--f-xs);color:var(--tinta2);padding:.5rem 0 0;line-height:1.45}
@@ -144,13 +144,13 @@ figcaption b{font-weight:600;color:var(--tinta)}
 /* minerales */
 .tabla-minerales{width:100%;border-collapse:collapse}
 .tabla-minerales th{text-align:left;font-weight:500;font-size:var(--f-xs);letter-spacing:.02em;color:var(--tinta2);padding:.5rem .6rem;border-bottom:1px solid var(--sepiolita2)}
-.tabla-minerales td{padding:.6rem .6rem;font-size:var(--f-s);color:var(--tinta2);border-bottom:1px solid var(--sepiolita);vertical-align:middle}
+.tabla-minerales td{padding:.35rem .6rem;font-size:var(--f-s);color:var(--tinta2);border-bottom:1px solid var(--sepiolita);vertical-align:middle}
 .tabla-minerales tbody tr.fila{cursor:pointer}
 .tabla-minerales tbody tr.fila:hover td{background:#fff}
 .tabla-minerales .mini{width:var(--mini);height:var(--mini);border-radius:var(--r);overflow:hidden;background:var(--grafito)}
 .tabla-minerales .mini img{width:100%;height:100%;object-fit:cover}
 .tabla-minerales .nombre a{font-family:var(--serif);font-size:var(--f-nom);color:var(--tinta);text-decoration:none}
-.tabla-minerales .grupo-fila td{padding-top:2.4rem;padding-bottom:.55rem;border-bottom:1px solid var(--sepiolita2)}
+.tabla-minerales .grupo-fila td{padding-top:1.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--sepiolita2)}
 .grupo-fila .g-nom{font-family:var(--serif);font-size:var(--f-grupo);color:var(--tinta);line-height:1.2}
 .grupo-fila .g-nota{font-size:var(--f-xs);color:var(--terracota);margin-left:.75rem;white-space:nowrap}
 
@@ -232,11 +232,11 @@ details.especialistas tr+tr th,details.especialistas tr+tr td{border-top:1px sol
 .columnas-lista li{break-inside:avoid;margin-bottom:.3rem}
 .texto-largo{max-width:var(--texto)}
 .texto-largo h3{margin-top:1.6em}
-.premio{padding:1.6rem 0;border-bottom:1px solid var(--sepiolita2);display:grid;grid-template-columns:1fr 1.6fr;gap:2rem}
+.premio{padding:1.1rem 0;border-bottom:1px solid var(--sepiolita2);display:grid;grid-template-columns:1fr 1.6fr;gap:2rem}
 .premio h3{margin-bottom:.3rem}
 .premio .abierto{display:inline-block;background:var(--ocre);color:#fff;font-size:var(--f-xs);font-weight:600;border-radius:999px;padding:.15rem .7rem;margin-bottom:.5rem}
 .documentos{padding:0;max-width:52rem}
-.documentos li{padding:.7rem 0;border-bottom:1px solid var(--sepiolita);list-style:none}
+.documentos li{padding:.45rem 0;border-bottom:1px solid var(--sepiolita);list-style:none}
 .semblanzas{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1.6rem 1.2rem}
 .semblanzas a{text-decoration:none;color:var(--tinta)}
 .semblanzas img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:var(--r);background:var(--sepiolita);filter:grayscale(1)}
@@ -254,7 +254,7 @@ details.especialistas tr+tr th,details.especialistas tr+tr td{border-top:1px sol
 
 /* historia (página) */
 .portada-img{aspect-ratio:21/9;width:100%;object-fit:cover;background:var(--grafito);border-radius:var(--r)}
-.historia-texto{font-size:var(--f-m);line-height:1.75;max-width:38rem}
+.historia-texto{font-size:var(--f-m);line-height:1.6;max-width:38rem}
 
 /* juego */
 .juego{max-width:640px}
@@ -313,7 +313,7 @@ footer li{margin:.3rem 0}
 
 /* Publicaciones de los socios */
 .lista-pub{list-style:none;padding:0;margin:0;max-width:52rem}
-.lista-pub li{padding:.9rem 0;border-bottom:1px solid var(--sepiolita)}
+.lista-pub li{padding:.6rem 0;border-bottom:1px solid var(--sepiolita)}
 .lista-pub a{font-family:var(--serif);font-size:var(--f-l);color:var(--tinta);text-decoration:none;line-height:1.35}
 .lista-pub a:hover{text-decoration:underline}
 .pub-meta{font-size:var(--f-s);color:var(--tinta2);margin-top:.3rem}
@@ -322,3 +322,7 @@ footer li{margin:.3rem 0}
 .logos-socios{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;margin-top:1rem}
 .logos-socios a{background:#fff;border:1px solid var(--sepiolita);border-radius:var(--r);display:flex;align-items:center;justify-content:center;padding:.6rem;aspect-ratio:2.16/1}
 .logos-socios img{max-width:100%;max-height:100%;object-fit:contain}
+
+/* «Hazte socio»: enlace discreto en la cabecera */
+.enlace-menu.discreto{font-weight:400;font-size:var(--f-s);color:var(--tinta2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--sepiolita2)}
+.enlace-menu.discreto:hover{background:none;color:var(--terracota)}
