@@ -12,7 +12,7 @@
   --serif:"Spectral",Georgia,"Times New Roman",serif; --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --f-xs:.8125rem; --f-s:.9375rem; --f-m:1.0625rem; --f-l:1.125rem; --f-xl:1.4375rem; --f-2xl:clamp(1.6rem,2.8vw,1.875rem); --f-3xl:clamp(2rem,3.6vw,2.5rem);
   --f-ent:1.125rem; --f-nom:1.125rem; --f-grupo:1.4375rem; --mini:36px;
-  --ancho:1200px; --texto:40rem; --r:3px;
+  --ancho:1200px; --texto:56rem; --r:3px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -191,7 +191,7 @@ details.especialistas tr+tr th,details.especialistas tr+tr td{border-top:1px sol
 .oscuro .filtro[aria-pressed=true]{background:#fff;color:var(--grafito)}
 
 /* propiedades */
-.fila-barra{display:grid;grid-template-columns:170px 1fr 130px;gap:.8rem;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--sepiolita)}
+.fila-barra{display:grid;grid-template-columns:170px 1fr auto;gap:.8rem;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--sepiolita)}
 .fila-barra a{font-family:var(--serif);font-size:var(--f-l);color:var(--tinta);text-decoration:none}
 .pista{position:relative;height:10px;background:var(--sepiolita);border-radius:999px}
 .rango{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--terracota);transition:left .5s,width .5s}
@@ -254,7 +254,7 @@ details.especialistas tr+tr th,details.especialistas tr+tr td{border-top:1px sol
 
 /* historia (página) */
 .portada-img{aspect-ratio:21/9;width:100%;object-fit:cover;background:var(--grafito);border-radius:var(--r)}
-.historia-texto{font-size:var(--f-m);line-height:1.6;max-width:38rem}
+.historia-texto{font-size:var(--f-m);line-height:1.6;max-width:56rem}
 
 /* juego */
 .juego{max-width:640px}
@@ -294,7 +294,7 @@ footer li{margin:.3rem 0}
   .indice{grid-template-columns:1fr}
   .heroe .placa{display:none}
   footer .envoltorio{grid-template-columns:1fr}
-  .fila-barra{grid-template-columns:110px 1fr 92px}
+  .fila-barra{grid-template-columns:100px 1fr auto}
   .columnas-lista,.lista-mundo{columns:1}
   .marca span span{display:none}.marca{min-width:0}.marca b{font-size:.92rem}.idioma{flex:none}
 }
@@ -354,3 +354,4 @@ svg.mundo{width:100%;height:auto;display:block;margin-top:.8rem}
 .lista-mundo2 h4{font-size:var(--f-m);margin:0 0 .3rem}
 .lista-mundo2 ul{margin:0 0 .8rem;padding-left:1.1rem;font-size:var(--f-s)}
 .lista-mundo2 li{margin:.15rem 0}
+.valor{white-space:nowrap;text-align:right}

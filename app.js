@@ -34,7 +34,7 @@ es:{
  def:"La AIPEA y la Clay Minerals Society definen la arcilla como un material natural formado sobre todo por minerales de grano fino, generalmente plástico con la cantidad adecuada de agua, que se endurece al secarse o cocerse.",
  escTit:"Del grano de arena a la partícula de arcilla", escE:"Mueve el control para cambiar el tamaño de la partícula.", clases:["Arena","Limo","Arcilla"],
  analog:"Si una partícula de arcilla de 2 µm fuera un grano de arroz de 5 mm, esta partícula mediría",
- estE:"Gira los modelos, cambia de mineral y monta tu propia lámina con las dos piezas básicas.",
+ estE:"Gira los modelos y cambia de mineral para ver cómo se ordenan tetraedros y octaedros en cada lámina.",
  m3dTit:"Modelos en 3D", m3dNota:"Modelos idealizados con poliedros regulares; no son estructuras refinadas.", perfil:"De perfil", planta:"En planta", oblicua:"Oblicua",
  nombres3d:{caolinita:"Caolinita",talco:"Talco",pirofilita:"Pirofilita",illita:"Illita",montmorillonita:"Montmorillonita",vermiculita:"Vermiculita",clorita:"Clorita",sepiolita:"Sepiolita",palygorskita:"Palygorskita"},
  conTit:"Construye una lámina", conE:"Pulsa T y O para montar la lámina y elige qué hay entre las láminas.",
@@ -97,7 +97,7 @@ en:{
  def:"AIPEA and the Clay Minerals Society define clay as a naturally occurring material composed mainly of fine-grained minerals, generally plastic at appropriate water contents, which hardens when dried or fired.",
  escTit:"From a sand grain to a clay particle", escE:"Move the slider to change the particle size.", clases:["Sand","Silt","Clay"],
  analog:"If a 2 µm clay particle were a 5 mm grain of rice, this particle would measure",
- estE:"Rotate the models, switch minerals and build your own layer from the two basic pieces.",
+ estE:"Rotate the models and switch minerals to see how tetrahedra and octahedra are arranged in each layer.",
  m3dTit:"3D models", m3dNota:"Idealised models built with regular polyhedra; not refined structures.", perfil:"Side view", planta:"Top view", oblicua:"Oblique",
  nombres3d:{caolinita:"Kaolinite",talco:"Talc",pirofilita:"Pyrophyllite",illita:"Illite",montmorillonita:"Montmorillonite",vermiculita:"Vermiculite",clorita:"Chlorite",sepiolita:"Sepiolite",palygorskita:"Palygorskite"},
  conTit:"Build a layer", conE:"Tap T and O to build the layer and choose what sits between layers.",
@@ -242,8 +242,14 @@ function clavesLeyenda(m){ var l=m.lam, k=["T","O"];
     if(i==="Mg"){ if(k.indexOf("Mg")<0) k.push("Mg"); if(k.indexOf("agua")<0) k.push("agua"); }
     if(i==="hidroxido"&&k.indexOf("hid")<0) k.push("hid"); });
   return k; }
-function leyenda(t){ var it={T:C.T,O:C.O,vac:C.vac,K:C.K,cat:C.cat,agua:C.agua,hid:C.hid,Mg:C.Mg};
-  return '<div class="leyenda">'+t.map(function(k){ return '<span><i style="background:'+it[k]+(k==="vac"?";border:1px dashed "+C.Ob:"")+'"></i>'+U("ley."+k)+'</span>'; }).join("")+'</div>'; }
+/* Texto de los octaedros según el mineral (catión octaédrico dominante) */
+var OCT_LEY={caolinita:"Al",dickita:"Al",nacrita:"Al",halloysita:"Al",pirofilita:"Al",illita:"Al",moscovita:"Al",beidellita:"Al",rectorita:"Al",
+ montmorillonita:"AlMg",nontronita:"Fe3",glauconita:"FeAlMg",talco:"Mg",lizardita:"Mg",crisotilo:"Mg",saponita:"Mg",estevensita:"Mg",hectorita:"MgLi",vermiculita:"Mg",sepiolita:"Mg",corrensita:"MgFe",clorita:"MgFe",palygorskita:"MgAl"};
+var OCT_TXT={es:{Al:"Octaedros de Al",AlMg:"Octaedros de Al (con algo de Mg)",Fe3:"Octaedros de Fe³⁺",FeAlMg:"Octaedros de Fe³⁺, Al y Mg",Mg:"Octaedros de Mg",MgLi:"Octaedros de Mg (con algo de Li)",MgFe:"Octaedros de Mg y Fe²⁺",MgAl:"Octaedros de Mg y Al"},
+ en:{Al:"Al octahedra",AlMg:"Al octahedra (with some Mg)",Fe3:"Fe³⁺ octahedra",FeAlMg:"Fe³⁺, Al and Mg octahedra",Mg:"Mg octahedra",MgLi:"Mg octahedra (with some Li)",MgFe:"Mg and Fe²⁺ octahedra",MgAl:"Mg and Al octahedra"}};
+function leyenda(t,m){ var it={T:C.T,O:C.O,vac:C.vac,K:C.K,cat:C.cat,agua:C.agua,hid:C.hid,Mg:C.Mg};
+  function txt(k){ if(k==="O"&&m){ var c=OCT_LEY[m.id]||(m.lam&&m.lam.oct==="tri"?"Mg":"Al"); return OCT_TXT[lang==="en"?"en":"es"][c]; } return U("ley."+k); }
+  return '<div class="leyenda">'+t.map(function(k){ return '<span><i style="background:'+it[k]+(k==="vac"?";border:1px dashed "+C.Ob:"")+'"></i>'+txt(k)+'</span>'; }).join("")+'</div>'; }
 
 /* ---------------- 3D ---------------- */
 var visores=[];
@@ -332,7 +338,7 @@ P.estructura=function(){
    '<div class="dos-col" style="align-items:start"><div class="lienzo3d" id="v3d" style="aspect-ratio:1/1"><span class="aviso">'+U("girar")+'</span></div><div><div class="filtros"><button class="filtro" data-vista="oblicua">'+U("oblicua")+'</button><button class="filtro" data-vista="perfil">'+U("perfil")+'</button><button class="filtro" data-vista="planta">'+U("planta")+'</button></div><div id="info3d"></div><div id="ley3d"></div><p class="pequeno" style="margin-top:1rem">'+U("m3dNota")+'</p></div></div></div></section>';
   v3d=crear3D($("#v3d"),m3dSel,{autoRotate:true});
   function pinta3d(){ $$("[data-m3d]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-m3d")===m3dSel); });
-    var mmL=minById(m3dSel); $("#ley3d").innerHTML=mmL?leyenda(clavesLeyenda(mmL).filter(function(k){return k!=="vac";})):"";
+    var mmL=minById(m3dSel); $("#ley3d").innerHTML=mmL?leyenda(clavesLeyenda(mmL).filter(function(k){return k!=="vac";}),mmL):"";
     var mm=minById(m3dSel);
     $("#info3d").innerHTML=mm?'<h3>'+esc(L(mm).n)+'</h3><p>'+esc(L(mm).r)+'</p><p><a href="#mineral/'+mm.id+'">'+U("verFicha")+'</a></p>':'<h3>'+U("nombres3d")[m3dSel]+'</h3><p>'+(lang==="es"?"Lámina 2:1 sin carga y sin nada entre láminas. Es la referencia para entender las demás láminas 2:1.":"An uncharged 2:1 layer with nothing between layers. It is the reference for understanding the other 2:1 layers.")+'</p>'; }
   $$("[data-m3d]").forEach(function(b){ b.onclick=function(){ m3dSel=b.getAttribute("data-m3d"); if(v3d) v3d.poner(m3dSel,3); pinta3d(); }; });
@@ -369,7 +375,7 @@ P.mineral=function(id){
   var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",U("nav.arcillas")[2][1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d,k){ return '<div class="dato'+(k===0?' ancho':'')+'"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
   if(e) h+='<details class="especialistas"><summary>'+U("esp.tit")+'</summary><div class="dentro"><table><tr><th>'+U("esp.lam")+'</th><td>'+esc(L(e.lam))+'</td></tr><tr><th>'+U("esp.x")+'</th><td>'+esc(num(L(e.x)))+'</td></tr><tr><th>'+U("esp.grupo")+'</th><td>'+esc(L(e.grupo))+'</td></tr><tr><th>'+U("esp.oct")+'</th><td>'+esc(L(e.oct))+'</td></tr><tr><th>'+U("esp.inter")+'</th><td>'+esc(L(e.inter))+'</td></tr></table><p style="margin:1rem 0 .4rem">'+esc(L(e.nota))+'</p><p class="pequeno" style="margin:0">'+U("esp.fuente")+'</p></div></details>';
   if(micro.length>1) h+='<h2 style="margin-top:2rem">'+U("ficha.micro")+'</h2><div class="mosaico">'+micro.slice(1).map(function(i){return fig(i);}).join("")+'</div>';
-  h+='<h2 style="margin-top:2rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter"||m.lam.t==="rollo"||m.lam.t==="onda"||Array.isArray(m.lam.inter))?null:num(m.d.split(/[ ;(]/)[0])+" Å"})+leyenda(clavesLeyenda(m))+'</div></div>';
+  h+='<h2 style="margin-top:2rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter"||m.lam.t==="rollo"||m.lam.t==="onda"||Array.isArray(m.lam.inter))?null:num(m.d.split(/[ ;(]/)[0])+" Å"})+leyenda(clavesLeyenda(m),m)+'</div></div>';
   if(m.espana&&m.espana.length) h+='<h2 style="margin-top:2rem">'+U("ficha.espana")+'</h2><ul>'+m.espana.map(function(k){ return '<li>'+esc(L(MAPA.lugares[k]).n)+'</li>'; }).join("")+'</ul><a class="boton claro" href="#yacimientos">'+U("ficha.verMapa")+'</a>';
   if(mano.length) h+='<h2 style="margin-top:2rem">'+U("ficha.mano")+'</h2><div class="mosaico">'+mano.map(function(i){return fig(i);}).join("")+'</div>';
   h+='</div>'; main.innerHTML=h;
