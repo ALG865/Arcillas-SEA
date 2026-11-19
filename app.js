@@ -10,7 +10,7 @@ if(/[?&]lang=es/.test(location.search)) lang="es";
 var UI={
 es:{
  sea:"Sociedad Española de Arcillas", corto:"SEA", arcillas:"Las arcillas", sociedad:"La Sociedad", hazte:"Hazte socio", menu:"Menú", cerrar:"Cerrar", inicio:"Inicio",
- nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["modificadas","Arcillas modificadas"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["afines","Materiales afines"]],
+ nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["minerales","Minerales"],["estructura","Estructura en 3D"],["propiedades","Propiedades"],["modificadas","Arcillas modificadas"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["afines","Materiales afines"]],
    sociedad:[["noticias","Noticias y convocatorias"],["sociedad","Quiénes somos"],["junta","Junta directiva"],["premios","Premios y ayudas"],["reuniones","Reuniones científicas"],["publicaciones","Publicaciones"],["glosario","Glosario"],["semblanzas","Semblanzas"],["estatutos","Estatutos"],["pubsocios","Publicaciones científicas recientes de los socios"]] },
  heroeT:"El mundo de las arcillas", heroeE:"Silicatos formados por láminas de un nanómetro que, con el agua, se vuelven plásticos y, al cocerse, se endurecen. Su diminuto tamaño les da una superficie enorme: hinchan, retienen agua e intercambian iones. Están en el suelo que pisamos, en la cerámica, el papel, los fármacos y las barreras que aíslan los residuos radiactivos, y en buena parte de la historia humana.",
  explorar:"Explorar las arcillas", conocer:"Conocer la SEA",
@@ -36,7 +36,7 @@ es:{
  analog:"Si una partícula de arcilla de 2 µm fuera un grano de arroz de 5 mm, esta partícula mediría",
  estE:"Gira los modelos y cambia de mineral para ver cómo se ordenan tetraedros y octaedros en cada lámina.",
  m3dTit:"Modelos en 3D", m3dNota:"Modelos idealizados con poliedros regulares; no son estructuras refinadas.", perfil:"De perfil", planta:"En planta", oblicua:"Oblicua",
- nombres3d:{caolinita:"Caolinita",talco:"Talco",pirofilita:"Pirofilita",illita:"Illita",montmorillonita:"Montmorillonita",vermiculita:"Vermiculita",clorita:"Clorita",sepiolita:"Sepiolita",palygorskita:"Palygorskita"},
+ nombres3d:{caolinita:"Caolinita",talco:"Talco",pirofilita:"Pirofilita",illita:"Illita",montmorillonita:"Montmorillonita",vermiculita:"Vermiculita",clorita:"Clorita",sepiolita:"Sepiolita",palygorskita:"Palygorskita",pilareada:"Arcilla pilareada",organoarcilla:"Organoarcilla",ldh:"LDH (hidrotalcita)"},
  conTit:"Construye una lámina", conE:"Pulsa T y O para montar la lámina y elige qué hay entre las láminas.",
  paso1:"1. Monta la lámina", paso2:"2. ¿Qué hay entre las láminas?", paso3:"3. Capa octaédrica", borrar:"Borrar", fibras:"Cintas invertidas (fibrosas)",
  di:"Dioctaédrica: 2 de cada 3 huecos", tri:"Trioctaédrica: 3 de 3",
@@ -73,7 +73,7 @@ es:{
 },
 en:{
  sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
- nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["modificadas","Modified clays"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["afines","Related materials"]],
+ nav:{ arcillas:[["que-es","What is clay?"],["minerales","Minerals"],["estructura","Structure in 3D"],["propiedades","Properties"],["modificadas","Modified clays"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["afines","Related materials"]],
    sociedad:[["noticias","News and calls"],["sociedad","About us"],["junta","Board"],["premios","Awards and grants"],["reuniones","Scientific meetings"],["publicaciones","Publications"],["glosario","Glossary"],["semblanzas","Profiles"],["estatutos","Statutes"],["pubsocios","Recent scientific publications by members"]] },
  heroeT:"The world of clays", heroeE:"Silicates built from layers one nanometre thick that turn plastic with water and harden when fired. Their tiny size gives them an enormous surface: they swell, hold water and exchange ions. They are in the soil beneath our feet, in ceramics, paper, medicines and the barriers that isolate radioactive waste, and in much of human history.",
  explorar:"Explore clays", conocer:"About the SEA",
@@ -99,7 +99,7 @@ en:{
  analog:"If a 2 µm clay particle were a 5 mm grain of rice, this particle would measure",
  estE:"Rotate the models and switch minerals to see how tetrahedra and octahedra are arranged in each layer.",
  m3dTit:"3D models", m3dNota:"Idealised models built with regular polyhedra; not refined structures.", perfil:"Side view", planta:"Top view", oblicua:"Oblique",
- nombres3d:{caolinita:"Kaolinite",talco:"Talc",pirofilita:"Pyrophyllite",illita:"Illite",montmorillonita:"Montmorillonite",vermiculita:"Vermiculite",clorita:"Chlorite",sepiolita:"Sepiolite",palygorskita:"Palygorskite"},
+ nombres3d:{caolinita:"Kaolinite",talco:"Talc",pirofilita:"Pyrophyllite",illita:"Illite",montmorillonita:"Montmorillonite",vermiculita:"Vermiculite",clorita:"Chlorite",sepiolita:"Sepiolite",palygorskita:"Palygorskite",pilareada:"Pillared clay",organoarcilla:"Organoclay",ldh:"LDH (hydrotalcite)"},
  conTit:"Build a layer", conE:"Tap T and O to build the layer and choose what sits between layers.",
  paso1:"1. Build the layer", paso2:"2. What is between the layers?", paso3:"3. Octahedral sheet", borrar:"Clear", fibras:"Inverted ribbons (fibrous)",
  di:"Dioctahedral: 2 of every 3 sites", tri:"Trioctahedral: 3 of 3",
@@ -326,13 +326,14 @@ P["que-es"]=function(){
   main.innerHTML=cabezaPagina(navI("que-es")[1],U("queE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h3>'+U("tam")+'</h3><p>'+U("tamT")+'</p><h3 style="margin-top:1.8rem">'+U("min")+'</h3>'+U("minT")+''+
    '<p class="entrada" style="margin:2rem 0">'+U("def")+'</p>'+
    '<div class="mosaico" style="margin-top:2rem">'+imgSEA("montmorillonita").slice(0,2).concat(imgIOC("caolinita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div>'+
-   '<p style="margin-top:2rem"><a class="boton" href="#estructura">'+navI("estructura")[1]+'</a></p></div>';
+   '<h3 style="margin-top:2.2rem">'+(lang==="es"?"Más allá del mineral natural":"Beyond the natural mineral")+'</h3><p>'+(lang==="es"?"Las arcillas también se transforman en el laboratorio: se intercalan moléculas orgánicas (organoarcillas), se separan sus láminas con pilares de óxidos (arcillas pilareadas), se activan con ácidos o con calor, se combinan con polímeros y biopolímeros o se sintetizan. Así se obtienen materiales para descontaminar aguas, liberar fármacos, catalizar reacciones o fabricar cementos con menos CO₂.":"Clays are also transformed in the laboratory: organic molecules are intercalated (organoclays), their layers are propped apart with oxide pillars (pillared clays), they are activated with acids or heat, combined with polymers and biopolymers, or synthesised. The result is materials to clean water, release drugs, catalyse reactions or make lower-CO₂ cements.")+'</p>'+
+   '<p style="margin-top:2rem"><a class="boton" href="#estructura">'+navI("estructura")[1]+'</a> <a class="boton claro" href="#modificadas">'+navI("modificadas")[1]+'</a></p></div>';
 };
 
 /* ---- estructura: 3D + constructor ---- */
 var m3dSel="caolinita", est={seq:"",oct:"di",inter:null,fibra:null}, v3d=null;
 P.estructura=function(){
-  var ids=["caolinita","talco","pirofilita","illita","montmorillonita","vermiculita","clorita","sepiolita","palygorskita"];
+  var ids=["caolinita","talco","pirofilita","illita","montmorillonita","vermiculita","clorita","sepiolita","palygorskita","pilareada","organoarcilla","ldh"];
   main.innerHTML=cabezaPagina(navI("estructura")[1],U("estE"),migaArcillas())+
    '<section class="bloque oscuro" style="padding-top:2.5rem"><div class="envoltorio"><h2>'+U("m3dTit")+'</h2><div class="filtros">'+ids.map(function(id){ return '<button class="filtro" data-m3d="'+id+'">'+U("nombres3d")[id]+'</button>'; }).join("")+'</div>'+
    '<div class="dos-col" style="align-items:start"><div class="lienzo3d" id="v3d" style="aspect-ratio:1/1"><span class="aviso">'+U("girar")+'</span></div><div><div class="filtros"><button class="filtro" data-vista="oblicua">'+U("oblicua")+'</button><button class="filtro" data-vista="perfil">'+U("perfil")+'</button><button class="filtro" data-vista="planta">'+U("planta")+'</button></div><div id="info3d"></div><div id="ley3d"></div><p class="pequeno" style="margin-top:1rem">'+U("m3dNota")+'</p></div></div></div></section>';
@@ -340,6 +341,10 @@ P.estructura=function(){
   function pinta3d(){ $$("[data-m3d]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-m3d")===m3dSel); });
     var mmL=minById(m3dSel); $("#ley3d").innerHTML=mmL?leyenda(clavesLeyenda(mmL).filter(function(k){return k!=="vac";}),mmL):"";
     var mm=minById(m3dSel);
+    var EX={pilareada:{es:["Una montmorillonita en la que se han intercalado policationes de aluminio que, al calcinar, forman pilares de óxido entre las láminas (amarillo). El espaciado sube a unos 18 Å y entre los pilares quedan microporos estables: es la base de catalizadores y adsorbentes.","modificadas"],en:["A montmorillonite intercalated with aluminium polycations that, on calcination, form oxide pillars between the layers (yellow). The spacing rises to about 18 Å and stable micropores remain between the pillars: the basis of catalysts and adsorbents.","modificadas"]},
+      organoarcilla:{es:["Una montmorillonita en la que los cationes interlaminares se han cambiado por alquilamonios: la cabeza de nitrógeno (azul) queda junto a la lámina y la cadena de carbono (gris) separa las láminas hasta unos 20 Å. La superficie se vuelve organófila y retiene contaminantes orgánicos o se dispersa en plásticos.","modificadas"],en:["A montmorillonite whose interlayer cations have been exchanged for alkylammonium: the nitrogen head (blue) sits next to the layer and the carbon chain (grey) props the layers apart to about 20 Å. The surface becomes organophilic, retains organic pollutants and disperses in plastics.","modificadas"]},
+      ldh:{es:["Un hidróxido doble laminar: láminas octaédricas de tipo brucita con carga positiva y aniones (rojo) y agua entre ellas. Es lo inverso de una esmectita y no es un mineral de la arcilla, sino un material afín.","afines"],en:["A layered double hydroxide: brucite-like octahedral layers with a positive charge and anions (red) and water between them. It is the reverse of a smectite and is not a clay mineral but a related material.","afines"]}};
+    if(EX[m3dSel]){ var ex=EX[m3dSel][lang]; $("#info3d").innerHTML='<h3>'+U("nombres3d")[m3dSel]+'</h3><p>'+ex[0]+'</p><p><a href="#'+ex[1]+'">'+navI(ex[1])[1]+'</a></p>'; return; }
     $("#info3d").innerHTML=mm?'<h3>'+esc(L(mm).n)+'</h3><p>'+esc(L(mm).r)+'</p><p><a href="#mineral/'+mm.id+'">'+U("verFicha")+'</a></p>':'<h3>'+U("nombres3d")[m3dSel]+'</h3><p>'+(lang==="es"?"Lámina 2:1 sin carga y sin nada entre láminas. Es la referencia para entender las demás láminas 2:1.":"An uncharged 2:1 layer with nothing between layers. It is the reference for understanding the other 2:1 layers.")+'</p>'; }
   $$("[data-m3d]").forEach(function(b){ b.onclick=function(){ m3dSel=b.getAttribute("data-m3d"); if(v3d) v3d.poner(m3dSel,3); pinta3d(); }; });
   $$("[data-vista]").forEach(function(b){ b.onclick=function(){ if(v3d) v3d.vista(b.getAttribute("data-vista")); }; });

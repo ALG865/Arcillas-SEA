@@ -6,7 +6,7 @@ var S3=Math.sqrt(3), E=3.05;                 // arista O–O
 var A1=[E,0], A2=[E/2,E*S3/2];               // red de aniones
 var HT=E*Math.sqrt(2/3);                     // alto de la capa octaédrica (planos de aniones)
 var TT=1.62*4/3;                              // alto del tetraedro
-var COL={T:0x7fa7c9,O:0x8fbf8a,Ob:0x5c9457,H:0xc9dfb4,K:0x9b6fb0,cat:0xd1783f,agua:0x5aa9d6,Mg:0x7a8f3a,Al:0xe0c060};
+var COL={T:0x7fa7c9,O:0x8fbf8a,Ob:0x5c9457,H:0xc9dfb4,K:0x9b6fb0,cat:0xd1783f,agua:0x5aa9d6,Mg:0x7a8f3a,Al:0xe0c060,C:0x4a4a4a,N:0x3d5fb0,an:0xc0504d};
 function P(i,j){ return [i*A1[0]+j*A2[0], i*A1[1]+j*A2[1]]; }
 
 function Constructor(lim){ this.t=[]; this.o=[]; this.h=[]; this.esf=[]; this.lim=lim||{x:13,y:11}; }
@@ -77,6 +77,7 @@ Constructor.prototype.agua=function(z0,z1){
 /* Lámina: 1:1 o 2:1 con base en z0 (plano basal inferior). Devuelve z del plano basal superior. */
 Constructor.prototype.lamina=function(z0,tipo,oct){
   var sh=[0,0];
+  if(tipo==="O"){ var zo=z0+HT; this.capaO(zo,oct,null,sh); return zo; }
   if(tipo==="TO"){ var zb=z0, zt=zb+HT; this.capaO(zt,oct,null,sh); this.capaT(zt,true,sh); return zt+TT; }
   var zA=z0+TT; this.capaT(zA,false,[sh[0]+(A1[0]+A2[0])*2/3, sh[1]+(A1[1]+A2[1])*2/3]);
   var zt2=zA+HT; this.capaO(zt2,oct,null,sh); this.capaT(zt2,true,sh); return zt2+TT;
@@ -100,10 +101,14 @@ var MODELOS={
   corrensita:{lam:"TOT",oct:"tri",alt:[{inter:"hidroxido",d:14.2},{inter:"agua",d:15.0}]},
   tosudita:{lam:"TOT",oct:"di",alt:[{inter:"hidroxido",d:14.2},{inter:"agua",d:15.0}]},
   aliettita:{lam:"TOT",oct:"tri",alt:[{inter:"nada",d:9.35},{inter:"agua",d:15.0}]},
-  hidrobiotita:{lam:"TOT",oct:"tri",alt:[{inter:"K",d:10.0},{inter:"Mg",d:14.4}]}
+  hidrobiotita:{lam:"TOT",oct:"tri",alt:[{inter:"K",d:10.0},{inter:"Mg",d:14.4}]},
+  /* arcillas modificadas y materiales afines (modelos esquemáticos) */
+  pilareada:{lam:"TOT",oct:"di",d:18.0,inter:"pilar"},
+  organoarcilla:{lam:"TOT",oct:"di",d:20.0,inter:"organico"},
+  ldh:{lam:"O",oct:"tri",d:7.6,inter:"anion"}
 };
 function construir(id,capas){
-  var m=MODELOS[id], c=new Constructor(), n=capas||2, grosor=m.lam==="TO"?(HT+TT):(2*TT+HT), z0=0;
+  var m=MODELOS[id], c=new Constructor(), n=capas||2, grosor=m.lam==="O"?HT:(m.lam==="TO"?(HT+TT):(2*TT+HT)), z0=0;
   if(m.alt&&n<3) n=3;
   for(var k=0;k<n;k++){
     var ztop=c.lamina(z0,m.lam,m.oct), it=m.alt?m.alt[k%m.alt.length]:m;
@@ -112,6 +117,16 @@ function construir(id,capas){
       else if(it.inter==="agua"){ c.esferas((g0+g1)/2,"cat",0.75,0.35,[0,0]); c.agua(g0+0.9,g1-0.9); }
       else if(it.inter==="Mg"){ c.esferas((g0+g1)/2,"Mg",0.7,0.4,[0,0]); c.agua(g0+0.9,g1-0.9); }
       else if(it.inter==="agua1"){ c.agua((g0+g1)/2-0.3,(g0+g1)/2+0.3); }
+      else if(it.inter==="pilar"){ // pilares de óxido de Al (Al13 calcinado), espaciados, con microporos entre ellos
+        var zc=(g0+g1)/2, hh=(g1-g0)/2-0.6;
+        [[-8,-6],[8,-6],[0,1],[-8,7],[8,7]].forEach(function(pp){
+          for(var lv=-1;lv<=1;lv++) for(var q=0;q<6;q++){ var ang=q*Math.PI/3+lv*0.5; c.esf.push({x:pp[0]+1.6*Math.cos(ang),y:pp[1]+1.6*Math.sin(ang),z:zc+lv*hh*0.62,t:"Al",r:1.0}); }
+          c.esf.push({x:pp[0],y:pp[1],z:zc,t:"Al",r:1.2}); }); }
+      else if(it.inter==="organico"){ // cationes alquilamonio: cabeza N junto a la lámina y cadena de C inclinada
+        var k2=0; for(var ox=-10;ox<=10;ox+=4) for(var oy=-8;oy<=8;oy+=4){ k2++; var abajo=k2%2===0, zN=abajo?g0+0.9:g1-0.9, dir=abajo?1:-1;
+          c.esf.push({x:ox,y:oy,z:zN,t:"N",r:0.95});
+          for(var s=1;s<=9;s++){ c.esf.push({x:ox+s*0.75*0.6,y:oy+((s%2)?0.35:-0.35),z:zN+dir*s*0.75*0.8,t:"C",r:0.72}); } } }
+      else if(it.inter==="anion"){ c.esferas((g0+g1)/2,"an",0.8,0.5,[A1[0]/3,A1[1]/3]); c.agua(g0+0.6,g1-0.6); }
       else if(it.inter==="hidroxido"){ var zh=(g0+g1)/2+HT/2; c.capaO(zh,"tri",c.h,[A1[0]/3,A1[1]/3]); }
       z0+=it.d;
     }
