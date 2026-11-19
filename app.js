@@ -1,6 +1,3 @@
-/* Variante tipográfica para comparar: ?tipo=3 (amplia) o ?tipo=1 (editorial, por defecto); se recuerda en este navegador. */
-(function(){ try{ var t=(location.search.match(/[?&]tipo=(\d)/)||[])[1]; if(t) localStorage.setItem("sea-tipo",t); else t=localStorage.getItem("sea-tipo");
-  if(t==="3") document.documentElement.classList.add("tipo3"); }catch(e){} })();
 /* Sociedad Española de Arcillas · web */
 (function(){
 "use strict";
@@ -232,6 +229,19 @@ function svgOnda(){ var w=340,s="",i,x,y,n=170,A=16,P=170,pO=[],segT=["",""];
   for(i=0;i<20;i++){ x=8+i*(w-16)/19; y=70+A*Math.sin(x/P*2*Math.PI); var arriba=(Math.floor(x/(P/2))%2===0), dy=arriba?-17:17;
     s+='<polygon points="'+(x-7)+','+(y+dy*1.5)+' '+(x+7)+','+(y+dy*1.5)+' '+x+','+(y+dy*0.55)+'" fill="'+C.T+'" stroke="'+C.Tb+'" stroke-width="1.2"/>'; }
   return '<svg viewBox="0 0 '+w+' 140" role="img">'+s+'</svg>'; }
+/* Leyenda propia de cada mineral: solo los elementos que aparecen en sus dibujos 2D y 3D */
+function clavesLeyenda(m){ var l=m.lam, k=["T","O"];
+  if(l.t==="inter") return ["T","O","vac","K","cat","agua"];
+  if(l.t==="fibra") return ["T","O","agua"];
+  if(l.t==="rollo"||l.t==="onda") return k;
+  if(l.oct==="di") k.push("vac");
+  if(l.agua) k.push("agua");
+  (Array.isArray(l.inter)?l.inter:[l.inter]).forEach(function(i){
+    if(i==="K"&&k.indexOf("K")<0) k.push("K");
+    if(i==="agua"){ if(k.indexOf("cat")<0) k.push("cat"); if(k.indexOf("agua")<0) k.push("agua"); }
+    if(i==="Mg"){ if(k.indexOf("Mg")<0) k.push("Mg"); if(k.indexOf("agua")<0) k.push("agua"); }
+    if(i==="hidroxido"&&k.indexOf("hid")<0) k.push("hid"); });
+  return k; }
 function leyenda(t){ var it={T:C.T,O:C.O,vac:C.vac,K:C.K,cat:C.cat,agua:C.agua,hid:C.hid,Mg:C.Mg};
   return '<div class="leyenda">'+t.map(function(k){ return '<span><i style="background:'+it[k]+(k==="vac"?";border:1px dashed "+C.Ob:"")+'"></i>'+U("ley."+k)+'</span>'; }).join("")+'</div>'; }
 
@@ -353,7 +363,7 @@ function resultadoEst(){ var s=est.seq,o=est.oct,i=est.inter;
     if(i==="K") return o==="di"?{id:"illita",d:"10 Å",h:0,carga:"0,6–0,85",ej:{es:"Illita, glauconita; con más carga, moscovita",en:"Illite, glauconite; with more charge, muscovite"}}:{n:{es:"Micas trioctaédricas",en:"Trioctahedral micas"},d:"10 Å",h:0,carga:"≈ 1",ej:{es:"Biotita, flogopita",en:"Biotite, phlogopite"}};
     if(i==="agua") return o==="di"?{id:"montmorillonita",d:"12–15 Å",h:3,carga:"0,2–0,6",n:{es:"Esmectitas dioctaédricas",en:"Dioctahedral smectites"},ej:{es:"Montmorillonita, beidellita, nontronita",en:"Montmorillonite, beidellite, nontronite"}}:{id:"saponita",d:"12–15 Å",h:3,carga:"0,2–0,6",n:{es:"Esmectitas trioctaédricas",en:"Trioctahedral smectites"},ej:{es:"Saponita, hectorita, estevensita",en:"Saponite, hectorite, stevensite"}};
     if(i==="Mg") return {id:"vermiculita",d:"14,4 Å",h:1,carga:"0,6–0,9",ej:{es:"Casi siempre trioctaédrica",en:"Almost always trioctahedral"}};
-    if(i==="hidroxido") return o==="di"?{id:"sudoita",n:{es:"Clorita di,trioctaédrica",en:"Di,trioctahedral chlorite"},d:"14,1 Å",h:0,carga:L({es:"variable",en:"variable"}),ej:{es:"Lámina 2:1 dioctaédrica con capa de hidróxido trioctaédrica: sudoíta y cookeíta. La única clorita del todo dioctaédrica es la donbassita.",en:"A dioctahedral 2:1 layer with a trioctahedral hydroxide sheet: sudoite and cookeite. The only fully dioctahedral chlorite is donbassite."}}:{id:"clorita",d:"14,2 Å",h:0,carga:L({es:"variable",en:"variable"}),ej:{es:"Clinocloro (Mg), chamosita (Fe²⁺)",en:"Clinochlore (Mg), chamosite (Fe²⁺)"}};
+    if(i==="hidroxido") return o==="di"?{n:{es:"Clorita di,trioctaédrica",en:"Di,trioctahedral chlorite"},d:"14,1 Å",h:0,carga:L({es:"variable",en:"variable"}),ej:{es:"Lámina 2:1 dioctaédrica con capa de hidróxido trioctaédrica: sudoíta y cookeíta. La única clorita del todo dioctaédrica es la donbassita.",en:"A dioctahedral 2:1 layer with a trioctahedral hydroxide sheet: sudoite and cookeite. The only fully dioctahedral chlorite is donbassite."}}:{id:"clorita",d:"14,2 Å",h:0,carga:L({es:"variable",en:"variable"}),ej:{es:"Clinocloro (Mg), chamosita (Fe²⁺)",en:"Clinochlore (Mg), chamosite (Fe²⁺)"}};
   } return null; }
 function pintar(){ var lz=$("#lienzo"); if(!lz) return;
   $$("[data-oct]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-oct")===est.oct); });
@@ -386,7 +396,7 @@ function especieTxt(x){ var n=lang==="en"?x[1]:x[0]; return x[2]?'<a href="#mine
 function tablaAIPEA(){ var es=lang==="es";
   var t1=CLASIF_PLANOS.map(function(r){ return r.sp.map(function(o,i){ return '<tr>'+(i===0?'<td rowspan="'+r.sp.length+'">'+esc(es?r.lam:(r.lamen||r.lam))+'</td><td rowspan="'+r.sp.length+'">'+esc(L(r.inter))+'</td><td rowspan="'+r.sp.length+'"><b>'+esc(L(r.g))+'</b></td>':'')+'<td style="white-space:nowrap">'+esc(L(o[0]))+'</td><td style="min-width:13rem">'+o[1].map(especieTxt).join(", ")+'</td></tr>'; }).join(""); }).join("");
   var t2=CLASIF_NOPLANOS.map(function(r){ return '<tr><td>'+r.lam+'</td><td>'+esc(L(r.tipo))+'</td><td>'+esc(L(r.af))+'</td><td>'+r.sp.map(especieTxt).join(", ")+'</td></tr>'; }).join("");
-  return '<details class="especialistas" style="margin-top:2.5rem"><summary>'+(es?"Para especialistas: clasificación completa de la AIPEA":"For specialists: full AIPEA classification")+'</summary><div class="dentro">'+
+  return '<details class="especialistas" style="margin-top:2.5rem"><summary>'+(es?"Clasificación completa de la AIPEA":"Full AIPEA classification")+'</summary><div class="dentro">'+
    '<p>'+(es?"Clasificación de los filosilicatos hidratados del Comité de Nomenclatura de la AIPEA, con la terminología del Glosario de la SEA: <i>capa</i> (tetraédrica u octaédrica), <i>lámina</i> (1:1 o 2:1) e <i>interlámina</i>. x es la carga neta de la lámina por fórmula unidad. Las listas de especies no son exhaustivas. Los nombres enlazados tienen ficha.":"Classification of hydrous phyllosilicates by the AIPEA Nomenclature Committee. x is the net layer charge per formula unit. Species lists are not exhaustive. Linked names have their own page.")+'</p>'+
    '<h4>'+(es?"Filosilicatos planos":"Planar phyllosilicates")+'</h4><div style="overflow-x:auto"><table><thead><tr><th>'+(es?"Lámina":"Layer")+'</th><th>'+(es?"Material interlaminar":"Interlayer material")+'</th><th>'+(es?"Grupo":"Group")+'</th><th>'+(es?"Carácter octaédrico":"Octahedral character")+'</th><th>'+(es?"Especies":"Species")+'</th></tr></thead><tbody>'+t1+'</tbody></table></div>'+
    '<h4 style="margin-top:1.5rem">'+(es?"Filosilicatos no planos":"Non-planar phyllosilicates")+'</h4><div style="overflow-x:auto"><table><thead><tr><th>'+(es?"Lámina":"Layer")+'</th><th>'+(es?"Estructura":"Structure")+'</th><th>'+(es?"Afinidad tradicional":"Traditional affiliation")+'</th><th>'+(es?"Especies":"Species")+'</th></tr></thead><tbody>'+t2+'</tbody></table></div>'+
@@ -402,7 +412,7 @@ P.mineral=function(id){
   var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",U("nav.arcillas")[2][1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d){ return '<div class="dato"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
   if(e) h+='<details class="especialistas"><summary>'+U("esp.tit")+'</summary><div class="dentro"><table><tr><th>'+U("esp.lam")+'</th><td>'+esc(L(e.lam))+'</td></tr><tr><th>'+U("esp.x")+'</th><td>'+esc(num(L(e.x)))+'</td></tr><tr><th>'+U("esp.grupo")+'</th><td>'+esc(L(e.grupo))+'</td></tr><tr><th>'+U("esp.oct")+'</th><td>'+esc(L(e.oct))+'</td></tr><tr><th>'+U("esp.inter")+'</th><td>'+esc(L(e.inter))+'</td></tr></table><p style="margin:1rem 0 .4rem">'+esc(L(e.nota))+'</p><p class="pequeno" style="margin:0">'+U("esp.fuente")+'</p></div></details>';
   if(micro.length>1) h+='<h2 style="margin-top:2.5rem">'+U("ficha.micro")+'</h2><div class="mosaico">'+micro.slice(1).map(function(i){return fig(i);}).join("")+'</div>';
-  h+='<h2 style="margin-top:2.5rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter"||m.lam.t==="rollo"||m.lam.t==="onda"||Array.isArray(m.lam.inter))?null:num(m.d.split(/[ ;(]/)[0])+" Å"})+leyenda(["T","O","vac","K","cat","agua","hid"])+'</div></div>';
+  h+='<h2 style="margin-top:2.5rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter"||m.lam.t==="rollo"||m.lam.t==="onda"||Array.isArray(m.lam.inter))?null:num(m.d.split(/[ ;(]/)[0])+" Å"})+leyenda(clavesLeyenda(m))+'</div></div>';
   if(m.espana&&m.espana.length) h+='<h2 style="margin-top:2.5rem">'+U("ficha.espana")+'</h2><ul>'+m.espana.map(function(k){ return '<li>'+esc(L(MAPA.lugares[k]).n)+'</li>'; }).join("")+'</ul><a class="boton claro" href="#yacimientos">'+U("ficha.verMapa")+'</a>';
   if(mano.length) h+='<h2 style="margin-top:2.5rem">'+U("ficha.mano")+'</h2><div class="mosaico">'+mano.map(function(i){return fig(i);}).join("")+'</div>';
   h+='</div>'; main.innerHTML=h;

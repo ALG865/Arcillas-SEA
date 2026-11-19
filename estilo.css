@@ -309,10 +309,4 @@ footer li{margin:.3rem 0}
 .tabla-minerales td:nth-child(3){width:26%}
 @media (max-width:700px){.tabla-minerales td.nombre,.tabla-minerales td:nth-child(3){width:auto}}
 
-/* Variante 3 (amplia): solo para comparar con ?tipo=3 */
-html.tipo3{--f-xs:.875rem; --f-s:1rem; --f-l:1.25rem; --f-xl:1.5rem; --f-2xl:clamp(1.8rem,3.2vw,2.125rem); --f-3xl:clamp(2.4rem,4.6vw,3.125rem); --f-ent:1.25rem; --f-nom:1.25rem; --f-grupo:1.6875rem; --mini:52px}
-html.tipo3 .entrada{font-style:italic}
-html.tipo3 .grupo-fila td{padding-top:2.8rem;border-bottom:0}
-html.tipo3 .grupo-fila .g-nom{display:block;color:var(--terracota);font-weight:500}
-html.tipo3 .grupo-fila .g-nota{display:block;margin:.15rem 0 0;color:var(--tinta2);font-size:var(--f-s)}
 @media (max-width:700px){.grupo-fila .g-nota{display:block;margin:.2rem 0 0;white-space:normal}}
