@@ -330,3 +330,11 @@ footer li{margin:.3rem 0}
 .dato.ancho{grid-column:1/-1}
 .dato b{overflow-wrap:anywhere}
 .cabeza-pagina .entrada{max-width:64rem}
+
+/* Aviso destacado de CLAY 2027 en la portada */
+.aviso-clay{background:var(--terracota);color:#fff;padding:1.6rem 0}
+.aviso-clay .envoltorio{display:flex;gap:1.5rem 2.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.aviso-clay h2{color:#fff;margin:.15rem 0 .35rem}
+.aviso-clay p{margin:0;max-width:44rem;color:#fbeee6}
+.aviso-clay .fecha{font-size:var(--f-s);color:#fbeee6}
+.aviso-clay .boton{background:#fff;color:var(--terracota);border-color:#fff;white-space:nowrap}
