@@ -32,7 +32,8 @@ for s in socios:
             k=(w.get("doi") or w["id"]).lower()
             o=obras.setdefault(k,{"t":w.get("title") or "","a":[x["author"]["display_name"] for x in w.get("authorships",[])][:12],
                "na":len(w.get("authorships",[])),"r":src.get("display_name",""),"y":w.get("publication_year"),"f":w.get("publication_date"),
-               "doi":w.get("doi") or "","s":[]})
+               "doi":w.get("doi") or "","v":(w.get("biblio") or {}).get("volume") or "","n":(w.get("biblio") or {}).get("issue") or "",
+               "p":"–".join(x for x in [(w.get("biblio") or {}).get("first_page"),(w.get("biblio") or {}).get("last_page")] if x) if (w.get("biblio") or {}).get("last_page")!=(w.get("biblio") or {}).get("first_page") else ((w.get("biblio") or {}).get("first_page") or ""),"s":[]})
             if s["n"] not in o["s"]: o["s"].append(s["n"])
         cursor=d["meta"].get("next_cursor")
 lista=sorted(obras.values(),key=lambda o:o["f"] or "",reverse=True)

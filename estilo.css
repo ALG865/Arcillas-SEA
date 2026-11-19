@@ -318,3 +318,7 @@ footer li{margin:.3rem 0}
 .lista-pub a:hover{text-decoration:underline}
 .pub-meta{font-size:var(--f-s);color:var(--tinta2);margin-top:.3rem}
 .pub-socio{font-size:var(--f-xs);color:var(--terracota);margin-top:.2rem}
+.lista-pub .pub-meta a.doi{font-family:var(--sans);font-size:inherit;color:var(--tinta2);text-decoration:underline;text-underline-offset:2px}
+.logos-socios{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;margin-top:1rem}
+.logos-socios a{background:#fff;border:1px solid var(--sepiolita);border-radius:var(--r);display:flex;align-items:center;justify-content:center;padding:.6rem;aspect-ratio:2.16/1}
+.logos-socios img{max-width:100%;max-height:100%;object-fit:contain}
