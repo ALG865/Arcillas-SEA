@@ -1,4 +1,4 @@
-/* Materiales afines y derivados de las arcillas. Referencias: trabajos con participación española y más de 150 citas (OpenAlex, noviembre de 2026). */
+/* Materiales afines y derivados de las arcillas. Referencias: trabajos con participación española y más de 100 citas (OpenAlex, noviembre de 2026). */
 window.AFINES = [
  {g:{es:"Materiales laminares afines",en:"Related layered materials"},
   i:{es:"No son minerales de la arcilla, pero comparten con ellas estructura, propiedades y aplicaciones, y se estudian en los mismos grupos y revistas.",en:"They are not clay minerals, but they share structure, properties and uses with clays, and are studied by the same groups and journals."},
