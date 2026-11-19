@@ -132,8 +132,8 @@ SEA.internacional = [
   {es:"Becas, tutoría de estudiantes y premios: Javier García Rivas, Jaime Cuevas, Mercedes Regadío y José Manuel Moreno Maroto.",en:"Grants, student mentoring and awards: Javier García Rivas, Jaime Cuevas, Mercedes Regadío and José Manuel Moreno Maroto."},
   {es:"Programa social: Margarita Darder, Pilar Aranda, Jaime Cuevas y Ana Isabel Ruiz.",en:"Social programme: Margarita Darder, Pilar Aranda, Jaime Cuevas and Ana Isabel Ruiz."}]},
  {g:{es:"Revistas científicas",en:"Scientific journals"},it:[
-  {es:"María Victoria Villar, editora jefe de Applied Clay Science.",en:"María Victoria Villar, Editor-in-Chief of Applied Clay Science."},
-  {es:"Alberto López Galindo, editor asociado de Applied Clay Science.",en:"Alberto López Galindo, Associate Editor of Applied Clay Science."},
-  {es:"Emilio Galán, editor asociado de Clay Minerals y de Applied Clay Science.",en:"Emilio Galán, Associate Editor of Clay Minerals and Applied Clay Science."},
+  {es:"María Victoria Villar fue editora jefe de Applied Clay Science.",en:"María Victoria Villar was Editor-in-Chief of Applied Clay Science."},
+  {es:"Alberto López Galindo fue editor asociado de Applied Clay Science (2020–2024).",en:"Alberto López Galindo was Associate Editor of Applied Clay Science (2020–2024)."},
+  {es:"Emilio Galán fue editor asociado de Clay Minerals y de Applied Clay Science.",en:"Emilio Galán was Associate Editor of Clay Minerals and Applied Clay Science."},
   {es:"La SEA es una de las sociedades coeditoras de la revista Clay Minerals.",en:"The SEA is one of the co-publishing societies of the journal Clay Minerals."}]}
 ];
