@@ -310,3 +310,11 @@ footer li{margin:.3rem 0}
 @media (max-width:700px){.tabla-minerales td.nombre,.tabla-minerales td:nth-child(3){width:auto}}
 
 @media (max-width:700px){.grupo-fila .g-nota{display:block;margin:.2rem 0 0;white-space:normal}}
+
+/* Publicaciones de los socios */
+.lista-pub{list-style:none;padding:0;margin:0;max-width:52rem}
+.lista-pub li{padding:.9rem 0;border-bottom:1px solid var(--sepiolita)}
+.lista-pub a{font-family:var(--serif);font-size:var(--f-l);color:var(--tinta);text-decoration:none;line-height:1.35}
+.lista-pub a:hover{text-decoration:underline}
+.pub-meta{font-size:var(--f-s);color:var(--tinta2);margin-top:.3rem}
+.pub-socio{font-size:var(--f-xs);color:var(--terracota);margin-top:.2rem}

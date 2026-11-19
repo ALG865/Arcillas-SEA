@@ -11,7 +11,7 @@ var UI={
 es:{
  sea:"Sociedad Española de Arcillas", corto:"SEA", arcillas:"Las arcillas", sociedad:"La Sociedad", hazte:"Hazte socio", menu:"Menú", cerrar:"Cerrar", inicio:"Inicio",
  nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["juego","Juego: ¿qué arcilla es?"]],
-   sociedad:[["noticias","Noticias y convocatorias"],["sociedad","Quiénes somos"],["junta","Junta directiva"],["premios","Premios y ayudas"],["reuniones","Reuniones científicas"],["publicaciones","Publicaciones"],["glosario","Glosario"],["semblanzas","Semblanzas"],["estatutos","Estatutos"]] },
+   sociedad:[["noticias","Noticias y convocatorias"],["sociedad","Quiénes somos"],["junta","Junta directiva"],["premios","Premios y ayudas"],["reuniones","Reuniones científicas"],["publicaciones","Publicaciones"],["glosario","Glosario"],["semblanzas","Semblanzas"],["estatutos","Estatutos"],["pubsocios","Publicaciones de los socios"]] },
  heroeT:"El mundo de las arcillas", heroeE:"Silicatos formados por láminas de un nanómetro que, con el agua, se vuelven plásticos y, al cocerse, se endurecen. Su diminuto tamaño les da una superficie enorme: hinchan, retienen agua e intercambian iones. Están en el suelo que pisamos, en la cerámica, el papel, los fármacos y las barreras que aíslan los residuos radiactivos, y en buena parte de la historia humana.",
  explorar:"Explorar las arcillas", conocer:"Conocer la SEA",
  lamTit:"Una lámina, dos capas", lamTxt:"Casi todos los minerales de la arcilla están hechos de dos piezas: una capa de tetraedros de silicio y oxígeno, en azul, y una capa de octaedros de aluminio o magnesio, en verde. Según cómo se apilan y qué queda entre las láminas, hinchan, intercambian cationes o se convierten en fibras.", girar:"Arrastra para girar el modelo", verEstructura:"Construir una lámina",
@@ -74,7 +74,7 @@ es:{
 en:{
  sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
  nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["juego","Game: which clay is it?"]],
-   sociedad:[["noticias","News and calls"],["sociedad","About us"],["junta","Board"],["premios","Awards and grants"],["reuniones","Scientific meetings"],["publicaciones","Publications"],["glosario","Glossary"],["semblanzas","Profiles"],["estatutos","Statutes"]] },
+   sociedad:[["noticias","News and calls"],["sociedad","About us"],["junta","Board"],["premios","Awards and grants"],["reuniones","Scientific meetings"],["publicaciones","Publications"],["glosario","Glossary"],["semblanzas","Profiles"],["estatutos","Statutes"],["pubsocios","Members’ publications"]] },
  heroeT:"The world of clays", heroeE:"Silicates built from layers one nanometre thick that turn plastic with water and harden when fired. Their tiny size gives them an enormous surface: they swell, hold water and exchange ions. They are in the soil beneath our feet, in ceramics, paper, medicines and the barriers that isolate radioactive waste, and in much of human history.",
  explorar:"Explore clays", conocer:"About the SEA",
  lamTit:"One layer, two sheets", lamTxt:"Almost every clay mineral is built from two pieces: a sheet of silicon–oxygen tetrahedra, in blue, and a sheet of aluminium or magnesium octahedra, in green. How they stack, and what sits between the layers, decides whether they swell, exchange cations or become fibres.", girar:"Drag to rotate the model", verEstructura:"Build a layer",
@@ -552,6 +552,13 @@ function tarjetaNoticia(n){
   var meta = n.tipo==="convocatoria"?(n.plazo>=hoyISO()?U("abiertaHasta")+" "+fechaTxt(n.plazo):U("cerrada")):(n.tipo==="evento"?fechaTxt(n.fecha):fechaTxt(n.fecha));
   return '<div class="convocatoria"><span class="fecha">'+esc(U("tipos")[n.tipo]||n.tipo)+'. '+esc(meta)+'</span><h3>'+esc(L(n).n)+'</h3>'+(n.img?'<img src="'+esc(n.img)+'" alt="" loading="lazy" style="margin:.4rem 0 .8rem;border-radius:3px;max-height:220px;object-fit:cover;width:100%">':'')+'<p>'+esc(L(n).t)+'</p>'+(n.url?'<a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+U("masInfo")+'</a>':'')+'</div>';
 }
+P.pubsocios=function(){ var D=window.PUBLICACIONES_SOCIOS||{obras:[]}, es=lang==="es";
+  var entrada=es?"Artículos recientes de los socios de la SEA en revistas científicas, desde "+D.desde+". La lista se actualiza automáticamente cada mes a partir de OpenAlex.":"Recent journal articles by SEA members since "+D.desde+". The list is updated automatically every month from OpenAlex.";
+  var anios={}; D.obras.forEach(function(o){ (anios[o.y]=anios[o.y]||[]).push(o); });
+  var h=Object.keys(anios).sort().reverse().map(function(y){ return '<h2 style="margin-top:2.5rem">'+y+'</h2><ul class="lista-pub">'+anios[y].map(function(o){
+    var au=o.a.join(", ")+(o.na>o.a.length?" et al.":"");
+    return '<li><a href="'+esc(o.doi||"#")+'" target="_blank" rel="noopener">'+esc(o.t)+'</a><div class="pub-meta">'+esc(au)+'. <i>'+esc(o.r)+'</i>, '+o.y+'.</div><div class="pub-socio">'+esc(o.s.join(", "))+'</div></li>'; }).join("")+'</ul>'; }).join("");
+  main.innerHTML=cabezaPagina(U("nav.sociedad")[9][1],entrada,migaSEA())+'<div class="envoltorio pagina-cuerpo">'+h+'<p class="pequeno" style="margin-top:2.5rem">'+(es?"Actualizado el ":"Updated ")+esc(D.actualizado||"")+'. '+(es?"Fuente: OpenAlex. Solo artículos en revistas.":"Source: OpenAlex. Journal articles only.")+'</p></div>'; };
 P.noticias=function(){
   var N=window.NOTICIAS||[], vig=N.filter(vigente), resto=N.filter(function(n){ return !vigente(n); });
   vig.sort(function(a,b){ return (a.plazo||a.fecha)<(b.plazo||b.fecha)?-1:1; });
