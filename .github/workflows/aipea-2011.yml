@@ -1,0 +1,18 @@
+name: Boletin AIPEA 2011 (temporal)
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/aipea-2011.yml"]
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir out && cd out
+          curl -sSL -A "Mozilla/5.0" -o n44.pdf "https://www.aipea.org/newsletter/AIPEA_Newsletter_44%20A4.pdf"
+          curl -sSL -A "Mozilla/5.0" -o n43.pdf "https://www.aipea.org/newsletter/AIPEA_newsletter_43%20A4.pdf"
+          ls -la
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boletines
+          path: out
