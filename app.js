@@ -10,13 +10,13 @@ if(/[?&]lang=es/.test(location.search)) lang="es";
 var UI={
 es:{
  sea:"Sociedad Española de Arcillas", corto:"SEA", arcillas:"Las arcillas", sociedad:"La Sociedad", hazte:"Hazte socio", menu:"Menú", cerrar:"Cerrar", inicio:"Inicio",
- nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["afines","Materiales afines"]],
+ nav:{ arcillas:[["que-es","¿Qué es una arcilla?"],["estructura","Estructura en 3D"],["minerales","Minerales"],["propiedades","Propiedades"],["modificadas","Arcillas modificadas"],["aplicaciones","Aplicaciones"],["yacimientos","Yacimientos"],["estudio","Cómo se estudian"],["galeria","Galería de microscopía"],["afines","Materiales afines"]],
    sociedad:[["noticias","Noticias y convocatorias"],["sociedad","Quiénes somos"],["junta","Junta directiva"],["premios","Premios y ayudas"],["reuniones","Reuniones científicas"],["publicaciones","Publicaciones"],["glosario","Glosario"],["semblanzas","Semblanzas"],["estatutos","Estatutos"],["pubsocios","Publicaciones científicas recientes de los socios"]] },
  heroeT:"El mundo de las arcillas", heroeE:"Silicatos formados por láminas de un nanómetro que, con el agua, se vuelven plásticos y, al cocerse, se endurecen. Su diminuto tamaño les da una superficie enorme: hinchan, retienen agua e intercambian iones. Están en el suelo que pisamos, en la cerámica, el papel, los fármacos y las barreras que aíslan los residuos radiactivos, y en buena parte de la historia humana.",
  explorar:"Explorar las arcillas", conocer:"Conocer la SEA",
  lamTit:"Una lámina, dos capas", lamTxt:"Casi todos los minerales de la arcilla están hechos de dos piezas: una capa de tetraedros de silicio y oxígeno, en azul, y una capa de octaedros de aluminio o magnesio, en verde. Según cómo se apilan y qué queda entre las láminas, hinchan, intercambian cationes o se convierten en fibras.", girar:"Arrastra para girar el modelo", verEstructura:"Construir una lámina",
  histTit:"Historias de arcilla", histE:"Del centro de la península a Marte, pasando por los murales mayas.",
- indiceTit:"Explorar", indice:{ afines:"Arcillas aniónicas, zeolitas, organoarcillas, arcillas pilareadas y otros", "que-es":"Arcilla como tamaño y como mineral", estructura:"Modelos 3D de las láminas", minerales:"Clasificación de la AIPEA y fichas de cada mineral", propiedades:"Intercambio, hinchamiento y superficie", aplicaciones:"De la porcelana a las barreras de residuos", yacimientos:"España y el mundo", estudio:"Difracción de rayos X, infrarrojo, análisis térmico y microscopía", galeria:"Imágenes de microscopio electrónico" },
+ indiceTit:"Explorar", indice:{ modificadas:"Organoarcillas, pilareadas, activadas, híbridos y geopolímeros", afines:"Arcillas aniónicas (LDH) y zeolitas", "que-es":"Arcilla como tamaño y como mineral", estructura:"Modelos 3D de las láminas", minerales:"Clasificación de la AIPEA y fichas de cada mineral", propiedades:"Intercambio, hinchamiento y superficie", aplicaciones:"De la porcelana a las barreras de residuos", yacimientos:"España y el mundo", estudio:"Difracción de rayos X, infrarrojo, análisis térmico y microscopía", galeria:"Imágenes de microscopio electrónico" },
  convTit:"Convocatorias y citas", plazo:"Plazo hasta el", verBases:"Ver las bases",
  clayTit:"CLAY 2027 en Madrid", clayTxt:"La conferencia internacional de arcillas de la AIPEA se celebra en Madrid del 20 al 26 de junio de 2027, organizada con la SEA.", clayWeb:"Web del congreso",
  galTit:"Galería", galE:"Imágenes de microscopio electrónico cedidas por socios de la SEA y del archivo «Images of Clay».", verGaleria:"Ver toda la galería",
@@ -49,7 +49,7 @@ es:{
  props:{cic:"Intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad"},
  propTxt:{cic:"Cuántos cationes puede intercambiar la arcilla con el agua que la rodea, en miliequivalentes por 100 g. Depende de la carga de la lámina y de si los cationes son accesibles.",se:"Superficie de un gramo de arcilla. En las esmectitas cuenta también la superficie entre láminas: un gramo puede tener la superficie de una pista de tenis grande.",hinch:"Cuánto aumenta de volumen al mojarse. Solo hinchan de verdad las esmectitas, sobre todo las sódicas, porque el agua entra entre sus láminas.",plast:"Capacidad de moldearse mojada sin romperse y de mantener la forma. De ella vive la alfarería."},
  aguaTit:"¿Qué pasa al añadir agua?", echarAgua:"Añadir agua", secar:"Secar",
- aplE:"Las arcillas están en muchos objetos de casa, en la industria y en el patrimonio.", aportT:"Trabajos de referencia de grupos españoles", aportI:"En los últimos cuarenta años, investigadores de universidades y centros españoles —muchos de ellos socios de la SEA— han firmado trabajos de referencia internacional en estas aplicaciones. Bajo cada una se recogen solo los más influyentes: artículos publicados desde 1985 en revistas internacionales de referencia, con participación de centros españoles y más de 100 citas según OpenAlex (noviembre de 2026).", minerales:"Minerales",
+ aplE:"Las arcillas están en muchos objetos de casa, en la industria y en el patrimonio.", aportT:"Trabajos de grupos españoles muy citados", aportI:"En los últimos cuarenta años, investigadores de universidades y centros españoles —muchos de ellos socios de la SEA— han firmado trabajos de referencia en estas aplicaciones. Bajo cada una se recogen algunos de los más citados en la bibliografía internacional.", minerales:"Minerales",
  yacE:"Principales yacimientos de minerales de la arcilla en España. Toca un punto.", leyMapa:{fibrosa:"Sepiolita y palygorskita",bentonita:"Bentonita (esmectitas)",caolin:"Caolín",pasado:"Explotado en el pasado"}, mundo:"En el mundo", hoy:"En explotación", pasado:"Explotado en el pasado",
  estuE:"Las partículas son demasiado pequeñas para el microscopio óptico. Se identifican con rayos X y se observan con microscopios electrónicos.",
  drxTit:"Difracción de rayos X: los tres tratamientos", drxE:"Elige un mineral y compara el agregado orientado seco al aire, tras etilenglicol y tras calentar a 550 °C. Pasa el dedo o el ratón por el gráfico para leer el espaciado.",
@@ -73,13 +73,13 @@ es:{
 },
 en:{
  sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
- nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["afines","Related materials"]],
+ nav:{ arcillas:[["que-es","What is clay?"],["estructura","Structure in 3D"],["minerales","Minerals"],["propiedades","Properties"],["modificadas","Modified clays"],["aplicaciones","Uses"],["yacimientos","Deposits"],["estudio","How we study them"],["galeria","Microscopy gallery"],["afines","Related materials"]],
    sociedad:[["noticias","News and calls"],["sociedad","About us"],["junta","Board"],["premios","Awards and grants"],["reuniones","Scientific meetings"],["publicaciones","Publications"],["glosario","Glossary"],["semblanzas","Profiles"],["estatutos","Statutes"],["pubsocios","Recent scientific publications by members"]] },
  heroeT:"The world of clays", heroeE:"Silicates built from layers one nanometre thick that turn plastic with water and harden when fired. Their tiny size gives them an enormous surface: they swell, hold water and exchange ions. They are in the soil beneath our feet, in ceramics, paper, medicines and the barriers that isolate radioactive waste, and in much of human history.",
  explorar:"Explore clays", conocer:"About the SEA",
  lamTit:"One layer, two sheets", lamTxt:"Almost every clay mineral is built from two pieces: a sheet of silicon–oxygen tetrahedra, in blue, and a sheet of aluminium or magnesium octahedra, in green. How they stack, and what sits between the layers, decides whether they swell, exchange cations or become fibres.", girar:"Drag to rotate the model", verEstructura:"Build a layer",
  histTit:"Clay stories", histE:"From the heart of Spain to Mars, by way of Maya murals.",
- indiceTit:"Explore", indice:{ afines:"Anionic clays, zeolites, organoclays, pillared clays and more", "que-es":"Clay as a size and as a mineral", estructura:"3D models of the layers", minerales:"AIPEA classification and mineral cards", propiedades:"Exchange, swelling and surface", aplicaciones:"From porcelain to waste barriers", yacimientos:"Spain and the world", estudio:"X-ray diffraction, infrared, thermal analysis and microscopy", galeria:"Electron microscope images" },
+ indiceTit:"Explore", indice:{ modificadas:"Organoclays, pillared, activated, hybrids and geopolymers", afines:"Anionic clays (LDH) and zeolites", "que-es":"Clay as a size and as a mineral", estructura:"3D models of the layers", minerales:"AIPEA classification and mineral cards", propiedades:"Exchange, swelling and surface", aplicaciones:"From porcelain to waste barriers", yacimientos:"Spain and the world", estudio:"X-ray diffraction, infrared, thermal analysis and microscopy", galeria:"Electron microscope images" },
  convTit:"Calls and events", plazo:"Deadline", verBases:"Read the rules",
  clayTit:"CLAY 2027 in Madrid", clayTxt:"AIPEA’s International Clay Conference takes place in Madrid on 20–26 June 2027, organised with the SEA.", clayWeb:"Conference website",
  galTit:"Gallery", galE:"Electron microscope images contributed by SEA members and from the “Images of Clay” archive.", verGaleria:"See the whole gallery",
@@ -112,7 +112,7 @@ en:{
  props:{cic:"Cation exchange",se:"Specific surface",hinch:"Swelling",plast:"Plasticity"},
  propTxt:{cic:"How many cations the clay can swap with the surrounding water, in milliequivalents per 100 g. It depends on the layer charge and on whether the cations can be reached.",se:"The surface area of one gram of clay. In smectites the surface between layers counts too: one gram can have the area of a large tennis court.",hinch:"How much its volume grows when wet. Only smectites really swell, especially sodium ones, because water enters between their layers.",plast:"The ability to be shaped when wet without breaking and to keep that shape. Pottery depends on it."},
  aguaTit:"What happens when water is added?", echarAgua:"Add water", secar:"Dry",
- aplE:"Clays are in many things at home, in industry and in our heritage.", aportT:"Reference papers by Spanish groups", aportI:"Over the last forty years, researchers at Spanish universities and research centres, many of them SEA members, have authored internationally recognised reference works in these applications. Only the most influential are listed under each one: papers published since 1985 in leading international journals, with Spanish co-authorship and more than 100 citations according to OpenAlex (November 2026).", minerales:"Minerals",
+ aplE:"Clays are in many things at home, in industry and in our heritage.", aportT:"Highly cited papers by Spanish groups", aportI:"Over the last forty years, researchers at Spanish universities and research centres, many of them SEA members, have authored reference works in these applications. Each one lists some of their most cited papers in the international literature.", minerales:"Minerals",
  yacE:"Main clay-mineral deposits in Spain. Tap a point.", leyMapa:{fibrosa:"Sepiolite and palygorskite",bentonita:"Bentonite (smectites)",caolin:"Kaolin",pasado:"Mined in the past"}, mundo:"Around the world", hoy:"Mined today", pasado:"Mined in the past",
  estuE:"The particles are too small for a light microscope. They are identified with X-rays and observed with electron microscopes.",
  drxTit:"X-ray diffraction: the three treatments", drxE:"Choose a mineral and compare the oriented aggregate air-dried, after ethylene glycol and after heating to 550 °C. Move your finger or mouse over the plot to read the spacing.",
@@ -323,17 +323,17 @@ P.historia=function(id){
 
 /* ---- qué es ---- */
 P["que-es"]=function(){
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[0][1],U("queE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h3>'+U("tam")+'</h3><p>'+U("tamT")+'</p><h3 style="margin-top:1.8rem">'+U("min")+'</h3>'+U("minT")+''+
+  main.innerHTML=cabezaPagina(navI("que-es")[1],U("queE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h3>'+U("tam")+'</h3><p>'+U("tamT")+'</p><h3 style="margin-top:1.8rem">'+U("min")+'</h3>'+U("minT")+''+
    '<p class="entrada" style="margin:2rem 0">'+U("def")+'</p>'+
    '<div class="mosaico" style="margin-top:2rem">'+imgSEA("montmorillonita").slice(0,2).concat(imgIOC("caolinita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div>'+
-   '<p style="margin-top:2rem"><a class="boton" href="#estructura">'+U("nav.arcillas")[1][1]+'</a></p></div>';
+   '<p style="margin-top:2rem"><a class="boton" href="#estructura">'+navI("estructura")[1]+'</a></p></div>';
 };
 
 /* ---- estructura: 3D + constructor ---- */
 var m3dSel="caolinita", est={seq:"",oct:"di",inter:null,fibra:null}, v3d=null;
 P.estructura=function(){
   var ids=["caolinita","talco","pirofilita","illita","montmorillonita","vermiculita","clorita","sepiolita","palygorskita"];
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[1][1],U("estE"),migaArcillas())+
+  main.innerHTML=cabezaPagina(navI("estructura")[1],U("estE"),migaArcillas())+
    '<section class="bloque oscuro" style="padding-top:2.5rem"><div class="envoltorio"><h2>'+U("m3dTit")+'</h2><div class="filtros">'+ids.map(function(id){ return '<button class="filtro" data-m3d="'+id+'">'+U("nombres3d")[id]+'</button>'; }).join("")+'</div>'+
    '<div class="dos-col" style="align-items:start"><div class="lienzo3d" id="v3d" style="aspect-ratio:1/1"><span class="aviso">'+U("girar")+'</span></div><div><div class="filtros"><button class="filtro" data-vista="oblicua">'+U("oblicua")+'</button><button class="filtro" data-vista="perfil">'+U("perfil")+'</button><button class="filtro" data-vista="planta">'+U("planta")+'</button></div><div id="info3d"></div><div id="ley3d"></div><p class="pequeno" style="margin-top:1rem">'+U("m3dNota")+'</p></div></div></div></section>';
   v3d=crear3D($("#v3d"),m3dSel,{autoRotate:true});
@@ -351,7 +351,7 @@ P.minerales=function(){
     var gt=L(g), gi=gt.indexOf(" ("), gn=gi>0?gt.slice(0,gi):gt, gs=gi>0?gt.slice(gi+2,-1):"";
     filas+='<tr class="grupo-fila"><td colspan="4"><span class="g-nom">'+esc(gn)+'</span>'+(gs?'<span class="g-nota">'+esc(num(gs))+'</span>':'')+'</td></tr>'+ms.map(function(m){ var im=primeraImg(m.id);
       return '<tr class="fila" data-ir="#mineral/'+m.id+'"><td style="width:66px"><div class="mini"'+(im?'':' style="background:#fff;padding:3px"')+'>'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':dibujoMineral(m))+'</div></td><td class="nombre"><a href="#mineral/'+m.id+'">'+esc(L(m).n)+'</a></td><td>'+esc(dTxt(m))+'</td><td>'+esc(L(m).r)+'</td></tr>'; }).join(""); });
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[2][1],lang==="es"?"Los grupos de minerales de la arcilla, ordenados según la clasificación de la AIPEA, y sus especies más importantes.":"The clay mineral groups, arranged according to the AIPEA classification, and their most important species.",migaArcillas())+
+  main.innerHTML=cabezaPagina(navI("minerales")[1],lang==="es"?"Los grupos de minerales de la arcilla, ordenados según la clasificación de la AIPEA, y sus especies más importantes.":"The clay mineral groups, arranged according to the AIPEA classification, and their most important species.",migaArcillas())+
    '<div class="envoltorio pagina-cuerpo" style="overflow-x:auto"><table class="tabla-minerales"><thead><tr>'+U("tablaCols").map(function(c){return '<th>'+c+'</th>';}).join("")+'</tr></thead><tbody>'+filas+'</tbody></table>'+tablaAIPEA()+'</div>';
   $$("tr.fila").forEach(function(tr){ tr.onclick=function(e){ if(e.target.tagName!=="A") location.hash=tr.getAttribute("data-ir"); }; });
 };
@@ -372,12 +372,13 @@ P.mineral=function(id){
   if(m.se) dat.push([U("ficha.se"),num(m.se[0])+"–"+num(m.se[1])+" "+U("seU")]);
   if(m.hinch!=null) dat.push([U("ficha.hinch"),U("niveles")[m.hinch]]);
   if(m.plast!=null) dat.push([U("ficha.plast"),U("nivelesF")[m.plast]]);
-  var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",U("nav.arcillas")[2][1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d,k){ return '<div class="dato'+(k===0?' ancho':'')+'"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
+  var h=cabezaPagina(esc(t.n),esc(t.r),["minerales",navI("minerales")[1]])+'<div class="envoltorio pagina-cuerpo"><div class="ficha-cab"><div class="principal">'+(prin?fig(prin,{grande:true}):'')+'</div><div><p class="pequeno">'+esc(grupoNombre(m.grupo))+'</p><p>'+esc(t.t)+'</p><div class="datos">'+dat.map(function(d,k){ return '<div class="dato'+(k===0?' ancho':'')+'"><small>'+d[0]+'</small><b>'+d[1]+'</b></div>'; }).join("")+'</div></div></div>';
   if(e) h+='<details class="especialistas"><summary>'+U("esp.tit")+'</summary><div class="dentro"><table><tr><th>'+U("esp.lam")+'</th><td>'+esc(L(e.lam))+'</td></tr><tr><th>'+U("esp.x")+'</th><td>'+esc(num(L(e.x)))+'</td></tr><tr><th>'+U("esp.grupo")+'</th><td>'+esc(L(e.grupo))+'</td></tr><tr><th>'+U("esp.oct")+'</th><td>'+esc(L(e.oct))+'</td></tr><tr><th>'+U("esp.inter")+'</th><td>'+esc(L(e.inter))+'</td></tr></table><p style="margin:1rem 0 .4rem">'+esc(L(e.nota))+'</p><p class="pequeno" style="margin:0">'+U("esp.fuente")+'</p></div></details>';
   if(micro.length>1) h+='<h2 style="margin-top:2rem">'+U("ficha.micro")+'</h2><div class="mosaico">'+micro.slice(1).map(function(i){return fig(i);}).join("")+'</div>';
   h+='<h2 style="margin-top:2rem">'+U("ficha.estructura")+'</h2><div class="dos-col" style="align-items:start">'+(M3D_DE[id]?'<div class="lienzo3d claro" id="vm3d"><span class="aviso">'+U("girar")+'</span></div>':'<div></div>')+'<div class="panel">'+dibujoMineral(m,{d:(m.lam.t==="fibra"||m.lam.t==="inter"||m.lam.t==="rollo"||m.lam.t==="onda"||Array.isArray(m.lam.inter))?null:num(m.d.split(/[ ;(]/)[0])+" Å"})+leyenda(clavesLeyenda(m),m)+'</div></div>';
   if(m.espana&&m.espana.length) h+='<h2 style="margin-top:2rem">'+U("ficha.espana")+'</h2><ul>'+m.espana.map(function(k){ return '<li>'+esc(L(MAPA.lugares[k]).n)+'</li>'; }).join("")+'</ul><a class="boton claro" href="#yacimientos">'+U("ficha.verMapa")+'</a>';
   if(mano.length) h+='<h2 style="margin-top:2rem">'+U("ficha.mano")+'</h2><div class="mosaico">'+mano.map(function(i){return fig(i);}).join("")+'</div>';
+  h+=modDeMineral(id);
   h+='</div>'; main.innerHTML=h;
   if(M3D_DE[id]) crear3D($("#vm3d"),M3D_DE[id],{autoRotate:true});
 };
@@ -386,7 +387,7 @@ P.mineral=function(id){
 var propSel="cic", PROP_MIN=["caolinita","halloysita","illita","montmorillonita","saponita","vermiculita","clorita","sepiolita","palygorskita"];
 P.propiedades=function(){
   var ks=["cic","se","hinch","plast"];
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[3][1],U("propE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros">'+ks.map(function(k){ return '<button class="filtro" data-p="'+k+'">'+U("props."+k)+'</button>'; }).join("")+'</div><p id="ptxt" class="lectura"></p><div id="barras" style=""></div><div id="pmas" class="lectura" style="margin-top:1.6rem"></div>'+
+  main.innerHTML=cabezaPagina(navI("propiedades")[1],U("propE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros">'+ks.map(function(k){ return '<button class="filtro" data-p="'+k+'">'+U("props."+k)+'</button>'; }).join("")+'</div><p id="ptxt" class="lectura"></p><div id="barras" style=""></div><div id="pmas" class="lectura" style="margin-top:1.6rem"></div>'+
    '<div class="mosaico" style="margin-top:2rem">'+imgSEA("estevensita").slice(0,1).concat(imgSEA("montmorillonita").slice(2,3),imgIOC("montmorillonita").slice(0,1)).map(function(i){return fig(i);}).join("")+'</div></div>';
   function pinta(){ $$("[data-p]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-p")===propSel); }); $("#ptxt").textContent=U("propTxt."+propSel); $("#pmas").innerHTML=L(PROP_TXT[propSel]).map(function(x){ return '<p>'+esc(x)+'</p>'; }).join("");
     var max=propSel==="cic"?200:(propSel==="se"?800:4);
@@ -397,6 +398,7 @@ P.propiedades=function(){
   $$("[data-p]").forEach(function(b){ b.onclick=function(){ propSel=b.getAttribute("data-p"); pinta(); }; }); pinta();
 };
 
+function navI(id){ return U("nav.arcillas").filter(function(x){ return x[0]===id; })[0]; }
 var GRUPOS_APL=[
  {id:"ceram",es:"Cerámica, construcción y patrimonio",en:"Ceramics, construction and heritage",ids:["ceramica","estructural","azulejos","refractarios","cemento","aislamiento","azulmaya"]},
  {id:"indus",es:"Industria",en:"Industry",ids:["papel","cargas","perforacion","fundicion","pelets"]},
@@ -406,16 +408,22 @@ var GRUPOS_APL=[
 var tarjetaApl=function(a){
     var im=null; for(var i=0;i<a.m.length&&!im;i++) im=primeraImg(a.m[i]);
     return '<div class="apl">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':'<span></span>')+'<div><h3>'+esc(L(a).n)+'</h3><p>'+esc(L(a).t)+'</p><p class="apl-min">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</p>'+aportes(a.id)+'</div></div>'; };
+var aplTab="ceram";
+function modDeApl(id){ var M=[]; (window.MODIFICADAS||[]).forEach(function(g){ g.items.forEach(function(m){ if(m.ap&&m.ap.indexOf(id)>=0) M.push(m); }); });
+  return M.length?'<p class="apl-min">'+navI("modificadas")[1]+': '+M.map(function(m){ return '<a href="#modificadas">'+esc(m[lang].n)+'</a>'; }).join(", ")+'</p>':''; }
 function bloquesApl(){ var byId={}; APLICACIONES.forEach(function(x){ byId[x.id]=x; });
-  return '<div class="filtros salto-apl">'+GRUPOS_APL.map(function(g){ return '<button class="filtro" data-salto="g-'+g.id+'">'+esc(g[lang])+'</button>'; }).join("")+'</div>'+
-   GRUPOS_APL.map(function(g){ return '<h2 id="g-'+g.id+'" class="grupo-apl">'+esc(g[lang])+'</h2><div class="aplic">'+g.ids.filter(function(i){ return byId[i]; }).map(function(i){ return tarjetaApl(byId[i]); }).join("")+'</div>'; }).join(""); }
+  var g=GRUPOS_APL.filter(function(q){ return q.id===aplTab; })[0]||GRUPOS_APL[0];
+  return '<div class="filtros salto-apl" role="tablist">'+GRUPOS_APL.map(function(q){ return '<button class="filtro" role="tab" data-tab="'+q.id+'" aria-pressed="'+(q.id===g.id)+'">'+esc(q[lang])+'</button>'; }).join("")+'</div>'+
+   '<div class="aplic">'+g.ids.filter(function(i){ return byId[i]; }).map(function(i){ return tarjetaApl(byId[i]).replace(/<\/div><\/div>$/,modDeApl(i)+'</div></div>').replace('<div class="apl">','<div class="apl" id="apl-'+i+'">'); }).join("")+'</div>'; }
 /* ---- aplicaciones ---- */
 function aportes(id){ var A=(window.APORTES||{})[id]; if(!A||!A.length) return "";
   return '<details class="aport"><summary>'+U("aportT")+' ('+A.length+')</summary><ul>'+A.map(function(z){ return '<li>'+esc(lang==="es"?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.doi+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.r)+'</i>.</li>'; }).join("")+'</ul></details>'; }
-P.aplicaciones=function(){
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><p class="intro-aport">'+U("aportI")+'</p>'+bloquesApl()+
+P.aplicaciones=function(arg){ if(arg){ GRUPOS_APL.forEach(function(q){ if(q.ids.indexOf(arg)>=0) aplTab=q.id; }); }
+  main.innerHTML=cabezaPagina(navI("aplicaciones")[1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><p class="intro-aport">'+U("aportI")+'</p>'+bloquesApl()+
    '<p style="margin-top:2rem"><a class="boton claro" href="#historia/casa">'+esc(L(HISTORIAS.filter(function(x){return x.id==="casa";})[0]).n)+'</a></p></div>';
-  $$('[data-salto]').forEach(function(b){ b.onclick=function(){ var t=document.getElementById(b.getAttribute('data-salto')); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }; });
+  var caja=$(".salto-apl").parentNode;
+  function activa(){ $$('[data-tab]').forEach(function(b){ b.onclick=function(){ aplTab=b.getAttribute('data-tab'); var t=document.createElement('div'); t.innerHTML=bloquesApl(); $(".salto-apl").nextElementSibling.remove(); $(".salto-apl").replaceWith(t.firstChild); $(".salto-apl").after(t.firstChild); activa(); }; }); }
+  activa(); if(arg){ var c=document.getElementById("apl-"+arg); if(c) setTimeout(function(){ c.scrollIntoView({block:"center"}); },50); }
 };
 
 /* ---- yacimientos ---- */
@@ -432,9 +440,9 @@ P.yacimientos=function(){
   var M=MAPA,pts="";
   Object.keys(M.lugares).forEach(function(k){ var p=M.lugares[k],t=tipoLugar(k),pas=p.estado==="pasado";
     pts+='<g class="punto" data-l="'+k+'" tabindex="0" role="button" aria-label="'+esc(L(p).n)+'"><circle cx="'+p.xy[0]+'" cy="'+p.xy[1]+'" r="15" fill="'+(pas?"#f6f3ee":COL_L[t])+'" stroke="'+(t==="caolin"?"#5d5248":COL_L[t])+'" stroke-width="'+(pas?4:2.5)+'"/></g>'; });
-  var svg='<svg viewBox="0 0 '+M.W+' '+M.H+'" role="img" aria-label="'+U("nav.arcillas")[5][1]+'">'+(M.vecinos||[]).map(function(d){ return '<path d="'+d+'" fill="#efe9de" stroke="#d9cdb8"/>'; }).join("")+'<path d="'+M.peninsula+'" fill="#e4d9c6" stroke="#b49c7c" stroke-width="2"/>'+M.islas.map(function(d){ return '<path d="'+d+'" fill="#e4d9c6" stroke="#b49c7c" stroke-width="2"/>'; }).join("")+pts+'</svg>';
+  var svg='<svg viewBox="0 0 '+M.W+' '+M.H+'" role="img" aria-label="'+navI("yacimientos")[1]+'">'+(M.vecinos||[]).map(function(d){ return '<path d="'+d+'" fill="#efe9de" stroke="#d9cdb8"/>'; }).join("")+'<path d="'+M.peninsula+'" fill="#e4d9c6" stroke="#b49c7c" stroke-width="2"/>'+M.islas.map(function(d){ return '<path d="'+d+'" fill="#e4d9c6" stroke="#b49c7c" stroke-width="2"/>'; }).join("")+pts+'</svg>';
   var ly=U("leyMapa");
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[5][1],U("yacE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="mapa"><div>'+svg+'<div class="leyenda"><span><i style="background:#b88733;border-radius:50%"></i>'+ly.fibrosa+'</span><span><i style="background:#8f3f22;border-radius:50%"></i>'+ly.bentonita+'</span><span><i style="background:#fff;border:2px solid #5d5248;border-radius:50%"></i>'+ly.caolin+'</span><span><i style="background:#6f97bd;border-radius:50%"></i>'+(lang==="es"?"Arcillas comunes para cerámica":"Common clays for ceramics")+'</span><span><i style="background:#7fae7a;border-radius:50%"></i>'+(lang==="es"?"Talco":"Talc")+'</span><span><i style="background:#f6f3ee;border:3px solid #8f3f22;border-radius:50%"></i>'+ly.pasado+'</span></div></div><div id="info"></div></div>'+
+  main.innerHTML=cabezaPagina(navI("yacimientos")[1],U("yacE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="mapa"><div>'+svg+'<div class="leyenda"><span><i style="background:#b88733;border-radius:50%"></i>'+ly.fibrosa+'</span><span><i style="background:#8f3f22;border-radius:50%"></i>'+ly.bentonita+'</span><span><i style="background:#fff;border:2px solid #5d5248;border-radius:50%"></i>'+ly.caolin+'</span><span><i style="background:#6f97bd;border-radius:50%"></i>'+(lang==="es"?"Arcillas comunes para cerámica":"Common clays for ceramics")+'</span><span><i style="background:#7fae7a;border-radius:50%"></i>'+(lang==="es"?"Talco":"Talc")+'</span><span><i style="background:#f6f3ee;border:3px solid #8f3f22;border-radius:50%"></i>'+ly.pasado+'</span></div></div><div id="info"></div></div>'+
    '<h2 style="margin-top:2.25rem">'+U("mundo")+'</h2>'+mapaMundo()+'</div>';
   function ver(k){ var p=M.lugares[k]; $$(".punto").forEach(function(g){ g.classList.toggle("activo",g.getAttribute("data-l")===k); });
     var ms=MINERALES.filter(function(m){ return m.espana&&m.espana.indexOf(k)>=0; });
@@ -464,7 +472,7 @@ function svgDRX(){
 }
 P.estudio=function(){
   var lista=Object.keys(DRX).concat(["mezcla"]);
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[6][1],U("estuE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h2>'+U("drxTit")+'</h2><p class="lectura">'+U("drxE")+'</p><div class="filtros">'+lista.map(function(id){ return '<button class="filtro" data-drx="'+id+'">'+(id==="mezcla"?U("mezcla"):esc(L(minById(id)).n))+'</button>'; }).join("")+'</div>'+
+  main.innerHTML=cabezaPagina(navI("estudio")[1],U("estuE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><h2>'+U("drxTit")+'</h2><p class="lectura">'+U("drxE")+'</p><div class="filtros">'+lista.map(function(id){ return '<button class="filtro" data-drx="'+id+'">'+(id==="mezcla"?U("mezcla"):esc(L(minById(id)).n))+'</button>'; }).join("")+'</div>'+
    '<div class="drx"><div><div id="graf"></div><p class="pequeno" style="margin:.5rem 0 0">'+(lang==="es"?"Pasa el ratón o el dedo por el difractograma para leer el ángulo 2θ y el espaciado d correspondiente.":"Move the mouse or your finger over the diffractogram to read the 2θ angle and the corresponding d-spacing.")+'</p></div><div><div class="tratamientos">'+["AO","EG","C"].map(function(k){ return '<button class="trat" data-t="'+k+'" style="border-color:'+DRX_COL[k]+';color:'+DRX_COL[k]+'">'+U(k)+'</button>'; }).join("")+'</div><p id="drxTxt" style="margin-top:1rem"></p><p class="pequeno">'+U("marte")+' <a href="#historia/marte">'+esc(L(HISTORIAS[2]).n)+'</a></p></div></div>'+
    seccionIR()+seccionATD()+
    '<h2 style="margin-top:3rem">'+U("tecnicas")+'</h2><div class="indice">'+TECNICAS.filter(function(t){return ["drx","ir","termico"].indexOf(t.id)<0;}).map(function(t){ var im=t.id==="sem"?imgSEA("caolinita")[0]:(t.id==="tem"?imgIOC("caolinita")[2]:null);
@@ -514,14 +522,20 @@ function cursorDRX(){ var sv=$("#drxsvg"); if(!sv) return; var g=$("#cursor",sv)
 
 /* ---- galería ---- */
 var galM="", galF="";
-P.afines=function(){ var es=lang==="es", A=window.AFINES||[];
-  var ent=es?"Materiales que no son minerales de la arcilla o que se obtienen a partir de ellos, con aplicaciones actuales y grupos españoles que trabajan en ellos.":"Materials that are not clay minerals or are made from them, with current uses and Spanish groups working on them.";
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[8][1],ent,migaArcillas())+'<div class="envoltorio pagina-cuerpo">'+A.map(function(g,gi){ return '<h2'+(gi?' style="margin-top:2.5rem"':'')+'>'+esc(g.g[lang])+'</h2><p>'+esc(g.i[lang])+'</p><div class="afines">'+g.items.map(function(m){ var x=m[lang];
-    return '<div class="afin"><h3>'+esc(x.n)+'</h3><p>'+esc(x.t)+'</p><p><b>'+(es?"Aplicaciones: ":"Uses: ")+'</b>'+esc(x.u)+'</p>'+(m.r.length?'<details class="aport"><summary>'+U("aportT")+' ('+m.r.length+')</summary><ul>'+m.r.map(function(z){ return '<li>'+esc(es?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.d+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.j)+'</i>.</li>'; }).join("")+'</ul></details>':'')+'</div>'; }).join("")+'</div>'; }).join("")+'</div>'; };
+function fichaMat(m,conEnlaces){ var es=lang==="es", x=m[lang];
+  var enl=conEnlaces&&m.m?'<p class="apl-min">'+(es?"Minerales de partida: ":"Starting minerals: ")+m.m.map(function(id){ var mm=minById(id); return mm?'<a href="#mineral/'+id+'">'+esc(L(mm).n)+'</a>':''; }).filter(Boolean).join(", ")+'<br>'+(es?"Aplicaciones: ":"Uses: ")+m.ap.map(function(id){ var ap=APLICACIONES.filter(function(q){return q.id===id;})[0]; return ap?'<a href="#aplicaciones/'+id+'">'+esc(L(ap).n)+'</a>':''; }).filter(Boolean).join(", ")+'</p>':'';
+  return '<div class="afin" id="mod-'+m.es.n.replace(/[^A-Za-zÁÉÍÓÚáéíóúñ]+/g,"-").toLowerCase()+'"><h3>'+esc(x.n)+'</h3><p>'+esc(x.t)+'</p><p><b>'+(es?"Aplicaciones: ":"Uses: ")+'</b>'+esc(x.u)+'</p>'+enl+(m.r.length?'<details class="aport"><summary>'+U("aportT")+' ('+m.r.length+')</summary><ul>'+m.r.map(function(z){ return '<li>'+esc(es?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.d+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.j)+'</i>.</li>'; }).join("")+'</ul></details>':'')+'</div>'; }
+function paginaMat(id,ent,G,conEnlaces){ main.innerHTML=cabezaPagina(navI(id)[1],ent,migaArcillas())+'<div class="envoltorio pagina-cuerpo">'+G.map(function(g,gi){ return '<h2'+(gi?' style="margin-top:2.5rem"':'')+'>'+esc(g.g[lang])+'</h2>'+(g.i?'<p>'+esc(g.i[lang])+'</p>':'')+'<div class="afines">'+g.items.map(function(m){ return fichaMat(m,conEnlaces); }).join("")+'</div>'; }).join("")+'</div>'; }
+P.afines=function(){ var es=lang==="es";
+  paginaMat("afines",es?"Materiales laminares que no son minerales de la arcilla, pero comparten con ellas estructura, propiedades y aplicaciones, y se estudian en los mismos grupos y revistas.":"Layered materials that are not clay minerals but share structure, properties and uses with clays, and are studied by the same groups and journals.",[{g:{es:es?"Hidróxidos dobles laminares y zeolitas":"",en:"Layered double hydroxides and zeolites"},items:(window.AFINES||[{items:[]}])[0].items}],false); };
+P.modificadas=function(){ var es=lang==="es";
+  paginaMat("modificadas",es?"Arcillas transformadas por intercambio, intercalación, tratamiento químico o térmico, combinación con otros materiales o síntesis, para darles propiedades nuevas.":"Clays transformed by exchange, intercalation, chemical or thermal treatment, combination with other materials or synthesis, to give them new properties.",window.MODIFICADAS||[],true); };
+function modDeMineral(id){ var M=[]; (window.MODIFICADAS||[]).forEach(function(g){ g.items.forEach(function(m){ if(m.m&&m.m.indexOf(id)>=0) M.push(m); }); });
+  if(!M.length) return ""; return '<p style="margin-top:1.5rem"><b>'+navI("modificadas")[1]+':</b> '+M.map(function(m){ return '<a href="#modificadas">'+esc(m[lang].n)+'</a>'; }).join(", ")+'</p>'; }
 P.galeria=function(){
   var todas=imgSEA().concat([].concat.apply([],Object.keys(SEM).filter(function(k){return minById(k);}).map(imgIOC)));
   var mins=[]; todas.forEach(function(i){ if(mins.indexOf(i.m)<0) mins.push(i.m); });
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[7][1],U("galPag"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros"><button class="filtro" data-gm="">'+U("todos")+'</button>'+mins.map(function(m){ return '<button class="filtro" data-gm="'+m+'">'+esc(L(minById(m)).n)+'</button>'; }).join("")+'</div><div class="filtros" style="margin-top:-.6rem"><button class="filtro" data-gf="">'+U("todos")+'</button><button class="filtro" data-gf="sea">'+U("fuentes.sea")+'</button><button class="filtro" data-gf="ioc">'+U("fuentes.ioc")+'</button></div><div class="mosaico" id="gal"></div></div>';
+  main.innerHTML=cabezaPagina(navI("galeria")[1],U("galPag"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros"><button class="filtro" data-gm="">'+U("todos")+'</button>'+mins.map(function(m){ return '<button class="filtro" data-gm="'+m+'">'+esc(L(minById(m)).n)+'</button>'; }).join("")+'</div><div class="filtros" style="margin-top:-.6rem"><button class="filtro" data-gf="">'+U("todos")+'</button><button class="filtro" data-gf="sea">'+U("fuentes.sea")+'</button><button class="filtro" data-gf="ioc">'+U("fuentes.ioc")+'</button></div><div class="mosaico" id="gal"></div></div>';
   function pinta(){ $$("[data-gm]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-gm")===galM); }); $$("[data-gf]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-gf")===galF); });
     $("#gal").innerHTML=todas.filter(function(i){ return (!galM||i.m===galM)&&(!galF||i.fuente===galF); }).map(function(i){ return fig(i); }).join(""); }
   $$("[data-gm]").forEach(function(b){ b.onclick=function(){ galM=b.getAttribute("data-gm"); pinta(); }; });
