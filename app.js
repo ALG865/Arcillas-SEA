@@ -49,7 +49,7 @@ es:{
  props:{cic:"Intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad"},
  propTxt:{cic:"Cuántos cationes puede intercambiar la arcilla con el agua que la rodea, en miliequivalentes por 100 g. Depende de la carga de la lámina y de si los cationes son accesibles.",se:"Superficie de un gramo de arcilla. En las esmectitas cuenta también la superficie entre láminas: un gramo puede tener la superficie de una pista de tenis grande.",hinch:"Cuánto aumenta de volumen al mojarse. Solo hinchan de verdad las esmectitas, sobre todo las sódicas, porque el agua entra entre sus láminas.",plast:"Capacidad de moldearse mojada sin romperse y de mantener la forma. De ella vive la alfarería."},
  aguaTit:"¿Qué pasa al añadir agua?", echarAgua:"Añadir agua", secar:"Secar",
- aplE:"Las arcillas están en muchos objetos de casa, en la industria y en el patrimonio.", minerales:"Minerales",
+ aplE:"Las arcillas están en muchos objetos de casa, en la industria y en el patrimonio.", aportT:"Aportaciones de grupos españoles", aportI:"En los últimos cuarenta años, investigadores de universidades y centros españoles —muchos de ellos socios de la SEA— han contribuido de forma destacada a estas aplicaciones. Bajo cada una se recoge una selección de sus trabajos más citados.", minerales:"Minerales",
  yacE:"Principales yacimientos de minerales de la arcilla en España. Toca un punto.", leyMapa:{fibrosa:"Sepiolita y palygorskita",bentonita:"Bentonita (esmectitas)",caolin:"Caolín",pasado:"Explotado en el pasado"}, mundo:"En el mundo", hoy:"En explotación", pasado:"Explotado en el pasado",
  estuE:"Las partículas son demasiado pequeñas para el microscopio óptico. Se identifican con rayos X y se observan con microscopios electrónicos.",
  drxTit:"Difracción de rayos X: los tres tratamientos", drxE:"Elige un mineral y compara el agregado orientado seco al aire, tras etilenglicol y tras calentar a 550 °C. Pasa el dedo o el ratón por el gráfico para leer el espaciado.",
@@ -112,7 +112,7 @@ en:{
  props:{cic:"Cation exchange",se:"Specific surface",hinch:"Swelling",plast:"Plasticity"},
  propTxt:{cic:"How many cations the clay can swap with the surrounding water, in milliequivalents per 100 g. It depends on the layer charge and on whether the cations can be reached.",se:"The surface area of one gram of clay. In smectites the surface between layers counts too: one gram can have the area of a large tennis court.",hinch:"How much its volume grows when wet. Only smectites really swell, especially sodium ones, because water enters between their layers.",plast:"The ability to be shaped when wet without breaking and to keep that shape. Pottery depends on it."},
  aguaTit:"What happens when water is added?", echarAgua:"Add water", secar:"Dry",
- aplE:"Clays are in many things at home, in industry and in our heritage.", minerales:"Minerals",
+ aplE:"Clays are in many things at home, in industry and in our heritage.", aportT:"Contributions from Spanish groups", aportI:"Over the last forty years, researchers at Spanish universities and research centres, many of them SEA members, have made notable contributions to these applications. Each one lists a selection of their most cited papers.", minerales:"Minerals",
  yacE:"Main clay-mineral deposits in Spain. Tap a point.", leyMapa:{fibrosa:"Sepiolite and palygorskite",bentonita:"Bentonite (smectites)",caolin:"Kaolin",pasado:"Mined in the past"}, mundo:"Around the world", hoy:"Mined today", pasado:"Mined in the past",
  estuE:"The particles are too small for a light microscope. They are identified with X-rays and observed with electron microscopes.",
  drxTit:"X-ray diffraction: the three treatments", drxE:"Choose a mineral and compare the oriented aggregate air-dried, after ethylene glycol and after heating to 550 °C. Move your finger or mouse over the plot to read the spacing.",
@@ -398,10 +398,12 @@ P.propiedades=function(){
 };
 
 /* ---- aplicaciones ---- */
+function aportes(id){ var A=(window.APORTES||{})[id]; if(!A||!A.length) return "";
+  return '<details class="aport"><summary>'+U("aportT")+' ('+A.length+')</summary><ul>'+A.map(function(z){ return '<li>'+esc(lang==="es"?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.doi+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.r)+'</i>.</li>'; }).join("")+'</ul></details>'; }
 P.aplicaciones=function(){
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="aplic">'+APLICACIONES.map(function(a){
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><p class="intro-aport">'+U("aportI")+'</p><div class="aplic">'+APLICACIONES.map(function(a){
     var im=null; for(var i=0;i<a.m.length&&!im;i++) im=primeraImg(a.m[i]);
-    return '<div class="apl">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':'<span></span>')+'<div><h3>'+esc(L(a).n)+'</h3><p>'+esc(L(a).t)+'</p><p class="apl-min">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</p></div></div>'; }).join("")+'</div>'+
+    return '<div class="apl">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':'<span></span>')+'<div><h3>'+esc(L(a).n)+'</h3><p>'+esc(L(a).t)+'</p><p class="apl-min">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</p>'+aportes(a.id)+'</div></div>'; }).join("")+'</div>'+
    '<p style="margin-top:2rem"><a class="boton claro" href="#historia/casa">'+esc(L(HISTORIAS.filter(function(x){return x.id==="casa";})[0]).n)+'</a></p></div>';
 };
 

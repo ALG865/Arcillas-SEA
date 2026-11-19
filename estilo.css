@@ -360,3 +360,9 @@ svg.mundo{width:100%;height:auto;display:block;margin-top:.8rem}
 .internac h3{font-size:var(--f-l);margin:0 0 .4rem}
 .internac ul{margin:0 0 1rem;padding-left:1.1rem}
 .internac li{margin:.25rem 0}
+
+.intro-aport{max-width:var(--texto);margin:0 0 1.5rem}
+details.aport{margin-top:.5rem;font-size:var(--f-xs)}
+details.aport summary{cursor:pointer;font-weight:500}
+details.aport ul{margin:.4rem 0 0;padding-left:1.1rem}
+details.aport li{margin:.25rem 0;line-height:1.4}
