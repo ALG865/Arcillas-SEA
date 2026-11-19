@@ -1,7 +1,3 @@
-@font-face{font-family:"Spectral";src:url(fuentes-tipo/spectral-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Spectral";src:url(fuentes-tipo/spectral-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Spectral";src:url(fuentes-tipo/spectral-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Spectral";src:url(fuentes-tipo/spectral-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url(fuentes-tipo/instrument-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url(fuentes-tipo/instrument-sans-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url(fuentes-tipo/instrument-sans-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
@@ -9,7 +5,7 @@
 :root{
   --caolin:#f6f3ee; --sepiolita:#e4d9c6; --sepiolita2:#d6c7ad; --ocre:#b88733; --terracota:#8f3f22; --terracota2:#6f2f18;
   --grafito:#1c1d1f; --grafito2:#2a2b2e; --tinta:#26201b; --tinta2:#5d5248; --T:#6f97bd; --Tb:#4b7398; --O:#7fae7a; --Ob:#57864f;
-  --serif:"Spectral",Georgia,"Times New Roman",serif; --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif; --sans:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --f-xs:.8125rem; --f-s:.9375rem; --f-m:1.0625rem; --f-l:1.125rem; --f-xl:1.4375rem; --f-2xl:clamp(1.6rem,2.8vw,1.875rem); --f-3xl:clamp(2rem,3.6vw,2.5rem);
   --f-ent:1.125rem; --f-nom:1.125rem; --f-grupo:1.4375rem; --mini:36px;
   --ancho:1040px; --texto:56rem; --r:3px;
@@ -23,7 +19,7 @@ a{color:var(--terracota);text-underline-offset:.18em;text-decoration-thickness:1
 a:hover{color:var(--terracota2)}
 :focus-visible{outline:2px solid var(--ocre);outline-offset:3px}
 button{font:inherit;color:inherit;cursor:pointer}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0 0 .5em;color:var(--tinta);letter-spacing:-.005em}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;margin:0 0 .5em;color:var(--tinta);letter-spacing:-.015em}
 h1{font-size:var(--f-3xl);letter-spacing:-.01em}
 h2{font-size:var(--f-2xl)}
 h3{font-size:var(--f-xl)}
