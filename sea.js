@@ -121,16 +121,7 @@ SEA.internacional = [
   {es:"Primera reunión Euroclay, Madrid, 1970.",en:"First Euroclay meeting, Madrid, 1970."},
   {es:"IV International Clay Conference, Madrid, 1972, presidida por E. Gutiérrez Ríos.",en:"4th International Clay Conference, Madrid, 1972, chaired by E. Gutiérrez Ríos."},
   {es:"XVI International Clay Conference, Granada, 2017, presidida por Alberto López Galindo.",en:"16th International Clay Conference, Granada, 2017, chaired by Alberto López Galindo."},
-  {es:"CLAY 2027, Madrid, primer congreso de la nueva serie CLAY de la AIPEA.",en:"CLAY 2027, Madrid, the first conference of AIPEA’s new CLAY series."}]},
- {g:{es:"CLAY 2027, Madrid: organización",en:"CLAY 2027, Madrid: organisation"},it:[
-  {es:"Presidencia del congreso: Jaime Cuevas (UAM), Pilar Aranda (ICMM-CSIC), Ana Isabel Ruiz (UAM) y Margarita Darder (ICMM-CSIC).",en:"Conference chairs: Jaime Cuevas (UAM), Pilar Aranda (ICMM-CSIC), Ana Isabel Ruiz (UAM) and Margarita Darder (ICMM-CSIC)."},
-  {es:"Sesiones científicas: Pilar Aranda, Blanca Bauluz, Mercedes Suárez, Tomás Undabeytia y María Victoria Villar.",en:"Scientific sessions: Pilar Aranda, Blanca Bauluz, Mercedes Suárez, Tomás Undabeytia and María Victoria Villar."},
-  {es:"Actos técnicos y publicaciones: Ana Isabel Ruiz, Margarita Darder y María Victoria Villar.",en:"Technical events and proceedings: Ana Isabel Ruiz, Margarita Darder and María Victoria Villar."},
-  {es:"Excursiones: Mercedes Suárez, José Fernández-Barrenechea, Emilia García-Romero, Juan Morales y Manuel Pozo.",en:"Field trips: Mercedes Suárez, José Fernández-Barrenechea, Emilia García-Romero, Juan Morales and Manuel Pozo."},
-  {es:"Finanzas y estrategia: Raúl Fernández, F. Javier Huertas y Alberto López Galindo.",en:"Finance and strategy: Raúl Fernández, F. Javier Huertas and Alberto López Galindo."},
-  {es:"Relaciones institucionales: Jaime Cuevas, Patricia Aparicio, Blanca Bauluz, Emilia García-Romero y África Yebra.",en:"Institutional relations: Jaime Cuevas, Patricia Aparicio, Blanca Bauluz, Emilia García-Romero and África Yebra."},
-  {es:"Becas, tutoría de estudiantes y premios: Javier García Rivas, Jaime Cuevas, Mercedes Regadío y José Manuel Moreno Maroto.",en:"Grants, student mentoring and awards: Javier García Rivas, Jaime Cuevas, Mercedes Regadío and José Manuel Moreno Maroto."},
-  {es:"Programa social: Margarita Darder, Pilar Aranda, Jaime Cuevas y Ana Isabel Ruiz.",en:"Social programme: Margarita Darder, Pilar Aranda, Jaime Cuevas and Ana Isabel Ruiz."}]},
+  {es:"CLAY 2027, Madrid, primer congreso de la nueva serie CLAY de la AIPEA, presidido por Jaime Cuevas, Pilar Aranda, Ana Isabel Ruiz y Margarita Darder.",en:"CLAY 2027, Madrid, the first conference of AIPEA’s new CLAY series, chaired by Jaime Cuevas, Pilar Aranda, Ana Isabel Ruiz and Margarita Darder."}]},
  {g:{es:"Revistas científicas",en:"Scientific journals"},it:[
   {es:"María Victoria Villar fue editora jefe de Applied Clay Science.",en:"María Victoria Villar was Editor-in-Chief of Applied Clay Science."},
   {es:"Alberto López Galindo fue editor asociado de Applied Clay Science.",en:"Alberto López Galindo was Associate Editor of Applied Clay Science."},
