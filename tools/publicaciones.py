@@ -9,6 +9,7 @@ def norm(s): return unicodedata.normalize("NFKD",s or "").encode("ascii","ignore
 socios=json.load(open("tools/socios.json",encoding="utf-8"))
 desde=f"{datetime.date.today().year-3}-01-01"
 obras={}
+idsocio={}
 for s in socios:
     res=get("https://api.openalex.org/authors?per-page=25&search="+urllib.parse.quote(s["buscar"]))["results"]
     claves=[norm(c) for c in s["centro"]]
@@ -23,6 +24,7 @@ for s in socios:
         print(("  ✔ " if ok else "  · ")+a["id"].split("/")[-1], a["display_name"], a.get("works_count"), "|", "; ".join(dict.fromkeys(inst))[:160])
         if ok: elegidos.append(a["id"].split("/")[-1])
     if not elegidos: continue
+    for e in elegidos: idsocio[e]=s["n"]
     cursor="*"
     while cursor:
         d=get("https://api.openalex.org/works?per-page=200&cursor="+cursor+"&filter="+urllib.parse.quote(f"author.id:{'|'.join(elegidos)},from_publication_date:{desde},type:article"))
@@ -30,12 +32,14 @@ for s in socios:
             src=((w.get("primary_location") or {}).get("source") or {})
             if src.get("type")!="journal": continue
             k=(w.get("doi") or w["id"]).lower()
-            o=obras.setdefault(k,{"t":w.get("title") or "","a":[x["author"]["display_name"] for x in w.get("authorships",[])][:12],
+            o=obras.setdefault(k,{"t":w.get("title") or "","a":[x["author"]["display_name"] for x in w.get("authorships",[])][:12],"ai":[(x["author"].get("id") or "").split("/")[-1] for x in w.get("authorships",[])][:12],
                "na":len(w.get("authorships",[])),"r":src.get("display_name",""),"y":w.get("publication_year"),"f":w.get("publication_date"),
                "doi":w.get("doi") or "","v":(w.get("biblio") or {}).get("volume") or "","n":(w.get("biblio") or {}).get("issue") or "",
                "p":"–".join(x for x in [(w.get("biblio") or {}).get("first_page"),(w.get("biblio") or {}).get("last_page")] if x) if (w.get("biblio") or {}).get("last_page")!=(w.get("biblio") or {}).get("first_page") else ((w.get("biblio") or {}).get("first_page") or ""),"s":[]})
             if s["n"] not in o["s"]: o["s"].append(s["n"])
         cursor=d["meta"].get("next_cursor")
+for o in obras.values():
+    o["a"]=[idsocio.get(i,n) for n,i in zip(o["a"],o.pop("ai"))]
 lista=sorted(obras.values(),key=lambda o:o["f"] or "",reverse=True)
 print("\nTotal:",len(lista))
 for o in lista[:60]: print(" ",o["y"],"|",o["t"][:90],"|",o["r"][:40],"|",", ".join(o["s"]))
