@@ -67,7 +67,7 @@ nav.menu{display:flex;gap:.2rem;align-items:center}
 .heroe .fotos img.ver{opacity:.78}
 .heroe::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,29,31,.92) 0,rgba(28,29,31,.55) 45%,rgba(28,29,31,.1) 80%),linear-gradient(0deg,rgba(28,29,31,.8),transparent 40%);z-index:1}
 .heroe .envoltorio{position:relative;z-index:2;width:100%;padding-top:5rem;padding-bottom:3.2rem}
-.heroe h1{font-size:clamp(2.2rem,4.8vw,3.4rem);color:#fff;max-width:11ch;margin-bottom:.35em}
+.heroe h1{font-size:clamp(2.2rem,4.8vw,3.4rem);color:#fff;max-width:18ch;margin-bottom:.35em}
 .heroe .entrada{color:rgba(255,255,255,.86)}
 .heroe .placa{position:absolute;right:clamp(1rem,4vw,2.5rem);bottom:3.2rem;z-index:2;text-align:right;font-size:var(--f-xs);color:rgba(255,255,255,.75);max-width:20rem}
 .heroe .placa b{display:block;font-family:var(--sans);font-weight:400;font-size:var(--f-l);color:#fff}
@@ -374,3 +374,4 @@ details.aport li{margin:.25rem 0;line-height:1.4}
 sup,sub{line-height:0}
 .afines{display:grid;grid-template-columns:repeat(auto-fill,minmax(26rem,1fr));gap:.5rem 2.5rem}.afin{padding:1rem 0;border-top:1px solid var(--sepiolita2)}.afin h3{margin-bottom:.4rem}.afin p{margin:0 0 .5rem}
 @media (max-width:560px){.afines{grid-template-columns:1fr}}
+.pionero{display:inline-block;font-size:.75rem;font-weight:600;padding:.05rem .45rem;border:1px solid currentColor;border-radius:999px;margin-right:.2rem;color:var(--terracota,#8f3f22)}
