@@ -397,14 +397,25 @@ P.propiedades=function(){
   $$("[data-p]").forEach(function(b){ b.onclick=function(){ propSel=b.getAttribute("data-p"); pinta(); }; }); pinta();
 };
 
+var GRUPOS_APL=[
+ {id:"ceram",es:"Cerámica, construcción y patrimonio",en:"Ceramics, construction and heritage",ids:["ceramica","estructural","azulejos","refractarios","cemento","aislamiento","azulmaya"]},
+ {id:"indus",es:"Industria",en:"Industry",ids:["papel","cargas","perforacion","fundicion","pelets"]},
+ {id:"ambiente",es:"Medio ambiente e ingeniería",en:"Environment and engineering",ids:["agua","absorbentes","ingenieria","barreras"]},
+ {id:"salud",es:"Salud, alimentación y agricultura",en:"Health, food and agriculture",ids:["farmacia","alimentos","pienso","agricultura"]},
+ {id:"nuevos",es:"Nuevos materiales y energía",en:"New materials and energy",ids:["catalisis","nanocompuestos","litio"]}];
+var tarjetaApl=function(a){
+    var im=null; for(var i=0;i<a.m.length&&!im;i++) im=primeraImg(a.m[i]);
+    return '<div class="apl">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':'<span></span>')+'<div><h3>'+esc(L(a).n)+'</h3><p>'+esc(L(a).t)+'</p><p class="apl-min">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</p>'+aportes(a.id)+'</div></div>'; };
+function bloquesApl(){ var byId={}; APLICACIONES.forEach(function(x){ byId[x.id]=x; });
+  return '<div class="filtros salto-apl">'+GRUPOS_APL.map(function(g){ return '<button class="filtro" data-salto="g-'+g.id+'">'+esc(g[lang])+'</button>'; }).join("")+'</div>'+
+   GRUPOS_APL.map(function(g){ return '<h2 id="g-'+g.id+'" class="grupo-apl">'+esc(g[lang])+'</h2><div class="aplic">'+g.ids.filter(function(i){ return byId[i]; }).map(function(i){ return tarjetaApl(byId[i]); }).join("")+'</div>'; }).join(""); }
 /* ---- aplicaciones ---- */
 function aportes(id){ var A=(window.APORTES||{})[id]; if(!A||!A.length) return "";
   return '<details class="aport"><summary>'+U("aportT")+' ('+A.length+')</summary><ul>'+A.map(function(z){ return '<li>'+esc(lang==="es"?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.doi+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.r)+'</i>.</li>'; }).join("")+'</ul></details>'; }
 P.aplicaciones=function(){
-  main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><p class="intro-aport">'+U("aportI")+'</p><div class="aplic">'+APLICACIONES.map(function(a){
-    var im=null; for(var i=0;i<a.m.length&&!im;i++) im=primeraImg(a.m[i]);
-    return '<div class="apl">'+(im?'<img loading="lazy" src="'+im.mini+'" alt="">':'<span></span>')+'<div><h3>'+esc(L(a).n)+'</h3><p>'+esc(L(a).t)+'</p><p class="apl-min">'+a.m.map(function(id){ return '<a href="#mineral/'+id+'">'+esc(L(minById(id)).n)+'</a>'; }).join(", ")+'</p>'+aportes(a.id)+'</div></div>'; }).join("")+'</div>'+
+  main.innerHTML=cabezaPagina(U("nav.arcillas")[4][1],U("aplE"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><p class="intro-aport">'+U("aportI")+'</p>'+bloquesApl()+
    '<p style="margin-top:2rem"><a class="boton claro" href="#historia/casa">'+esc(L(HISTORIAS.filter(function(x){return x.id==="casa";})[0]).n)+'</a></p></div>';
+  $$('[data-salto]').forEach(function(b){ b.onclick=function(){ var t=document.getElementById(b.getAttribute('data-salto')); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }; });
 };
 
 /* ---- yacimientos ---- */
