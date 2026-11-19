@@ -3,5 +3,5 @@
  {"n": "Javier Huertas Puerta", "buscar": "F. Javier Huertas", "apellido": "Huertas", "completo": "Javier Huertas Puerta", "centro": ["Andaluz de Ciencias de la Tierra"]},
  {"n": "Jaime Cuevas Rodríguez", "buscar": "Jaime Cuevas", "apellido": "Cuevas", "centro": ["Universidad Autónoma de Madrid", "Complutense"]},
  {"n": "Pilar Aranda", "buscar": "Pilar Aranda", "apellido": "Aranda", "centro": ["Ciencia de Materiales de Madrid"]},
- {"n": "Mercedes Suárez Barrios", "buscar": "Mercedes Suárez", "apellido": "Suarez", "centro": ["Universidad de Salamanca", "University of Salamanca"]}
+ {"n": "Mercedes Suárez Barrios", "buscar": "Mercedes Suárez", "apellido": "Suarez", "centro": ["Universidad de Salamanca", "University of Salamanca"], "completo": "Mercedes Suarez Barrios"}
 ]
