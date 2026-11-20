@@ -198,7 +198,7 @@ function socios_desde_filas(array $filas, array $previos): array {
     $centro = $col['centro'] !== null ? trim($f[$col['centro']] ?? '') : '';
     if (isset($ant[$clave])) { $s = $ant[$clave]; if ($centro !== '' && !in_array($centro, $s['centro'], true)) $s['centro'][] = $centro; $res[] = $s; continue; }
     $s = ['n' => $n, 'buscar' => $n, 'apellido' => primer_apellido($ape), 'centro' => $centro !== '' ? [$centro] : []];
-    $s['completo'] = $n; // también se acepta el autor cuyo nombre completo coincide exactamente
+    $s['nombre'] = norma(explode(' ', $n)[0]); $s['completo'] = $n; // también se acepta el autor cuyo nombre completo coincide exactamente
     $res[] = $s;
   }
   return $res;

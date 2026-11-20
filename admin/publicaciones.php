@@ -23,7 +23,9 @@ function actualizar_publicaciones(): array {
       $txt = norma(implode(' | ', $inst));
       $nom = str_replace('-', ' ', norma($a['display_name'] ?? ''));
       $centro_ok = false; foreach ($claves as $c) if ($c !== '' && str_contains($txt, $c)) $centro_ok = true;
-      $ok = ($a['works_count'] ?? 0) > 0 && ((str_contains($nom, norma($s['apellido'])) && $centro_ok) || (!empty($s['completo']) && str_contains($nom, norma($s['completo']))));
+      $pn = explode(' ', trim($nom))[0] ?? ''; $sn = $s['nombre'] ?? '';
+      $nomok = $sn === '' || $pn === $sn || (strlen(rtrim($pn, '.')) === 1 && $pn[0] === $sn[0]) || in_array($sn, explode(' ', $nom), true);
+      $ok = $nomok && ($a['works_count'] ?? 0) > 0 && ((str_contains($nom, norma($s['apellido'])) && $centro_ok) || (!empty($s['completo']) && str_contains($nom, norma($s['completo']))));
       if ($ok) $elegidos[] = basename($a['id']);
     }
     $log[] = $s['n'] . ': ' . count($elegidos) . ' perfil(es) en OpenAlex';

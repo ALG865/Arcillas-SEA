@@ -20,7 +20,9 @@ for s in socios:
         inst+= [af["institution"].get("display_name","") for af in (a.get("affiliations") or []) if af.get("institution")]
         txt=norm(" | ".join(inst))
         nom=norm(a["display_name"]).replace("-"," ")
-        ok=a.get("works_count",0)>0 and ((norm(s["apellido"]) in nom and any(c in txt for c in claves)) or (s.get("completo") and norm(s["completo"]) in nom))
+        pn=nom.split()[0] if nom.split() else ""
+        nomok=not s.get("nombre") or pn==s["nombre"] or (len(pn.rstrip("."))==1 and pn[0]==s["nombre"][0]) or s["nombre"] in nom.split()
+        ok=a.get("works_count",0)>0 and nomok and ((norm(s["apellido"]) in nom and any(c in txt for c in claves)) or (s.get("completo") and norm(s["completo"]) in nom))
         print(("  ✔ " if ok else "  · ")+a["id"].split("/")[-1], a["display_name"], a.get("works_count"), "|", "; ".join(dict.fromkeys(inst))[:160])
         if ok: elegidos.append(a["id"].split("/")[-1])
     if not elegidos: continue
