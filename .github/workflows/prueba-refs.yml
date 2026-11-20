@@ -1,0 +1,9 @@
+name: prueba-referencias
+on: workflow_dispatch
+jobs:
+  r:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: php admin/cli-referencias.php
+      - run: git diff --stat
