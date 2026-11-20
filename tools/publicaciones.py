@@ -45,8 +45,8 @@ for s in socios:
             claves_af=[norm(x).replace("-"," ") for x in s.get("afil",[])]
             firma=False
             for au in w.get("authorships",[]):
-                if (au.get("author") or {}).get("id","").split("/")[-1] not in elegidos: continue
-                t=norm(" | ".join([i.get("display_name","") for i in au.get("institutions",[])]+(au.get("raw_affiliation_strings") or []))).replace("-"," ")
+                if ((au.get("author") or {}).get("id") or "").split("/")[-1] not in elegidos: continue
+                t=norm(" | ".join([(i.get("display_name") or "") for i in (au.get("institutions") or [])]+(au.get("raw_affiliation_strings") or []))).replace("-"," ")
                 if any(c in t for c in claves_af): firma=True
             if not firma: continue
             # Tema: arcillas y minerales, geología, suelos, materiales (cementos incluidos), química y medio ambiente
