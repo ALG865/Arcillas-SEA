@@ -1,7 +1,7 @@
 [
  {
   "n": "Maria Isabel Abad Martinez",
-  "buscar": "Maria Isabel Abad Martinez",
+  "buscar": "Maria Isabel Abad",
   "apellido": "abad",
   "completo": "Maria Isabel Abad Martinez",
   "centro": [
@@ -11,7 +11,7 @@
  },
  {
   "n": "Jacinto Alonso Azcarate",
-  "buscar": "Jacinto Alonso Azcarate",
+  "buscar": "Jacinto Alonso",
   "apellido": "alonso",
   "completo": "Jacinto Alonso Azcarate",
   "centro": [
@@ -22,7 +22,7 @@
  },
  {
   "n": "Patricia Aparicio Fernandez",
-  "buscar": "Patricia Aparicio Fernandez",
+  "buscar": "Patricia Aparicio",
   "apellido": "aparicio",
   "completo": "Patricia Aparicio Fernandez",
   "centro": [
@@ -33,7 +33,7 @@
  },
  {
   "n": "Javier Aróstegui García",
-  "buscar": "Javier Aróstegui García",
+  "buscar": "Javier Aróstegui",
   "apellido": "arostegui",
   "completo": "Javier Aróstegui García",
   "centro": [
@@ -46,7 +46,7 @@
  },
  {
   "n": "Xabier Arroyo Rey",
-  "buscar": "Xabier Arroyo Rey",
+  "buscar": "Xabier Arroyo",
   "apellido": "arroyo",
   "completo": "Xabier Arroyo Rey",
   "centro": [
@@ -56,7 +56,7 @@
  },
  {
   "n": "Blanca Bauluz Lazaro",
-  "buscar": "Blanca Bauluz Lazaro",
+  "buscar": "Blanca Bauluz",
   "apellido": "bauluz",
   "completo": "Blanca Bauluz Lazaro",
   "centro": [
@@ -66,7 +66,7 @@
  },
  {
   "n": "Carolina Belver Coldeira",
-  "buscar": "Carolina Belver Coldeira",
+  "buscar": "Carolina Belver",
   "apellido": "belver",
   "completo": "Carolina Belver Coldeira",
   "centro": [
@@ -80,7 +80,7 @@
  },
  {
   "n": "María José Bentabol Manzanares",
-  "buscar": "María José Bentabol Manzanares",
+  "buscar": "María José Bentabol",
   "apellido": "bentabol",
   "completo": "María José Bentabol Manzanares",
   "centro": [
@@ -90,7 +90,7 @@
  },
  {
   "n": "Leopoldo Bisbal Cervello",
-  "buscar": "Leopoldo Bisbal Cervello",
+  "buscar": "Leopoldo Bisbal",
   "apellido": "bisbal",
   "completo": "Leopoldo Bisbal Cervello",
   "centro": [
@@ -99,10 +99,10 @@
   "nombre": "leopoldo"
  },
  {
-  "n": "Maríaisabel Carretero León",
-  "buscar": "Maríaisabel Carretero León",
+  "n": "María Isabel Carretero León",
+  "buscar": "María Isabel Carretero",
   "apellido": "carretero",
-  "completo": "Maríaisabel Carretero León",
+  "completo": "María Isabel Carretero León",
   "centro": [
    "sevilla",
    "seville"
@@ -121,7 +121,7 @@
  },
  {
   "n": "María Jose de la Torre Lopez",
-  "buscar": "María Jose de la Torre Lopez",
+  "buscar": "María Jose de la Torre",
   "apellido": "torre",
   "completo": "María Jose de la Torre Lopez",
   "centro": [
@@ -132,7 +132,7 @@
  },
  {
   "n": "Carmen del Hoyo Martinez",
-  "buscar": "Carmen del Hoyo Martinez",
+  "buscar": "Carmen del Hoyo",
   "apellido": "hoyo",
   "completo": "Carmen del Hoyo Martinez",
   "centro": [
@@ -142,7 +142,7 @@
  },
  {
   "n": "María Carmen Dominguez Diaz",
-  "buscar": "María Carmen Dominguez Diaz",
+  "buscar": "María Carmen Dominguez",
   "apellido": "dominguez",
   "completo": "María Carmen Dominguez Diaz",
   "centro": [
@@ -156,7 +156,7 @@
  },
  {
   "n": "Jose Fernandez Barrenechea",
-  "buscar": "Jose Fernandez Barrenechea",
+  "buscar": "Jose Fernandez",
   "apellido": "fernandez",
   "completo": "Jose Fernandez Barrenechea",
   "centro": [
@@ -167,7 +167,7 @@
  },
  {
   "n": "Raul Fernandez Martin",
-  "buscar": "Raul Fernandez Martin",
+  "buscar": "Raul Fernandez",
   "apellido": "fernandez",
   "completo": "Raul Fernandez Martin",
   "centro": [
@@ -181,7 +181,7 @@
  },
  {
   "n": "Ana María Fernandez Diaz",
-  "buscar": "Ana María Fernandez Diaz",
+  "buscar": "Ana María Fernandez",
   "apellido": "fernandez",
   "completo": "Ana María Fernandez Diaz",
   "centro": [
@@ -193,7 +193,7 @@
  },
  {
   "n": "Francisco Ignacio Franco Duro",
-  "buscar": "Francisco Ignacio Franco Duro",
+  "buscar": "Francisco Franco",
   "apellido": "franco",
   "completo": "Francisco Ignacio Franco Duro",
   "centro": [
@@ -203,7 +203,7 @@
  },
  {
   "n": "Javier García Rivas",
-  "buscar": "Javier García Rivas",
+  "buscar": "Javier García",
   "apellido": "garcia",
   "completo": "Javier García Rivas",
   "centro": [
@@ -213,7 +213,7 @@
  },
  {
   "n": "Emilia Garcia Romero",
-  "buscar": "Emilia Garcia Romero",
+  "buscar": "Emilia Garcia",
   "apellido": "garcia",
   "completo": "Emilia Garcia Romero",
   "centro": [
@@ -224,7 +224,7 @@
  },
  {
   "n": "Jacinta Garcia Talegon",
-  "buscar": "Jacinta Garcia Talegon",
+  "buscar": "Jacinta Garcia",
   "apellido": "garcia",
   "completo": "Jacinta Garcia Talegon",
   "centro": [
@@ -234,7 +234,7 @@
  },
  {
   "n": "Isidoro Gomez Parrales",
-  "buscar": "Isidoro Gomez Parrales",
+  "buscar": "Isidoro Gomez",
   "apellido": "gomez",
   "completo": "Isidoro Gomez Parrales",
   "centro": [
@@ -245,7 +245,7 @@
  },
  {
   "n": "Isabel Gonzalez Diez",
-  "buscar": "Isabel Gonzalez Diez",
+  "buscar": "Isabel Gonzalez",
   "apellido": "gonzalez",
   "completo": "Isabel Gonzalez Diez",
   "centro": [
@@ -266,7 +266,7 @@
  },
  {
   "n": "Isabel Iglesias Martín",
-  "buscar": "Isabel Iglesias Martín",
+  "buscar": "Isabel Iglesias",
   "apellido": "iglesias",
   "completo": "Isabel Iglesias Martín",
   "centro": [
@@ -276,7 +276,7 @@
  },
  {
   "n": "Juan Jimenez Millan",
-  "buscar": "Juan Jimenez Millan",
+  "buscar": "Juan Jimenez",
   "apellido": "jimenez",
   "completo": "Juan Jimenez Millan",
   "centro": [
@@ -286,7 +286,7 @@
  },
  {
   "n": "Manuel Miguel Jordan Vidal",
-  "buscar": "Manuel Miguel Jordan Vidal",
+  "buscar": "Manuel Miguel Jordan",
   "apellido": "jordan",
   "completo": "Manuel Miguel Jordan Vidal",
   "centro": [
@@ -307,7 +307,7 @@
  },
  {
   "n": "Aurora Lopez Munguira",
-  "buscar": "Aurora Lopez Munguira",
+  "buscar": "Aurora Lopez",
   "apellido": "lopez",
   "completo": "Aurora Lopez Munguira",
   "centro": [
@@ -318,7 +318,7 @@
  },
  {
   "n": "Francisca Martinez Ruiz",
-  "buscar": "Francisca Martinez Ruiz",
+  "buscar": "Francisca Martinez",
   "apellido": "martinez",
   "completo": "Francisca Martinez Ruiz",
   "centro": [
@@ -328,7 +328,7 @@
  },
  {
   "n": "Txomín Marza Fernández de Gamboa",
-  "buscar": "Txomín Marza Fernández de Gamboa",
+  "buscar": "Txomín Marza",
   "apellido": "marza",
   "completo": "Txomín Marza Fernández de Gamboa",
   "centro": [
@@ -339,7 +339,7 @@
  },
  {
   "n": "María Pilar Mata Campo",
-  "buscar": "María Pilar Mata Campo",
+  "buscar": "María Pilar Mata",
   "apellido": "mata",
   "completo": "María Pilar Mata Campo",
   "centro": [
@@ -349,7 +349,7 @@
  },
  {
   "n": "María Jose Mayayo Burillo",
-  "buscar": "María Jose Mayayo Burillo",
+  "buscar": "María Jose Mayayo",
   "apellido": "mayayo",
   "completo": "María Jose Mayayo Burillo",
   "centro": [
@@ -359,7 +359,7 @@
  },
  {
   "n": "Beyene Meaza Tsige",
-  "buscar": "Beyene Meaza Tsige",
+  "buscar": "Beyene Meaza",
   "apellido": "meaza",
   "completo": "Beyene Meaza Tsige",
   "centro": [
@@ -369,7 +369,7 @@
  },
  {
   "n": "Adolfo Miras Ruiz",
-  "buscar": "Adolfo Miras Ruiz",
+  "buscar": "Adolfo Miras",
   "apellido": "miras",
   "completo": "Adolfo Miras Ruiz",
   "centro": [
@@ -380,7 +380,7 @@
  },
  {
   "n": "Juan Morales Sánchez-migallón",
-  "buscar": "Juan Morales Sánchez-migallón",
+  "buscar": "Juan Morales",
   "apellido": "morales",
   "completo": "Juan Morales Sánchez-migallón",
   "centro": [
@@ -390,7 +390,7 @@
  },
  {
   "n": "Esmeralda Morillo Gonzalez",
-  "buscar": "Esmeralda Morillo Gonzalez",
+  "buscar": "Esmeralda Morillo",
   "apellido": "morillo",
   "completo": "Esmeralda Morillo Gonzalez",
   "centro": [
@@ -401,7 +401,7 @@
  },
  {
   "n": "Fernando Nieto Garcia",
-  "buscar": "Fernando Nieto Garcia",
+  "buscar": "Fernando Nieto",
   "apellido": "nieto",
   "completo": "Fernando Nieto Garcia",
   "centro": [
@@ -411,7 +411,7 @@
  },
  {
   "n": "Marta Pelayo Bayon",
-  "buscar": "Marta Pelayo Bayon",
+  "buscar": "Marta Pelayo",
   "apellido": "pelayo",
   "completo": "Marta Pelayo Bayon",
   "centro": [
@@ -422,7 +422,7 @@
  },
  {
   "n": "Manuel Pozo Rodríguez",
-  "buscar": "Manuel Pozo Rodríguez",
+  "buscar": "Manuel Pozo",
   "apellido": "pozo",
   "completo": "Manuel Pozo Rodríguez",
   "centro": [
@@ -436,7 +436,7 @@
  },
  {
   "n": "Maria Dolores Rodriguez Ruiz",
-  "buscar": "Maria Dolores Rodriguez Ruiz",
+  "buscar": "Maria Dolores Rodriguez",
   "apellido": "rodriguez",
   "completo": "Maria Dolores Rodriguez Ruiz",
   "centro": [
@@ -446,7 +446,7 @@
  },
  {
   "n": "Ana Isabel Ruiz Garcia",
-  "buscar": "Ana Isabel Ruiz Garcia",
+  "buscar": "Ana Isabel Ruiz",
   "apellido": "ruiz",
   "completo": "Ana Isabel Ruiz Garcia",
   "centro": [
@@ -456,7 +456,7 @@
  },
  {
   "n": "Claro Ignacio Sainz Diaz",
-  "buscar": "Claro Ignacio Sainz Diaz",
+  "buscar": "Claro Ignacio Sainz",
   "apellido": "sainz",
   "completo": "Claro Ignacio Sainz Diaz",
   "centro": [
@@ -466,7 +466,7 @@
  },
  {
   "n": "Angel Sanchez Bellon",
-  "buscar": "Angel Sanchez Bellon",
+  "buscar": "Angel Sanchez",
   "apellido": "sanchez",
   "completo": "Angel Sanchez Bellon",
   "centro": [
@@ -476,7 +476,7 @@
  },
  {
   "n": "Carlos Sanchez Jimenez",
-  "buscar": "Carlos Sanchez Jimenez",
+  "buscar": "Carlos Sanchez",
   "apellido": "sanchez",
   "completo": "Carlos Sanchez Jimenez",
   "centro": [
@@ -487,7 +487,7 @@
  },
  {
   "n": "María Jesus Sanchez Martin",
-  "buscar": "María Jesus Sanchez Martin",
+  "buscar": "María Jesus Sanchez",
   "apellido": "sanchez",
   "completo": "María Jesus Sanchez Martin",
   "centro": [
@@ -497,7 +497,7 @@
  },
  {
   "n": "Julio Santaren Rome",
-  "buscar": "Julio Santaren Rome",
+  "buscar": "Julio Santaren",
   "apellido": "santaren",
   "completo": "Julio Santaren Rome",
   "centro": [
@@ -508,7 +508,7 @@
  },
  {
   "n": "Eduardo Sebastián Pardo",
-  "buscar": "Eduardo Sebastián Pardo",
+  "buscar": "Eduardo Sebastián",
   "apellido": "sebastian",
   "completo": "Eduardo Sebastián Pardo",
   "centro": [
@@ -529,7 +529,7 @@
  },
  {
   "n": "Esperança Tauler Ferre",
-  "buscar": "Esperança Tauler Ferre",
+  "buscar": "Esperança Tauler",
   "apellido": "tauler",
   "completo": "Esperança Tauler Ferre",
   "centro": [
@@ -539,7 +539,7 @@
  },
  {
   "n": "Tomás Undabeytia López",
-  "buscar": "Tomás Undabeytia López",
+  "buscar": "Tomás Undabeytia",
   "apellido": "undabeytia",
   "completo": "Tomás Undabeytia López",
   "centro": [
@@ -550,7 +550,7 @@
  },
  {
   "n": "Miguel Angel Vicente Rodríguez",
-  "buscar": "Miguel Angel Vicente Rodríguez",
+  "buscar": "Miguel Angel Vicente",
   "apellido": "vicente",
   "completo": "Miguel Angel Vicente Rodríguez",
   "centro": [
@@ -560,7 +560,7 @@
  },
  {
   "n": "Maria Victoria Villar Galicia",
-  "buscar": "Maria Victoria Villar Galicia",
+  "buscar": "Maria Victoria Villar",
   "apellido": "villar",
   "completo": "Maria Victoria Villar Galicia",
   "centro": [
@@ -572,7 +572,7 @@
  },
  {
   "n": "Cesar Viseras Iborra",
-  "buscar": "Cesar Viseras Iborra",
+  "buscar": "Cesar Viseras",
   "apellido": "viseras",
   "completo": "Cesar Viseras Iborra",
   "centro": [
@@ -582,7 +582,7 @@
  },
  {
   "n": "Africa Yebra Rodriguez",
-  "buscar": "Africa Yebra Rodriguez",
+  "buscar": "Africa Yebra",
   "apellido": "yebra",
   "completo": "Africa Yebra Rodriguez",
   "centro": [
@@ -592,7 +592,7 @@
  },
  {
   "n": "Alfonso Yuste Oliete",
-  "buscar": "Alfonso Yuste Oliete",
+  "buscar": "Alfonso Yuste",
   "apellido": "yuste",
   "completo": "Alfonso Yuste Oliete",
   "centro": [
@@ -602,7 +602,7 @@
  },
  {
   "n": "María Cruz Zuluaga Ibargallartu",
-  "buscar": "María Cruz Zuluaga Ibargallartu",
+  "buscar": "María Cruz Zuluaga",
   "apellido": "zuluaga",
   "completo": "María Cruz Zuluaga Ibargallartu",
   "centro": [
@@ -615,7 +615,7 @@
  },
  {
   "n": "Eusebio Alcaraz Tito",
-  "buscar": "Eusebio Alcaraz Tito",
+  "buscar": "Eusebio Alcaraz",
   "apellido": "alcaraz",
   "completo": "Eusebio Alcaraz Tito",
   "centro": [
@@ -625,7 +625,7 @@
  },
  {
   "n": "Pilar Aranda Gallego",
-  "buscar": "Pilar Aranda Gallego",
+  "buscar": "Pilar Aranda",
   "apellido": "aranda",
   "completo": "Pilar Aranda Gallego",
   "centro": [
@@ -639,7 +639,7 @@
  },
  {
   "n": "Arturo Bascones Lopez",
-  "buscar": "Arturo Bascones Lopez",
+  "buscar": "Arturo Bascones",
   "apellido": "bascones",
   "completo": "Arturo Bascones Lopez",
   "centro": [
@@ -649,7 +649,7 @@
  },
  {
   "n": "Margarita Darder Colom",
-  "buscar": "Margarita Darder Colom",
+  "buscar": "Margarita Darder",
   "apellido": "darder",
   "completo": "Margarita Darder Colom",
   "centro": [
@@ -663,7 +663,7 @@
  },
  {
   "n": "Rafael Delgado Calvo-flores",
-  "buscar": "Rafael Delgado Calvo-flores",
+  "buscar": "Rafael Delgado",
   "apellido": "delgado",
   "completo": "Rafael Delgado Calvo-flores",
   "centro": [
@@ -681,7 +681,7 @@
  },
  {
   "n": "Cristina Fernandez Barranco",
-  "buscar": "Cristina Fernandez Barranco",
+  "buscar": "Cristina Fernandez",
   "apellido": "fernandez",
   "completo": "Cristina Fernandez Barranco",
   "centro": [
@@ -691,7 +691,7 @@
  },
  {
   "n": "Juan Carlos Fernandez Caliani",
-  "buscar": "Juan Carlos Fernandez Caliani",
+  "buscar": "Juan Carlos Fernandez",
   "apellido": "fernandez",
   "completo": "Juan Carlos Fernandez Caliani",
   "centro": [
@@ -709,7 +709,7 @@
  },
  {
   "n": "Francisco Javier Luque del Villar",
-  "buscar": "Francisco Javier Luque del Villar",
+  "buscar": "Francisco Javier Luque",
   "apellido": "luque",
   "completo": "Francisco Javier Luque del Villar",
   "centro": [
@@ -720,7 +720,7 @@
  },
  {
   "n": "Domingo Martin Garcia",
-  "buscar": "Domingo Martin Garcia",
+  "buscar": "Domingo Martin",
   "apellido": "martin",
   "completo": "Domingo Martin Garcia",
   "centro": [
@@ -731,7 +731,7 @@
  },
  {
   "n": "Almudena Ortega Martos",
-  "buscar": "Almudena Ortega Martos",
+  "buscar": "Almudena Ortega",
   "apellido": "ortega",
   "completo": "Almudena Ortega Martos",
   "centro": [
@@ -745,7 +745,7 @@
  },
  {
   "n": "Inmaculada Palomo Delgado",
-  "buscar": "Inmaculada Palomo Delgado",
+  "buscar": "Inmaculada Palomo",
   "apellido": "palomo",
   "completo": "Inmaculada Palomo Delgado",
   "centro": [],
@@ -753,7 +753,7 @@
  },
  {
   "n": "Manuel Rodriguez Rastrero",
-  "buscar": "Manuel Rodriguez Rastrero",
+  "buscar": "Manuel Rodriguez",
   "apellido": "rodriguez",
   "completo": "Manuel Rodriguez Rastrero",
   "centro": [
@@ -765,7 +765,7 @@
  },
  {
   "n": "Pedro Jose Sanchez Soto",
-  "buscar": "Pedro Jose Sanchez Soto",
+  "buscar": "Pedro Jose Sanchez",
   "apellido": "sanchez",
   "completo": "Pedro Jose Sanchez Soto",
   "centro": [
@@ -776,7 +776,7 @@
  },
  {
   "n": "Joaquin Vila Barbera",
-  "buscar": "Joaquin Vila Barbera",
+  "buscar": "Joaquin Vila",
   "apellido": "vila",
   "completo": "Joaquin Vila Barbera",
   "centro": [
@@ -787,7 +787,7 @@
  },
  {
   "n": "Cristina Villanova de Benavent",
-  "buscar": "Cristina Villanova de Benavent",
+  "buscar": "Cristina Villanova",
   "apellido": "villanova",
   "completo": "Cristina Villanova de Benavent",
   "centro": [
@@ -797,7 +797,7 @@
  },
  {
   "n": "María Angulo Martínez",
-  "buscar": "María Angulo Martínez",
+  "buscar": "María Angulo",
   "apellido": "angulo",
   "completo": "María Angulo Martínez",
   "centro": [
@@ -807,7 +807,7 @@
  },
  {
   "n": "Ana María Borrego Sánchez",
-  "buscar": "Ana María Borrego Sánchez",
+  "buscar": "Ana María Borrego",
   "apellido": "borrego",
   "completo": "Ana María Borrego Sánchez",
   "centro": [
@@ -818,7 +818,7 @@
  },
  {
   "n": "Esperanza Carazo Gil",
-  "buscar": "Esperanza Carazo Gil",
+  "buscar": "Esperanza Carazo",
   "apellido": "carazo",
   "completo": "Esperanza Carazo Gil",
   "centro": [
@@ -828,7 +828,7 @@
  },
  {
   "n": "Beatriz Carbonell Barrios",
-  "buscar": "Beatriz Carbonell Barrios",
+  "buscar": "Beatriz Carbonell",
   "apellido": "carbonell",
   "completo": "Beatriz Carbonell Barrios",
   "centro": [
@@ -839,7 +839,7 @@
  },
  {
   "n": "Pablo del Buey Fernandez",
-  "buscar": "Pablo del Buey Fernandez",
+  "buscar": "Pablo del Buey",
   "apellido": "buey",
   "completo": "Pablo del Buey Fernandez",
   "centro": [
@@ -850,7 +850,7 @@
  },
  {
   "n": "Esperanza Durán Reina",
-  "buscar": "Esperanza Durán Reina",
+  "buscar": "Esperanza Durán",
   "apellido": "duran",
   "completo": "Esperanza Durán Reina",
   "centro": [
@@ -861,7 +861,7 @@
  },
  {
   "n": "Laura García-españa Soriano",
-  "buscar": "Laura García-españa Soriano",
+  "buscar": "Laura García-españa",
   "apellido": "garcia-espana",
   "completo": "Laura García-españa Soriano",
   "centro": [
@@ -871,7 +871,7 @@
  },
  {
   "n": "María Del Mar González del Campo Rodríguez-barbero",
-  "buscar": "María Del Mar González del Campo Rodríguez-barbero",
+  "buscar": "María Del Mar González",
   "apellido": "gonzalez",
   "completo": "María Del Mar González del Campo Rodríguez-barbero",
   "centro": [
@@ -885,7 +885,7 @@
  },
  {
   "n": "Juan Emilio Herranz Luque",
-  "buscar": "Juan Emilio Herranz Luque",
+  "buscar": "Juan Emilio Herranz",
   "apellido": "herranz",
   "completo": "Juan Emilio Herranz Luque",
   "centro": [],
@@ -904,7 +904,7 @@
  },
  {
   "n": "Elisa Laita Florián",
-  "buscar": "Elisa Laita Florián",
+  "buscar": "Elisa Laita",
   "apellido": "laita",
   "completo": "Elisa Laita Florián",
   "centro": [
@@ -914,7 +914,7 @@
  },
  {
   "n": "Daniel Lamarca Irisarri",
-  "buscar": "Daniel Lamarca Irisarri",
+  "buscar": "Daniel Lamarca",
   "apellido": "lamarca",
   "completo": "Daniel Lamarca Irisarri",
   "centro": [
@@ -925,7 +925,7 @@
  },
  {
   "n": "Adrián Lorenzo Hernández",
-  "buscar": "Adrián Lorenzo Hernández",
+  "buscar": "Adrián Lorenzo",
   "apellido": "lorenzo",
   "completo": "Adrián Lorenzo Hernández",
   "centro": [
@@ -935,7 +935,7 @@
  },
  {
   "n": "Yesenia Stephanie Martinez Lama",
-  "buscar": "Yesenia Stephanie Martinez Lama",
+  "buscar": "Yesenia Stephanie Martinez",
   "apellido": "martinez",
   "completo": "Yesenia Stephanie Martinez Lama",
   "centro": [
@@ -945,7 +945,7 @@
  },
  {
   "n": "Jose Manuel Moreno Maroto",
-  "buscar": "Jose Manuel Moreno Maroto",
+  "buscar": "Jose Manuel Moreno",
   "apellido": "moreno",
   "completo": "Jose Manuel Moreno Maroto",
   "centro": [
@@ -956,7 +956,7 @@
  },
  {
   "n": "Laura Pardo Canales",
-  "buscar": "Laura Pardo Canales",
+  "buscar": "Laura Pardo",
   "apellido": "pardo",
   "completo": "Laura Pardo Canales",
   "centro": [
@@ -976,7 +976,7 @@
  },
  {
   "n": "Mercedes Regadio Garcia",
-  "buscar": "Mercedes Regadio Garcia",
+  "buscar": "Mercedes Regadio",
   "apellido": "regadio",
   "completo": "Mercedes Regadio Garcia",
   "centro": [],
@@ -984,7 +984,7 @@
  },
  {
   "n": "Jesús Javier Rey Samper",
-  "buscar": "Jesús Javier Rey Samper",
+  "buscar": "Jesús Javier Rey",
   "apellido": "rey",
   "completo": "Jesús Javier Rey Samper",
   "centro": [
@@ -995,7 +995,7 @@
  },
  {
   "n": "Alberto Sánchez Encinar",
-  "buscar": "Alberto Sánchez Encinar",
+  "buscar": "Alberto Sánchez",
   "apellido": "sanchez",
   "completo": "Alberto Sánchez Encinar",
   "centro": [
@@ -1006,7 +1006,7 @@
  },
  {
   "n": "Catalina Sanchez Roa",
-  "buscar": "Catalina Sanchez Roa",
+  "buscar": "Catalina Sanchez",
   "apellido": "sanchez",
   "completo": "Catalina Sanchez Roa",
   "centro": [
@@ -1026,7 +1026,7 @@
  },
  {
   "n": "Daniel Gonzalez Santamaria",
-  "buscar": "Daniel Gonzalez Santamaria",
+  "buscar": "Daniel Gonzalez",
   "apellido": "gonzalez",
   "completo": "Daniel Gonzalez Santamaria",
   "centro": [
@@ -1036,7 +1036,7 @@
  },
  {
   "n": "Ana María Andrés Gomez de Barreda",
-  "buscar": "Ana María Andrés Gomez de Barreda",
+  "buscar": "Ana María Andrés",
   "apellido": "andres",
   "completo": "Ana María Andrés Gomez de Barreda",
   "centro": [
@@ -1050,7 +1050,7 @@
  },
  {
   "n": "Francisco Aragon de la Cruz",
-  "buscar": "Francisco Aragon de la Cruz",
+  "buscar": "Francisco Aragon",
   "apellido": "aragon",
   "completo": "Francisco Aragon de la Cruz",
   "centro": [
@@ -1060,7 +1060,7 @@
  },
  {
   "n": "Joaquín Bastida Cuairan",
-  "buscar": "Joaquín Bastida Cuairan",
+  "buscar": "Joaquín Bastida",
   "apellido": "bastida",
   "completo": "Joaquín Bastida Cuairan",
   "centro": [
@@ -1070,7 +1070,7 @@
  },
  {
   "n": "Nicolas Bellinfante Crocci",
-  "buscar": "Nicolas Bellinfante Crocci",
+  "buscar": "Nicolas Bellinfante",
   "apellido": "bellinfante",
   "completo": "Nicolas Bellinfante Crocci",
   "centro": [
@@ -1081,7 +1081,7 @@
  },
  {
   "n": "Jose María Brell Parlade",
-  "buscar": "Jose María Brell Parlade",
+  "buscar": "Jose María Brell",
   "apellido": "brell",
   "completo": "Jose María Brell Parlade",
   "centro": [
@@ -1092,7 +1092,7 @@
  },
  {
   "n": "Manuel Carames Lorite",
-  "buscar": "Manuel Carames Lorite",
+  "buscar": "Manuel Carames",
   "apellido": "carames",
   "completo": "Manuel Carames Lorite",
   "centro": [
@@ -1103,7 +1103,7 @@
  },
  {
   "n": "Blanca Casal Piga",
-  "buscar": "Blanca Casal Piga",
+  "buscar": "Blanca Casal",
   "apellido": "casal",
   "completo": "Blanca Casal Piga",
   "centro": [
@@ -1121,7 +1121,7 @@
  },
  {
   "n": "Juan Cornejo Suero",
-  "buscar": "Juan Cornejo Suero",
+  "buscar": "Juan Cornejo",
   "apellido": "cornejo",
   "completo": "Juan Cornejo Suero",
   "centro": [
@@ -1132,7 +1132,7 @@
  },
  {
   "n": "Carlos de la Fuente Cullel",
-  "buscar": "Carlos de la Fuente Cullel",
+  "buscar": "Carlos de la Fuente",
   "apellido": "fuente",
   "completo": "Carlos de la Fuente Cullel",
   "centro": [
@@ -1142,7 +1142,7 @@
  },
  {
   "n": "Purificacion Fenoll Hachh-ali",
-  "buscar": "Purificacion Fenoll Hachh-ali",
+  "buscar": "Purificacion Fenoll",
   "apellido": "fenoll",
   "completo": "Purificacion Fenoll Hachh-ali",
   "centro": [
@@ -1160,7 +1160,7 @@
  },
  {
   "n": "Emilio Galan Huertos",
-  "buscar": "Emilio Galan Huertos",
+  "buscar": "Emilio Galan",
   "apellido": "galan",
   "completo": "Emilio Galan Huertos",
   "centro": [
@@ -1171,7 +1171,7 @@
  },
  {
   "n": "Antonio Gallego de Torres",
-  "buscar": "Antonio Gallego de Torres",
+  "buscar": "Antonio Gallego",
   "apellido": "gallego",
   "completo": "Antonio Gallego de Torres",
   "centro": [],
@@ -1187,7 +1187,7 @@
  },
  {
   "n": "Jose Manuel Gonzalez Lopez",
-  "buscar": "Jose Manuel Gonzalez Lopez",
+  "buscar": "Jose Manuel Gonzalez",
   "apellido": "gonzalez",
   "completo": "Jose Manuel Gonzalez Lopez",
   "centro": [
@@ -1197,7 +1197,7 @@
  },
  {
   "n": "Francisco Huertas García",
-  "buscar": "Francisco Huertas García",
+  "buscar": "Francisco Huertas",
   "apellido": "huertas",
   "completo": "Francisco Huertas García",
   "centro": [
@@ -1224,7 +1224,7 @@
  },
  {
   "n": "Santiago Leguey Jimenez",
-  "buscar": "Santiago Leguey Jimenez",
+  "buscar": "Santiago Leguey",
   "apellido": "leguey",
   "completo": "Santiago Leguey Jimenez",
   "centro": [
@@ -1238,7 +1238,7 @@
  },
  {
   "n": "Jose Linares Gonzalez",
-  "buscar": "Jose Linares Gonzalez",
+  "buscar": "Jose Linares",
   "apellido": "linares",
   "completo": "Jose Linares Gonzalez",
   "centro": [
@@ -1249,7 +1249,7 @@
  },
  {
   "n": "Francisco Lopez Aguayo",
-  "buscar": "Francisco Lopez Aguayo",
+  "buscar": "Francisco Lopez",
   "apellido": "lopez",
   "completo": "Francisco Lopez Aguayo",
   "centro": [
@@ -1259,7 +1259,7 @@
  },
  {
   "n": "Celia Maqueda Porras",
-  "buscar": "Celia Maqueda Porras",
+  "buscar": "Celia Maqueda",
   "apellido": "maqueda",
   "completo": "Celia Maqueda Porras",
   "centro": [
@@ -1278,7 +1278,7 @@
  },
  {
   "n": "Jose María Mesa Lopez-colmenar",
-  "buscar": "Jose María Mesa Lopez-colmenar",
+  "buscar": "Jose María Mesa",
   "apellido": "mesa",
   "completo": "Jose María Mesa Lopez-colmenar",
   "centro": [
@@ -1297,7 +1297,7 @@
  },
  {
   "n": "Jose Luis Perez Rodriguez",
-  "buscar": "Jose Luis Perez Rodriguez",
+  "buscar": "Jose Luis Perez",
   "apellido": "perez",
   "completo": "Jose Luis Perez Rodriguez",
   "centro": [
@@ -1316,7 +1316,7 @@
  },
  {
   "n": "Magdalena Rodas González",
-  "buscar": "Magdalena Rodas González",
+  "buscar": "Magdalena Rodas",
   "apellido": "rodas",
   "completo": "Magdalena Rodas González",
   "centro": [
@@ -1327,7 +1327,7 @@
  },
  {
   "n": "Eduardo Ruiz Hitzky",
-  "buscar": "Eduardo Ruiz Hitzky",
+  "buscar": "Eduardo Ruiz",
   "apellido": "ruiz",
   "completo": "Eduardo Ruiz Hitzky",
   "centro": [
@@ -1341,7 +1341,7 @@
  },
  {
   "n": "Henri Van Damme",
-  "buscar": "Henri Van Damme",
+  "buscar": "Henri Van",
   "apellido": "van",
   "completo": "Henri Van Damme",
   "centro": [],
@@ -1349,7 +1349,7 @@
  },
  {
   "n": "Andres Varela Martinez",
-  "buscar": "Andres Varela Martinez",
+  "buscar": "Andres Varela",
   "apellido": "varela",
   "completo": "Andres Varela Martinez",
   "centro": [
@@ -1359,7 +1359,7 @@
  },
  {
   "n": "Miguel Vargas Muñoz",
-  "buscar": "Miguel Vargas Muñoz",
+  "buscar": "Miguel Vargas",
   "apellido": "vargas",
   "completo": "Miguel Vargas Muñoz",
   "centro": [
@@ -1385,7 +1385,7 @@
  },
  {
   "n": "Angel Justo Erbez",
-  "buscar": "Angel Justo Erbez",
+  "buscar": "Angel Justo",
   "apellido": "justo",
   "completo": "Angel Justo Erbez",
   "centro": [
@@ -1396,7 +1396,7 @@
  },
  {
   "n": "María Carmen Hermosin Gaviño",
-  "buscar": "María Carmen Hermosin Gaviño",
+  "buscar": "María Carmen Hermosin",
   "apellido": "hermosin",
   "completo": "María Carmen Hermosin Gaviño",
   "centro": [

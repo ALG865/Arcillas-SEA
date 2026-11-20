@@ -2,9 +2,16 @@
 Lee tools/socios.json y escribe publicaciones.js. Se ejecuta en GitHub Actions."""
 import json, urllib.request, urllib.parse, datetime, sys, unicodedata
 MAIL="sea.arcillas.web@gmail.com"
+import time
 def get(url):
     sep="&" if "?" in url else "?"
-    with urllib.request.urlopen(url+sep+"mailto="+MAIL, timeout=60) as r: return json.load(r)
+    for intento in range(6):
+        try:
+            time.sleep(0.4)
+            with urllib.request.urlopen(url+sep+"mailto="+MAIL, timeout=60) as r: return json.load(r)
+        except Exception as e:
+            print("   reintento", intento+1, e); time.sleep(5*(intento+1))
+    return {"results":[],"meta":{}}
 def norm(s): return unicodedata.normalize("NFKD",s or "").encode("ascii","ignore").decode().lower()
 socios=json.load(open("tools/socios.json",encoding="utf-8"))
 desde=f"{datetime.date.today().year-1}-01-01"
