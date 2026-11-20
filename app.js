@@ -696,3 +696,7 @@ document.addEventListener("DOMContentLoaded",function(){
   if("serviceWorker" in navigator&&location.protocol==="https:") navigator.serviceWorker.register("sw.js").catch(function(){});
 });
 })();
+
+/* En el servidor de la SEA (con PHP), la propia web pide la actualización mensual de las publicaciones de los socios. */
+(function(){ try{ var D=window.PUBLICACIONES_SOCIOS; if(!D||!D.actualizado||location.hostname.indexOf("github.io")>=0) return;
+  if(Date.now()-new Date(D.actualizado).getTime()>31*864e5) fetch("admin/auto.php",{cache:"no-store"}).catch(function(){}); }catch(e){} })();

@@ -1,0 +1,22 @@
+PANEL DE LA WEB DE LA SEA
+
+Para qué sirve: añadir noticias y convocatorias, socios, trabajos de referencia,
+y actualizar las publicaciones de los socios, sin tocar código.
+
+Instalación en el servidor de la SEA (una sola vez):
+1. Borrar la web antigua y subir TODOS los ficheros de esta carpeta "Arcillas-SEA"
+   a la raíz del servidor (por FTP o desde el gestor de archivos del hosting).
+2. El servidor debe tener PHP 8 (lo tienen casi todos los alojamientos).
+3. Abrir https://sea-arcillas.es/admin/ y elegir la contraseña la primera vez.
+
+Uso: entrar en https://sea-arcillas.es/admin/ con la contraseña.
+Los cambios se ven en la web al momento.
+Las publicaciones de los socios se actualizan solas cada mes.
+Conviene descargar de vez en cuando la copia de seguridad (pestaña "Contraseña y copia").
+
+Si se olvida la contraseña: borrar por FTP el fichero admin/datos/clave.php
+y volver a abrir /admin/ para crear una nueva.
+
+Probar en un ordenador propio (opcional): con PHP instalado, abrir un terminal
+en la carpeta Arcillas-SEA y escribir:  php -S localhost:8080
+Después abrir en el navegador  http://localhost:8080/admin/
