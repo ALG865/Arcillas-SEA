@@ -37,9 +37,12 @@ td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{col
 <label>Plazo <small>(solo convocatorias: último día para presentarse; después deja de destacarse)</small><input type="date" name="plazo"></label>
 <label>Título<input name="ten" required></label>
 <label>Texto <small>(dos o tres frases)</small><textarea name="tex"></textarea></label>
-<label>Enlace <small>(opcional: página con más información)</small><input type="url" name="url" placeholder="https://…"></label>
+<label>Texto completo <small>(opcional: si se rellena, la noticia tendrá su propia página con «Leer más»; separa los párrafos con una línea en blanco)</small><textarea name="lar" style="min-height:10rem"></textarea></label>
+<label>Fichero adjunto <small>(opcional: circular, bases o cartel en PDF, o una imagen; en esta prueba, máximo 3 MB)</small><input type="file" name="adj" accept=".pdf,.jpg,.jpeg,.png,.webp"></label>
+<label id="lquitar" class="oculto" style="display:flex;gap:.5rem;align-items:center;font-weight:400"><input type="checkbox" name="quitar" style="width:auto"> Quitar el fichero adjunto actual</label>
+<label>Enlace a una web externa <small>(opcional: web del congreso, convocatoria oficial, inscripción…, si la hay)</small><input type="url" name="url" placeholder="https://…"></label>
 <details><summary>Versión en inglés (opcional; si se deja vacía se muestra el texto en español)</summary>
-<label>Title<input name="tin"></label><label>Text<textarea name="txi"></textarea></label></details>
+<label>Title<input name="tin"></label><label>Text<textarea name="txi"></textarea></label><label>Full text<textarea name="lai"></textarea></label></details>
 <button id="bpub">Publicar</button></form>
 <h2>Noticias publicadas</h2><table id="lnot"></table></section>
 <section id="p-socios" class="oculto"><h1>Socios</h1>

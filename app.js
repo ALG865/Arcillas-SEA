@@ -71,7 +71,7 @@ es:{
  estatutosE:"Estatutos de la Sociedad Española de Arcillas.",
  pie:"Funciona sin conexión una vez cargada.", creditos:"Créditos",
  credT:"Imágenes de microscopio: archivo de imágenes de la SEA (cedidas por sus autores) y «Images of Clay» de la Mineralogical Society y The Clay Minerals Society. Muestras de mano: IACT y colecciones privadas. Tipografía Instrument Sans (SIL Open Font License).",
- otrasHist:"Otras historias", notE:"Noticias de la Sociedad, convocatorias de premios y ayudas y próximas citas.", tipos:{noticia:"Noticia",convocatoria:"Convocatoria",evento:"Cita"}, abiertaHasta:"Abierta hasta el", cerrada:"Cerrada", masInfo:"Más información", verNoticias:"Ver todas las noticias", proximas:"Abiertas y próximas", anteriores:"Anteriores"
+ otrasHist:"Otras historias", notE:"Noticias de la Sociedad, convocatorias de premios y ayudas y próximas citas.", tipos:{noticia:"Noticia",convocatoria:"Convocatoria",evento:"Cita"}, abiertaHasta:"Abierta hasta el", cerrada:"Cerrada", masInfo:"Más información", leerMas:"Leer más", verDoc:"Descargar documento (PDF)", volverNot:"Volver a las noticias", verNoticias:"Ver todas las noticias", proximas:"Abiertas y próximas", anteriores:"Anteriores"
 },
 en:{
  sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
@@ -134,7 +134,7 @@ en:{
  estatutosE:"Statutes of the Spanish Clay Society.",
  pie:"Works offline once loaded.", creditos:"Credits",
  credT:"Microscope images: SEA image archive (contributed by their authors) and “Images of Clay” of the Mineralogical Society and The Clay Minerals Society. Hand specimens: IACT and private collections. Typeface Instrument Sans (SIL Open Font License).",
- otrasHist:"More stories", notE:"Society news, calls for awards and grants, and upcoming events.", tipos:{noticia:"News",convocatoria:"Call",evento:"Event"}, abiertaHasta:"Open until", cerrada:"Closed", masInfo:"More information", verNoticias:"See all news", proximas:"Open and upcoming", anteriores:"Earlier"
+ otrasHist:"More stories", notE:"Society news, calls for awards and grants, and upcoming events.", tipos:{noticia:"News",convocatoria:"Call",evento:"Event"}, abiertaHasta:"Open until", cerrada:"Closed", masInfo:"More information", leerMas:"Read more", verDoc:"Download document (PDF)", volverNot:"Back to news", verNoticias:"See all news", proximas:"Open and upcoming", anteriores:"Earlier"
 }};
 function U(k){ var o=UI[lang],p=k.split("."); for(var i=0;i<p.length;i++) o=o&&o[p[i]]; return o; }
 function L(o){ if(o==null) return ""; if(typeof o==="string") return o; return o[lang]!==undefined?o[lang]:o.es; }
@@ -571,7 +571,7 @@ function baraja(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor
 function vigente(n){ var h=hoyISO(); return (n.tipo==="convocatoria"&&n.plazo&&n.plazo>=h)||(n.tipo==="evento"&&n.fecha>=h); }
 function tarjetaNoticia(n){
   var meta = n.tipo==="convocatoria"?(n.plazo>=hoyISO()?U("abiertaHasta")+" "+fechaTxt(n.plazo):U("cerrada")):(n.tipo==="evento"?fechaTxt(n.fecha):fechaTxt(n.fecha));
-  return '<div class="convocatoria"><span class="fecha">'+esc(U("tipos")[n.tipo]||n.tipo)+'. '+esc(meta)+'</span><h3>'+esc(L(n).n)+'</h3>'+(n.img?'<img src="'+esc(n.img)+'" alt="" loading="lazy" style="margin:.4rem 0 .8rem;border-radius:3px;max-height:220px;object-fit:cover;width:100%">':'')+'<p>'+esc(L(n).t)+'</p>'+(n.url?'<a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+U("masInfo")+'</a>':'')+'</div>';
+  return '<div class="convocatoria"><span class="fecha">'+esc(U("tipos")[n.tipo]||n.tipo)+'. '+esc(meta)+'</span><h3>'+esc(L(n).n)+'</h3>'+(n.img?'<img src="'+esc(n.img)+'" alt="" loading="lazy" style="margin:.4rem 0 .8rem;border-radius:3px;max-height:220px;object-fit:cover;width:100%">':'')+'<p>'+esc(L(n).t)+'</p>'+enlacesNoticia(n,1)+'</div>';
 }
 P.pubsocios=function(){ var D=window.PUBLICACIONES_SOCIOS||{obras:[]}, es=lang==="es";
   var entrada=es?"Artículos de los socios de la SEA en revistas científicas publicados en "+(new Date().getFullYear()-1)+" y "+new Date().getFullYear()+". La lista se actualiza automáticamente cada mes a partir de OpenAlex.":"Journal articles by SEA members published in "+(new Date().getFullYear()-1)+" and "+new Date().getFullYear()+". The list is updated automatically every month from OpenAlex.";
@@ -581,7 +581,17 @@ P.pubsocios=function(){ var D=window.PUBLICACIONES_SOCIOS||{obras:[]}, es=lang==
     var d=(o.doi||"").replace(/^https?:\/\/doi.org\//,"");
     return '<li><a href="'+esc(o.doi||"#")+'" target="_blank" rel="noopener">'+esc(o.t)+'</a><div class="pub-meta">'+esc(au)+'. '+ref+'.'+(d?' DOI: <a class="doi" href="https://doi.org/'+esc(d)+'" target="_blank" rel="noopener">'+esc(d)+'</a>':'')+'</div></li>'; }).join("")+'</ul>'; }).join("");
   main.innerHTML=cabezaPagina(U("nav.sociedad")[9][1],entrada,migaSEA())+'<div class="envoltorio pagina-cuerpo">'+h+'<p class="pequeno" style="margin-top:2rem">'+(es?"Actualizado el ":"Updated ")+esc(D.actualizado||"")+'. '+(es?"Fuente: OpenAlex. Solo artículos en revistas.":"Source: OpenAlex. Journal articles only.")+'</p></div>'; };
-P.noticias=function(){
+function idNoticia(n){ return n.id||(n.fecha+"-"+String(n.es.n).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,50)); }
+function enlacesNoticia(n,tarjeta){
+  var e=[]; if(tarjeta&&L(n).l) e.push('<a href="#noticias/'+esc(idNoticia(n))+'">'+U("leerMas")+'</a>');
+  if(n.doc) e.push('<a href="'+esc(n.doc)+'" target="_blank" rel="noopener">'+U("verDoc")+'</a>');
+  if(n.url) e.push('<a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+U("masInfo")+'</a>');
+  return e.length?'<p class="enlaces-noticia">'+e.join(" · ")+'</p>':'';
+}
+P.noticias=function(arg){
+  if(arg){ var n=(window.NOTICIAS||[]).filter(function(x){ return idNoticia(x)===arg; })[0];
+    if(n){ var tx=L(n), largo=String(tx.l||"").split(/\n\s*\n/).filter(function(x){ return x.trim(); }).map(function(x){ return '<p>'+esc(x.trim()).replace(/\n/g,"<br>")+'</p>'; }).join("");
+      main.innerHTML=cabezaPagina(tx.n,"",migaSEA())+'<div class="envoltorio pagina-cuerpo"><p class="pequeno">'+esc(U("tipos")[n.tipo]||n.tipo)+'. '+esc(fechaTxt(n.fecha))+(n.tipo==="convocatoria"&&n.plazo?'. '+U("abiertaHasta")+' '+esc(fechaTxt(n.plazo)):'')+'</p>'+(n.img?'<img src="'+esc(n.img)+'" alt="" style="margin:.4rem 0 1rem;border-radius:3px;max-width:100%">':'')+'<p class="entrada">'+esc(tx.t)+'</p>'+largo+enlacesNoticia(n,0)+'<p style="margin-top:2rem"><a href="#noticias">'+U("volverNot")+'</a></p></div>'; return; } }
   var N=window.NOTICIAS||[], vig=N.filter(vigente), resto=N.filter(function(n){ return !vigente(n); });
   vig.sort(function(a,b){ return (a.plazo||a.fecha)<(b.plazo||b.fecha)?-1:1; });
   main.innerHTML=cabezaPagina(U("nav.sociedad")[0][1],U("notE"),migaSEA())+'<div class="envoltorio pagina-cuerpo">'+(vig.length?'<h2>'+U("proximas")+'</h2><div class="convocatorias">'+vig.map(tarjetaNoticia).join("")+'</div>':'')+(resto.length?'<h2 style="margin-top:2.25rem">'+U("anteriores")+'</h2><div class="convocatorias">'+resto.map(tarjetaNoticia).join("")+'</div>':'')+'</div>';

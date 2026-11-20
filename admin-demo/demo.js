@@ -21,27 +21,36 @@
 
   /* Noticias */
   var F = $("#fnot");
-  function limpia() { F.reset(); F.i.value = ""; F.fecha.value = hoy(); $("#tn").textContent = "Nueva noticia, convocatoria o congreso"; $("#bpub").textContent = "Publicar"; }
+  function limpia() { F.reset(); F.i.value = ""; F.fecha.value = hoy(); $("#lquitar").classList.add("oculto"); $("#tn").textContent = "Nueva noticia, convocatoria o congreso"; $("#bpub").textContent = "Publicar"; }
   function pintaN() {
     var t = "<tr><th>Fecha</th><th>Tipo</th><th>Título</th><th></th></tr>";
     N.forEach(function (n, i) { t += "<tr><td>" + h(n.fecha) + "</td><td>" + h(n.tipo) + "</td><td>" + h(n.es.n) + '</td><td><a href="#" data-ed="' + i + '">Modificar</a> <button class="claro" data-bo="' + i + '">Borrar</button></td></tr>'; });
     $("#lnot").innerHTML = t;
   }
   limpia();
-  F.onsubmit = function (e) {
+  function leeFichero(f) { return new Promise(function (ok, mal) { var r = new FileReader(); r.onload = function () { ok(r.result); }; r.onerror = mal; r.readAsDataURL(f); }); }
+  F.onsubmit = async function (e) {
     e.preventDefault();
-    var n = { tipo: F.tipo.value, fecha: F.fecha.value, plazo: F.plazo.value, es: { n: F.ten.value.trim(), t: F.tex.value.trim() },
-      en: { n: F.tin.value.trim() || F.ten.value.trim(), t: F.txi.value.trim() || F.tex.value.trim() }, url: F.url.value.trim(), img: "" };
-    if (F.i.value !== "") N[+F.i.value] = n; else N.push(n);
+    var les = F.lar.value.trim();
+    var n = { tipo: F.tipo.value, fecha: F.fecha.value, plazo: F.plazo.value, es: { n: F.ten.value.trim(), t: F.tex.value.trim(), l: les },
+      en: { n: F.tin.value.trim() || F.ten.value.trim(), t: F.txi.value.trim() || F.tex.value.trim(), l: F.lai.value.trim() || les }, url: F.url.value.trim(), img: "", doc: "" };
+    var prev = F.i.value !== "" ? N[+F.i.value] : null;
+    if (prev && !F.quitar.checked) { n.img = prev.img || ""; n.doc = prev.doc || ""; }
+    var f = F.adj.files[0];
+    if (f) { if (f.size > 3 * 1048576) return aviso("En la prueba el fichero no puede pasar de 3 MB (en el panel real, 15 MB).", true);
+      var d = await leeFichero(f); if (/pdf$/i.test(f.name)) n.doc = d; else n.img = d; }
+    if (prev) N[+F.i.value] = n; else N.push(n);
     N.sort(function (a, b) { return a.fecha < b.fecha ? 1 : -1; });
-    guarda("sea-demo-noticias", N); pintaN(); limpia();
+    try { localStorage.setItem("sea-demo-noticias", JSON.stringify(N)); } catch (err) { return aviso("El navegador no tiene espacio para guardar el fichero en la prueba; prueba con uno más pequeño.", true); }
+    pintaN(); limpia();
     aviso("Noticia guardada y publicada. Pulsa «Ver la web» para verla en Noticias y en la portada.");
   };
   $("#lnot").onclick = function (e) {
     var ed = e.target.getAttribute("data-ed"), bo = e.target.getAttribute("data-bo");
     if (ed !== null) {
       e.preventDefault(); var n = N[+ed]; F.i.value = ed; F.tipo.value = n.tipo; F.fecha.value = n.fecha; F.plazo.value = n.plazo || "";
-      F.ten.value = n.es.n; F.tex.value = n.es.t; F.url.value = n.url || ""; F.tin.value = n.en.n !== n.es.n ? n.en.n : ""; F.txi.value = n.en.t !== n.es.t ? n.en.t : "";
+      F.ten.value = n.es.n; F.tex.value = n.es.t; F.lar.value = n.es.l || ""; F.lai.value = (n.en.l && n.en.l !== n.es.l) ? n.en.l : ""; F.url.value = n.url || "";
+      $("#lquitar").classList.toggle("oculto", !(n.img || n.doc)); F.tin.value = n.en.n !== n.es.n ? n.en.n : ""; F.txi.value = n.en.t !== n.es.t ? n.en.t : "";
       $("#tn").textContent = "Modificar noticia"; $("#bpub").textContent = "Guardar cambios"; scrollTo(0, 0);
     }
     if (bo !== null && confirm("¿Borrar esta noticia?")) { N.splice(+bo, 1); guarda("sea-demo-noticias", N); pintaN(); aviso("Noticia borrada."); }

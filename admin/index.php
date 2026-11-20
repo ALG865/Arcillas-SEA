@@ -34,12 +34,26 @@ if (dentro() && $accion !== '' && !in_array($accion, ['entrar', 'crear_clave'], 
       $N = leer_js('noticias.js', 'NOTICIAS') ?? [];
       $tes = trim($_POST['titulo_es'] ?? ''); $fecha = $_POST['fecha'] ?? '';
       if ($tes === '' || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha)) throw new RuntimeException('Faltan el título o la fecha.');
+      $les = trim($_POST['largo_es'] ?? '');
       $n = ['tipo' => $_POST['tipo'] ?? 'noticia', 'fecha' => $fecha, 'plazo' => $_POST['plazo'] ?? '',
-        'es' => ['n' => $tes, 't' => trim($_POST['texto_es'] ?? '')],
-        'en' => ['n' => trim($_POST['titulo_en'] ?? '') ?: $tes, 't' => trim($_POST['texto_en'] ?? '') ?: trim($_POST['texto_es'] ?? '')],
-        'url' => trim($_POST['enlace'] ?? ''), 'img' => ''];
+        'es' => ['n' => $tes, 't' => trim($_POST['texto_es'] ?? ''), 'l' => $les],
+        'en' => ['n' => trim($_POST['titulo_en'] ?? '') ?: $tes, 't' => trim($_POST['texto_en'] ?? '') ?: trim($_POST['texto_es'] ?? ''), 'l' => trim($_POST['largo_en'] ?? '') ?: $les],
+        'url' => trim($_POST['enlace'] ?? ''), 'img' => '', 'doc' => ''];
       $i = $_POST['i'] ?? '';
-      if ($i !== '' && isset($N[(int)$i])) { $n['img'] = $N[(int)$i]['img'] ?? ''; $N[(int)$i] = $n; } else $N[] = $n;
+      if ($i !== '' && isset($N[(int)$i])) { $prev = $N[(int)$i]; $n['id'] = $prev['id'] ?? ''; if (empty($_POST['quitar_adjunto'])) { $n['img'] = $prev['img'] ?? ''; $n['doc'] = $prev['doc'] ?? ''; } }
+      if (empty($n['id'])) $n['id'] = $fecha . '-' . substr(trim(preg_replace('/[^a-z0-9]+/', '-', norma($tes)), '-'), 0, 50);
+      /* Fichero adjunto: imagen (se muestra en la noticia) o PDF (se enlaza) */
+      $f = $_FILES['adjunto'] ?? null;
+      if ($f && $f['error'] !== UPLOAD_ERR_NO_FILE) {
+        if ($f['error'] !== UPLOAD_ERR_OK || $f['size'] > 15 * 1048576) throw new RuntimeException('No se pudo subir el fichero (máximo 15 MB).');
+        $ext = strtolower(pathinfo($f['name'], PATHINFO_EXTENSION));
+        if (!in_array($ext, ['pdf', 'jpg', 'jpeg', 'png', 'webp'], true)) throw new RuntimeException('El fichero debe ser PDF o imagen (JPG, PNG, WEBP).');
+        if (!is_dir(RAIZ . '/adjuntos')) mkdir(RAIZ . '/adjuntos', 0755, true);
+        $nom = $n['id'] . '-' . substr(md5((string)microtime(true)), 0, 6) . '.' . $ext;
+        if (!move_uploaded_file($f['tmp_name'], RAIZ . '/adjuntos/' . $nom)) throw new RuntimeException('No se pudo guardar el fichero.');
+        if ($ext === 'pdf') $n['doc'] = 'adjuntos/' . $nom; else $n['img'] = 'adjuntos/' . $nom;
+      }
+      if ($i !== '' && isset($N[(int)$i])) $N[(int)$i] = $n; else $N[] = $n;
       usort($N, fn($a, $b) => strcmp($b['fecha'], $a['fecha']));
       escribir_js('noticias.js', 'NOTICIAS', $N, 'Noticias y convocatorias. Lo mantiene el panel de administración.');
       $aviso = 'Noticia guardada y publicada.';
@@ -143,7 +157,7 @@ td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{col
 <?php if ($pag === 'noticias'):
   $N = leer_js('noticias.js', 'NOTICIAS') ?? []; $e = isset($_GET['editar']) ? ($N[(int)$_GET['editar']] ?? null) : null; ?>
 <h1><?= $e ? 'Modificar noticia' : 'Nueva noticia, convocatoria o congreso' ?></h1>
-<form method="post" class="ficha" action="?p=noticias"><?= $F ?><input type="hidden" name="accion" value="noticia_guardar">
+<form method="post" class="ficha" action="?p=noticias" enctype="multipart/form-data"><?= $F ?><input type="hidden" name="accion" value="noticia_guardar">
 <input type="hidden" name="i" value="<?= $e ? (int)$_GET['editar'] : '' ?>">
 <div class="dos"><label>Tipo<select name="tipo">
 <?php foreach (['noticia' => 'Noticia', 'convocatoria' => 'Convocatoria o premio (tiene plazo)', 'evento' => 'Congreso, jornada o evento'] as $k => $v): ?>
@@ -152,10 +166,14 @@ td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{col
 <label>Plazo <small>(solo convocatorias: último día para presentarse; después deja de destacarse)</small><input type="date" name="plazo" value="<?= h($e['plazo'] ?? '') ?>"></label>
 <label>Título<input name="titulo_es" required value="<?= h($e['es']['n'] ?? '') ?>"></label>
 <label>Texto <small>(dos o tres frases)</small><textarea name="texto_es"><?= h($e['es']['t'] ?? '') ?></textarea></label>
-<label>Enlace <small>(opcional: página con más información)</small><input type="url" name="enlace" placeholder="https://…" value="<?= h($e['url'] ?? '') ?>"></label>
+<label>Texto completo <small>(opcional: si se rellena, la noticia tendrá su propia página con «Leer más»; separa los párrafos con una línea en blanco)</small><textarea name="largo_es" style="min-height:10rem"><?= h($e['es']['l'] ?? '') ?></textarea></label>
+<label>Fichero adjunto <small>(opcional: circular, bases o cartel en PDF, o una imagen; máximo 15 MB)</small><input type="file" name="adjunto" accept=".pdf,.jpg,.jpeg,.png,.webp"></label>
+<?php if (!empty($e['img']) || !empty($e['doc'])): ?><label style="display:flex;gap:.5rem;align-items:center;font-weight:400"><input type="checkbox" name="quitar_adjunto" style="width:auto"> Quitar el fichero adjunto actual (<a href="../<?= h($e['doc'] ?: $e['img']) ?>" target="_blank">ver</a>)</label><?php endif; ?>
+<label>Enlace a una web externa <small>(opcional: web del congreso, convocatoria oficial, inscripción…, si la hay)</small><input type="url" name="enlace" placeholder="https://…" value="<?= h($e['url'] ?? '') ?>"></label>
 <details><summary>Versión en inglés (opcional; si se deja vacía se muestra el texto en español)</summary>
 <label>Title<input name="titulo_en" value="<?= h(($e && $e['en']['n'] !== $e['es']['n']) ? $e['en']['n'] : '') ?>"></label>
-<label>Text<textarea name="texto_en"><?= h(($e && $e['en']['t'] !== $e['es']['t']) ? $e['en']['t'] : '') ?></textarea></label></details>
+<label>Text<textarea name="texto_en"><?= h(($e && $e['en']['t'] !== $e['es']['t']) ? $e['en']['t'] : '') ?></textarea></label>
+<label>Full text<textarea name="largo_en"><?= h(($e && ($e['en']['l'] ?? '') !== ($e['es']['l'] ?? '')) ? $e['en']['l'] : '') ?></textarea></label></details>
 <button><?= $e ? 'Guardar cambios' : 'Publicar' ?></button></form>
 <h2>Noticias publicadas</h2>
 <table><tr><th>Fecha</th><th>Tipo</th><th>Título</th><th></th></tr>
