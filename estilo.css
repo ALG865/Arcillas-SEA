@@ -378,3 +378,4 @@ sup,sub{line-height:0}
 .pionero{display:inline-block;font-size:.75rem;font-weight:600;padding:.05rem .45rem;border:1px solid currentColor;border-radius:999px;margin-right:.2rem;color:var(--terracota,#8f3f22)}
 
 dl.interes{margin:1.2rem 0 .6rem}dl.interes dt{font-weight:600;margin-top:.9rem}dl.interes dd{margin:.2rem 0 0}
+.mosaico.fotos figure img{aspect-ratio:4/3;object-fit:cover;width:100%}
