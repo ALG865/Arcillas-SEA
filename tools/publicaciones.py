@@ -56,7 +56,9 @@ for s in socios:
                 if any(c in t and (c not in gen or any(x in t for x in ciud)) for c in claves_af): firma=True
             if not firma: continue
             # Tema estricto: el título debe tratar de arcillas, minerales de la arcilla o materiales hechos con ellas (cerámica, cementos)
-            if not re.search(ESTRICTO,norm(w.get("title") or "")) and (w.get("doi") or "").lower() not in INCLUIDAS: continue
+            inv=w.get("abstract_inverted_index") or {}
+            resumen=" ".join(k for p,k in sorted((p,k) for k,v in inv.items() for p in v))
+            if not re.search(ESTRICTO,norm((w.get("title") or "")+" "+resumen)) and (w.get("doi") or "").lower() not in INCLUIDAS: continue
             if (w.get("doi") or w["id"]).lower() in EXCLUIDAS: continue
             src=((w.get("primary_location") or {}).get("source") or {})
             if src.get("type")!="journal": continue
