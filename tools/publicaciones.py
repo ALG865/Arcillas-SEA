@@ -14,6 +14,11 @@ def get(url):
     return {"results":[],"meta":{}}
 def norm(s): return unicodedata.normalize("NFKD",s or "").encode("ascii","ignore").decode().lower()
 import re
+ESTRICTO=r"clay|arcilla|smectit|montmorillon|bentonit|kaolin|caolin|illit|sepiolit|palygorsk|attapulg|vermiculit|chlorit|tosudit|halloysit|hectorit|saponit|stevensit|kerolit|beidellit|nontronit|phyllosilic|pyrophyllit|talc|mica|glauconit|celadonit|imogolit|aluminum silicate|layered double|hydrotalc|hydrocalumit|ldh|zeolit|geopolym|metakaol|calcined clay|cement|ceramic|porcelain|brick|tile|metapelit"
+try: EXCLUIDAS={x.lower() for x in json.load(open("tools/pubs-excluidas.json",encoding="utf-8"))}
+except Exception: EXCLUIDAS=set()
+try: INCLUIDAS={x.lower() for x in json.load(open("tools/pubs-incluidas.json",encoding="utf-8"))}
+except Exception: INCLUIDAS=set()
 CAMPOS={"Earth and Planetary Sciences","Materials Science","Chemistry","Chemical Engineering","Environmental Science","Engineering","Agricultural and Biological Sciences","Energy","Pharmacology, Toxicology and Pharmaceutics","Physics and Astronomy"}
 socios=json.load(open("tools/socios.json",encoding="utf-8"))
 desde=f"{datetime.date.today().year-1}-01-01"
@@ -50,10 +55,9 @@ for s in socios:
                 ciud=[norm(x) for x in s.get("ciudad",[])]; gen=set(norm(x) for x in s.get("generico",[]))
                 if any(c in t and (c not in gen or any(x in t for x in ciud)) for c in claves_af): firma=True
             if not firma: continue
-            # Tema: arcillas y minerales, geología, suelos, materiales (cementos incluidos), química y medio ambiente
-            campo=(((w.get("primary_topic") or {}).get("field") or {}).get("display_name") or "")
-            tema=re.search(r"clay|smectit|montmorillon|bentonit|kaolin|illit|sepiolit|palygorsk|attapulg|vermiculit|chlorit|halloysit|hectorit|saponit|stevensit|phyllosilic|mica|zeolit|layered double|hydrotalc|mineral|ceramic|brick|tile|soil|sediment|cement|concrete|geopolym|metakaol|pozzolan|mortar|nanocompos|adsorb",norm(w.get("title") or ""))
-            if not tema and campo not in CAMPOS: continue
+            # Tema estricto: el título debe tratar de arcillas, minerales de la arcilla o materiales hechos con ellas (cerámica, cementos)
+            if not re.search(ESTRICTO,norm(w.get("title") or "")) and (w.get("doi") or "").lower() not in INCLUIDAS: continue
+            if (w.get("doi") or w["id"]).lower() in EXCLUIDAS: continue
             src=((w.get("primary_location") or {}).get("source") or {})
             if src.get("type")!="journal": continue
             k=(w.get("doi") or w["id"]).lower()
