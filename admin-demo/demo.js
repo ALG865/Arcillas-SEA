@@ -61,9 +61,7 @@
   /* Trabajos propuestos (ejemplos de la prueba real) */
   var PR = [
     { s: "Catálisis", y: 2001, t: "A study of the surface acidity of acid-treated montmorillonite clay catalysts", c: 155, socio: 1 },
-    { s: "Absorbentes", y: 2010, t: "Removal of dyes from wastewaters by adsorption on sepiolite and Pansil", c: 71, socio: 1 },
-    { s: "Azulejos", y: 2006, t: "An empirical study of lean production in the ceramic tile industry in Spain", c: 241 },
-    { s: "Agricultura", y: 2020, t: "Optimization and validation of a QuEChERS-based method for the simultaneous environmental monitoring of 218 pesticide residues in clay loam soil", c: 144 }
+    { s: "Absorbentes", y: 2010, t: "Removal of dyes from wastewaters by adsorption on sepiolite and Pansil", c: 71, socio: 1 }
   ];
   function pintaP() {
     $("#nprop").textContent = PR.length + " trabajos pendientes";

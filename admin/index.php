@@ -197,7 +197,7 @@ td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{col
 
 <?php elseif ($pag === 'auto'): $P = leer_js('publicaciones.js', 'PUBLICACIONES_SOCIOS') ?? []; $rf = leer_json('referencias-fecha.json', []); $pr = leer_json('propuestos.json', []); ?>
 <h1>Trabajos propuestos</h1>
-<p class="nota">Cada mes la web actualiza sola las publicaciones de los socios y las citas de los trabajos pioneros o altamente citados. Si encuentra trabajos nuevos con participación española y muchas citas, no los publica: los deja aquí. Acéptalos solo si tratan de verdad de arcillas en esa aplicación. Si nadie entra, la web sigue igual.</p>
+<p class="nota">Cada mes la web actualiza sola las publicaciones de los socios y las citas de los trabajos pioneros o altamente citados. Si encuentra trabajos nuevos de socios con muchas citas, no los publica: los deja aquí. Acéptalos solo si tratan de verdad de arcillas en esa aplicación. Si nadie entra, la web sigue igual.</p>
 <table><tr><th>Publicaciones de socios</th><td>actualizadas el <?= h($P['actualizado'] ?? '—') ?> · <?= count($P['obras'] ?? []) ?> artículos</td></tr>
 <tr><th>Trabajos de referencia</th><td>revisados el <?= h($rf['actualizado'] ?? '—') ?></td></tr></table>
 <h2><?= count($pr) ?> trabajos pendientes</h2>

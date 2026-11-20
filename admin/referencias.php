@@ -1,7 +1,7 @@
 <?php
 /* Actualización automática de los trabajos pioneros o altamente citados (aportaciones.js y geo-refs.js).
    Criterios (los mismos usados al preparar la web):
-   - Participación de centros españoles (OpenAlex), desde 1985.
+   - Al menos un autor es o ha sido socio de la SEA (o trabaja en un socio colectivo); la búsqueda se limita a centros españoles (OpenAlex), desde 1985.
    - Al menos 50 citas; 20 si la sección aún no tiene ningún trabajo.
    - El título debe contener todas las palabras de una de las búsquedas de la sección (evita trabajos ajenos al tema).
    - Los trabajos ya incluidos se conservan (aunque sean de socios antiguos); solo salen si otros más citados los superan.
@@ -64,9 +64,6 @@ function titulo_encaja(string $titulo, array $busquedas): bool {
 /* ¿Algún autor con centro español es o fue socio? (apellido + nombre completo o apellido + centro) */
 function autor_socio(array $w, array $socios): bool {
   foreach ($w['authorships'] ?? [] as $a) {
-    $es = false; $inst = '';
-    foreach ($a['institutions'] ?? [] as $i) { if (($i['country_code'] ?? '') === 'ES') $es = true; $inst .= ' ' . norma($i['display_name'] ?? ''); }
-    if (!$es) continue;
     $nom = str_replace('-', ' ', norma($a['author']['display_name'] ?? ''));
     foreach ($socios as $s) {
       if (!str_contains($nom, norma($s['apellido']))) continue;
@@ -142,7 +139,8 @@ function actualizar_referencias(): array {
         $z = ficha_trabajo($w); $d = strtolower($z['doi']);
         if (isset($presentes[$d]) || isset($yaProp[$d]) || in_array($d, $excluidos, true)) continue;
         if (($w['type'] ?? '') === 'paratext' || !titulo_encaja($z['t'], $qs) || !preg_match(ARCILLA, norma($z['t']))) continue;
-        $prop[] = ['fecha' => date('Y-m-d'), 'seccion' => $sec, 'socio' => autor_socio($w, $hist)] + $z;
+        if (!autor_socio($w, $hist)) continue; // solo trabajos con algún autor socio
+        $prop[] = ['fecha' => date('Y-m-d'), 'seccion' => $sec, 'socio' => true] + $z;
         $yaProp[$d] = true; $nuevos++;
       }
       usleep(1000000);
