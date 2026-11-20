@@ -34,7 +34,8 @@ for o in obras:
             nm=norm((au.get("author") or {}).get("display_name") or ""); pn=nm.split()[0] if nm.split() else ""
             if ap not in nm or not (pn==nom or (len(pn.rstrip("."))==1 and nom and pn[0]==nom[0]) or nom in nm.split()): continue
             t=norm(" | ".join([(i.get("display_name") or "") for i in (au.get("institutions") or [])]+(au.get("raw_affiliation_strings") or [])))
-            hit=[c for c in claves if c in t]
+            ciud=[norm(x) for x in s.get("ciudad",[])]; gen=set(norm(x) for x in s.get("generico",[]))
+            hit=[c for c in claves if c in t and (c not in gen or any(x in t for x in ciud))]
             if hit: ok.append(sn); print('DENTRO |',sn,'|',hit[0],'|',o.get('t','')[:100]); break
     campo=(((w.get("primary_topic") or {}).get("field") or {}).get("display_name") or "")
     tema=re.search(TEMA,norm(o.get("t","")))

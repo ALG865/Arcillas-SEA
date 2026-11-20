@@ -47,7 +47,8 @@ for s in socios:
             for au in w.get("authorships",[]):
                 if ((au.get("author") or {}).get("id") or "").split("/")[-1] not in elegidos: continue
                 t=norm(" | ".join([(i.get("display_name") or "") for i in (au.get("institutions") or [])]+(au.get("raw_affiliation_strings") or []))).replace("-"," ")
-                if any(c in t for c in claves_af): firma=True
+                ciud=[norm(x) for x in s.get("ciudad",[])]; gen=set(norm(x) for x in s.get("generico",[]))
+                if any(c in t and (c not in gen or any(x in t for x in ciud)) for c in claves_af): firma=True
             if not firma: continue
             # Tema: arcillas y minerales, geología, suelos, materiales (cementos incluidos), química y medio ambiente
             campo=(((w.get("primary_topic") or {}).get("field") or {}).get("display_name") or "")
