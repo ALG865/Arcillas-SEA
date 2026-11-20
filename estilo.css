@@ -276,6 +276,7 @@ footer ul{list-style:none;padding:0;margin:0}
 footer li{margin:.3rem 0}
 
 @media (max-width:900px){
+  #cabecera{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--caolin)}
   #abrirMenu{display:inline-flex;align-items:center}
   nav.menu{position:fixed;inset:64px 0 0 0;background:var(--caolin);flex-direction:column;align-items:stretch;padding:1rem;gap:.4rem;overflow:auto;display:none}
   nav.menu.abierto{display:flex}
