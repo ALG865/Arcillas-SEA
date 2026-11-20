@@ -533,8 +533,18 @@ function cursorDRX(){ var sv=$("#drxsvg"); if(!sv) return; var g=$("#cursor",sv)
 
 /* ---- galería ---- */
 var galM="", galF="";
+/* Trabajos de referencia de cada arcilla modificada: los de sus aplicaciones cuyo título trata de ese material, más los propios */
+var CLAVE_MOD={"Organoarcillas":/organo|alkylammonium|surfactant|cationic/i,"Arcillas pilareadas":/pillar/i,"Arcillas activadas con ácido":/acid/i,"Arcillas calcinadas y geopolímeros":/metakaolin|geopolym|calcined|alkal[a-z]* activ/i,"Materiales híbridos y bionanocompuestos":/hybrid|bionanocomposite|biopolymer|chitosan|nanocomposite/i,"Nanotubos de halloysita":/halloysite/i,"Arcillas sintéticas":/synthetic/i};
+function refsMod(m){ var re=CLAVE_MOD[m.es.n]; if(!re) return ""; var vistos={}, S=[], O=[];
+  function mete(L,z){ var k=z.t.toLowerCase().replace(/[^a-z0-9]+/g,""); if(vistos[k]) return; vistos[k]=1; L.push(z); }
+  var otras={}; m.ap.forEach(function(ap){ ((window.OTRAS_ES||{})[ap]||[]).forEach(function(z){ otras[z.t.toLowerCase()]=1; if(re.test(z.t)) mete(O,z); }); });
+  (m.r||[]).forEach(function(z){ var w={a:z.a,y:z.y,t:z.t,r:z.j,c:z.c,doi:z.d}; if(otras[w.t.toLowerCase()]||/Fernández-Jiménez|Arroyo/.test(w.a)) mete(O,w); else mete(S,w); });
+  m.ap.forEach(function(ap){ ((window.APORTES||{})[ap]||[]).forEach(function(z){ if(re.test(z.t)) mete(S,z); }); });
+  function ord(L){ return L.sort(function(a,b){ return (b.p?1:0)-(a.p?1:0)||(b.c||0)-(a.c||0); }); }
+  return (S.length?'<details class="aport"><summary>'+U("aportT")+' ('+S.length+')</summary><ul>'+ord(S).map(refLi).join("")+'</ul></details>':'')+(O.length?'<details class="aport"><summary>'+U("otrasT")+' ('+O.length+')</summary><p class="pequeno">'+U("otrasI")+'</p><ul>'+ord(O).map(refLi).join("")+'</ul></details>':''); }
 function fichaMat(m,conEnlaces){ var es=lang==="es", x=m[lang];
   var enl=conEnlaces&&m.m?'<p class="apl-min">'+(es?"Minerales de partida: ":"Starting minerals: ")+m.m.map(function(id){ var mm=minById(id); return mm?'<a href="#mineral/'+id+'">'+esc(L(mm).n)+'</a>':''; }).filter(Boolean).join(", ")+'<br>'+(es?"Se usa en: ":"Used in: ")+m.ap.map(function(id){ var ap=APLICACIONES.filter(function(q){return q.id===id;})[0]; return ap?'<a href="#aplicaciones/'+id+'">'+esc(L(ap).n)+'</a>':''; }).filter(Boolean).join(", ")+'</p>':'';
+  if(conEnlaces) enl+=refsMod(m);
   return '<div class="afin" id="mod-'+m.es.n.replace(/[^A-Za-zÁÉÍÓÚáéíóúñ]+/g,"-").toLowerCase()+'"><h3>'+esc(x.n)+'</h3><p>'+esc(x.t)+'</p>'+(conEnlaces?'':'<p><b>'+(es?"Aplicaciones: ":"Uses: ")+'</b>'+esc(x.u)+'</p>')+enl+(!conEnlaces&&m.r.length?'<details class="aport"><summary>'+U("aportT")+' ('+m.r.length+')</summary><ul>'+m.r.map(function(z){ return '<li>'+esc(es?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.d+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.j)+'</i>.</li>'; }).join("")+'</ul></details>':'')+'</div>'; }
 function paginaMat(id,ent,G,conEnlaces){ main.innerHTML=cabezaPagina(navI(id)[1],ent,migaArcillas())+'<div class="envoltorio pagina-cuerpo">'+G.map(function(g,gi){ return '<h2'+(gi?' style="margin-top:2.5rem"':'')+'>'+esc(g.g[lang])+'</h2>'+(g.i?'<p>'+esc(g.i[lang])+'</p>':'')+'<div class="afines">'+g.items.map(function(m){ return fichaMat(m,conEnlaces); }).join("")+'</div>'; }).join("")+'</div>'; }
 P.afines=function(){ var es=lang==="es";
