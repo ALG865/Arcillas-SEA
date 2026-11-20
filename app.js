@@ -71,7 +71,7 @@ es:{
  estatutosE:"Estatutos de la Sociedad Española de Arcillas.",
  pie:"Funciona sin conexión una vez cargada.", creditos:"Créditos",
  credT:"Imágenes de microscopio: archivo de imágenes de la SEA (cedidas por sus autores) y «Images of Clay» de la Mineralogical Society y The Clay Minerals Society. Muestras de mano: IACT y colecciones privadas. Tipografía Instrument Sans (SIL Open Font License).",
- otrasHist:"Otras historias", notE:"Noticias de la Sociedad, convocatorias de premios y ayudas y próximas citas.", tipos:{noticia:"Noticia",convocatoria:"Convocatoria",evento:"Cita"}, abiertaHasta:"Abierta hasta el", cerrada:"Cerrada", masInfo:"Más información", leerMas:"Leer más", verDoc:"Descargar documento (PDF)", volverNot:"Volver a las noticias", verNoticias:"Ver todas las noticias", proximas:"Abiertas y próximas", anteriores:"Anteriores"
+ otrasHist:"Otras historias", notE:"Noticias de la Sociedad, convocatorias de premios y ayudas y próximas citas.", tipos:{noticia:"Noticia",convocatoria:"Convocatoria",evento:"Cita"}, abiertaHasta:"Abierta hasta el", cerrada:"Cerrada", masInfo:"Más información", accJunta:"Acceso para la Junta Directiva", leerMas:"Leer más", verDoc:"Descargar documento (PDF)", volverNot:"Volver a las noticias", verNoticias:"Ver todas las noticias", proximas:"Abiertas y próximas", anteriores:"Anteriores"
 },
 en:{
  sea:"Spanish Clay Society", corto:"SEA", arcillas:"Clays", sociedad:"The Society", hazte:"Join", menu:"Menu", cerrar:"Close", inicio:"Home",
@@ -134,7 +134,7 @@ en:{
  estatutosE:"Statutes of the Spanish Clay Society.",
  pie:"Works offline once loaded.", creditos:"Credits",
  credT:"Microscope images: SEA image archive (contributed by their authors) and “Images of Clay” of the Mineralogical Society and The Clay Minerals Society. Hand specimens: IACT and private collections. Typeface Instrument Sans (SIL Open Font License).",
- otrasHist:"More stories", notE:"Society news, calls for awards and grants, and upcoming events.", tipos:{noticia:"News",convocatoria:"Call",evento:"Event"}, abiertaHasta:"Open until", cerrada:"Closed", masInfo:"More information", leerMas:"Read more", verDoc:"Download document (PDF)", volverNot:"Back to news", verNoticias:"See all news", proximas:"Open and upcoming", anteriores:"Earlier"
+ otrasHist:"More stories", notE:"Society news, calls for awards and grants, and upcoming events.", tipos:{noticia:"News",convocatoria:"Call",evento:"Event"}, abiertaHasta:"Open until", cerrada:"Closed", masInfo:"More information", accJunta:"Board access", leerMas:"Read more", verDoc:"Download document (PDF)", volverNot:"Back to news", verNoticias:"See all news", proximas:"Open and upcoming", anteriores:"Earlier"
 }};
 function U(k){ var o=UI[lang],p=k.split("."); for(var i=0;i<p.length;i++) o=o&&o[p[i]]; return o; }
 function L(o){ if(o==null) return ""; if(typeof o==="string") return o; return o[lang]!==undefined?o[lang]:o.es; }
@@ -687,7 +687,7 @@ document.addEventListener("click",function(e){
   var v=e.target.closest("[data-ver]"); if(v){ verImagen(v.getAttribute("data-ver"),v.getAttribute("data-cap")); }
 });
 function pie(){
-  $("#pie").innerHTML='<div class="estratos sobre-oscuro"></div><div class="envoltorio"><div><img src="logo-sea-negativo.png" alt="" width="72" height="72" style="margin-bottom:1rem"><h4>'+U("sea")+'</h4><p>'+U("sobreSEA")+'</p><p>'+esc(SEA.sede)+'<br><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a></p><p class="pequeno" style="color:#8f897f">'+U("creditos")+'. '+U("credT")+'</p></div><div><h4>'+U("sociedad")+'</h4><ul>'+U("nav.sociedad").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'<li><a href="#socio">'+U("hazte")+'</a></li></ul></div><div><h4>'+U("arcillas")+'</h4><ul>'+U("nav.arcillas").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'</ul><p class="pequeno" style="margin-top:1rem;color:#8f897f">'+U("pie")+'</p></div></div>';
+  $("#pie").innerHTML='<div class="estratos sobre-oscuro"></div><div class="envoltorio"><div><img src="logo-sea-negativo.png" alt="" width="72" height="72" style="margin-bottom:1rem"><h4>'+U("sea")+'</h4><p>'+U("sobreSEA")+'</p><p>'+esc(SEA.sede)+'<br><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a></p><p class="pequeno" style="color:#8f897f">'+U("creditos")+'. '+U("credT")+'</p><p class="pequeno"><a href="'+(location.hostname.indexOf("github.io")>=0?"admin-demo/":"admin/")+'" style="color:#8f897f">'+U("accJunta")+'</a></p></div><div><h4>'+U("sociedad")+'</h4><ul>'+U("nav.sociedad").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'<li><a href="#socio">'+U("hazte")+'</a></li></ul></div><div><h4>'+U("arcillas")+'</h4><ul>'+U("nav.arcillas").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'</ul><p class="pequeno" style="margin-top:1rem;color:#8f897f">'+U("pie")+'</p></div></div>';
 }
 function ir(){
   var h=(location.hash||"#inicio").slice(1).split("?")[0], partes=h.split("/"), id=partes[0], arg=partes[1];
