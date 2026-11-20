@@ -105,7 +105,7 @@ function actualizar_referencias(): array {
   foreach (leer_json('socios.json', []) as $s) if (!in_array(norma($s['n']), $ya, true)) $hist[] = $s;
   escribir_json('socios-historico.json', $hist);
   $presentes = [];
-  foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $l) foreach ($l as $z) $presentes[strtolower($z['doi'])] = true;
+  foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $l) foreach ($l as $z) if (!empty($z['doi'])) $presentes[strtolower($z['doi'])] = true;
 
   /* 1. Citas al día de los trabajos ya incluidos */
   $dois = array_keys($presentes);
@@ -114,7 +114,7 @@ function actualizar_referencias(): array {
     foreach ($res['results'] ?? [] as $w) {
       $d = strtolower(preg_replace('~^https?://doi\.org/~i', '', (string)$w['doi']));
       foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $k => $l) foreach ($l as $i => $z)
-        if (strtolower($z['doi']) === $d && $w['cited_by_count'] > ($z['c'] ?? 0)) $R[$g][$k][$i]['c'] = (int)$w['cited_by_count'];
+        if (strtolower($z['doi'] ?? '') === $d && $w['cited_by_count'] > ($z['c'] ?? 0)) $R[$g][$k][$i]['c'] = (int)$w['cited_by_count'];
     }
     usleep(300000);
   }

@@ -423,7 +423,7 @@ function bloquesApl(){ var byId={}; APLICACIONES.forEach(function(x){ byId[x.id]
   return '<div class="filtros salto-apl" role="tablist">'+GRUPOS_APL.map(function(q){ return '<button class="filtro" role="tab" data-tab="'+q.id+'" aria-pressed="'+(q.id===g.id)+'">'+esc(q[lang])+'</button>'; }).join("")+'</div>'+
    '<div class="aplic">'+g.ids.filter(function(i){ return byId[i]; }).map(function(i){ return tarjetaApl(byId[i]).replace(/(<p class="apl-min">[\s\S]*?)(<\/p>)/,function(_,p1,p2){ return p1+modDeApl(i)+p2; }).replace('<div class="apl">','<div class="apl" id="apl-'+i+'">'); }).join("")+'</div>'; }
 /* ---- aplicaciones ---- */
-function refLi(z){ var es=lang==="es"; return '<li>'+esc(es?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). <a href="https://doi.org/'+z.doi+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>. <i>'+esc(z.r)+'</i>.</li>'; }
+function refLi(z){ var es=lang==="es"; return '<li>'+esc(es?z.a:z.a.replace(" y otros"," et al."))+' ('+z.y+'). '+(z.doi||z.url?'<a href="'+(z.doi?'https://doi.org/'+z.doi:z.url)+'" target="_blank" rel="noopener">'+esc(z.t)+'</a>':esc(z.t))+'. <i>'+esc(z.r)+'</i>.</li>'; }
 function aportes(id){ var A=(window.APORTES||{})[id]; if(!A||!A.length) return "";
   return '<details class="aport"><summary>'+U("aportT")+' ('+A.length+')</summary><ul>'+A.map(refLi).join("")+'</ul></details>'; }
 P.aplicaciones=function(arg){ if(arg){ GRUPOS_APL.forEach(function(q){ if(q.ids.indexOf(arg)>=0) aplTab=q.id; }); }
