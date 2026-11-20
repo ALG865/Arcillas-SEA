@@ -14,7 +14,7 @@
   }
   function entrar() { $("#entrada").classList.add("oculto"); $("#panel").classList.remove("oculto"); verPag((location.hash || "#noticias").slice(1)); pintaN(); cargaSocios(); }
   if (sessionStorage.getItem("sea-demo-dentro")) entrar();
-  $("#fentrar").onsubmit = function (e) { e.preventDefault(); sessionStorage.setItem("sea-demo-dentro", "1"); entrar(); };
+  $("#fentrar").onsubmit = function (e) { e.preventDefault(); if ($("#fentrar input").value !== "SEA") { $("#mal").classList.remove("oculto"); return; } sessionStorage.setItem("sea-demo-dentro", "1"); entrar(); };
   $("#salir").onclick = function (e) { e.preventDefault(); sessionStorage.removeItem("sea-demo-dentro"); location.reload(); };
   $("#reiniciar").onclick = function (e) { e.preventDefault(); if (!confirm("¿Borrar todos los cambios de la prueba?")) return; localStorage.removeItem("sea-demo-noticias"); localStorage.removeItem("sea-demo-socios"); location.reload(); };
   window.onhashchange = function () { verPag(location.hash.slice(1) || "noticias"); };
