@@ -14,7 +14,9 @@
   }
   function entrar() { $("#entrada").classList.add("oculto"); $("#panel").classList.remove("oculto"); verPag((location.hash || "#noticias").slice(1)); pintaN(); cargaSocios(); }
   if (sessionStorage.getItem("sea-demo-dentro")) entrar();
-  $("#fentrar").onsubmit = function (e) { e.preventDefault(); if ($("#fentrar input").value !== "SEA") { $("#mal").classList.remove("oculto"); return; } sessionStorage.setItem("sea-demo-dentro", "1"); entrar(); };
+  $("#fentrar").onsubmit = async function (e) { e.preventDefault();
+    var b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode($("#fentrar input").value)), x = Array.from(new Uint8Array(b)).map(function (v) { return v.toString(16).padStart(2, "0"); }).join("");
+    if (x !== "08dd9890141cdccd3999d425a3492bfb742823adb8c56586370cd28ddf72f65b") { $("#mal").classList.remove("oculto"); return; } sessionStorage.setItem("sea-demo-dentro", "1"); entrar(); };
   $("#salir").onclick = function (e) { e.preventDefault(); sessionStorage.removeItem("sea-demo-dentro"); location.reload(); };
   $("#reiniciar").onclick = function (e) { e.preventDefault(); if (!confirm("¿Borrar todos los cambios de la prueba?")) return; localStorage.removeItem("sea-demo-noticias"); localStorage.removeItem("sea-demo-socios"); location.reload(); };
   window.onhashchange = function () { verPag(location.hash.slice(1) || "noticias"); };
