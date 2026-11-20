@@ -1,0 +1,17 @@
+name: Filtrar publicaciones
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/filtrar_pubs.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publicaciones.js
+          git commit -q -m "Publicaciones de los socios filtradas por afiliación y tema" || exit 0
+          git pull --rebase -q origin main && git push origin HEAD:main
+          git fetch -q origin main && git push --force origin origin/main:gh-pages
