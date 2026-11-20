@@ -86,6 +86,12 @@ function pedir_json(string $url) {
   return json_decode($r, true);
 }
 
+/* Nombres de autor sin palabras enteras en mayúsculas */
+function nom_autor(string $t): string {
+  $t = preg_replace('/\s+/', ' ', $t);
+  return preg_replace_callback('/\p{Lu}[\p{Lu}\'’-]+/u', fn($m) => implode('-', array_map(fn($p) => mb_substr($p, 0, 1) . mb_strtolower(mb_substr($p, 1)), explode('-', $m[0]))), $t);
+}
+
 /* Contraseña */
 function clave_guardada(): ?string { $f = DATOS . '/clave.php'; return is_file($f) ? (include $f) : null; }
 function guardar_clave(string $clave): void {

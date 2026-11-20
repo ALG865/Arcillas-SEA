@@ -80,7 +80,7 @@ function ficha_trabajo(array $w): array {
     foreach ($a['institutions'] ?? [] as $i) if (($i['country_code'] ?? '') === 'ES') { $es[] = $n; break; }
   }
   $lista = $es ?: $todos;
-  return ['a' => implode(', ', array_slice($lista, 0, 3)) . (count($todos) > 3 ? ' y otros' : ''),
+  return ['a' => nom_autor(implode(', ', array_slice($lista, 0, 3))) . (count($todos) > 3 ? ' y otros' : ''),
     'y' => (int)($w['publication_year'] ?? 0), 't' => strip_tags((string)$w['title']),
     'r' => $w['primary_location']['source']['display_name'] ?? '', 'c' => (int)($w['cited_by_count'] ?? 0),
     'doi' => preg_replace('~^https?://doi\.org/~i', '', (string)$w['doi'])];
