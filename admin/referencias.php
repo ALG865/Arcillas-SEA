@@ -119,12 +119,19 @@ function actualizar_referencias(): array {
     usleep(300000);
   }
 
-  /* 2. Trabajos nuevos que cumplan los criterios */
+  /* 2. Los ya incluidos: pioneros siempre; de los demás, ordenados por citas (no sale ninguno) */
+  foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $k => $l) $R[$g][$k] = ordenar_seccion($l, PHP_INT_MAX);
+  guardar_referencias($R);
+
+  /* 3. Trabajos nuevos: NO se publican; quedan «propuestos» para aceptarlos o descartarlos en el panel */
+  $prop = leer_json('propuestos.json', []); $yaProp = [];
+  foreach ($prop as $x) $yaProp[strtolower($x['doi'])] = true;
+  $nuevos = 0;
   foreach (BUSQUEDAS as $sec => $qs) {
     $geo = str_starts_with($sec, 'geo:'); $g = $geo ? 'geo' : 'ap'; $k = $geo ? substr($sec, 4) : $sec;
-    $lista = $R[$g][$k] ?? [];
-    $normales = array_values(array_filter($lista, fn($z) => empty($z['p'])));
+    $normales = array_values(array_filter($R[$g][$k] ?? [], fn($z) => empty($z['p'])));
     $umbral = $normales ? MINIMO : MINIMO_VACIA;
+    if (count($normales) >= MAXIMO) $umbral = max($umbral, (int)($normales[MAXIMO - 1]['c'] ?? 0) + 1); // solo si supera al décimo
     foreach ($qs as $q) {
       $url = 'https://api.openalex.org/works?per-page=50&sort=cited_by_count:desc&filter='
         . rawurlencode("institutions.country_code:ES,from_publication_date:1985-01-01,cited_by_count:>" . ($umbral - 1) . ",title_and_abstract.search:$q");
@@ -133,35 +140,41 @@ function actualizar_referencias(): array {
       foreach ($res['results'] ?? [] as $w) {
         if (empty($w['doi']) || empty($w['title'])) continue;
         $z = ficha_trabajo($w); $d = strtolower($z['doi']);
-        if (isset($presentes[$d]) || in_array($d, $excluidos, true)) continue;
-        if (($w['type'] ?? '') === 'paratext' || !titulo_encaja($z['t'], $qs)) continue;
-        if (!preg_match(ARCILLA, norma($z['t'])) || !autor_socio($w, $hist)) continue;
-        $lista[] = $z; $presentes[$d] = true; $nuevos[$d] = ['s' => $sec, 'z' => $z];
+        if (isset($presentes[$d]) || isset($yaProp[$d]) || in_array($d, $excluidos, true)) continue;
+        if (($w['type'] ?? '') === 'paratext' || !titulo_encaja($z['t'], $qs) || !preg_match(ARCILLA, norma($z['t']))) continue;
+        $prop[] = ['fecha' => date('Y-m-d'), 'seccion' => $sec, 'socio' => autor_socio($w, $hist)] + $z;
+        $yaProp[$d] = true; $nuevos++;
       }
       usleep(1000000);
     }
-    /* Pioneros siempre; de los demás, los 10 más citados */
-    $p = array_values(array_filter($lista, fn($z) => !empty($z['p'])));
-    $n = array_values(array_filter($lista, fn($z) => empty($z['p'])));
-    usort($n, fn($a, $b) => ($b['c'] ?? 0) <=> ($a['c'] ?? 0));
-    $quedan = array_slice($n, 0, MAXIMO);
-    foreach (array_slice($n, MAXIMO) as $z) unset($nuevos[strtolower($z['doi'])]);
-    if ($p || $quedan) $R[$g][$k] = array_merge($p, $quedan);
   }
-  guardar_referencias($R);
-  /* Lista de lo añadido en esta actualización, para poder revisarlo en el panel */
-  $hist = leer_json('anadidos.json', []);
-  foreach ($nuevos as $d => $x) $hist[] = ['fecha' => date('Y-m-d'), 'seccion' => $x['s'], 'doi' => $x['z']['doi'], 't' => $x['z']['t'], 'a' => $x['z']['a'], 'y' => $x['z']['y'], 'c' => $x['z']['c']];
-  escribir_json('anadidos.json', array_slice($hist, -60));
+  usort($prop, fn($a, $b) => [$b['socio'], $b['c']] <=> [$a['socio'], $a['c']]);
+  escribir_json('propuestos.json', $prop);
   escribir_json('referencias-fecha.json', ['actualizado' => date('Y-m-d')]);
-  return [count($nuevos), $log];
+  return [$nuevos, $log];
 }
 
-/* Quitar un trabajo (añadido por error) de todas las secciones y no volver a incluirlo */
-function excluir_trabajo(string $doi): void {
-  $d = strtolower($doi); $R = leer_referencias();
-  foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $k => $l) $R[$g][$k] = array_values(array_filter($l, fn($z) => strtolower($z['doi']) !== $d));
+/* Pioneros primero (por año); los demás por citas, como máximo $max */
+function ordenar_seccion(array $l, int $max): array {
+  $p = array_values(array_filter($l, fn($z) => !empty($z['p']))); usort($p, fn($a, $b) => $a['y'] <=> $b['y']);
+  $n = array_values(array_filter($l, fn($z) => empty($z['p']))); usort($n, fn($a, $b) => ($b['c'] ?? 0) <=> ($a['c'] ?? 0));
+  return array_merge($p, array_slice($n, 0, $max));
+}
+function sacar_propuesto(string $doi): ?array {
+  $d = strtolower($doi); $prop = leer_json('propuestos.json', []); $x = null;
+  foreach ($prop as $i => $y) if (strtolower($y['doi']) === $d) { $x = $y; array_splice($prop, $i, 1); break; }
+  escribir_json('propuestos.json', $prop); return $x;
+}
+/* Aceptar: entra en su sección; si ya hay 10, sale el menos citado */
+function aceptar_propuesto(string $doi): void {
+  $x = sacar_propuesto($doi); if (!$x) return;
+  $sec = $x['seccion']; $z = array_intersect_key($x, array_flip(['a', 'y', 't', 'r', 'c', 'doi']));
+  $R = leer_referencias(); $geo = str_starts_with($sec, 'geo:'); $g = $geo ? 'geo' : 'ap'; $k = $geo ? substr($sec, 4) : $sec;
+  $R[$g][$k] = ordenar_seccion(array_merge($R[$g][$k] ?? [], [$z]), MAXIMO);
   guardar_referencias($R);
+}
+/* Descartar: no se vuelve a proponer */
+function descartar_propuesto(string $doi): void {
+  sacar_propuesto($doi);
   $ex = leer_json('excluidos.json', []); $ex[] = $doi; escribir_json('excluidos.json', array_values(array_unique($ex)));
-  escribir_json('anadidos.json', array_values(array_filter(leer_json('anadidos.json', []), fn($x) => strtolower($x['doi']) !== $d)));
 }

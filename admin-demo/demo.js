@@ -47,6 +47,28 @@
     if (bo !== null && confirm("¿Borrar esta noticia?")) { N.splice(+bo, 1); guarda("sea-demo-noticias", N); pintaN(); aviso("Noticia borrada."); }
   };
 
+  /* Trabajos propuestos (ejemplos de la prueba real) */
+  var PR = [
+    { s: "Catálisis", y: 2001, t: "A study of the surface acidity of acid-treated montmorillonite clay catalysts", c: 155, socio: 1 },
+    { s: "Absorbentes", y: 2010, t: "Removal of dyes from wastewaters by adsorption on sepiolite and Pansil", c: 71, socio: 1 },
+    { s: "Azulejos", y: 2006, t: "An empirical study of lean production in the ceramic tile industry in Spain", c: 241 },
+    { s: "Agricultura", y: 2020, t: "Optimization and validation of a QuEChERS-based method for the simultaneous environmental monitoring of 218 pesticide residues in clay loam soil", c: 144 }
+  ];
+  function pintaP() {
+    $("#nprop").textContent = PR.length + " trabajos pendientes";
+    $("#lprop").innerHTML = PR.length ? "<tr><th>Sección</th><th>Trabajo</th><th>Citas</th><th></th></tr>" + PR.map(function (x, i) {
+      return "<tr><td>" + h(x.s) + "</td><td>" + "(" + x.y + ") " + h(x.t) + (x.socio ? "<br><small>Autor socio de la SEA</small>" : "") + "</td><td>" + x.c +
+        '</td><td style="white-space:nowrap"><button data-ac="' + i + '">Aceptar</button> <button class="claro" data-de="' + i + '">Descartar</button></td></tr>';
+    }).join("") : "";
+  }
+  $("#lprop").onclick = function (e) {
+    var ac = e.target.getAttribute("data-ac"), de = e.target.getAttribute("data-de");
+    if (ac !== null) { PR.splice(+ac, 1); aviso("Trabajo aceptado y publicado en su sección (en la prueba no se añade a la web)."); }
+    else if (de !== null) { PR.splice(+de, 1); aviso("Trabajo descartado; no se volverá a proponer."); } else return;
+    pintaP();
+  };
+  pintaP();
+
   /* Socios */
   function pintaS() {
     $("#nsoc").textContent = S.length;

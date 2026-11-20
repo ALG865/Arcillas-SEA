@@ -75,10 +75,11 @@ if (dentro() && $accion !== '' && !in_array($accion, ['entrar', 'crear_clave'], 
       $S = leer_json('socios.json', []); array_splice($S, (int)$_POST['i'], 1); escribir_json('socios.json', $S); $aviso = 'Socio quitado.';
     }
     /* Actualización automática (normalmente no hace falta tocar nada) */
-    if ($accion === 'quitar_trabajo') { excluir_trabajo($_POST['doi'] ?? ''); $aviso = 'Trabajo quitado; no volverá a añadirse.'; }
+    if ($accion === 'aceptar') { aceptar_propuesto($_POST['doi'] ?? ''); $aviso = 'Trabajo aceptado y publicado en su sección.'; }
+    if ($accion === 'descartar') { descartar_propuesto($_POST['doi'] ?? ''); $aviso = 'Trabajo descartado; no se volverá a proponer.'; }
     if ($accion === 'actualizar_todo') {
       [$np] = actualizar_publicaciones(); [$nr] = actualizar_referencias();
-      $aviso = "Hecho: $np publicaciones recientes de socios; $nr trabajos de referencia nuevos.";
+      $aviso = "Hecho: $np publicaciones recientes de socios; $nr trabajos de referencia nuevos propuestos.";
     }
     /* Ajustes */
     if ($accion === 'clave_cambiar') {
@@ -132,7 +133,7 @@ td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{col
 <?php endif; ?></main>
 <?php else: ?>
 <header><b>Panel de la web de la SEA</b>
-<nav><?php foreach (['noticias' => 'Noticias', 'socios' => 'Socios', 'auto' => 'Actualización automática', 'ajustes' => 'Contraseña y copia'] as $k => $v): ?>
+<nav><?php foreach (['noticias' => 'Noticias', 'socios' => 'Socios', 'auto' => 'Trabajos propuestos', 'ajustes' => 'Contraseña y copia'] as $k => $v): ?>
 <a href="?p=<?= $k ?>" class="<?= $pag === $k ? 'activo' : '' ?>"><?= $v ?></a><?php endforeach; ?></nav>
 <a href="../" target="_blank">Ver la web</a> · <a href="?salir=1">Salir</a></header>
 <main>
@@ -176,18 +177,18 @@ td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{col
 <?php foreach ($S as $i => $s): ?><tr><td><?= h($s['n']) ?></td><td><?= h(implode(', ', $s['centro'])) ?></td>
 <td><form method="post" action="?p=socios" onsubmit="return confirm('¿Quitar a esta persona?')"><?= $F ?><input type="hidden" name="accion" value="socio_borrar"><input type="hidden" name="i" value="<?= $i ?>"><button class="claro">Quitar</button></form></td></tr><?php endforeach; ?></table>
 
-<?php elseif ($pag === 'auto'): $P = leer_js('publicaciones.js', 'PUBLICACIONES_SOCIOS') ?? []; $rf = leer_json('referencias-fecha.json', []); $an = array_reverse(leer_json('anadidos.json', [])); ?>
-<h1>Actualización automática</h1>
-<p class="nota">No hace falta hacer nada aquí: cada mes la web busca sola las publicaciones recientes de los socios y los trabajos pioneros o altamente citados (con participación española, al menos 50 citas, los 10 más citados por sección). Los ya incluidos se mantienen salvo que otros más citados los superen.</p>
-<table><tr><th>Publicaciones de socios</th><td><?= h($P['actualizado'] ?? 'nunca') ?> · <?= count($P['obras'] ?? []) ?> artículos</td></tr>
-<tr><th>Trabajos de referencia</th><td><?= h($rf['actualizado'] ?? 'nunca') ?></td></tr></table>
-<form method="post" class="ficha" action="?p=auto" style="margin-top:1rem" onsubmit="this.querySelector('button').textContent='Actualizando… puede tardar unos minutos'"><?= $F ?><input type="hidden" name="accion" value="actualizar_todo"><button class="claro">Actualizar ahora</button></form>
-<h2>Últimos trabajos añadidos solos</h2>
-<p class="nota">Por si alguno no corresponde a su sección: «Quitar» lo elimina y no vuelve a añadirse.</p>
-<?php if (!$an): ?><p class="nota">Ninguno todavía.</p><?php else: ?>
-<table><tr><th>Sección</th><th>Trabajo</th><th></th></tr>
-<?php foreach ($an as $x): ?><tr><td><?= h(SECCIONES[$x['seccion']] ?? $x['seccion']) ?></td><td><?= h($x['a']) ?> (<?= (int)$x['y'] ?>). <a href="https://doi.org/<?= h($x['doi']) ?>" target="_blank"><?= h($x['t']) ?></a></td>
-<td><form method="post" action="?p=auto"><?= $F ?><input type="hidden" name="accion" value="quitar_trabajo"><input type="hidden" name="doi" value="<?= h($x['doi']) ?>"><button class="claro">Quitar</button></form></td></tr><?php endforeach; ?></table><?php endif; ?>
+<?php elseif ($pag === 'auto'): $P = leer_js('publicaciones.js', 'PUBLICACIONES_SOCIOS') ?? []; $rf = leer_json('referencias-fecha.json', []); $pr = leer_json('propuestos.json', []); ?>
+<h1>Trabajos propuestos</h1>
+<p class="nota">Cada mes la web actualiza sola las publicaciones de los socios y las citas de los trabajos pioneros o altamente citados. Si encuentra trabajos nuevos con participación española y muchas citas, no los publica: los deja aquí. Acéptalos solo si tratan de verdad de arcillas en esa aplicación. Si nadie entra, la web sigue igual.</p>
+<table><tr><th>Publicaciones de socios</th><td>actualizadas el <?= h($P['actualizado'] ?? '—') ?> · <?= count($P['obras'] ?? []) ?> artículos</td></tr>
+<tr><th>Trabajos de referencia</th><td>revisados el <?= h($rf['actualizado'] ?? '—') ?></td></tr></table>
+<h2><?= count($pr) ?> trabajos pendientes</h2>
+<?php if (!$pr): ?><p class="nota">No hay ninguno pendiente.</p><?php else: ?>
+<table><tr><th>Sección</th><th>Trabajo</th><th>Citas</th><th></th></tr>
+<?php foreach ($pr as $x): ?><tr><td><?= h(SECCIONES[$x['seccion']] ?? $x['seccion']) ?></td>
+<td><?= h($x['a']) ?> (<?= (int)$x['y'] ?>). <a href="https://doi.org/<?= h($x['doi']) ?>" target="_blank"><?= h($x['t']) ?></a>. <i><?= h($x['r']) ?></i><?= $x['socio'] ? '<br><small>Autor socio de la SEA</small>' : '' ?></td><td><?= (int)$x['c'] ?></td>
+<td style="white-space:nowrap"><?php foreach (['aceptar' => 'Aceptar', 'descartar' => 'Descartar'] as $ac => $et): ?><form method="post" action="?p=auto"><?= $F ?><input type="hidden" name="accion" value="<?= $ac ?>"><input type="hidden" name="doi" value="<?= h($x['doi']) ?>"><button class="<?= $ac === 'descartar' ? 'claro' : '' ?>"><?= $et ?></button></form> <?php endforeach; ?></td></tr><?php endforeach; ?></table><?php endif; ?>
+<form method="post" class="ficha" action="?p=auto" style="margin-top:1.5rem" onsubmit="this.querySelector('button').textContent='Buscando… puede tardar unos minutos'"><?= $F ?><input type="hidden" name="accion" value="actualizar_todo"><button class="claro">Buscar ahora</button></form>
 
 <?php else: ?>
 <h1>Contraseña y copia de seguridad</h1>
