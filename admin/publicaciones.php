@@ -4,10 +4,6 @@
 declare(strict_types=1);
 require_once __DIR__ . '/comun.php';
 
-function norma(string $s): string {
-  $s = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $s) ?: $s;
-  return strtolower($s);
-}
 
 /* Devuelve [número de artículos, mensajes] o lanza una excepción. */
 function actualizar_publicaciones(): array {

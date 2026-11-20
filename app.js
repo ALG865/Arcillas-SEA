@@ -4,6 +4,8 @@
 var lang="es";
 try{ var g=localStorage.getItem("sea-lang"); if(g==="en"||g==="es") lang=g; }catch(e){}
 if(/[?&]lang=en/.test(location.search)) lang="en";
+/* Versión de prueba del panel (admin-demo): las noticias guardadas en este navegador sustituyen a las publicadas. */
+try{ var dn=localStorage.getItem("sea-demo-noticias"); if(dn) window.NOTICIAS=JSON.parse(dn); }catch(e){}
 if(/[?&]lang=es/.test(location.search)) lang="es";
 
 /* ---------------- textos de la interfaz ---------------- */

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Panel de la web · SEA (prueba)</title>
+<style>
+@font-face{font-family:"Instrument Sans";src:url("../fuentes-tipo/instrument-sans-latin-400-normal.woff2") format("woff2")}@font-face{font-family:"Instrument Sans";src:url("../fuentes-tipo/instrument-sans-latin-600-normal.woff2") format("woff2");font-weight:600}
+:root{--fondo:#f5f2ec;--tinta:#2a2520;--suave:#6b625a;--borde:#ddd5c8;--acento:#8f3f22}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 "Instrument Sans",system-ui,sans-serif;background:var(--fondo);color:var(--tinta)}
+header{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;padding:1rem 1.5rem;border-bottom:1px solid var(--borde);background:#fff}
+header b{font-size:1.1rem;margin-right:auto}nav a{color:var(--tinta);text-decoration:none;padding:.3rem .1rem;margin-right:1rem}
+nav a.activo{border-bottom:2px solid var(--acento);font-weight:600}main{max-width:62rem;margin:0 auto;padding:1.5rem}
+h1{font-size:1.5rem;margin:.2rem 0 1rem}h2{font-size:1.15rem;margin:2rem 0 .6rem}
+.aviso,.error{padding:.7rem 1rem;border-radius:6px;margin:0 0 1rem}.aviso{background:#e7f1e3}.error{background:#f6e0da}
+form.ficha{background:#fff;border:1px solid var(--borde);border-radius:8px;padding:1.2rem;display:grid;gap:.8rem}
+label{display:grid;gap:.25rem;font-weight:600;font-size:.92rem}label small{font-weight:400;color:var(--suave)}
+input,select,textarea{font:inherit;padding:.5rem .6rem;border:1px solid var(--borde);border-radius:6px;background:#fff;width:100%}
+textarea{min-height:6rem}.dos{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+button{font:inherit;font-weight:600;padding:.55rem 1.1rem;border-radius:6px;border:1px solid var(--acento);background:var(--acento);color:#fff;cursor:pointer;justify-self:start}
+button.claro{background:#fff;color:var(--acento)}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--borde)}
+td,th{padding:.5rem .6rem;border-bottom:1px solid var(--borde);text-align:left;vertical-align:top;font-size:.93rem}th{background:#faf8f4}
+td form{display:inline}td button{padding:.25rem .6rem;font-size:.85rem}.nota{color:var(--suave);font-size:.92rem}
+.entrar{max-width:24rem;margin:4rem auto}@media(max-width:640px){.dos{grid-template-columns:1fr}}
+</style>
+<style>.prueba{background:#fff4d6;border-bottom:1px solid #e8d49a;padding:.6rem 1.5rem;font-size:.92rem}.oculto{display:none}</style>
+<script src="../noticias.js"></script></head><body>
+<div class="prueba"><b>Versión de prueba.</b> Funciona igual que el panel real, pero los cambios solo se guardan en este navegador y solo los ves tú en «Ver la web». <a href="#" id="reiniciar">Borrar la prueba</a></div>
+<main class="entrar" id="entrada"><h1>Panel de la web de la SEA</h1>
+<p class="nota">En la prueba vale cualquier contraseña.</p>
+<form class="ficha" id="fentrar"><label>Contraseña<input type="password" required autofocus></label><button>Entrar</button></form></main>
+<div id="panel" class="oculto">
+<header><b>Panel de la web de la SEA</b><nav><a href="#noticias" data-p="noticias">Noticias</a><a href="#socios" data-p="socios">Socios</a><a href="#auto" data-p="auto">Actualización automática</a></nav>
+<a href="../#noticias" target="_blank">Ver la web</a> · <a href="#" id="salir">Salir</a></header>
+<main><p class="aviso oculto" id="aviso"></p><p class="error oculto" id="error"></p>
+<section id="p-noticias"><h1 id="tn">Nueva noticia, convocatoria o congreso</h1>
+<form class="ficha" id="fnot"><input type="hidden" name="i">
+<div class="dos"><label>Tipo<select name="tipo"><option value="noticia">Noticia</option><option value="convocatoria">Convocatoria o premio (tiene plazo)</option><option value="evento">Congreso, jornada o evento</option></select></label>
+<label>Fecha <small>(de la noticia o del evento)</small><input type="date" name="fecha" required></label></div>
+<label>Plazo <small>(solo convocatorias: último día para presentarse; después deja de destacarse)</small><input type="date" name="plazo"></label>
+<label>Título<input name="ten" required></label>
+<label>Texto <small>(dos o tres frases)</small><textarea name="tex"></textarea></label>
+<label>Enlace <small>(opcional: página con más información)</small><input type="url" name="url" placeholder="https://…"></label>
+<details><summary>Versión en inglés (opcional; si se deja vacía se muestra el texto en español)</summary>
+<label>Title<input name="tin"></label><label>Text<textarea name="txi"></textarea></label></details>
+<button id="bpub">Publicar</button></form>
+<h2>Noticias publicadas</h2><table id="lnot"></table></section>
+<section id="p-socios" class="oculto"><h1>Socios</h1>
+<p class="nota">Sube el listado actual de socios cuando cambie. Basta un Excel o CSV con columnas <b>Nombre</b>, <b>Apellidos</b> y, si se tiene, <b>Centro</b> de trabajo. Las publicaciones de la web se actualizan solas a partir de este listado; los trabajos de referencia de socios antiguos se conservan.</p>
+<form class="ficha" id="fsoc"><label>Fichero con el listado <small>(.xlsx o .csv)</small><input type="file" accept=".xlsx,.csv,.txt" required></label><button>Cargar listado</button></form>
+<h2>Listado actual (<span id="nsoc"></span>)</h2><table id="lsoc"></table></section>
+<section id="p-auto" class="oculto"><h1>Actualización automática</h1>
+<p class="nota">No hace falta hacer nada aquí: cada mes la web busca sola las publicaciones recientes de los socios y los trabajos pioneros o altamente citados (con participación española, al menos 50 citas, los 10 más citados por sección). Los ya incluidos se mantienen salvo que otros más citados los superen.</p>
+<p class="nota">En el panel real aparece aquí la fecha de la última actualización, un botón «Actualizar ahora» y la lista de los últimos trabajos añadidos solos, con un botón «Quitar» por si alguno no corresponde. En esta prueba no se puede ejecutar porque necesita el servidor.</p></section>
+</main></div>
+<script src="demo.js"></script></body></html>

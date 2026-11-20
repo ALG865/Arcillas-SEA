@@ -43,6 +43,8 @@ const BUSQUEDAS = [
   'geo:geoarqueologia' => ['archaeological ceramics provenance', 'archaeometry clay', 'archaeological pottery clay'],
   'geo:marte' => ['Mars clay', 'Mars phyllosilicates', 'Martian clay', 'Mars smectite'],
 ];
+/* Palabras de arcilla que debe contener el título */
+const ARCILLA = '/\b(clays?|clayey|smectit|montmorillonit|bentonit|kaolin|illit|sepiolit|palygorskit|attapulgit|vermiculit|chlorit|halloysit|hectorit|saponit|beidellit|nontronit|phyllosilicat|organoclay|bionanocomposit|metakaolin|pyrophyllit|talc|mica|layered double hydroxide|hydrotalcit|ldh|peloid|maya blue|febex|adobe|brick|porcelain|stoneware|ceramic|tile|refractor)/';
 const MINIMO = 50, MINIMO_VACIA = 20, MAXIMO = 10;
 
 function raiz_palabra(string $w): string { return substr($w, 0, 6); }
@@ -56,6 +58,21 @@ function titulo_encaja(string $titulo, array $busquedas): bool {
     $ok = true;
     foreach (palabras($q) as $w) if (!str_contains($t, ' ' . raiz_palabra($w))) { $ok = false; break; }
     if ($ok) return true;
+  }
+  return false;
+}
+/* ¿Algún autor con centro español es o fue socio? (apellido + nombre completo o apellido + centro) */
+function autor_socio(array $w, array $socios): bool {
+  foreach ($w['authorships'] ?? [] as $a) {
+    $es = false; $inst = '';
+    foreach ($a['institutions'] ?? [] as $i) { if (($i['country_code'] ?? '') === 'ES') $es = true; $inst .= ' ' . norma($i['display_name'] ?? ''); }
+    if (!$es) continue;
+    $nom = str_replace('-', ' ', norma($a['author']['display_name'] ?? ''));
+    foreach ($socios as $s) {
+      if (!str_contains($nom, norma($s['apellido']))) continue;
+      $pn = norma(explode(' ', $s['n'])[0]);
+      if (str_contains($nom, $pn) || (isset($nom[0], $pn[0]) && $nom[0] === $pn[0])) return true;
+    }
   }
   return false;
 }
@@ -77,13 +94,23 @@ function actualizar_referencias(): array {
   @set_time_limit(600);
   $R = leer_referencias(); $log = []; $nuevos = [];
   $excluidos = array_map('strtolower', leer_json('excluidos.json', []));
+  /* Socios actuales y antiguos (se acumulan: nadie sale de esta lista) */
+  $hist = leer_json('socios-historico.json', null);
+  if ($hist === null) { /* Primera vez: los autores de los trabajos ya seleccionados cuentan como «socios antiguos» */
+    $nombres = [];
+    foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $l) foreach ($l as $z) foreach (preg_split('/, | y /', preg_replace('/ y otros$/', '', $z['a'])) as $n) $nombres[] = [trim($n)];
+    $hist = socios_desde_filas($nombres, []);
+  }
+  $ya = array_map(fn($s) => norma($s['n']), $hist);
+  foreach (leer_json('socios.json', []) as $s) if (!in_array(norma($s['n']), $ya, true)) $hist[] = $s;
+  escribir_json('socios-historico.json', $hist);
   $presentes = [];
   foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $l) foreach ($l as $z) $presentes[strtolower($z['doi'])] = true;
 
   /* 1. Citas al día de los trabajos ya incluidos */
   $dois = array_keys($presentes);
   foreach (array_chunk($dois, 40) as $trozo) {
-    $res = pedir_json('https://api.openalex.org/works?per-page=50&select=doi,cited_by_count&mailto=' . CORREO . '&filter=doi:' . rawurlencode(implode('|', $trozo)));
+    $res = pedir_json('https://api.openalex.org/works?per-page=50&select=doi,cited_by_count&filter=doi:' . rawurlencode(implode('|', $trozo)));
     foreach ($res['results'] ?? [] as $w) {
       $d = strtolower(preg_replace('~^https?://doi\.org/~i', '', (string)$w['doi']));
       foreach (['ap', 'geo'] as $g) foreach ($R[$g] as $k => $l) foreach ($l as $i => $z)
@@ -99,18 +126,19 @@ function actualizar_referencias(): array {
     $normales = array_values(array_filter($lista, fn($z) => empty($z['p'])));
     $umbral = $normales ? MINIMO : MINIMO_VACIA;
     foreach ($qs as $q) {
-      $url = 'https://api.openalex.org/works?per-page=50&sort=cited_by_count:desc&mailto=' . CORREO . '&filter='
+      $url = 'https://api.openalex.org/works?per-page=50&sort=cited_by_count:desc&filter='
         . rawurlencode("institutions.country_code:ES,from_publication_date:1985-01-01,cited_by_count:>" . ($umbral - 1) . ",title_and_abstract.search:$q");
-      $res = pedir_json($url);
-      if ($res === null) { $log[] = "Sin respuesta para «$q»"; usleep(1000000); continue; }
+      $res = pedir_json($url); if ($res === null) { sleep(3); $res = pedir_json($url); }
+      if ($res === null) { $log[] = "Sin respuesta para «{$q}»"; continue; }
       foreach ($res['results'] ?? [] as $w) {
         if (empty($w['doi']) || empty($w['title'])) continue;
         $z = ficha_trabajo($w); $d = strtolower($z['doi']);
         if (isset($presentes[$d]) || in_array($d, $excluidos, true)) continue;
         if (($w['type'] ?? '') === 'paratext' || !titulo_encaja($z['t'], $qs)) continue;
+        if (!preg_match(ARCILLA, norma($z['t'])) || !autor_socio($w, $hist)) continue;
         $lista[] = $z; $presentes[$d] = true; $nuevos[$d] = ['s' => $sec, 'z' => $z];
       }
-      usleep(300000);
+      usleep(1000000);
     }
     /* Pioneros siempre; de los demás, los 10 más citados */
     $p = array_values(array_filter($lista, fn($z) => !empty($z['p'])));

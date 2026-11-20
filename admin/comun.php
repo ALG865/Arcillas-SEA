@@ -137,3 +137,69 @@ function datos_doi(string $doi): ?array {
   }
   return null;
 }
+
+function norma(string $s): string {
+  $s = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $s) ?: $s;
+  return strtolower($s);
+}
+
+/* ---------- Listado de socios desde un fichero (Excel .xlsx o .csv) ---------- */
+function filas_xlsx(string $f): array {
+  if (!class_exists('ZipArchive')) throw new RuntimeException('El servidor no puede leer ficheros Excel; guárdalo como CSV.');
+  $z = new ZipArchive(); if ($z->open($f) !== true) throw new RuntimeException('No se pudo abrir el fichero Excel.');
+  $comp = [];
+  if (($s = $z->getFromName('xl/sharedStrings.xml')) !== false) {
+    $x = simplexml_load_string($s); foreach ($x->si as $si) { $t = ''; foreach ($si->xpath('.//*[local-name()="t"]') as $n) $t .= (string)$n; $comp[] = $t; }
+  }
+  $h = $z->getFromName('xl/worksheets/sheet1.xml'); $z->close();
+  if ($h === false) throw new RuntimeException('El fichero Excel no tiene hojas.');
+  $x = simplexml_load_string($h); $filas = [];
+  foreach ($x->sheetData->row as $row) {
+    $f = [];
+    foreach ($row->c as $c) {
+      preg_match('/^([A-Z]+)/', (string)$c['r'], $m); $col = 0; foreach (str_split($m[1]) as $l) $col = $col * 26 + ord($l) - 64;
+      $v = (string)$c['t'] === 's' ? ($comp[(int)$c->v] ?? '') : ((string)$c['t'] === 'inlineStr' ? (string)$c->is->t : (string)$c->v);
+      $f[$col - 1] = trim($v);
+    }
+    if ($f) { $max = max(array_keys($f)); $fila = []; for ($i = 0; $i <= $max; $i++) $fila[] = $f[$i] ?? ''; $filas[] = $fila; }
+  }
+  return $filas;
+}
+function filas_csv(string $f): array {
+  $txt = file_get_contents($f); if (!mb_check_encoding($txt, 'UTF-8')) $txt = mb_convert_encoding($txt, 'UTF-8', 'Windows-1252');
+  $txt = preg_replace('/^\xEF\xBB\xBF/', '', $txt); $lin = preg_split('/\r\n|\r|\n/', trim($txt));
+  $sep = substr_count($lin[0] ?? '', ';') >= substr_count($lin[0] ?? '', ',') ? ';' : ',';
+  if (substr_count($lin[0] ?? '', "\t") > 0) $sep = "\t";
+  return array_map(fn($l) => array_map('trim', str_getcsv($l, $sep)), array_filter($lin, fn($l) => trim($l) !== ''));
+}
+const PARTICULAS = ['de', 'del', 'la', 'las', 'los', 'y', 'i', 'da', 'van', 'von'];
+function primer_apellido(string $apellidos): string {
+  $p = preg_split('/\s+/', trim($apellidos)); $r = [];
+  foreach ($p as $w) { $r[] = $w; if (!in_array(mb_strtolower($w), PARTICULAS, true)) break; }
+  return explode('-', implode(' ', $r))[0];
+}
+/* Convierte las filas en socios. Reconoce columnas «Nombre», «Apellidos» y «Centro/Institución/Universidad»;
+   o una sola columna con «Apellidos, Nombre» o «Nombre Apellido1 Apellido2». Devuelve [socios, avisos]. */
+function socios_desde_filas(array $filas, array $previos): array {
+  $cab = array_map(fn($c) => norma((string)$c), $filas[0] ?? []); $col = ['nombre' => null, 'apellidos' => null, 'centro' => null];
+  foreach ($cab as $i => $c) {
+    if ($col['apellidos'] === null && str_contains($c, 'apellido')) $col['apellidos'] = $i;
+    elseif ($col['nombre'] === null && (str_contains($c, 'nombre') || $c === 'name' || str_contains($c, 'socio'))) $col['nombre'] = $i;
+    elseif ($col['centro'] === null && preg_match('/centro|instituc|universidad|organismo|empresa|afiliac|lugar de trabajo/', $c)) $col['centro'] = $i;
+  }
+  if ($col['nombre'] !== null || $col['apellidos'] !== null) array_shift($filas); else $col['nombre'] = 0;
+  $ant = []; foreach ($previos as $s) $ant[norma($s['n'])] = $s;
+  $res = []; $vistos = [];
+  foreach ($filas as $f) {
+    $nom = trim($f[$col['nombre']] ?? ''); $ape = $col['apellidos'] !== null ? trim($f[$col['apellidos']] ?? '') : '';
+    if ($ape === '' && str_contains($nom, ',')) { [$ape, $nom] = array_map('trim', explode(',', $nom, 2)); }
+    if ($ape === '') { $p = preg_split('/\s+/', $nom); if (count($p) < 2) continue; $k = (count($p) >= 3 && !str_contains(end($p), "-")) ? 2 : 1; $ape = implode(' ', array_slice($p, -$k)); $nom = implode(' ', array_slice($p, 0, -$k)); }
+    $n = trim("$nom $ape"); $clave = norma($n); if ($n === '' || isset($vistos[$clave])) continue; $vistos[$clave] = true;
+    $centro = $col['centro'] !== null ? trim($f[$col['centro']] ?? '') : '';
+    if (isset($ant[$clave])) { $s = $ant[$clave]; if ($centro !== '' && !in_array($centro, $s['centro'], true)) $s['centro'][] = $centro; $res[] = $s; continue; }
+    $s = ['n' => $n, 'buscar' => $n, 'apellido' => primer_apellido($ape), 'centro' => $centro !== '' ? [$centro] : []];
+    $s['completo'] = $n; // también se acepta el autor cuyo nombre completo coincide exactamente
+    $res[] = $s;
+  }
+  return $res;
+}
