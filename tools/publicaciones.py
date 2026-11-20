@@ -29,7 +29,8 @@ for s in socios:
         nom=norm(a["display_name"]).replace("-"," ")
         pn=nom.split()[0] if nom.split() else ""
         nomok=not s.get("nombre") or pn==s["nombre"] or (len(pn.rstrip("."))==1 and pn[0]==s["nombre"][0]) or s["nombre"] in nom.split()
-        ok=a.get("works_count",0)>0 and nomok and ((norm(s["apellido"]) in nom and any(c in txt for c in claves)) or (s.get("completo") and norm(s["completo"]) in nom))
+        # Candidato por nombre y primer apellido; la afiliación se comprueba después, artículo por artículo
+        ok=a.get("works_count",0)>0 and nomok and norm(s["apellido"]) in nom and bool(s.get("afil"))
         print(("  ✔ " if ok else "  · ")+a["id"].split("/")[-1], a["display_name"], a.get("works_count"), "|", "; ".join(dict.fromkeys(inst))[:160])
         if ok: elegidos.append(a["id"].split("/")[-1])
     if not elegidos: continue
@@ -38,6 +39,14 @@ for s in socios:
     while cursor:
         d=get("https://api.openalex.org/works?per-page=200&cursor="+cursor+"&filter="+urllib.parse.quote(f"author.id:{'|'.join(elegidos)},from_publication_date:{desde},type:article"))
         for w in d["results"]:
+            # El socio debe firmar ESTE artículo con su centro del listado de la SEA
+            claves_af=[norm(x).replace("-"," ") for x in s.get("afil",[])]
+            firma=False
+            for au in w.get("authorships",[]):
+                if (au.get("author") or {}).get("id","").split("/")[-1] not in elegidos: continue
+                t=norm(" | ".join([i.get("display_name","") for i in au.get("institutions",[])]+(au.get("raw_affiliation_strings") or []))).replace("-"," ")
+                if any(c in t for c in claves_af): firma=True
+            if not firma: continue
             src=((w.get("primary_location") or {}).get("source") or {})
             if src.get("type")!="journal": continue
             k=(w.get("doi") or w["id"]).lower()

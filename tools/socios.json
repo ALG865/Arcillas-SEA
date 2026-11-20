@@ -7,7 +7,15 @@
   "centro": [
    "jaen"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "university of jaen",
+   "universidad de jaen",
+   "universitat de jaen",
+   "universidade de jaen",
+   "universita degli studi di jaen",
+   "universidade do jaen"
+  ]
  },
  {
   "n": "Jacinto Alonso Azcarate",
@@ -18,7 +26,10 @@
    "castilla",
    "toledo"
   ],
-  "nombre": "jacinto"
+  "nombre": "jacinto",
+  "afil": [
+   "castilla la mancha"
+  ]
  },
  {
   "n": "Patricia Aparicio Fernandez",
@@ -29,7 +40,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "patricia"
+  "nombre": "patricia",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Javier Aróstegui García",
@@ -42,7 +67,12 @@
    "euskal",
    "bilbao"
   ],
-  "nombre": "javier"
+  "nombre": "javier",
+  "afil": [
+   "basque country",
+   "pais vasco",
+   "euskal herriko"
+  ]
  },
  {
   "n": "Xabier Arroyo Rey",
@@ -52,7 +82,10 @@
   "centro": [
    "complutense"
   ],
-  "nombre": "xabier"
+  "nombre": "xabier",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Blanca Bauluz Lazaro",
@@ -62,7 +95,17 @@
   "centro": [
    "zaragoza"
   ],
-  "nombre": "blanca"
+  "nombre": "blanca",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of zaragoza",
+   "universidad de zaragoza",
+   "universitat de zaragoza",
+   "universidade de zaragoza",
+   "universita degli studi di zaragoza",
+   "universidade do zaragoza"
+  ]
  },
  {
   "n": "Carolina Belver Coldeira",
@@ -76,7 +119,13 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "carolina"
+  "nombre": "carolina",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid",
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "María José Bentabol Manzanares",
@@ -86,7 +135,15 @@
   "centro": [
    "malaga"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "university of malaga",
+   "universidad de malaga",
+   "universitat de malaga",
+   "universidade de malaga",
+   "universita degli studi di malaga",
+   "universidade do malaga"
+  ]
  },
  {
   "n": "Leopoldo Bisbal Cervello",
@@ -96,7 +153,11 @@
   "centro": [
    "valencia"
   ],
-  "nombre": "leopoldo"
+  "nombre": "leopoldo",
+  "afil": [
+   "politecnica de valencia",
+   "polytechnic university of valencia"
+  ]
  },
  {
   "n": "María Isabel Carretero León",
@@ -107,7 +168,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "mariaisabel"
+  "nombre": "mariaisabel",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Jaime Cuevas Rodríguez",
@@ -117,7 +192,11 @@
    "Universidad Autónoma de Madrid",
    "Complutense"
   ],
-  "nombre": "jaime"
+  "nombre": "jaime",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "María Jose de la Torre Lopez",
@@ -128,7 +207,15 @@
    "jaen",
    "linares"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "university of jaen",
+   "universidad de jaen",
+   "universitat de jaen",
+   "universidade de jaen",
+   "universita degli studi di jaen",
+   "universidade do jaen"
+  ]
  },
  {
   "n": "Carmen del Hoyo Martinez",
@@ -138,7 +225,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "carmen"
+  "nombre": "carmen",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "María Carmen Dominguez Diaz",
@@ -152,7 +247,11 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Jose Fernandez Barrenechea",
@@ -163,7 +262,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Raul Fernandez Martin",
@@ -177,7 +279,11 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "raul"
+  "nombre": "raul",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Ana María Fernandez Diaz",
@@ -189,7 +295,12 @@
    "ciemat",
    "madrid"
   ],
-  "nombre": "ana"
+  "nombre": "ana",
+  "afil": [
+   "complutense",
+   "ciemat",
+   "centro de investigaciones energeticas"
+  ]
  },
  {
   "n": "Francisco Ignacio Franco Duro",
@@ -199,7 +310,15 @@
   "centro": [
    "malaga"
   ],
-  "nombre": "francisco"
+  "nombre": "francisco",
+  "afil": [
+   "university of malaga",
+   "universidad de malaga",
+   "universitat de malaga",
+   "universidade de malaga",
+   "universita degli studi di malaga",
+   "universidade do malaga"
+  ]
  },
  {
   "n": "Javier García Rivas",
@@ -209,7 +328,12 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "javier"
+  "nombre": "javier",
+  "afil": [
+   "basque country",
+   "pais vasco",
+   "euskal herriko"
+  ]
  },
  {
   "n": "Emilia Garcia Romero",
@@ -220,7 +344,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "emilia"
+  "nombre": "emilia",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Jacinta Garcia Talegon",
@@ -230,7 +357,17 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "jacinta"
+  "nombre": "jacinta",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology",
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Isidoro Gomez Parrales",
@@ -241,7 +378,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "isidoro"
+  "nombre": "isidoro",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Isabel Gonzalez Diez",
@@ -252,7 +403,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "isabel"
+  "nombre": "isabel",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Javier Huertas Puerta",
@@ -262,7 +427,13 @@
   "centro": [
    "Andaluz de Ciencias de la Tierra"
   ],
-  "nombre": "javier"
+  "nombre": "javier",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of granada",
+   "universidad de granada"
+  ]
  },
  {
   "n": "Isabel Iglesias Martín",
@@ -272,7 +443,8 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "isabel"
+  "nombre": "isabel",
+  "afil": []
  },
  {
   "n": "Juan Jimenez Millan",
@@ -282,7 +454,15 @@
   "centro": [
    "jaen"
   ],
-  "nombre": "juan"
+  "nombre": "juan",
+  "afil": [
+   "university of jaen",
+   "universidad de jaen",
+   "universitat de jaen",
+   "universidade de jaen",
+   "universita degli studi di jaen",
+   "universidade do jaen"
+  ]
  },
  {
   "n": "Manuel Miguel Jordan Vidal",
@@ -294,7 +474,16 @@
    "elche",
    "alicante"
   ],
-  "nombre": "manuel"
+  "nombre": "manuel",
+  "afil": [
+   "miguel hernandez",
+   "university of alicante",
+   "universidad de alicante",
+   "universitat de alicante",
+   "universidade de alicante",
+   "universita degli studi di alicante",
+   "universidade do alicante"
+  ]
  },
  {
   "n": "Alberto López Galindo",
@@ -303,7 +492,13 @@
   "centro": [
    "Andaluz de Ciencias de la Tierra"
   ],
-  "nombre": "alberto"
+  "nombre": "alberto",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of granada",
+   "universidad de granada"
+  ]
  },
  {
   "n": "Aurora Lopez Munguira",
@@ -314,7 +509,15 @@
    "badajoz",
    "extremadura"
   ],
-  "nombre": "aurora"
+  "nombre": "aurora",
+  "afil": [
+   "university of extremadura",
+   "universidad de extremadura",
+   "universitat de extremadura",
+   "universidade de extremadura",
+   "universita degli studi di extremadura",
+   "universidade do extremadura"
+  ]
  },
  {
   "n": "Francisca Martinez Ruiz",
@@ -324,7 +527,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "francisca"
+  "nombre": "francisca",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Txomín Marza Fernández de Gamboa",
@@ -335,7 +546,10 @@
    "castellon",
    "jaume"
   ],
-  "nombre": "txomin"
+  "nombre": "txomin",
+  "afil": [
+   "jaume"
+  ]
  },
  {
   "n": "María Pilar Mata Campo",
@@ -345,7 +559,15 @@
   "centro": [
    "cadiz"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "university of cadiz",
+   "universidad de cadiz",
+   "universitat de cadiz",
+   "universidade de cadiz",
+   "universita degli studi di cadiz",
+   "universidade do cadiz"
+  ]
  },
  {
   "n": "María Jose Mayayo Burillo",
@@ -355,7 +577,17 @@
   "centro": [
    "zaragoza"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of zaragoza",
+   "universidad de zaragoza",
+   "universitat de zaragoza",
+   "universidade de zaragoza",
+   "universita degli studi di zaragoza",
+   "universidade do zaragoza"
+  ]
  },
  {
   "n": "Beyene Meaza Tsige",
@@ -365,7 +597,10 @@
   "centro": [
    "complutense"
   ],
-  "nombre": "beyene"
+  "nombre": "beyene",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Adolfo Miras Ruiz",
@@ -376,7 +611,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "adolfo"
+  "nombre": "adolfo",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Juan Morales Sánchez-migallón",
@@ -386,7 +635,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "juan"
+  "nombre": "juan",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Esmeralda Morillo Gonzalez",
@@ -397,7 +654,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "esmeralda"
+  "nombre": "esmeralda",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology"
+  ]
  },
  {
   "n": "Fernando Nieto Garcia",
@@ -407,7 +668,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "fernando"
+  "nombre": "fernando",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Marta Pelayo Bayon",
@@ -418,7 +687,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "marta"
+  "nombre": "marta",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Manuel Pozo Rodríguez",
@@ -432,7 +704,11 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "manuel"
+  "nombre": "manuel",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Maria Dolores Rodriguez Ruiz",
@@ -442,7 +718,15 @@
   "centro": [
    "malaga"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "university of malaga",
+   "universidad de malaga",
+   "universitat de malaga",
+   "universidade de malaga",
+   "universita degli studi di malaga",
+   "universidade do malaga"
+  ]
  },
  {
   "n": "Ana Isabel Ruiz Garcia",
@@ -452,7 +736,11 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "ana"
+  "nombre": "ana",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Claro Ignacio Sainz Diaz",
@@ -462,7 +750,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "claro"
+  "nombre": "claro",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Angel Sanchez Bellon",
@@ -472,7 +768,15 @@
   "centro": [
    "cadiz"
   ],
-  "nombre": "angel"
+  "nombre": "angel",
+  "afil": [
+   "university of cadiz",
+   "universidad de cadiz",
+   "universitat de cadiz",
+   "universidade de cadiz",
+   "universita degli studi di cadiz",
+   "universidade do cadiz"
+  ]
  },
  {
   "n": "Carlos Sanchez Jimenez",
@@ -483,7 +787,10 @@
    "castilla",
    "ciudad real"
   ],
-  "nombre": "carlos"
+  "nombre": "carlos",
+  "afil": [
+   "castilla la mancha"
+  ]
  },
  {
   "n": "María Jesus Sanchez Martin",
@@ -493,7 +800,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Julio Santaren Rome",
@@ -504,7 +819,10 @@
    "tolsa",
    "madrid"
   ],
-  "nombre": "julio"
+  "nombre": "julio",
+  "afil": [
+   "tolsa"
+  ]
  },
  {
   "n": "Eduardo Sebastián Pardo",
@@ -514,7 +832,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "eduardo"
+  "nombre": "eduardo",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Mercedes Suárez Barrios",
@@ -525,7 +851,11 @@
    "University of Salamanca"
   ],
   "completo": "Mercedes Suarez Barrios",
-  "nombre": "mercedes"
+  "nombre": "mercedes",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca"
+  ]
  },
  {
   "n": "Esperança Tauler Ferre",
@@ -535,7 +865,15 @@
   "centro": [
    "barcelona"
   ],
-  "nombre": "esperanca"
+  "nombre": "esperanca",
+  "afil": [
+   "university of barcelona",
+   "universidad de barcelona",
+   "universitat de barcelona",
+   "universidade de barcelona",
+   "universita degli studi di barcelona",
+   "universidade do barcelona"
+  ]
  },
  {
   "n": "Tomás Undabeytia López",
@@ -546,7 +884,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "tomas"
+  "nombre": "tomas",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology"
+  ]
  },
  {
   "n": "Miguel Angel Vicente Rodríguez",
@@ -556,7 +898,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "miguel"
+  "nombre": "miguel",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Maria Victoria Villar Galicia",
@@ -568,7 +918,12 @@
    "ciemat",
    "madrid"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "complutense",
+   "ciemat",
+   "centro de investigaciones energeticas"
+  ]
  },
  {
   "n": "Cesar Viseras Iborra",
@@ -578,7 +933,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "cesar"
+  "nombre": "cesar",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Africa Yebra Rodriguez",
@@ -588,7 +951,15 @@
   "centro": [
    "jaen"
   ],
-  "nombre": "africa"
+  "nombre": "africa",
+  "afil": [
+   "university of jaen",
+   "universidad de jaen",
+   "universitat de jaen",
+   "universidade de jaen",
+   "universita degli studi di jaen",
+   "universidade do jaen"
+  ]
  },
  {
   "n": "Alfonso Yuste Oliete",
@@ -598,7 +969,17 @@
   "centro": [
    "zaragoza"
   ],
-  "nombre": "alfonso"
+  "nombre": "alfonso",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of zaragoza",
+   "universidad de zaragoza",
+   "universitat de zaragoza",
+   "universidade de zaragoza",
+   "universita degli studi di zaragoza",
+   "universidade do zaragoza"
+  ]
  },
  {
   "n": "María Cruz Zuluaga Ibargallartu",
@@ -611,7 +992,12 @@
    "euskal",
    "bilbao"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "basque country",
+   "pais vasco",
+   "euskal herriko"
+  ]
  },
  {
   "n": "Eusebio Alcaraz Tito",
@@ -621,7 +1007,8 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "eusebio"
+  "nombre": "eusebio",
+  "afil": []
  },
  {
   "n": "Pilar Aranda Gallego",
@@ -635,7 +1022,13 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "pilar"
+  "nombre": "pilar",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid",
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "Arturo Bascones Lopez",
@@ -645,7 +1038,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "arturo"
+  "nombre": "arturo",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Margarita Darder Colom",
@@ -659,7 +1060,13 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "margarita"
+  "nombre": "margarita",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid",
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "Rafael Delgado Calvo-flores",
@@ -669,7 +1076,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "rafael"
+  "nombre": "rafael",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Nathalie Fagel",
@@ -677,7 +1092,10 @@
   "apellido": "fagel",
   "completo": "Nathalie Fagel",
   "centro": [],
-  "nombre": "nathalie"
+  "nombre": "nathalie",
+  "afil": [
+   "liege"
+  ]
  },
  {
   "n": "Cristina Fernandez Barranco",
@@ -687,7 +1105,15 @@
   "centro": [
    "jaen"
   ],
-  "nombre": "cristina"
+  "nombre": "cristina",
+  "afil": [
+   "university of jaen",
+   "universidad de jaen",
+   "universitat de jaen",
+   "universidade de jaen",
+   "universita degli studi di jaen",
+   "universidade do jaen"
+  ]
  },
  {
   "n": "Juan Carlos Fernandez Caliani",
@@ -697,7 +1123,15 @@
   "centro": [
    "huelva"
   ],
-  "nombre": "juan"
+  "nombre": "juan",
+  "afil": [
+   "university of huelva",
+   "universidad de huelva",
+   "universitat de huelva",
+   "universidade de huelva",
+   "universita degli studi di huelva",
+   "universidade do huelva"
+  ]
  },
  {
   "n": "Saverio Fiore",
@@ -705,7 +1139,11 @@
   "apellido": "fiore",
   "completo": "Saverio Fiore",
   "centro": [],
-  "nombre": "saverio"
+  "nombre": "saverio",
+  "afil": [
+   "metodologie per l",
+   "imaa"
+  ]
  },
  {
   "n": "Francisco Javier Luque del Villar",
@@ -716,7 +1154,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "francisco"
+  "nombre": "francisco",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Domingo Martin Garcia",
@@ -727,7 +1168,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "domingo"
+  "nombre": "domingo",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Almudena Ortega Martos",
@@ -741,7 +1196,11 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "almudena"
+  "nombre": "almudena",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Inmaculada Palomo Delgado",
@@ -749,7 +1208,11 @@
   "apellido": "palomo",
   "completo": "Inmaculada Palomo Delgado",
   "centro": [],
-  "nombre": "inmaculada"
+  "nombre": "inmaculada",
+  "afil": [
+   "university of granada",
+   "universidad de granada"
+  ]
  },
  {
   "n": "Manuel Rodriguez Rastrero",
@@ -761,7 +1224,11 @@
    "ciemat",
    "madrid"
   ],
-  "nombre": "manuel"
+  "nombre": "manuel",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Pedro Jose Sanchez Soto",
@@ -772,7 +1239,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "pedro"
+  "nombre": "pedro",
+  "afil": [
+   "materiales de sevilla",
+   "materials science institute of seville"
+  ]
  },
  {
   "n": "Joaquin Vila Barbera",
@@ -783,7 +1254,10 @@
    "castellon",
    "jaume"
   ],
-  "nombre": "joaquin"
+  "nombre": "joaquin",
+  "afil": [
+   "jaume"
+  ]
  },
  {
   "n": "Cristina Villanova de Benavent",
@@ -793,7 +1267,17 @@
   "centro": [
    "barcelona"
   ],
-  "nombre": "cristina"
+  "nombre": "cristina",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of barcelona",
+   "universidad de barcelona",
+   "universitat de barcelona",
+   "universidade de barcelona",
+   "universita degli studi di barcelona",
+   "universidade do barcelona"
+  ]
  },
  {
   "n": "María Angulo Martínez",
@@ -803,7 +1287,8 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": []
  },
  {
   "n": "Ana María Borrego Sánchez",
@@ -814,7 +1299,11 @@
    "andaluz de ciencias de la tierra",
    "granada"
   ],
-  "nombre": "ana"
+  "nombre": "ana",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences"
+  ]
  },
  {
   "n": "Esperanza Carazo Gil",
@@ -824,7 +1313,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "esperanza"
+  "nombre": "esperanza",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Beatriz Carbonell Barrios",
@@ -835,7 +1332,11 @@
    "ciemat",
    "madrid"
   ],
-  "nombre": "beatriz"
+  "nombre": "beatriz",
+  "afil": [
+   "ciemat",
+   "centro de investigaciones energeticas"
+  ]
  },
  {
   "n": "Pablo del Buey Fernandez",
@@ -846,7 +1347,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "pablo"
+  "nombre": "pablo",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Esperanza Durán Reina",
@@ -857,7 +1361,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "esperanza"
+  "nombre": "esperanza",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology"
+  ]
  },
  {
   "n": "Laura García-españa Soriano",
@@ -867,7 +1375,12 @@
   "centro": [
    "valencia"
   ],
-  "nombre": "laura"
+  "nombre": "laura",
+  "afil": [
+   "university of valencia",
+   "universitat de valencia",
+   "universidad de valencia"
+  ]
  },
  {
   "n": "María Del Mar González del Campo Rodríguez-barbero",
@@ -881,7 +1394,11 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Juan Emilio Herranz Luque",
@@ -889,7 +1406,8 @@
   "apellido": "herranz",
   "completo": "Juan Emilio Herranz Luque",
   "centro": [],
-  "nombre": "juan"
+  "nombre": "juan",
+  "afil": []
  },
  {
   "n": "Rachid Khatem",
@@ -900,7 +1418,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "rachid"
+  "nombre": "rachid",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Elisa Laita Florián",
@@ -910,7 +1442,15 @@
   "centro": [
    "zaragoza"
   ],
-  "nombre": "elisa"
+  "nombre": "elisa",
+  "afil": [
+   "university of zaragoza",
+   "universidad de zaragoza",
+   "universitat de zaragoza",
+   "universidade de zaragoza",
+   "universita degli studi di zaragoza",
+   "universidade do zaragoza"
+  ]
  },
  {
   "n": "Daniel Lamarca Irisarri",
@@ -921,7 +1461,17 @@
    "andaluz de ciencias de la tierra",
    "granada"
   ],
-  "nombre": "daniel"
+  "nombre": "daniel",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Adrián Lorenzo Hernández",
@@ -931,7 +1481,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "adrian"
+  "nombre": "adrian",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Yesenia Stephanie Martinez Lama",
@@ -941,7 +1499,15 @@
   "centro": [
    "salamanca"
   ],
-  "nombre": "yesenia"
+  "nombre": "yesenia",
+  "afil": [
+   "university of salamanca",
+   "universidad de salamanca",
+   "universitat de salamanca",
+   "universidade de salamanca",
+   "universita degli studi di salamanca",
+   "universidade do salamanca"
+  ]
  },
  {
   "n": "Jose Manuel Moreno Maroto",
@@ -952,7 +1518,10 @@
    "castilla",
    "toledo"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "castilla la mancha"
+  ]
  },
  {
   "n": "Laura Pardo Canales",
@@ -962,7 +1531,15 @@
   "centro": [
    "malaga"
   ],
-  "nombre": "laura"
+  "nombre": "laura",
+  "afil": [
+   "university of malaga",
+   "universidad de malaga",
+   "universitat de malaga",
+   "universidade de malaga",
+   "universita degli studi di malaga",
+   "universidade do malaga"
+  ]
  },
  {
   "n": "Ediana Paula Rebitski",
@@ -972,7 +1549,11 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "ediana"
+  "nombre": "ediana",
+  "afil": [
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "Mercedes Regadio Garcia",
@@ -980,7 +1561,10 @@
   "apellido": "regadio",
   "completo": "Mercedes Regadio Garcia",
   "centro": [],
-  "nombre": "mercedes"
+  "nombre": "mercedes",
+  "afil": [
+   "leuven"
+  ]
  },
  {
   "n": "Jesús Javier Rey Samper",
@@ -991,7 +1575,11 @@
    "ciemat",
    "madrid"
   ],
-  "nombre": "jesus"
+  "nombre": "jesus",
+  "afil": [
+   "ciemat",
+   "centro de investigaciones energeticas"
+  ]
  },
  {
   "n": "Alberto Sánchez Encinar",
@@ -1002,7 +1590,11 @@
    "andaluz de ciencias de la tierra",
    "granada"
   ],
-  "nombre": "alberto"
+  "nombre": "alberto",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences"
+  ]
  },
  {
   "n": "Catalina Sanchez Roa",
@@ -1012,7 +1604,15 @@
   "centro": [
    "jaen"
   ],
-  "nombre": "catalina"
+  "nombre": "catalina",
+  "afil": [
+   "university of jaen",
+   "universidad de jaen",
+   "universitat de jaen",
+   "universidade de jaen",
+   "universita degli studi di jaen",
+   "universidade do jaen"
+  ]
  },
  {
   "n": "Bernd Wicklein",
@@ -1022,7 +1622,11 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "bernd"
+  "nombre": "bernd",
+  "afil": [
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "Daniel Gonzalez Santamaria",
@@ -1032,7 +1636,11 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "daniel"
+  "nombre": "daniel",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Ana María Andrés Gomez de Barreda",
@@ -1046,7 +1654,13 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "ana"
+  "nombre": "ana",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid",
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "Francisco Aragon de la Cruz",
@@ -1056,7 +1670,8 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "francisco"
+  "nombre": "francisco",
+  "afil": []
  },
  {
   "n": "Joaquín Bastida Cuairan",
@@ -1066,7 +1681,15 @@
   "centro": [
    "valencia"
   ],
-  "nombre": "joaquin"
+  "nombre": "joaquin",
+  "afil": [
+   "university of valencia",
+   "universitat de valencia",
+   "universidad de valencia",
+   "universidade de valencia",
+   "universita degli studi di valencia",
+   "universidade do valencia"
+  ]
  },
  {
   "n": "Nicolas Bellinfante Crocci",
@@ -1077,7 +1700,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "nicolas"
+  "nombre": "nicolas",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Jose María Brell Parlade",
@@ -1088,7 +1725,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Manuel Carames Lorite",
@@ -1099,7 +1739,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "manuel"
+  "nombre": "manuel",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Blanca Casal Piga",
@@ -1109,7 +1752,11 @@
   "centro": [
    "madrid"
   ],
-  "nombre": "blanca"
+  "nombre": "blanca",
+  "afil": [
+   "cenim",
+   "investigaciones metalurgicas"
+  ]
  },
  {
   "n": "Hervé Chamley",
@@ -1117,7 +1764,10 @@
   "apellido": "chamley",
   "completo": "Hervé Chamley",
   "centro": [],
-  "nombre": "herve"
+  "nombre": "herve",
+  "afil": [
+   "lille"
+  ]
  },
  {
   "n": "Juan Cornejo Suero",
@@ -1128,7 +1778,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "juan"
+  "nombre": "juan",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology"
+  ]
  },
  {
   "n": "Carlos de la Fuente Cullel",
@@ -1138,7 +1792,15 @@
   "centro": [
    "barcelona"
   ],
-  "nombre": "carlos"
+  "nombre": "carlos",
+  "afil": [
+   "university of barcelona",
+   "universidad de barcelona",
+   "universitat de barcelona",
+   "universidade de barcelona",
+   "universita degli studi di barcelona",
+   "universidade do barcelona"
+  ]
  },
  {
   "n": "Purificacion Fenoll Hachh-ali",
@@ -1148,7 +1810,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "purificacion"
+  "nombre": "purificacion",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Ray E. Ferrell",
@@ -1156,7 +1826,10 @@
   "apellido": "ferrell",
   "completo": "Ray E. Ferrell",
   "centro": [],
-  "nombre": "ray"
+  "nombre": "ray",
+  "afil": [
+   "louisiana state"
+  ]
  },
  {
   "n": "Emilio Galan Huertos",
@@ -1167,7 +1840,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "emilio"
+  "nombre": "emilio",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Antonio Gallego de Torres",
@@ -1175,7 +1862,8 @@
   "apellido": "gallego",
   "completo": "Antonio Gallego de Torres",
   "centro": [],
-  "nombre": "antonio"
+  "nombre": "antonio",
+  "afil": []
  },
  {
   "n": "Celso Gomes",
@@ -1183,7 +1871,15 @@
   "apellido": "gomes",
   "completo": "Celso Gomes",
   "centro": [],
-  "nombre": "celso"
+  "nombre": "celso",
+  "afil": [
+   "university of aveiro",
+   "universidad de aveiro",
+   "universitat de aveiro",
+   "universidade de aveiro",
+   "universita degli studi di aveiro",
+   "universidade do aveiro"
+  ]
  },
  {
   "n": "Jose Manuel Gonzalez Lopez",
@@ -1193,7 +1889,17 @@
   "centro": [
    "zaragoza"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "ciencias de la tierra",
+   "earth sciences",
+   "university of zaragoza",
+   "universidad de zaragoza",
+   "universitat de zaragoza",
+   "universidade de zaragoza",
+   "universita degli studi di zaragoza",
+   "universidade do zaragoza"
+  ]
  },
  {
   "n": "Francisco Huertas García",
@@ -1204,7 +1910,10 @@
    "zaidin",
    "granada"
   ],
-  "nombre": "francisco"
+  "nombre": "francisco",
+  "afil": [
+   "zaidin"
+  ]
  },
  {
   "n": "Jiri Konta",
@@ -1212,7 +1921,10 @@
   "apellido": "konta",
   "completo": "Jiri Konta",
   "centro": [],
-  "nombre": "jiri"
+  "nombre": "jiri",
+  "afil": [
+   "charles university"
+  ]
  },
  {
   "n": "Gerhard Lagaly",
@@ -1220,7 +1932,10 @@
   "apellido": "lagaly",
   "completo": "Gerhard Lagaly",
   "centro": [],
-  "nombre": "gerhard"
+  "nombre": "gerhard",
+  "afil": [
+   "kiel"
+  ]
  },
  {
   "n": "Santiago Leguey Jimenez",
@@ -1234,7 +1949,11 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "santiago"
+  "nombre": "santiago",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid"
+  ]
  },
  {
   "n": "Jose Linares Gonzalez",
@@ -1245,7 +1964,10 @@
    "zaidin",
    "granada"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "zaidin"
+  ]
  },
  {
   "n": "Francisco Lopez Aguayo",
@@ -1255,7 +1977,15 @@
   "centro": [
    "cadiz"
   ],
-  "nombre": "francisco"
+  "nombre": "francisco",
+  "afil": [
+   "university of cadiz",
+   "universidad de cadiz",
+   "universitat de cadiz",
+   "universidade de cadiz",
+   "universita degli studi di cadiz",
+   "universidade do cadiz"
+  ]
  },
  {
   "n": "Celia Maqueda Porras",
@@ -1266,7 +1996,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "celia"
+  "nombre": "celia",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology"
+  ]
  },
  {
   "n": "Pier Paolo Mattias",
@@ -1274,7 +2008,10 @@
   "apellido": "mattias",
   "completo": "Pier Paolo Mattias",
   "centro": [],
-  "nombre": "pier"
+  "nombre": "pier",
+  "afil": [
+   "camerino"
+  ]
  },
  {
   "n": "Jose María Mesa Lopez-colmenar",
@@ -1285,7 +2022,21 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "university of seville",
+   "universidad de seville",
+   "universitat de seville",
+   "universidade de seville",
+   "universita degli studi di seville",
+   "universidade do seville",
+   "university of sevilla",
+   "universidad de sevilla",
+   "universitat de sevilla",
+   "universidade de sevilla",
+   "universita degli studi di sevilla",
+   "universidade do sevilla"
+  ]
  },
  {
   "n": "Shlomo Nir",
@@ -1293,7 +2044,10 @@
   "apellido": "nir",
   "completo": "Shlomo Nir",
   "centro": [],
-  "nombre": "shlomo"
+  "nombre": "shlomo",
+  "afil": [
+   "hebrew university"
+  ]
  },
  {
   "n": "Jose Luis Perez Rodriguez",
@@ -1304,7 +2058,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "jose"
+  "nombre": "jose",
+  "afil": [
+   "materiales de sevilla",
+   "materials science institute of seville"
+  ]
  },
  {
   "n": "Thomas J. Pinnavaia",
@@ -1312,7 +2070,10 @@
   "apellido": "pinnavaia",
   "completo": "Thomas J. Pinnavaia",
   "centro": [],
-  "nombre": "thomas"
+  "nombre": "thomas",
+  "afil": [
+   "michigan state"
+  ]
  },
  {
   "n": "Magdalena Rodas González",
@@ -1323,7 +2084,10 @@
    "complutense",
    "madrid"
   ],
-  "nombre": "magdalena"
+  "nombre": "magdalena",
+  "afil": [
+   "complutense"
+  ]
  },
  {
   "n": "Eduardo Ruiz Hitzky",
@@ -1337,7 +2101,13 @@
    "cantoblanco",
    "madrid"
   ],
-  "nombre": "eduardo"
+  "nombre": "eduardo",
+  "afil": [
+   "autonoma de madrid",
+   "autonomous university of madrid",
+   "materiales de madrid",
+   "materials science institute of madrid"
+  ]
  },
  {
   "n": "Henri Van Damme",
@@ -1345,7 +2115,10 @@
   "apellido": "van",
   "completo": "Henri Van Damme",
   "centro": [],
-  "nombre": "henri"
+  "nombre": "henri",
+  "afil": [
+   "espci"
+  ]
  },
  {
   "n": "Andres Varela Martinez",
@@ -1355,7 +2128,8 @@
   "centro": [
    "lugo"
   ],
-  "nombre": "andres"
+  "nombre": "andres",
+  "afil": []
  },
  {
   "n": "Miguel Vargas Muñoz",
@@ -1365,7 +2139,15 @@
   "centro": [
    "granada"
   ],
-  "nombre": "miguel"
+  "nombre": "miguel",
+  "afil": [
+   "university of granada",
+   "universidad de granada",
+   "universitat de granada",
+   "universidade de granada",
+   "universita degli studi di granada",
+   "universidade do granada"
+  ]
  },
  {
   "n": "Fernando Veniale",
@@ -1373,7 +2155,10 @@
   "apellido": "veniale",
   "completo": "Fernando Veniale",
   "centro": [],
-  "nombre": "fernando"
+  "nombre": "fernando",
+  "afil": [
+   "pavia"
+  ]
  },
  {
   "n": "Armin Weiss",
@@ -1381,7 +2166,12 @@
   "apellido": "weiss",
   "completo": "Armin Weiss",
   "centro": [],
-  "nombre": "armin"
+  "nombre": "armin",
+  "afil": [
+   "munich",
+   "munchen",
+   "ludwig maximilian"
+  ]
  },
  {
   "n": "Angel Justo Erbez",
@@ -1392,7 +2182,11 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "angel"
+  "nombre": "angel",
+  "afil": [
+   "materiales de sevilla",
+   "materials science institute of seville"
+  ]
  },
  {
   "n": "María Carmen Hermosin Gaviño",
@@ -1403,6 +2197,10 @@
    "sevilla",
    "seville"
   ],
-  "nombre": "maria"
+  "nombre": "maria",
+  "afil": [
+   "recursos naturales y agrobiologia",
+   "natural resources and agrobiology"
+  ]
  }
 ]
