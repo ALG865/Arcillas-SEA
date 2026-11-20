@@ -1,5 +1,9 @@
 name: Filtrar publicaciones
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      solo_ver:
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -8,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 tools/filtrar_pubs.py
+        env:
+          SOLO_VER: ${{ inputs.solo_ver }}
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

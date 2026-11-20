@@ -34,7 +34,8 @@ for o in obras:
             nm=norm((au.get("author") or {}).get("display_name") or ""); pn=nm.split()[0] if nm.split() else ""
             if ap not in nm or not (pn==nom or (len(pn.rstrip("."))==1 and nom and pn[0]==nom[0]) or nom in nm.split()): continue
             t=norm(" | ".join([(i.get("display_name") or "") for i in (au.get("institutions") or [])]+(au.get("raw_affiliation_strings") or [])))
-            if any(c in t for c in claves): ok.append(sn); break
+            hit=[c for c in claves if c in t]
+            if hit: ok.append(sn); print('DENTRO |',sn,'|',hit[0],'|',o.get('t','')[:100]); break
     campo=(((w.get("primary_topic") or {}).get("field") or {}).get("display_name") or "")
     tema=re.search(TEMA,norm(o.get("t","")))
     if ok and (tema or campo in CAMPOS):
@@ -42,4 +43,5 @@ for o in obras:
     else: print("FUERA |",", ".join(o.get("s",[])),"|",campo,"|",o.get("t","")[:90])
 print("Quedan",len(quedan),"de",len(obras))
 D["obras"]=quedan; D["actualizado"]=datetime.date.today().isoformat()
-open("publicaciones.js","w",encoding="utf-8").write("/* Generado automáticamente desde OpenAlex por tools/publicaciones.py; no editar a mano. */\nwindow.PUBLICACIONES_SOCIOS="+json.dumps(D,ensure_ascii=False)+";\n")
+import os
+if not os.environ.get("SOLO_VER"): open("publicaciones.js","w",encoding="utf-8").write("/* Generado automáticamente desde OpenAlex por tools/publicaciones.py; no editar a mano. */\nwindow.PUBLICACIONES_SOCIOS="+json.dumps(D,ensure_ascii=False)+";\n")
