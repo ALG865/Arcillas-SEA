@@ -13,6 +13,8 @@ def get(url):
             print("   reintento", intento+1, e); time.sleep(5*(intento+1))
     return {"results":[],"meta":{}}
 def norm(s): return unicodedata.normalize("NFKD",s or "").encode("ascii","ignore").decode().lower()
+import re
+CAMPOS={"Earth and Planetary Sciences","Materials Science","Chemistry","Chemical Engineering","Environmental Science","Engineering","Agricultural and Biological Sciences","Energy","Pharmacology, Toxicology and Pharmaceutics","Physics and Astronomy"}
 socios=json.load(open("tools/socios.json",encoding="utf-8"))
 desde=f"{datetime.date.today().year-1}-01-01"
 obras={}
@@ -47,6 +49,10 @@ for s in socios:
                 t=norm(" | ".join([i.get("display_name","") for i in au.get("institutions",[])]+(au.get("raw_affiliation_strings") or []))).replace("-"," ")
                 if any(c in t for c in claves_af): firma=True
             if not firma: continue
+            # Tema: arcillas y minerales, geología, suelos, materiales (cementos incluidos), química y medio ambiente
+            campo=(((w.get("primary_topic") or {}).get("field") or {}).get("display_name") or "")
+            tema=re.search(r"clay|smectit|montmorillon|bentonit|kaolin|illit|sepiolit|palygorsk|attapulg|vermiculit|chlorit|halloysit|hectorit|saponit|stevensit|phyllosilic|mica|zeolit|layered double|hydrotalc|mineral|ceramic|brick|tile|soil|sediment|cement|concrete|geopolym|metakaol|pozzolan|mortar|nanocompos|adsorb",norm(w.get("title") or ""))
+            if not tema and campo not in CAMPOS: continue
             src=((w.get("primary_location") or {}).get("source") or {})
             if src.get("type")!="journal": continue
             k=(w.get("doi") or w["id"]).lower()
