@@ -14,7 +14,7 @@ def get(url):
     return {"results":[],"meta":{}}
 def norm(s): return unicodedata.normalize("NFKD",s or "").encode("ascii","ignore").decode().lower()
 import re
-ESTRICTO=r"clay|arcilla|smectit|montmorillon|bentonit|kaolin|caolin|illit|sepiolit|palygorsk|attapulg|vermiculit|chlorit|tosudit|halloysit|hectorit|saponit|stevensit|kerolit|beidellit|nontronit|phyllosilic|pyrophyllit|talc|mica|glauconit|celadonit|imogolit|aluminum silicate|layered double|hydrotalc|hydrocalumit|ldh|zeolit|geopolym|metakaol|calcined clay|cement|ceramic|porcelain|brick|tile|metapelit"
+ESTRICTO=r"clay|arcilla|smectit|montmorillon|bentonit|kaolin|caolin|illit|sepiolit|palygorsk|attapulg|vermiculit|chlorit|tosudit|halloysit|hectorit|saponit|stevensit|kerolit|beidellit|nontronit|phyllosilic|pyrophyllit|\btalc|\bmicas?\b|glauconit|celadonit|imogolit|aluminum silicate|layered double|hydrotalc|hydrocalumit|ldh|zeolit|geopolym|metakaol|calcined clay|\bcement|ceramic|porcelain|brick|\btiles?\b|metapelit"
 try: EXCLUIDAS={x.lower() for x in json.load(open("tools/pubs-excluidas.json",encoding="utf-8"))}
 except Exception: EXCLUIDAS=set()
 try: INCLUIDAS={x.lower() for x in json.load(open("tools/pubs-incluidas.json",encoding="utf-8"))}
