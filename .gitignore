@@ -1,0 +1,9 @@
+admin/datos/clave.php
+admin/datos/actualizando.txt
+
+# Datos de socios: solo en el ordenador del encargado, nunca en el repositorio
+tools/socios.json
+tools/socios-top.json
+tools/socios-openalex.json
+ENTRADA/
+*.xlsx

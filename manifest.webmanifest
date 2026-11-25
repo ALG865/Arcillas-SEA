@@ -1,0 +1,10 @@
+{
+  "name": "Sociedad Española de Arcillas",
+  "short_name": "SEA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f3ee",
+  "theme_color": "#1c1d1f",
+  "lang": "es",
+  "icons": [{"src": "icono-192.png", "sizes": "192x192", "type": "image/png"}]
+}

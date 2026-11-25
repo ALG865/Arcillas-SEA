@@ -1,0 +1,862 @@
+{
+ "ceramica": [
+  {
+   "doi": "10.1016/j.jeurceramsoc.2004.05.019",
+   "t": "X-ray diffraction microstructure analysis of mullite, quartz and corundum in porcelain insulators",
+   "a": "José M. Amigó, F. J. Serrano, Joaquín Bastida y otros",
+   "y": 2004,
+   "r": "Journal of the European Ceramic Society",
+   "c": 72,
+   "autores": [
+    "José M. Amigó",
+    "F. J. Serrano",
+    "Marek Andrzej Kojdecki",
+    "Joaquín Bastida",
+    "V. Esteve",
+    "María Mercedes Reventós",
+    "Francisco Martí"
+   ],
+   "anio": 2004,
+   "citas": 75,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/0169-1317(96)00003-8",
+   "t": "Ceramic applications of Middle Ordovician shales from central Spain",
+   "a": "J. Parras, C. J. Sánchez Jiménez, Magdalena Rodas y otros",
+   "y": 1996,
+   "r": "Applied Clay Science",
+   "c": 52,
+   "autores": [
+    "J. Parras",
+    "C. J. Sánchez Jiménez",
+    "Magdalena Rodas",
+    "Francisco Javier Luque del Villar"
+   ],
+   "anio": 1996,
+   "citas": 54,
+   "resumen": ""
+  }
+ ],
+ "estructural": [
+  {
+   "doi": "10.1127/0935-1221/2001/0013-0621",
+   "t": "Carbonate and silicate phase reactions during ceramic firing",
+   "a": "Giuseppe Cultrone, Carlos Manuel Rodriguez-Navarro, Eduardo Sebastian y otros",
+   "y": 2001,
+   "r": "European Journal of Mineralogy",
+   "c": 735,
+   "autores": [
+    "Giuseppe Cultrone",
+    "Carlos Manuel Rodriguez-Navarro",
+    "Eduardo Sebastian",
+    "Olga Cazalla",
+    "María José de la Torre López"
+   ],
+   "anio": 2001,
+   "citas": 752,
+   "resumen": "Mineralogical, textural and chemical analyses of clay-rich materials following firing, evidence that initial mineralogical differences between two raw materials (one with carbonates and the other without) influence the textural and mineralogical evolution of the ceramics as T increases from 700 to 1100°C. Mineralogical and textural changes are interpreted considering local marked disequilibria in a system that resembles a small-scale high- T metamorphic process (e.g., contact aureoles in pyrometamorphism). In such conditions, rapid heating induces significant overstepping in mineral reaction, preventing stable phase formation and favoring metastable ones. High-T transformations in non-carbonate materials include microcline structure collapse and/or partial transformation into sanidine; and mullite plus sanidine formation at the expenses of muscovite and/or illite at T ≥ 800°C. Mullite forms by muscovite-out topotactic replacement, following the orientation of mica crystals: i.e., former (001)muscovite are ⊥ to (001)mullite. This reaction is favored by minimization of free energy during phase transition. Partial melting followed by fingered structure development at the carbonate-silicate reaction interface enhanced high-T Ca (and Mg) silicates formation in carbonate-rich materials. Gehlenite, wollastonite, diopside, and anorthite form at carbonate-silicate interfaces by combined mass transport (viscous flow) and reaction-diffusion processes. These results may add to a better understanding of the complex high-T transformations of silicate phases in both natural (e.g., pyrometamorphism) and artificial (e.g., ceramic processing) systems. This information is important to elucidate technological achievements and raw material sources of ancient civilizations and, it can also be used to select appropriate clay composition and firing temperatures for new bricks used in cultural heritage conservation interventions."
+  },
+  {
+   "doi": "10.1016/s0955-2219(03)00249-8",
+   "t": "Influence of mineralogy and firing temperature on the porosity of bricks",
+   "a": "Giuseppe Cultrone, Eduardo Sebastián, Kerstin Elert y otros",
+   "y": 2003,
+   "r": "Journal of the European Ceramic Society",
+   "c": 528,
+   "autores": [
+    "Giuseppe Cultrone",
+    "Eduardo Sebastián",
+    "Kerstin Elert",
+    "María José de la Torre López",
+    "Olga Cazalla",
+    "Carlos Manuel Rodriguez-Navarro"
+   ],
+   "anio": 2003,
+   "citas": 540,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.ceramint.2016.09.181",
+   "t": "Characterization and evaluation of rice husk ash and wood ash in sustainable clay matrix bricks",
+   "a": "Dolores Eliche-Quesada, M. A. Felipe-Sesé, J.A. López-Pérez y otros",
+   "y": 2016,
+   "r": "Ceramics International",
+   "c": 239,
+   "autores": [
+    "Dolores Eliche‐Quesada",
+    "M. A. Felipe-Sesé",
+    "J.A. López-Pérez",
+    "Antonia Infantes‐Molina"
+   ],
+   "anio": 2016,
+   "citas": 242,
+   "resumen": ""
+  }
+ ],
+ "azulejos": [
+  {
+   "doi": "10.1016/s0169-1317(98)00052-0",
+   "t": "Firing transformations of cretaceous clays used in the manufacturing of ceramic tiles",
+   "a": "M.M. Jordán, A. Boix, T. Sanfeliu y otros",
+   "y": 1999,
+   "r": "Applied Clay Science",
+   "c": 182,
+   "autores": [
+    "M.M Jordán",
+    "A. Boix",
+    "T. Sanfeliu",
+    "C de la Fuente"
+   ],
+   "anio": 1999,
+   "citas": 189,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.clay.2008.01.005",
+   "t": "Influence of firing temperature and mineralogical composition on bending strength and porosity of ceramic tile bodies",
+   "a": "M.M. Jordan, M.A. Montero, Sergi Meseguer y otros",
+   "y": 2008,
+   "r": "Applied Clay Science",
+   "c": 141,
+   "autores": [
+    "M.M. Jordan",
+    "M.A. Montero",
+    "Sergi Meseguer",
+    "T. Sanfeliu"
+   ],
+   "anio": 2008,
+   "citas": 142,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.clay.2009.10.013",
+   "t": "The use of sewage sludge and marble residues in the manufacture of ceramic tile bodies",
+   "a": "M.A. Montero, M.M. Jordán, M. S. Hernández-Crespo y otros",
+   "y": 2009,
+   "r": "Applied Clay Science",
+   "c": 134,
+   "autores": [
+    "M.A. Montero",
+    "M.M. Jordán",
+    "M. S. Hernández-Crespo",
+    "T. Sanfeliu"
+   ],
+   "anio": 2009,
+   "citas": 138,
+   "resumen": ""
+  }
+ ],
+ "cargas": [
+  {
+   "doi": "10.1346/ccmn.1976.0240102",
+   "t": "Organomineral Derivatives Obtained by Reacting Organochlorosilanes with the Surface of Silicates in Organic Solvents",
+   "a": "Eduardo Ruiz-Hitzky y otros",
+   "y": 1976,
+   "r": "Clays and Clay Minerals",
+   "c": 91,
+   "autores": [
+    "Eduardo Ruiz‐Hitzky",
+    "José Jean Fripiat"
+   ],
+   "anio": 1976,
+   "citas": 94,
+   "resumen": "Stable organomineral derivatives are formed by reaction of organochlorosilanes with certain phyllosilicates. Organosiloxyl functions are grafted on silanol groups present at external mineral surfaces. Water molecules adsorbed on external mineral surfaces may cause hydrolysis of the reactant organosilicon products, with liberation of HCl. This, in turn, may react with the silicate: octahedral cations are extracted from the lattice and fresh Si-OH groups, capable of further grafting, are formed on the mineral surface. On the other hand, when difunctional reagents such as methylvinyldichlorosilane are used and if the ratio of adsorbed water to added reactive is adequate, then polymeric species with polysiloxane chains are grafted on the mineral. Because of its high content of silanol groups, sepiolite forms organomineral compounds having a relatively high organic matter content. With chrysotile, the amount of organic matter grafted to the silicate, is considerably smaller, but it increases appreciably if water is added to the reacting products. This is attributed to hydrolysis of the organic reactant and subsequent destruction of external “brucitic” layers by acid attack."
+  }
+ ],
+ "perforacion": [
+  {
+   "doi": "10.1016/s0070-4571(08)70044-x",
+   "t": "Sepiolite: Properties and Uses",
+   "a": "A. Alvarez",
+   "y": 1984,
+   "r": "Developments in sedimentology",
+   "c": 180,
+   "autores": [
+    "A. Alvarez"
+   ],
+   "anio": 1984,
+   "citas": 182,
+   "resumen": ""
+  }
+ ],
+ "barreras": [
+  {
+   "doi": "10.1680/geot.2003.53.1.27",
+   "t": "Mechanical behaviour of heavily compacted bentonite under high suction changes",
+   "a": "A. Lloret, María Victoria Villar, Marcelo Sánchez y otros",
+   "y": 2003,
+   "r": "Géotechnique",
+   "c": 633,
+   "autores": [
+    "A. Lloret",
+    "María Victoria Villar",
+    "Marcelo Sánchez",
+    "Antonio Gens",
+    "Xavier Pintado",
+    "Eduardo Alonso Pérez de Ágreda"
+   ],
+   "anio": 2003,
+   "citas": 649,
+   "resumen": "The paper reports the results of an experimental study carried out on a bentonite compacted to a dry density of up to 1·7 Mg/m3, a high value for this type of soil. The soil fabric has been studied using a variety of techniques, revealing a clear bimodal pore distribution that corresponds to two distinct structural levels: a microstructural one and a macrostructural one. The main testing programme has been performed using oedometers especially designed to apply a very large range of suctions. By applying the axis-translation technique (using nitrogen as the gas fluid), it has been possible to reach suctions up to 15 MPa. The higher suction range has been achieved by applying a controlled atmosphere where the relative humidity has been fixed by a solution of sulphuric acid or salts. In this way suctions up to 550 MPa could be reached. The maximum vertical stress that could be applied in the apparatus was 10 MPa. Two types of test have been carried out: (a) tests in which a combination of loading paths at constant suction and drying/wetting paths at constant load were applied; (b) swelling tests under constant-volume conditions in order to determine the swelling pressure and the stress path followed during wetting. The results of the experimental programme are examined, taking into account the role of the soil fabric in controlling observed mechanical behaviour. In addition, the results of the laboratory tests are reproduced and interpreted using a generalised plasticity model that considers explicitly the interaction between macrostructure and microstructure. In this way, it is possible to achieve a more complete understanding of the mechanisms that underlie observed behaviour, and in particular the interplay between the two structural levels."
+  },
+  {
+   "doi": "10.1016/j.clay.2003.12.026",
+   "t": "Influence of temperature on the hydro-mechanical behaviour of a compacted bentonite",
+   "a": "María Victoria Villar, A. Lloret",
+   "y": 2004,
+   "r": "Applied Clay Science",
+   "c": 502,
+   "autores": [
+    "María Victoria Villar",
+    "A. Lloret"
+   ],
+   "anio": 2004,
+   "citas": 512,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.clay.2007.04.007",
+   "t": "Influence of dry density and water content on the swelling of a compacted bentonite",
+   "a": "María Victoria Villar, A. Lloret",
+   "y": 2007,
+   "r": "Applied Clay Science",
+   "c": 411,
+   "autores": [
+    "María Victoria Villar",
+    "A. Lloret"
+   ],
+   "anio": 2007,
+   "citas": 415,
+   "resumen": ""
+  }
+ ],
+ "absorbentes": [
+  {
+   "doi": "10.1180/claymin.1996.031.4.01",
+   "t": "Properties and applications of palygorskite-sepiolite clays",
+   "a": "E. Galán",
+   "y": 1996,
+   "r": "Clay Minerals",
+   "c": 710,
+   "autores": [
+    "E. Galan"
+   ],
+   "anio": 1996,
+   "citas": 725,
+   "resumen": "The palygorskite-sepiolite group of clay minerals has a wide range of industrial applications derived mainly from its sorptive, rheological and catalytic properties which are based on the fabric, surface area, porosity, crystal morphology, structure and composition of these minerals. For assessing potential industrial uses, the mineralogical and chemical composition of the clay and its basic physical and physico-chemical parameters must be determined. Then some particular properties of commercial interest can be modified and improved by appropriate thermal, mechanical and acid treatments, surface active agents, organo-mineral derivatives formation, etc. In this paper, a revision of the principal characteristics of commercial palygorskite-sepiolite clays is presented, and potential uses are suggested according to these data. New products and applications are being investigated and those concerning environmental protection in particular, are noted. Finally, possible health effects of these elongate clay minerals are discussed."
+  },
+  {
+   "doi": "10.1016/b978-0-444-53607-5.00017-7",
+   "t": "Advanced Materials and New Applications of Sepiolite and Palygorskite",
+   "a": "Eduardo Ruiz-Hitzky, Pilar Aranda, Antonio Álvarez y otros",
+   "y": 2011,
+   "r": "Developments in clay science",
+   "c": 121,
+   "autores": [
+    "Eduardo Ruiz‐Hitzky",
+    "Pîlar Aranda",
+    "Antonio Álvarez",
+    "Julio Santarén",
+    "Antonio Esteban-Cubillo"
+   ],
+   "anio": 2011,
+   "citas": 124,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/s0169-1317(01)00062-x",
+   "t": "Sepiolite-based adsorbents as humidity controller",
+   "a": "J.C González, Miguel Molina-Sabio, Francisco Rodríguez-Reinoso",
+   "y": 2001,
+   "r": "Applied Clay Science",
+   "c": 85,
+   "autores": [
+    "J.C González",
+    "Miguel Molina‐Sabio",
+    "Francisco Rodríguez-Reinoso"
+   ],
+   "anio": 2001,
+   "citas": 88,
+   "resumen": ""
+  }
+ ],
+ "agricultura": [
+  {
+   "doi": "10.1021/jf202713q",
+   "t": "Comparative Sorption and Leaching Study of the Herbicides Fluometuron and 4-Chloro-2-methylphenoxyacetic Acid (MCPA) in a Soil Amended with Biochars and Other Sorbents",
+   "a": "Lucía Cox, Rafael Celis, María C. Hermosín y otros",
+   "y": 2011,
+   "r": "Journal of Agricultural and Food Chemistry",
+   "c": 173,
+   "autores": [
+    "Alegría Cabrera Mesa",
+    "Lucía Cox",
+    "Kurt Arnold Spokas",
+    "Rafael Celis",
+    "María C. Hermosín",
+    "Juan Cornejo",
+    "William C. Koskinen"
+   ],
+   "anio": 2011,
+   "citas": 176,
+   "resumen": "Biochar, the solid residual remaining after the thermochemical transformation of biomass for carbon sequestration, has been proposed to be used as a soil amendment, because of its agronomic benefits. The effect of amending soil with six biochars made from different feedstocks on the sorption and leaching of fluometuron and 4-chloro-2-methylphenoxyacetic acid (MCPA) was compared to the effect of other sorbents: an activated carbon, a Ca-rich Arizona montmorillonite modified with hexadecyltrimethylammonium organic cation (SA-HDTMA), and an agricultural organic residue from olive oil production (OOW). Soil was amended at 2% (w/w), and studies were performed following a batch equilibration procedure. Sorption of both herbicides increased in all amended soils, but decreased in soil amended with a biochar produced from macadamia nut shells made with fast pyrolysis. Lower leaching of the herbicides was observed in the soils amended with the biochars with higher surface areas BC5 and BC6 and the organoclay (OCl). Despite the increase in herbicide sorption in soils amended with two hardwood biochars (BC1 and BC3) and OOW, leaching of fluometuron and MCPA was enhanced with the addition of these amendments as compared to the unamended soil. The increased leaching is due to some amendments' soluble organic compounds, which compete or associate with herbicide molecules, enhancing their soil mobility. Thus, the results indicate that not all biochar amendments will increase sorption and decrease leaching of fluometuron and MCPA. Furthermore, the amount and composition of the organic carbon (OC) content of the amendment, especially the soluble part (DOC), can play an important role in the sorption and leaching of these herbicides."
+  },
+  {
+   "doi": "10.1021/jf011360o",
+   "t": "Inorganic and Organic Clays as Carriers for Controlled Release of the Herbicide Hexazinone",
+   "a": "Rafael Celis, María C. Hermosín, M. J. Carrizosa y otros",
+   "y": 2002,
+   "r": "Journal of Agricultural and Food Chemistry",
+   "c": 151,
+   "autores": [
+    "Rafael Celis",
+    "María C. Hermosín",
+    "M. J. Carrizosa",
+    "Juan Cornejo"
+   ],
+   "anio": 2002,
+   "citas": 154,
+   "resumen": "The risk of ground water contamination resulting from rapid leaching of highly soluble pesticides can be minimized through the application of the pesticide adsorbed on a matrix or carrier, which limits the amount of pesticide immediately available for undesirable losses. The use of natural materials for this purpose is of special interest in terms of economy and sustainability. In this work the adsorption of the herbicide hexazinone by two montmorillonites saturated with various inorganic and organic cations was determined and the ability of the two clays displaying the highest adsorption capacities [Fe(3+)-saturated Wyoming montmorillonite, (Fe-SW) and hexadecyltrimethylammonium-saturated Arizona montmorillonite (HDTMA-SA)] to act as carriers for slow release of hexazinone and to reduce herbicide leaching losses was evaluated. Hexazinone formulations based on Fe-SW and HDTMA-SA displayed slow release properties in water and soil/water suspensions, reduced herbicide leaching in soil columns, and maintained herbicidal activity, as compared with the currently available commercial hexazinone formulation (wettable powder). Loosely bound hexazinone-HDTMASA formulations, which led to the slowest breakthrough of hexazinone in soil columns along with the greatest amounts of herbicide released from the clay particles, displayed the most interesting characteristics for their use as slow release formulations and to prevent ground water contamination."
+  },
+  {
+   "doi": "10.2134/jeq1993.00472425002200020013x",
+   "t": "Binding Mechanism of 2,4-Dichlorophenoxyacetic Acid by Organo-Clays",
+   "a": "María C. Hermosín, Juan Cornejo",
+   "y": 1993,
+   "r": "Journal of Environmental Quality",
+   "c": 120,
+   "autores": [
+    "María C. Hermosín",
+    "Juan Cornejo"
+   ],
+   "anio": 1993,
+   "citas": 123,
+   "resumen": "The interaction of the herbicide 2,4‐dichlorophenoxyacetic acid (2,4‐D) with decylammonium‐montmorillonite (C10M) and decylammonium‐vermiculite (C10V) was studied by measuring 2,4‐D adsorption at different pH levels, and by preparing herbicide‐organic clay complexes which were characterized by x‐ray diffraction (XRD) and Fourier transform infrared spectroscopy (FT‐IR). The adsorption of 2,4‐D at different pH values indicated that the undissociated form was preferentially adsorbed on C10M, whereas the anionic form was adsorbed by C10V. The adsorption of 2,4‐D was much greater for C10V than for C10M. X‐ray diffraction diffractograms and FT‐IR spectra of C10M did not show any changes after exposure to 2,4‐D, indicating adsorption on external surfaces by weak lyopbilic, aromatic ring‐alkylchain(tail), bond. The d001 values of the two C10V samples expanded after 2,4‐D exposure from 2.1 to 2.9 nm and from 2.4 to 3.3 nm, indicating interlayer adsorption of the herbicide. The FT‐IR spectrum of herbicide‐C10V complex showed the presence of a small amount of the molecular form of 2,4‐D weakly adsorbed on external surfaces by lyophilic (ring‐tail) bonding, but most of the herbicide molecules were adsorbed at the interlayer spaces by hydrogen bonds between carbonyl group (vc=0 at 1634 cm−1) of 2,4‐D and ammonium group of the interlayer organic cations. Some 2,4‐D molecules in C10V complex appeared to be dissociated as suggested by two bands at 1590 and 1330 cm−1, which corresponded to the unsymmetrical and symmetrical vibrations, respectively, of the COO− groups."
+  }
+ ],
+ "farmacia": [
+  {
+   "doi": "10.1016/s0169-1317(01)00085-0",
+   "t": "Clay minerals and their beneficial effects upon human health. A review",
+   "a": "María Isabel Carretero",
+   "y": 2002,
+   "r": "Applied Clay Science",
+   "c": 739,
+   "autores": [
+    "María Isabel Carretero"
+   ],
+   "anio": 2002,
+   "citas": 761,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.clay.2006.06.015",
+   "t": "Use of clays as drug delivery systems: Possibilities and limitations",
+   "a": "Carola Aguzzi, Pilar Cerezo, César Viseras y Carla Caramella",
+   "y": 2007,
+   "r": "Applied Clay Science",
+   "c": 727,
+   "autores": [
+    "Carola Aguzzi",
+    "Pilar Cerezo",
+    "César Viseras",
+    "Carla Marcella Caramella"
+   ],
+   "anio": 2006,
+   "citas": 748,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.clay.2009.10.016",
+   "t": "Clay and non-clay minerals in the pharmaceutical and cosmetic industries Part II. Active ingredients",
+   "a": "María Isabel Carretero, Manuel Pozo",
+   "y": 2009,
+   "r": "Applied Clay Science",
+   "c": 416,
+   "autores": [
+    "María Isabel Carretero",
+    "Manuel Pozo"
+   ],
+   "anio": 2009,
+   "citas": 426,
+   "resumen": ""
+  }
+ ],
+ "agua": [
+  {
+   "doi": "10.1021/es000013c",
+   "t": "Heavy Metal Adsorption by Functionalized Clays",
+   "a": "Rafael Celis, María C. Hermosín, Juan Cornejo",
+   "y": 2000,
+   "r": "Environmental Science & Technology",
+   "c": 414,
+   "autores": [
+    "Rafael Celis",
+    "María C. Hermosín",
+    "Juan Cornejo"
+   ],
+   "anio": 2000,
+   "citas": 422,
+   "resumen": "Organic ligands containing the thiol (−SH) metal-chelating functionality were either grafted to the external surface silanol groups of sepiolite or introduced in the interlayers of montmorillonite, and the resulting functionalized clays were characterized and assayed as adsorbents for Hg(II), Pb(II), and Zn(II) ions from solution. Sepiolite was functionalized by covalently grafting 3-mercapto- pro-pyltrimethoxysilane (MPS) to the surface ⋮Si−OH groups of the clay, whereas montmorillonite was functionalized by replacement of the interlayer inorganic cation (Na + ) by 2-mercaptoethylammonium (MEA) cations. These clay-organic ligand systems were selected to minimize the congestion of the internal porosity of the clays, which has recently been shown to be the main obstacle to heavy metal adsorption by functionalized clays. Infrared spectroscopy and elemental analyses demonstrated the presence of the organic ligands in the modified clays. X-ray diffraction analysis indicated the organic cations (MEA) occupied the interlayers of montmorillonite. N 2 specific surface area measurements suggested that much of the surface area of montmorillonite and sepiolite remained accessible upon functionalization and that the organic ligand kept the montmorillonite interlayers open. The functionalized clays adsorbed most of the Hg(II) ions present in solution up to saturation and were also good adsorbents of Pb(II) at low metal ion concentrations (i.e., <0.02 mM). They were, however, less effective toward Pb(II) and Zn(II) at high metal ion concentrations. The presence of NaNO 3 or Ca(NO 3 ) 2 as background electrolytes at concentra tions ranging from 0.001 to 0.1 M did not alter the great adsorption capacity of functionalized sepiolite for Hg(II). The results show that clay functionalization can be optimized by matching clay structure with a suitable reactive (i.e., fibrous clay with a graftable ligand or expandable clay with an exchangeable cationic ligand) and minimizing the gallery volume taken up by the organic ligand, thus improving the performance of the functionalized clay as adsorbent of heavy metals from solution."
+  },
+  {
+   "doi": "10.1016/j.clay.2005.07.008",
+   "t": "Efficiency of different clay minerals modified with a cationic surfactant in the adsorption of pesticides: Influence of clay type and pesticide hydrophobicity",
+   "a": "María J. Sánchez-Martín, M. Sonia Rodríguez-Cruz, M.S. Andrades y otros",
+   "y": 2005,
+   "r": "Applied Clay Science",
+   "c": 256,
+   "autores": [
+    "María J. Sánchez‐Martín",
+    "M. Sonia Rodríguez‐Cruz",
+    "M.S. Andrades",
+    "María Sánchez-Camazano"
+   ],
+   "anio": 2005,
+   "citas": 259,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.jhazmat.2007.04.093",
+   "t": "Influence of clay mineral structure and surfactant nature on the adsorption capacity of surfactants by clays",
+   "a": "María J. Sánchez-Martín, M.C. Dorado, Carmen del Hoyo y otros",
+   "y": 2007,
+   "r": "Journal of Hazardous Materials",
+   "c": 227,
+   "autores": [
+    "María J. Sánchez‐Martín",
+    "M.C. Dorado",
+    "Carmen del Hoyo",
+    "M. Sonia Rodríguez‐Cruz"
+   ],
+   "anio": 2007,
+   "citas": 228,
+   "resumen": ""
+  }
+ ],
+ "catalisis": [
+  {
+   "doi": "10.1016/j.apcatb.2010.05.004",
+   "t": "Heterogeneous photo-Fenton oxidation with pillared clay-based catalysts for wastewater treatment: A review",
+   "a": "Miguel Angel Vicente y otros",
+   "y": 2010,
+   "r": "Applied Catalysis B: Environmental",
+   "c": 758,
+   "autores": [
+    "J. Herney-Ramírez",
+    "Miguel Angel Vicente",
+    "Luís Miguel Madeira"
+   ],
+   "anio": 2010,
+   "citas": 765,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1081/cr-100100261",
+   "t": "Recent Advances in the Synthesis and Catalytic Applications of Pillared Clays",
+   "a": "Antonio Gil, Luis M. Gandía, Miguel Angel Vicente",
+   "y": 2000,
+   "r": "Catalysis Reviews",
+   "c": 562,
+   "autores": [
+    "Antonio Gil",
+    "Luis M. Gandía",
+    "Miguel Angel Vicente"
+   ],
+   "anio": 2000,
+   "citas": 570,
+   "resumen": "New methods have been developed in recent years that are now being successfully applied in the preparation of pillared interlayered clays (PILCs). Variations in the procedures concern different parameters involved in the synthesis, such as the starting clay, the intercalating solution, the intercalation process, and the drying and calcination steps of the pillared solids, among others. In the present article, the latest results obtained when introducing modifications in the chemical aspects of PILC synthesis are reviewed. These include (1) pillaring with mixed solutions containing two or more cations, (2) using coordination or organometallic compounds, (3) using polymers and surfactants, (4) pillaring of acid-activated clays, and (5) enhancement of PILC acidity. A separate section is devoted to the specific features of preparing these solids in amounts large enough to make their manufacture on an industrial scale economically feasible. Recent developments in the catalytic applications of PILCs are also reviewed, with emphasis on the progressively more extended use of these materials as catalytic supports."
+  },
+  {
+   "doi": "10.1021/cm0111736",
+   "t": "Chemical Activation of a Kaolinite under Acid and Alkaline Conditions",
+   "a": "Carolina Belver, Miguel Angel Bañares-Muñoz, Miguel Angel Vicente",
+   "y": 2002,
+   "r": "Chemistry of Materials",
+   "c": 376,
+   "autores": [
+    "Carolina Belver",
+    "Miguel Angel Bañares-Muñoz",
+    "Miguel Angel Vicente"
+   ],
+   "anio": 2002,
+   "citas": 381,
+   "resumen": "Four metakaolins were prepared by calcination of a natural Spanish kaolin (Navalacruz deposit, Zamora province) at 600, 700, 800, and 900 °C. These four metakaolins, more reactive than the parent kaolin, were submitted to acid and alkaline activations. Acid activation was carried out with 6 M HCl at room temperature and at 90 °C under reflux conditions, with times of treatment of 6 and 24 h. Treatment at room temperature did not produce any alteration in the structure or in the properties of the metakaolins. Treatment under reflux conditions for 6 h led to the removal of most of the octahedral Al 3+ cations, and the formation of an amorphous silica phase, with surface area up to 219 m 2 /g, because of a high development of both the internal and the external surface of the solids. Acid treatment under stronger conditions (reflux, 24 h) also removed the octahedral cations, but provoked an amorphization of the silica obtained ( S ≈ 23 m 2 /g). The metakaolin prepared by calcination at 900 °C showed a lower reactivity than those synthesized at the other temperatures considered. The alkaline treatments were carried out with 1 M and 5 M KOH solutions, the treatments with the concentrated solution, both at room temperature and, especially, under reflux, led to the dissolution of the metakaolins and to the formation of well-crystallized K−F zeolite. The solids obtained by acid treatments are promising as adsorbents and catalyst supports, while treatment in alkaline conditions may be a good method for preparing K−F zeolite."
+  }
+ ],
+ "nanocompuestos": [
+  {
+   "doi": "10.1021/cm0343047",
+   "t": "Biopolymer−Clay Nanocomposites Based on Chitosan Intercalated in Montmorillonite",
+   "a": "Margarita Darder, Montserrat Colilla, Eduardo Ruiz-Hitzky",
+   "y": 2003,
+   "r": "Chemistry of Materials",
+   "c": 738,
+   "autores": [
+    "Margarita Darder",
+    "Montserrat Colilla",
+    "Eduardo Ruiz‐Hitzky"
+   ],
+   "anio": 2003,
+   "citas": 753,
+   "resumen": "The objective of this work is the intercalation of the cationic biopolymer chitosan in Na + −montmorillonite, providing compact and robust three-dimensional nanocomposites with interesting functional properties. CHN chemical analysis, X-ray diffraction, Fourier transform infrared spectroscopy, scanning transmission electron microscopy, energy-dispersion X-ray analysis, and thermal analysis have been employed in the characterization of the nanocomposites, confirming the adsorption in mono- or bilayers of chitosan chains depending on the relative amount of chitosan with respect to the cationic exchange capacity of the clay. The first chitosan layer is adsorbed through a cationic exchange procedure, while the second layer is adsorbed in the acetate salt form. Because the deintercalation of the biopolymer is very difficult, the −NH 3 + Ac - species belonging to the chitosan second layer act as anionic exchange sites and, in this way, such nanocomposites become suitable systems for the detection of anions. These materials have been successfully used in the development of bulk-modified electrodes exhibiting numerous advantages as easy surface renewal, ruggedness, and long-time stability. The resulting sensors are applied in the potentiometric determination of several anions, showing a higher selectivity toward monovalent anions. This selectivity behavior could be explained by the special arrangement of the polymer as a nanostructured bidimensional system."
+  },
+  {
+   "doi": "10.1039/c0jm00432d",
+   "t": "Hybrid materials based on clays for environmental and biomedical applications",
+   "a": "Eduardo Ruiz-Hitzky, Pilar Aranda, Margarita Darder y otros",
+   "y": 2010,
+   "r": "Journal of Materials Chemistry",
+   "c": 339,
+   "autores": [
+    "Eduardo Ruiz‐Hitzky",
+    "Pîlar Aranda",
+    "Margarita Darder",
+    "Giora Rytwo"
+   ],
+   "anio": 2010,
+   "citas": 345,
+   "resumen": "Nanostructured hybrids derived from clays are materials of increasing interest based on both structural characteristics and functional applications, including environmental and biomedical uses. This review introduces some recent examples of nanostructured clay derivatives (organoclays) useful as adsorbents or photocatalysts for environmental applications such as the removal of pollutants or development of environmentally oriented pesticide formulations. The second group of nanostructured materials considered here are related to the so-called bio-nanohybrids, formed by combination of an inorganic solid (clay mineral) with organic entities from biological origin at the nanometric scale. Bionanocomposites are an emerging group of nanomaterials resulting from the assembly of different clay minerals and biopolymers. Among the proposed applications, the development of novel hybrid materials for scaffolds and regenerative medicine, as well as new substrates to immobilize biological species from enzymes to viruses, is notable. Hybrid materials based on layered double hydroxides are receiving special attention in view of the possible applications as drug delivery systems."
+  },
+  {
+   "doi": "10.1039/b003197f",
+   "t": "Molecular access to intracrystalline tunnels of sepiolite",
+   "a": "Eduardo Ruiz-Hitzky",
+   "y": 2001,
+   "r": "Journal of Materials Chemistry",
+   "c": 339,
+   "autores": [
+    "Eduardo Ruiz‐Hitzky"
+   ],
+   "anio": 2001,
+   "citas": 348,
+   "resumen": "The availability of the structural micropores in sepiolite for the access of molecular or ionic entities is an old and controversial subject, which is revised in this work in the light of the most recent experimental data obtained in our research group. In this way evidence of the accessibility of molecules, voluminous ions and polymeric species to the intracrystalline tunnels of the mineral is presented on the bases of the application of several techniques to the study of the mineral adsorption properties."
+  }
+ ],
+ "azulmaya": [
+  {
+   "doi": "10.1111/j.1475-4754.2006.00246.x",
+   "t": "Synthesis and acid resistance of Maya blue pigment*",
+   "a": "Mercedes Suárez y otros",
+   "y": 2006,
+   "r": "Archaeometry",
+   "c": 129,
+   "autores": [
+    "Manuel Sánchez del Río",
+    "Pauline Martinetto",
+    "Constantino Reyes-Valerio",
+    "E. Dooryhée",
+    "Mercedes Suárez"
+   ],
+   "anio": 2006,
+   "citas": 136,
+   "resumen": "Maya blue is an organo‐clay artificial pigment composed of indigo and palygorskite. It was invented and frequently used in Mesoamerica in ancient times (eighth to 16th centuries). We analyse in this paper one of the characteristics of Maya blue that has attracted the attention of scientists since its rediscovery in 1931: its high stability against chemical aggression (acids, alkalis, solvents, etc.) and biodegradation, which has permitted the survival of many works of art for centuries in hostile environments, such as the tropical forest. We have reproduced the different methods proposed to produce a synthetic pigment with the characteristics of the ancient Maya blue. The stability of the pigments produced using either palygorskite or sepiolite has been analysed by performing acid attacks of different intensities. The results are analysed in terms of pigment decolouration and destruction of the clay lattice, revealed by X‐ray diffraction. Palygorskite pigments are much more resistant than sepiolite pigments. It is shown that indigo does not protect the clay lattice against acid aggression. We show that Maya blue is an extremely resistant pigment, but it can be destroyed using very intense acid treatment under reflux."
+  },
+  {
+   "doi": "10.1007/s10853-009-3772-5",
+   "t": "A combined synchrotron powder diffraction and vibrational study of the thermal treatment of palygorskite–indigo to produce Maya blue",
+   "a": "Mercedes Suárez y otros",
+   "y": 2009,
+   "r": "Journal of Materials Science",
+   "c": 103,
+   "autores": [
+    "Manuel Sánchez del Río",
+    "Enrico Boccaleri",
+    "Marco Milanesio",
+    "Gianluca Croce",
+    "Wouter van Beek",
+    "Constantinos Tsiantos",
+    "Georgios D. Chryssikos",
+    "V. Gionis"
+   ],
+   "anio": 2009,
+   "citas": 106,
+   "resumen": ""
+  }
+ ],
+ "refractarios": [
+  {
+   "doi": "10.1021/cm960224+",
+   "t": "Influence of Grinding in Pyrophyllite−Mullite Thermal Transformation Assessed by 29Si and 27Al MAS NMR Spectroscopies",
+   "a": "Pedro José Sánchez-Soto, José Luís Pérez-Rodríguez, Isabel Sobrados y otros",
+   "y": 1997,
+   "r": "Chemistry of Materials",
+   "c": 54,
+   "autores": [
+    "Pedro José Sánchez-Soto",
+    "José Luís Pérez-Rodríguez",
+    "Isabel Sobrados",
+    "Jesús Sanz"
+   ],
+   "anio": 1997,
+   "citas": 55,
+   "resumen": "The influence of grinding on the thermal transformation of pyrophyllite to mullite is analyzed by 27 Al and 29 Si MAS NMR spectroscopies, using X-ray powder diffraction and thermal analysis (DTA-TG) as complementary techniques. Mechanical treatments by dry grinding produce partial destruction of pyrophyllite and rearrangement of Al ions in tetra- and pentahedral environments. Tetrahedral sheet breakdown favors Al atomic diffusion and formation of Si-poor nuclei of mullite at 1000 °C. In particular, the exothermic peak detected at 1000 °C in DTA curves is ascribed to transformation of pentahedral coordination of Al in ground samples into tetra- and octahedral aluminum of mullite. During thermal decomposition of pyrophyllite, segregation of amorphous silica is produced. These results are compared with those obtained in kaolinite−mullite transformation, which were previously analyzed."
+  }
+ ],
+ "fundicion": [
+  {
+   "doi": "10.1016/0169-1317(86)90006-2",
+   "t": "Characterization and technical properties of a Mg-rich bentonite",
+   "a": "E. Galán, A. Alvarez, M.A. Esteban",
+   "y": 1986,
+   "r": "Applied Clay Science",
+   "c": 27,
+   "autores": [
+    "E. Galán",
+    "A. Alvarez",
+    "M.A. Esteban"
+   ],
+   "anio": 1986,
+   "citas": 28,
+   "resumen": ""
+  }
+ ],
+ "paleoclima": [
+  {
+   "doi": "10.1016/j.chemgeo.2013.12.016",
+   "t": "Provenance versus weathering control on the composition of tropical river mud (southern Africa)",
+   "a": "Alberto López-Galindo y otros",
+   "y": 2014,
+   "r": "Chemical Geology",
+   "c": 315,
+   "autores": [
+    "Eduardo Garzanti",
+    "Marta Padoan",
+    "Massimo Setti",
+    "Alberto López-Galindo",
+    "Igor M. Villa"
+   ],
+   "anio": 2014,
+   "citas": 319,
+   "resumen": ""
+  },
+  {
+   "doi": "10.1016/j.sedgeo.2010.04.002",
+   "t": "Integrated analysis for constraining palaeoclimatic and volcanic influences on clay–mineral assemblages in orogenic basins (Palaeogene Andean foreland, Northwestern Argentina)",
+   "a": "Fernando Nieto y otros",
+   "y": 2010,
+   "r": "Sedimentary Geology",
+   "c": 75,
+   "autores": [
+    "Margarita Do Campo",
+    "Cecilia Eugenia del Papa",
+    "Fernando Nieto",
+    "Fernando Hongn",
+    "I.A. Petrinovic"
+   ],
+   "anio": 2010,
+   "citas": 76,
+   "resumen": ""
+  }
+ ],
+ "diagenesis": [
+  {
+   "doi": "10.1016/0016-7037(95)00407-6",
+   "t": "Experimental kinetic study of the smectite-to-illite transformation",
+   "a": "Javier Cuadros, J. Linares",
+   "y": 1996,
+   "r": "Geochimica et Cosmochimica Acta",
+   "c": 187,
+   "autores": [
+    "Javier Cuadros",
+    "J. Linares"
+   ],
+   "anio": 1996,
+   "citas": 191,
+   "resumen": ""
+  },
+  {
+   "doi": "10.2138/am-2020-7341",
+   "t": "New insights into the nature of glauconite",
+   "a": "Adrián López-Quirós, Antonio Sánchez-Navas, Fernando Nieto y otros",
+   "y": 2020,
+   "r": "American Mineralogist",
+   "c": 93,
+   "autores": [
+    "Adrián López‐Quirós",
+    "Antonio Sánchez‐Navas",
+    "Fernando Nieto",
+    "Carlota Escutia"
+   ],
+   "anio": 2020,
+   "citas": 94,
+   "resumen": "Glauconite must be assessed as mica-rich mica-smectite R3 interstratified mineral, with the pure end-member mica also having intrinsic K-deficient chemical characteristics (K+ ~ 0.8 apfu). This assertion is in accordance with our X-ray diffraction (XRD) and high-resolution tranmission electron microscopy (HRTEM) studies and chemical analyses by electron probe microanalysis (EPMA) of mature glauconites in Cenozoic Antarctic sediments that indicate that: (1) It consists of a glauconite-smectite (R3 ordered) mixed-layer silicate, composed mainly of mica-type layers (>90%), but displaying slightly different proportions of Fe(III)-smectite layers (<10%). (2) More mature glaucony grains are characterized by major K+ and VIFe2+ (mica layers) and minor VIFe3+ (smectite layers) content in the interstratified glauconite-smectite. (3) Potassium is stabilized at the interlayer site by the octahedrally coordinated Fe2+. (4) Microtexture of the glauconite crystals are comparable with those of other micas and illite minerals, with straight, defect-free lattice fringes of ~10 Å spacings glauconite packets characteristic of mica with minor interstratified poorly crystalline smectite layers. In addition, our new findings give insights into the glauconitization process and at the same time investigate the potassium-deficient character of the dioctahedral mica “glauconite.” These findings show that glauconite crystallizes by a layer-growth mechanism at the expense of a poorly crystalline smectite precursor and that smectiteto-glauconite transformations are accompanied by a gradually higher octahedral charge deficiency (Fe2+/Fe3+) stabilized by K+ uptake into the interlayer sheet."
+  },
+  {
+   "doi": "10.1007/bf00310765",
+   "t": "Regional retrograde alteration of sub-greenschist facies chlorite to smectite",
+   "a": "Fernando Nieto, Nicolás Velilla, M. Ortega-Huertas y otros",
+   "y": 1994,
+   "r": "Contributions to Mineralogy and Petrology",
+   "c": 86,
+   "autores": [
+    "Fernando Nieto",
+    "Nicol�s Velilla",
+    "Donald R. Peacor",
+    "M. Ortega‐Huertas"
+   ],
+   "anio": 1994,
+   "citas": 88,
+   "resumen": ""
+  }
+ ],
+ "fallas": [
+  {
+   "doi": "10.1002/2017gl073055",
+   "t": "How phyllosilicate mineral structure affects fault strength in Mg‐rich fault systems",
+   "a": "C. Sanchez Roa, Juan Jiménez-Millán, Fernando Nieto y otros",
+   "y": 2017,
+   "r": "Geophysical Research Letters",
+   "c": 33,
+   "autores": [
+    "C. Sanchez Roa",
+    "Daniel Roy Faulkner",
+    "Carolyn Boulton",
+    "Juan Jiménez‐Millán",
+    "Fernando Nieto"
+   ],
+   "anio": 2017,
+   "citas": 34,
+   "resumen": "The clay mineralogy of fault gouges has important implications for the frictional properties of faults, often identified as a major factor contributing to profound fault weakness. This work compares the frictional strength of a group of Mg‐rich minerals common in the Mg‐Al‐Si‐O compositional space (talc, saponite, sepiolite, and palygorskite) by conducting triaxial frictional tests with water or argon as pore fluid. The studied minerals are chemically similar but differ in their crystallographic structure. Results show that fibrous Mg‐rich phyllosilicates are stronger than their planar equivalents. Frictional strength in this group of minerals is highly influenced by strength of the atomic bonds, continuity of water layers within the crystals, and interactions of mineral surfaces with water molecules, all of which are dictated by crystal structure. The formation and stability of the minerals studied are mainly controlled by small changes in pore fluid chemistry, which can lead to significant differences in fault strength."
+  },
+  {
+   "doi": "10.1016/j.clay.2016.06.023",
+   "t": "Fibrous clay mineral authigenesis induced by fluid-rock interaction in the Galera fault zone (Betic Cordillera, SE Spain) and its influence on fault gouge frictional properties",
+   "a": "C. Sanchez Roa, Juan Jiménez-Millán, Isabel Abad y otros",
+   "y": 2016,
+   "r": "Applied Clay Science",
+   "c": 27,
+   "autores": [
+    "C. Sanchez Roa",
+    "Juan Jiménez‐Millán",
+    "Isabel Abad",
+    "Daniel Roy Faulkner",
+    "Fernando Nieto",
+    "Francisco Juan García-Tortosa"
+   ],
+   "anio": 2016,
+   "citas": 27,
+   "resumen": ""
+  }
+ ],
+ "alteracion": [
+  {
+   "doi": "10.1016/b978-0-08-098258-8.00003-1",
+   "t": "Genesis of Clay Minerals",
+   "a": "E. Galán y otros",
+   "y": 2013,
+   "r": "Developments in clay science",
+   "c": 167,
+   "autores": [
+    "E. Galán",
+    "R. E. Ferrell"
+   ],
+   "anio": 2013,
+   "citas": 174,
+   "resumen": ""
+  },
+  {
+   "doi": "10.3390/min8110520",
+   "t": "An Overview of Authigenic Magnesian Clays",
+   "a": "Manuel Pozo, José P. Calvo",
+   "y": 2018,
+   "r": "Minerals",
+   "c": 140,
+   "autores": [
+    "Manuel Pozo",
+    "JOSE LUIS CALVO  ROLLE"
+   ],
+   "anio": 2018,
+   "citas": 143,
+   "resumen": "Clay authigenesis mostly concerns: (a) the formation of clays by direct precipitation from solution, called “neoformation” and (b) development of clays by transformation of precursor minerals. Precipitation from solution implies that a new mineral structure crystallizes, so that a prior mineral structure is not inherited. Transformation of precursor detrital minerals, a process also termed “neoformation by addition”, can be conducted whether throughout precipitation on pre-existing natural surfaces or transformation and reaction on pre-existing surfaces. Both processes have been recognized as effective mechanisms in the formation of Mg-clays, which mostly include 2:1 clay minerals, such as talc-kerolite and Mg-smectites, as well as fibrous clays (sepiolite, palygorskite). Authigenic Mg-clay minerals occur in both modern and ancient marine and non-marine depositional environments, although formation of these clays in hydrothermal continental and seafloor settings must be also outlined. Most favourable conditions for the formation of Mg-clays on earth surface are found in evaporitic depositional environments, especially where parent rocks are enriched in ferromagnesian minerals. In these settings, Mg-clays are important constituent of weathering profiles and soils and can form thick deposits of significant economic interest. Based on this review of authigenic clay deposits, we propose three geochemical pathways, mainly related to continental environments, for the origin of authigenic Mg-clays: formation of Al-bearing Mg-clays (pathway 1), formation of Al-free Mg clays (pathway 2) and formation of sepiolite from other Mg-clay minerals (pathway 3)."
+  },
+  {
+   "doi": "10.1016/b978-0-444-53607-5.00006-2",
+   "t": "Palygorskite and Sepiolite Deposits in Continental Environments. Description, Genetic Patterns and Sedimentary Settings",
+   "a": "Emilio Galán Huertos, Manuel Pozo",
+   "y": 2011,
+   "r": "Developments in clay science",
+   "c": 129,
+   "autores": [
+    "Emilio Galán Huertos",
+    "Manuel Pozo"
+   ],
+   "anio": 2011,
+   "citas": 130,
+   "resumen": ""
+  }
+ ],
+ "suelos": [
+  {
+   "doi": "10.1046/j.1365-2389.2003.00510.x",
+   "t": "Genesis of the terrae rossae of the Sierra Gádor (Andalusia, Spain)",
+   "a": "Rafael Delgado, Juan Manuel Martín-García, Cecilio Oyonarte y otros",
+   "y": 2003,
+   "r": "European Journal of Soil Science",
+   "c": 98,
+   "autores": [
+    "Rafael Delgado",
+    "Juan Manuel Martín‐García",
+    "Cecilio Oyonarte",
+    "Gabriel Delgado"
+   ],
+   "anio": 2003,
+   "citas": 99,
+   "resumen": "Summary Some aspects of the genesis of terrae rossae are still subject to controversy while others related to the genesis of the mineral fraction have been studied very little. We have studied four terrae rossae over limestone (two Chromic‐Leptic Luvisols, a Rhodi‐Leptic Luvisol and a Chromi‐Leptic Cambisol) in Sierra Gádor (Almería, southern Spain), in particular the various formation processes by (i) examination of their morphological, analytical and mineralogical characteristics (including crystallochemical parameters of the mica), (ii) examination of the insoluble residue of the gravel and rock, (iii) scanning electron microscopy (SEM) of sand and silt grains, and (iv) examination of the geochemistry of the soil solution. We have investigated the autochthonous or allochthonous nature of the soil material (fine earth and gravel) in relation to the rocky substrate, concluding that both origins are possible. Our SEM study of the morphology of the quartz grains shows that some are insoluble residue and some are probably wind blown from desert and coastal sources. The micas in the fine earth fractions are inherited from the insoluble residue. Comparison of the crystallochemical parameters of micas in the insoluble residue and the soil clay shows that the clay has more Si IV and (Fe, Mg) VI , and less Al IV , Al VI and x (layer charge) than the insoluble residue. It also has fewer polytypes 2 M 1 and more 1 M and has a smaller crystal size, especially in B horizons. The kaolinite is of varied origins including neoformation and inheritance from underlying rock. Some of the kaolinite and some mica has been blown in from elsewhere, probably from desert and coastal sources. The soils have undergone other typical processes of terrae rossae including dissolution of carbonate, illuviation of clay and iron oxides, and rubifaction."
+  },
+  {
+   "doi": "10.1346/ccmn.2016.064030",
+   "t": "Kaolinite and Halloysite Derived from Sequential Transformation of Pedogenic Smectite and Kaolinite-Smectite in a 120 ka Tropical Soil Chronosequence",
+   "a": "Peter C. Ryan, F. Javier Huertas y otros",
+   "y": 2016,
+   "r": "Clays and Clay Minerals",
+   "c": 33,
+   "autores": [
+    "Peter C. Ryan",
+    "F. Javier Huertas",
+    "Franklin Hobbs",
+    "Lauren N. Pincus"
+   ],
+   "anio": 2016,
+   "citas": 33,
+   "resumen": "Tropical soils range from nutrient-depleted lateritic soils rich in halloysite or kaolinite to Inceptisols rich in interstratified kaolinite-smectite (K-S), smectite, or related 2:1 clays. Given the strong influence of clay minerals on tropical soil quality, better understanding of factors influencing their occurrence is important for modeling and managing tropical environments. This study examines the alteration of smectite to kaolinite by way of intermediate K-S and halloysite in a 120 ka moist tropical chronosequence. Iron-rich smectite (11.6 ± 2.2% Fe2O3) is the dominant mineral in Holocene soils (1–8 ka) originating from sediments rich in plagioclase and clinopyroxene. The cation exchange capacity (CEC) of smectite is 54–84 cmolc/kg and pH is 6.1 to 7.4. Within 50 ka, smectite fixes Al-hydroxy complexes into interlayers, K+ is retained preferentially over Ca2+, and 2:1 layers are stripped of tetrahedral sheets; the resulting K-S inherits flaky smectite crystal habit and the 2:1 layers — which only expand partially — include Al-hydroxy smectite and some illite-like layers. After 50 ka, the dominant mineral is K-S, the CEC is 18–28 cmolc/kg, and the pH is 5.3. Flaky Fe-kaolinite with ~10% residual smectite layers and halloysite (7.4% Fe2O3) also occur in 50 ka soil. The 120 ka soils are dominated by flaky Fe-kaolinite (<10% residual smectite layers) and halloysite (4.9% Fe2O3), and Fe-poor hexagonal kaolinite also occurs (5–10% of soil). The CEC is 11–16 cmolc/kg and the pH is 4.7–5.3. Changes in crystal chemistry of the soil clays (decreasing Fe, Mg, Ca, and K; increasing Al) over time reflects two reaction mechanisms: (1) cell-preserved transformation of smectite layers to kaolinite layers that accompanies conversion of smectite to K-S and eventually kaolinite; this results in the formation of flaky Fe-rich kaolinites after 50 ka; and (2) dissolution of K-S followed by crystallization of halloysite. Neoformation of hexagonal kaolinite and/or halloysite with low Fe (<3% Fe2O3) follows dissolution of Fe-kaolinite or halloysite after 100 ka. This sequence is probably common in moist tropical soils and these findings may inform modeling of soil composition in tropical landscapes where tectonic, volcanic, or geomorphic activity periodically exposes unweathered parent material, producing a range of soil ages."
+  },
+  {
+   "doi": "10.1016/S0016-7037(97)00366-9",
+   "t": "Mechanism of kaolinite dissolution at room temperature and pressure: Part 1. Surface speciation",
+   "a": "F. Javier Huertas, L. Chou, R. Wollast",
+   "y": 1998,
+   "r": "Geochimica et Cosmochimica Acta",
+   "c": null,
+   "autores": [
+    "F. Javier Huertas",
+    "Lei Chou",
+    "Roland Wollast"
+   ],
+   "anio": 1998,
+   "citas": 220,
+   "resumen": ""
+  }
+ ],
+ "marte": [
+  {
+   "doi": "10.1016/j.chemgeo.2021.120403",
+   "t": "The role of microbial extracellular polymeric substances on formation of sulfate minerals and fibrous Mg-clays",
+   "a": "Pablo del Buey, María Esther Sanz-Montero, Óscar Cabestrero y otros",
+   "y": 2021,
+   "r": "Chemical Geology",
+   "c": 57,
+   "autores": [
+    "Pablo del Buey",
+    "María Esther Sanz‐Montero",
+    "Olivier Braissant",
+    "Óscar Cabestrero",
+    "Pieter T. Visscher"
+   ],
+   "anio": 2021,
+   "citas": 57,
+   "resumen": "A variety of Mg-, Na- and Ca-sulfates, including gypsum, and Mg-clays precipitate within the microbial mats that developed seasonally in the hypersaline playa lake El Longar (Central Spain). A multidisciplinary study of the microbial mats along a transect of the lake demonstrates that the degree of lithification of the mats increases from the soft and poorly lithified layers lying on the submerged ground to the highly crystalline mats present in the desiccated fringes. The community composition of the mats is diverse, dominated in terms of OTUs by Proteobacteria, Firmicutes and Cyanobacteria. The Proteobacteria include sulfur-cycling microbes, supporting biogeochemical cycling of this element. Cyanobacteria are the dominant EPS producers in microbial mats and Firmicutes and Proteobacteria have both been shown to play a role in EPS turnover. Several ions (e.g., Mg, S, Si, Al, Fe, Ca, Na) are bound to functional groups of EPS. The abundance of sulfate groups and carboxylic acids suggested that the EPS have a strong binding capacity for Mg2+ and Ca2+, which were higher in the submerged microbial mats. Na, Mg, K, Ca, SO42− and Si are more concentrated in the EPS matrices than in the natural brines. The concentration of ions in the EPS is sufficient to precipitate a mixture of minerals through freeze-drying, that is similar to that found in intact mats. In the EPS of the submerged mats precipitate more types of minerals, including sulfates and Mg-clays, than in the EPS of the exposed areas. These results suggest that the mineral nucleation occurred during the degradation of the mats when the EPS was progressively desiccated and likely released high amounts of ions. The present study helps to understand intrasedimentary growth of sulfates and clays in microbial mats. The presence of these mineral assemblage can be related to a potential biosignature of microbial past life on Earth and possibly also on exoplanets, like Mars."
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alg865.github.io/Arcillas-SEA/sitemap.xml

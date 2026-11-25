@@ -1,0 +1,16 @@
+name: Resúmenes para trabajos destacados (consulta)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  consulta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          if [ ! -f tools/socios.json ]; then echo "Sin lista de socios en el repositorio."; exit 0; fi
+          python3 tools/resumenes_destacados.py
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/resumenes-destacados.json
+          git diff --cached --quiet || (git commit -q -m "Consulta: resúmenes y trabajos más citados de socios" && git pull --rebase -q origin main && git push origin HEAD:main)

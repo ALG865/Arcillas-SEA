@@ -1,0 +1,51 @@
+name: Descargar imágenes y publicar
+
+# Baja las imágenes de microscopio del archivo «Images of Clay» (MinSoc y CMS)
+# que figuran en img/sem/fuentes.txt, las convierte a WebP y publica la web.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: imagenes
+  cancel-in-progress: true
+
+jobs:
+  imagenes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Herramientas
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq webp imagemagick
+      - name: Descargar y convertir
+        run: |
+          mkdir -p img/sem/mini /tmp/ioc
+          while read -r f; do
+            [ -z "$f" ] && continue
+            n="${f%.*}.webp"
+            if [ -f "img/sem/$n" ] && [ -f "img/sem/mini/$n" ]; then continue; fi
+            if curl -fsSL --retry 3 -o "/tmp/ioc/$f" "https://www.minersoc.org/wp-content/gallery/shimages/$f"; then
+              convert "/tmp/ioc/$f[0]" -auto-orient -strip -resize '1600x1600>' "/tmp/ioc/g.png"
+              cwebp -quiet -q 82 "/tmp/ioc/g.png" -o "img/sem/$n"
+              convert "/tmp/ioc/$f[0]" -auto-orient -strip -resize '640x640>' "/tmp/ioc/m.png"
+              cwebp -quiet -q 78 "/tmp/ioc/m.png" -o "img/sem/mini/$n"
+              echo "OK  $f"
+            else
+              echo "FALTA $f"
+            fi
+          done < img/sem/fuentes.txt
+          python3 tools/lista.py
+      - name: Guardar y publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img
+          if ! git diff --cached --quiet; then
+            git commit -m "Imágenes de microscopio de «Images of Clay»"
+            git pull --rebase origin main && git push origin HEAD:main
+          fi
+          git fetch -q origin main && git push --force origin origin/main:gh-pages

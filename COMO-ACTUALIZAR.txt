@@ -1,0 +1,28 @@
+CÓMO ACTUALIZAR LA WEB DE LA SEA DESDE TU ORDENADOR
+====================================================
+
+Cada 3 o 4 meses:
+
+1. Haz doble clic en  actualizar-web.bat  (está en la carpeta principal de la web).
+   Tarda entre 5 y 15 minutos y necesita conexión a Internet.
+2. Al terminar verás un resumen. Se guarda también en ULTIMA-ACTUALIZACION.txt.
+3. Sube la carpeta completa de la web al servidor (sustituyendo los ficheros).
+
+Qué se actualiza
+- Noticias: se leen de la hoja de Google «SEA – Noticias y convocatorias de la web».
+- Publicaciones de los socios: artículos de los últimos 24 meses (OpenAlex).
+- Citas de los trabajos de referencia de Aplicaciones y de Geología (OpenAlex).
+
+Qué se actualiza solo, sin hacer nada
+- Las convocatorias cuyo plazo ha terminado pasan a «Anteriores».
+- En la portada solo salen noticias del último año; en Noticias, las de los dos últimos años.
+- El aviso y la cuenta atrás de CLAY 2027 desaparecen cuando termina el congreso.
+- La lista de publicaciones muestra siempre los últimos 24 meses desde la fecha de consulta.
+
+La primera vez
+- El programa necesita Python 3 (gratuito). Si no está instalado, el .bat abre la
+  página de descarga. Al instalarlo, marca «Add python.exe to PATH».
+
+Si algo falla
+- Si no hay conexión o OpenAlex no responde, se conservan los datos anteriores:
+  la web nunca se queda vacía. Basta con repetir más tarde.
