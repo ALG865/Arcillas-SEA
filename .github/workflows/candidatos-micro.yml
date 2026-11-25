@@ -1,0 +1,23 @@
+name: Candidatos de imágenes MEB/MET
+# Solo en la rama auxiliar candidatos-micro: no toca main ni la web publicada.
+on:
+  push:
+    branches: [candidatos-micro]
+    paths: [tools/candidatos_micro.py, tools/candidatos_articulos.json, .github/workflows/candidatos-micro.yml]
+permissions:
+  contents: write
+jobs:
+  buscar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buscar y descargar
+        run: python3 tools/candidatos_micro.py
+      - name: Guardar en la rama auxiliar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add candidatos
+          git commit -m "Candidatos de imágenes MEB/MET" || exit 0
+          git push origin HEAD:candidatos-micro
