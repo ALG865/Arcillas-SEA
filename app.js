@@ -68,7 +68,7 @@ es:{
  socioTit:"Hazte socio", socioE:"Pueden asociarse investigadores, docentes, estudiantes, empresas e instituciones interesados en las arcillas.", socioPasos:["Descarga la ficha de inscripción.","Rellénala y envíala a la secretaría de la SEA.","La junta directiva te dará la bienvenida."], fichaWord:"Ficha en Word", fichaPdf:"Ficha en PDF",
  estatutosE:"Estatutos de la Sociedad Española de Arcillas.",
  pie:"Funciona sin conexión una vez cargada.", creditos:"Créditos",
- credT:"Imágenes de microscopio: archivo de imágenes de la SEA (cedidas por sus autores) y «Images of Clay» de la Mineralogical Society y The Clay Minerals Society. Tipografía Instrument Sans (SIL Open Font License).",
+ credT:"Imágenes de microscopio: archivo de imágenes de la SEA (cedidas por sus autores) y «Images of Clay» de la Mineralogical Society y The Clay Minerals Society. Muestras de mano: IACT, colecciones privadas y Wikimedia Commons. Tipografía Instrument Sans (SIL Open Font License).",
  otrasHist:"Otras historias", notE:"Noticias de la Sociedad, convocatorias de premios y ayudas y próximas citas.", tipos:{noticia:"Noticia",convocatoria:"Convocatoria",evento:"Cita"}, abiertaHasta:"Abierta hasta el", cerrada:"Cerrada", masInfo:"Más información", accJunta:"Acceso para la Junta Directiva", leerMas:"Leer más", verDoc:"Descargar documento (PDF)", volverNot:"Volver a las noticias", verNoticias:"Ver todas las noticias", proximas:"Abiertas y próximas", anteriores:"Anteriores"
 },
 en:{
@@ -131,7 +131,7 @@ en:{
  socioTit:"Join the SEA", socioE:"Researchers, teachers, students, companies and institutions interested in clays are welcome to join.", socioPasos:["Download the membership form.","Fill it in and send it to the SEA secretary.","The board will welcome you."], fichaWord:"Form (Word)", fichaPdf:"Form (PDF)",
  estatutosE:"Statutes of the Spanish Clay Society (official text, in Spanish).",
  pie:"Works offline once loaded.", creditos:"Credits",
- credT:"Microscope images: SEA image archive (contributed by their authors) and “Images of Clay” of the Mineralogical Society and The Clay Minerals Society. Typeface Instrument Sans (SIL Open Font License).",
+ credT:"Microscope images: SEA image archive (contributed by their authors) and “Images of Clay” of the Mineralogical Society and The Clay Minerals Society. Hand specimens: IACT, private collections and Wikimedia Commons. Typeface Instrument Sans (SIL Open Font License).",
  otrasHist:"More stories", notE:"Society news, calls for awards and grants, and upcoming events.", tipos:{noticia:"News",convocatoria:"Call",evento:"Event"}, abiertaHasta:"Open until", cerrada:"Closed", masInfo:"More information", accJunta:"Board access", leerMas:"Read more", verDoc:"Download document (PDF)", volverNot:"Back to news", verNoticias:"See all news", proximas:"Open and upcoming", anteriores:"Earlier"
 }};
 function U(k){ var o=UI[lang],p=k.split("."); for(var i=0;i<p.length;i++) o=o&&o[p[i]]; return o; }
