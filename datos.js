@@ -4,6 +4,31 @@ window.IOC = "https://www.minersoc.org/wp-content/gallery/shimages/";
 
 /* Imágenes de microscopio electrónico del archivo «Images of Clay».
    La carpeta img/sem/ la rellena el flujo de GitHub «Descargar imágenes». */
+/* Imágenes de microscopio electrónico con licencia libre (artículos CC BY y Wikimedia Commons).
+   Archivos en img/micro/. c = crédito que se muestra en el pie. */
+window.MICRO_LIBRE = {
+  dickita:[{f:"dickita-izadifar2020",t:"SEM",u:"https://doi.org/10.1007/s42860-020-00082-w",
+    c:{es:"Izadifar et al., Clays and Clay Minerals 68 (2020), CC BY 4.0",en:"Izadifar et al., Clays and Clay Minerals 68 (2020), CC BY 4.0"}}],
+  glauconita:[
+    {f:"glauconita-nieto2021-met",t:"TEM",u:"https://doi.org/10.5194/ejm-33-503-2021",
+     d:{es:"láminas de 1 nm con terminaciones (flechas)",en:"1 nm layers with layer terminations (arrows)"},
+     c:{es:"Nieto, Abad, Bauluz y Reolid, European Journal of Mineralogy 33 (2021), CC BY 4.0",en:"Nieto, Abad, Bauluz and Reolid, European Journal of Mineralogy 33 (2021), CC BY 4.0"}},
+    {f:"glauconita-nieto2021-bse",t:"SEM-BSE",u:"https://doi.org/10.5194/ejm-33-503-2021",
+     d:{es:"glauconita (Glt) y celadonita (Cel) rodeadas de calcita (Cal)",en:"glauconite (Glt) and celadonite (Cel) surrounded by calcite (Cal)"},
+     c:{es:"Nieto, Abad, Bauluz y Reolid, European Journal of Mineralogy 33 (2021), CC BY 4.0",en:"Nieto, Abad, Bauluz and Reolid, European Journal of Mineralogy 33 (2021), CC BY 4.0"}}],
+  lizardita:[{f:"lizardita-capitani2021",t:"TEM",u:"https://doi.org/10.5194/ejm-33-425-2021",
+    d:{es:"lizardita (Liz) con crisotilo y serpentina poligonal (Ctl+PS)",en:"lizardite (Liz) with chrysotile and polygonal serpentine (Ctl+PS)"},
+    c:{es:"Capitani et al., European Journal of Mineralogy 33 (2021), CC BY 4.0",en:"Capitani et al., European Journal of Mineralogy 33 (2021), CC BY 4.0"}}],
+  crisotilo:[{f:"crisotilo-cdc",t:"SEM",u:"https://commons.wikimedia.org/wiki/File:Chrysotile_SEM_photo.jpg",
+    c:{es:"Janice Haney Carr (CDC), dominio público, vía Wikimedia Commons",en:"Janice Haney Carr (CDC), public domain, via Wikimedia Commons"}}],
+  caolinita:[{f:"caolinita-usgs",t:"SEM",u:"https://commons.wikimedia.org/wiki/File:Kaolinite_-_USGS_bws00008.jpg",
+    d:{es:"librillos de cristales hexagonales rellenando poros de una arenisca",en:"books of hexagonal crystals filling pores in a sandstone"},
+    c:{es:"USGS (Bartsch-Winkler), dominio público, vía Wikimedia Commons",en:"USGS (Bartsch-Winkler), public domain, via Wikimedia Commons"}}],
+  halloysita:[{f:"halloysita-bruyere",t:"SEM",u:"https://commons.wikimedia.org/wiki/File:Halloysite_MEB02_D_Bruyere.jpg",
+    d:{es:"hábito tubular",en:"tubular habit"},
+    c:{es:"Delphine Bruyère, CC BY-SA 3.0, vía Wikimedia Commons",en:"Delphine Bruyère, CC BY-SA 3.0, via Wikimedia Commons"}}]
+};
+
 window.SEM = {
   caolinita:[
     {f:"45-Kao4_6-adjusted.jpg",a:"M. Roe"},

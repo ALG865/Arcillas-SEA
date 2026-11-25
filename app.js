@@ -22,7 +22,7 @@ es:{
  galTit:"Galería", galE:"Imágenes de microscopio electrónico cedidas por socios de la SEA y del archivo «Images of Clay».", verGaleria:"Ver toda la galería",
  sobreSEA:"La Sociedad Española de Arcillas reúne desde 1969 a quienes investigan, enseñan y trabajan con arcillas en España.",
  imagen:"Imagen", ioc:"Archivo «Images of Clay» (Mineralogical Society y The Clay Minerals Society)", seaArch:"Archivo de imágenes de la Sociedad Española de Arcillas",
- todos:"Todos", fuentes:{sea:"Archivo de la SEA",ioc:"Images of Clay"},
+ todos:"Todos", fuentes:{sea:"Archivo de la SEA",ioc:"Images of Clay",libre:"Otras fuentes con licencia libre"},
  ficha:{formula:"Fórmula ideal",comp:"Composición",d:"Espaciado basal",cic:"Capacidad de intercambio catiónico",se:"Superficie específica",hinch:"Hinchamiento",plast:"Plasticidad",micro:"Al microscopio electrónico",mano:"Muestras de mano",espana:"En España",estructura:"Su lámina",verMapa:"Ver en el mapa",modelo:"Modelo 3D"},
  esp:{tit:"Datos de interés",lam:"Tipo de lámina",x:"Carga de la lámina (x, por fórmula unidad)",grupo:"Grupo",oct:"Carácter octaédrico",inter:"Material interlaminar",fuente:"Clasificación del Comité de Nomenclatura de la AIPEA (Guggenheim et al., 2006, Clays and Clay Minerals 54, 761–772)."},
  niveles:["nulo","bajo","medio","alto","muy alto"], nivelesF:["nula","baja","media","alta","muy alta"], cicU:"meq/100 g", seU:"m²/g",
@@ -85,7 +85,7 @@ en:{
  galTit:"Gallery", galE:"Electron microscope images contributed by SEA members and from the “Images of Clay” archive.", verGaleria:"See the whole gallery",
  sobreSEA:"Since 1969 the Spanish Clay Society has brought together those who research, teach and work with clays in Spain.",
  imagen:"Image", ioc:"“Images of Clay” archive (Mineralogical Society and The Clay Minerals Society)", seaArch:"Image archive of the Spanish Clay Society",
- todos:"All", fuentes:{sea:"SEA archive",ioc:"Images of Clay"},
+ todos:"All", fuentes:{sea:"SEA archive",ioc:"Images of Clay",libre:"Other openly licensed sources"},
  ficha:{formula:"Ideal formula",comp:"Composition",d:"Basal spacing",cic:"Cation exchange capacity",se:"Specific surface area",hinch:"Swelling",plast:"Plasticity",micro:"Under the electron microscope",mano:"Hand specimens",espana:"In Spain",estructura:"Its layer",verMapa:"See on the map",modelo:"3D model"},
  esp:{tit:"Key facts",lam:"Layer type",x:"Layer charge (x, per formula unit)",grupo:"Group",oct:"Octahedral character",inter:"Interlayer material",fuente:"Classification of the AIPEA Nomenclature Committee (Guggenheim et al., 2006, Clays and Clay Minerals 54, 761–772)."},
  niveles:["none","low","medium","high","very high"], nivelesF:["none","low","medium","high","very high"], cicU:"meq/100 g", seU:"m²/g",
@@ -160,7 +160,14 @@ function imgSEA(id){
     return {src:seaImg(g.f),mini:seaImg(g.f,true),nombre:L(minById(g.m)).n,m:g.m,fuente:"sea",autor:"Emilia García-Romero",
       cap:"<b>"+esc(L(g))+"</b> "+U("imagen")+": Emilia García-Romero (UCM-IGEO). "+U("seaArch")+"."}; });
 }
-function imgMicro(id){ return imgSEA(id).concat(imgIOC(id)); }
+function imgLibre(id){
+  var L2=window.MICRO_LIBRE||{}, ids=id?[id]:Object.keys(L2), out=[];
+  ids.forEach(function(k){ (L2[k]||[]).forEach(function(s){ var mm=minById(k), nombre=mm?L(mm).n:k;
+    out.push({src:"img/micro/"+s.f+".webp",mini:"img/micro/mini/"+s.f+".webp",nombre:nombre,m:k,fuente:"libre",autor:L(s.c),
+      cap:"<b>"+esc(nombre)+"</b> ("+s.t+")"+(s.d?": "+esc(L(s.d)):"")+". "+U("imagen")+": <a href=\""+s.u+"\" target=\"_blank\" rel=\"noopener\">"+esc(L(s.c))+"</a>."}); }); });
+  return out;
+}
+function imgMicro(id){ return imgSEA(id).concat(imgIOC(id)).concat(imgLibre(id)); }
 function propia(c){ return c==="del IACT"||c==="privada"||/Llorens/.test(c||""); }
 function colTxt(c){ if(c==="del IACT") return U("colIACT"); if(c==="privada") return U("colPriv"); return c; }
 function imgMano(id){
@@ -591,9 +598,9 @@ P.geologia=function(){ var es=lang==="es", G=window.GEOLOGIA||[], R=window.GEO_R
   main.innerHTML=cabezaPagina(navI("geologia")[1],ent,migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="afines">'+G.map(function(b){ var x=b[lang], r=sinDest(b.id,R[b.id]);
     return '<div class="afin" id="geo-'+b.id+'"><h2 class="h3">'+esc(x.n)+'</h2><p>'+esc(x.t)+'</p>'+(b.id==="marte"?'<p class="apl-min"><a href="#historia/marte">'+esc(L(HISTORIAS[2]).n)+'</a></p>':'')+destacados(b.id)+(r.length?'<details class="aport"><summary>'+U("aportT")+' ('+r.length+')</summary><ul>'+r.map(refLi).join("")+'</ul></details>':'')+otrasES(b.id)+'</div>'; }).join("")+'</div></div>'; };
 P.galeria=function(){
-  var todas=imgSEA().concat([].concat.apply([],Object.keys(SEM).filter(function(k){return minById(k);}).map(imgIOC)));
+  var todas=imgSEA().concat([].concat.apply([],Object.keys(SEM).filter(function(k){return minById(k);}).map(imgIOC)),imgLibre().filter(function(i){return minById(i.m);}));
   var mins=[]; todas.forEach(function(i){ if(mins.indexOf(i.m)<0) mins.push(i.m); });
-  main.innerHTML=cabezaPagina(lang==="es"?"Galería de microscopía":"Microscopy gallery",U("galPag"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros"><button class="filtro" data-gm="">'+U("todos")+'</button>'+mins.map(function(m){ return '<button class="filtro" data-gm="'+m+'">'+esc(L(minById(m)).n)+'</button>'; }).join("")+'</div><div class="filtros" style="margin-top:-.6rem"><button class="filtro" data-gf="">'+U("todos")+'</button><button class="filtro" data-gf="sea">'+U("fuentes.sea")+'</button><button class="filtro" data-gf="ioc">'+U("fuentes.ioc")+'</button></div><div class="mosaico" id="gal"></div></div>';
+  main.innerHTML=cabezaPagina(lang==="es"?"Galería de microscopía":"Microscopy gallery",U("galPag"),migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="filtros"><button class="filtro" data-gm="">'+U("todos")+'</button>'+mins.map(function(m){ return '<button class="filtro" data-gm="'+m+'">'+esc(L(minById(m)).n)+'</button>'; }).join("")+'</div><div class="filtros" style="margin-top:-.6rem"><button class="filtro" data-gf="">'+U("todos")+'</button><button class="filtro" data-gf="sea">'+U("fuentes.sea")+'</button><button class="filtro" data-gf="ioc">'+U("fuentes.ioc")+'</button><button class="filtro" data-gf="libre">'+U("fuentes.libre")+'</button></div><div class="mosaico" id="gal"></div></div>';
   function pinta(){ $$("[data-gm]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-gm")===galM); }); $$("[data-gf]").forEach(function(b){ b.setAttribute("aria-pressed",b.getAttribute("data-gf")===galF); });
     $("#gal").innerHTML=todas.filter(function(i){ return (!galM||i.m===galM)&&(!galF||i.fuente===galF); }).map(function(i){ return fig(i); }).join(""); }
   $$("[data-gm]").forEach(function(b){ b.onclick=function(){ galM=b.getAttribute("data-gm"); pinta(); }; });
