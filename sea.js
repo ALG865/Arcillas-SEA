@@ -36,7 +36,7 @@ window.SEA = {
   {c:{es:"Vocal (hasta 2028)",en:"Board member (until 2028)"},n:"Adrián Lorenzo Hernández",o:"Universidad de Salamanca",e:"adrianlorenzo@usal.es",f:"2026/03/ALH.jpg"},
   {c:{es:"Vocal (hasta 2028)",en:"Board member (until 2028)"},n:"José Manuel Moreno Maroto",o:"Universidad Autónoma de Madrid",e:"josemanuel.moreno@uam.es",f:"2026/03/JMMM.jpg"},
   {c:{es:"Vocal (hasta 2030)",en:"Board member (until 2030)"},n:"Jacinto Alonso Azcárate",o:"Universidad de Castilla-La Mancha",e:"jacinto.alonso@uclm.es",f:""},
-  {c:{es:"Vocal (hasta 2030)",en:"Board member (until 2030)"},n:"Miguel Ángel Vicente Rodríguez",o:"Universidad de Salamanca",e:"mavicente@usal.es",f:""},
+  {c:{es:"Vocal (hasta 2030)",en:"Board member (until 2030)"},n:"Miguel Ángel Vicente Rodríguez",o:"Universidad de Salamanca",e:"mavicente@usal.es",f:"2026/11/MAV.jpg"},
   {c:{es:"Vocal (hasta 2030)",en:"Board member (until 2030)"},n:"Domingo Martín García",o:"Universidad de Sevilla",e:"dmartin5@us.es",f:""},
   {c:{es:"Vocal (hasta 2030)",en:"Board member (until 2030)"},n:"Margarita Darder Colom",o:"Instituto de Ciencia de Materiales de Madrid (CSIC)",e:"darder@icmm.csic.es",f:""}
  ],
