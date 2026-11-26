@@ -1,0 +1,104 @@
+Archivos de la carpeta «web» que hay que subir al servidor, sustituyendo los antiguos (26/11/2026 10:16):
+
+fotos.js
+img/fotos/2026-socios-de-la-sea-en-la-asamblea-general.webp
+img/fotos/mini/2026-socios-de-la-sea-en-la-asamblea-general.webp
+img/lista.json
+sw.js
+
+Cuando los hayas subido, borra este archivo.
+/* Galería fotográfica de la SEA. Generado por el actualizador; las fotos nuevas se añaden desde ENTRADA/fotos. */
+window.FOTOS_SEA=[
+{
+"f": "2026-socios-de-la-sea-en-la-asamblea-general",
+"g": "reuniones",
+"y": 2026,
+"es": "Socios de la SEA en la Asamblea General celebrada en Madrid",
+"en": "Socios de la SEA en la Asamblea General celebrada en Madrid",
+"src": "Archivo de la SEA"
+},
+{
+"f": "2025-asamblea-corrala",
+"g": "reuniones",
+"y": 2025,
+"es": "Socios de la SEA en el centro cultural La Corrala (Madrid) durante la Asamblea General del 21 de noviembre de 2025.",
+"en": "SEAENTRADA/hecho/registro.txt
+
+ENTRADA:
+documentos
+fotos
+hecho
+noticias.xlsx
+premios.xlsx
+
+ENTRADA/hecho/2026-11-26:
+fotos
+
+para-Claude:
+web-SEA-datos.zip
+None
+
+
+##### 26/11/2026 10:16
+Aviso: el traductor no está instalado; los textos nuevos saldrán en español en la versión inglesa.
+
+==================================================================
+ 1. Fotos
+==================================================================
+  Hay que completar el Excel de fotos antes de publicarlas:
+   - Fila 2 (IMG_0001.jpg): falta el Tema (elígelo de la lista)
+   - Fila 2 (IMG_0001.jpg): falta el Año (cuatro cifras)
+   - Fila 2 (IMG_0001.jpg): falta el Pie de foto
+  Guarda el Excel y vuelve a hacer doble clic en ACTUALIZAR-WEB.
+
+==================================================================
+ 2. Premios
+==================================================================
+  Creado ENTRADA/premios.xlsx con los datos actuales de la web.
+
+==================================================================
+ 3. Noticias
+==================================================================
+  Creado ENTRADA/noticias.xlsx con las noticias actuales de la web.
+  7 noticias en la web.
+
+  Kit para Claude actualizado en la carpeta «para-Claude».
+
+==================================================================
+ RESUMEN
+==================================================================
+  - Fotos: PENDIENTE de completar el Excel (3 avisos)
+  - Premios: actualizados
+  - Noticias: actualizadas
+  - NO se ha publicado nada: completa el Excel indicado y vuelve a hacer doble clic.
+
+##### 26/11/2026 10:16
+Aviso: el traductor no está instalado; los textos nuevos saldrán en español en la versión inglesa.
+
+==================================================================
+ 1. Fotos
+==================================================================
+  Publicada: IMG_0001.jpg -> 2026-socios-de-la-sea-en-la-asamblea-general
+
+==================================================================
+ 2. Premios
+==================================================================
+
+==================================================================
+ 3. Noticias
+==================================================================
+  7 noticias en la web.
+
+==================================================================
+ 6. Publicar
+==================================================================
+
+  Kit para Claude actualizado en la carpeta «para-Claude».
+
+==================================================================
+ RESUMEN
+==================================================================
+  - Fotos: 1 publicadas
+  - Premios: sin cambios
+  - Noticias: sin cambios
+  - Publicar: 5 archivos cambiados. Súbelos al servidor (lista en ARCHIVOS-PARA-SUBIR.txt)
