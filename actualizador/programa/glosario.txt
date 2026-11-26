@@ -1,0 +1,35 @@
+# Glosario de la SEA para la traducción automática al inglés.
+# Una línea por término:   español = inglés
+# Los términos más largos tienen prioridad. Se pueden añadir líneas nuevas.
+Sociedad Española de Arcillas = Spanish Clay Society
+Sociedad Española de Mineralogía = Spanish Mineralogical Society
+Reunión Científica de la SEA = SEA Scientific Meeting
+Reunión Científica = Scientific Meeting
+Asamblea General = General Assembly
+Junta Directiva = Board
+socios de la SEA = SEA members
+socias y socios = members
+socios = members
+socio = member
+socia = member
+socio de honor = honorary member
+Premio Martín-Vivaldi = Martín-Vivaldi Award
+Premio Martín Vivaldi = Martín-Vivaldi Award
+Premio José María Serratosa = José María Serratosa Award
+Premio Jóvenes Investigadores = Young Researchers Award
+Premio de Iniciación a la Investigación en Arcillas = Introduction to Clay Research Award
+Premio de Fotografía Científica = Scientific Photography Award
+Instituto Andaluz de Ciencias de la Tierra = Andalusian Institute of Earth Sciences
+minerales de la arcilla = clay minerals
+arcillas especiales = special clays
+peloides = peloids
+peloide = peloid
+sepiolita = sepiolite
+paligorskita = palygorskite
+palygorskita = palygorskite
+caolinita = kaolinite
+esmectita = smectite
+montmorillonita = montmorillonite
+halloysita = halloysite
+illita = illite
+bentonita = bentonite

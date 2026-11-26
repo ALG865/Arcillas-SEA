@@ -663,6 +663,7 @@ function idNoticia(n){ return n.id||(n.fecha+"-"+String(n.es.n).normalize("NFD")
 function enlacesNoticia(n,tarjeta){
   var e=[]; if(tarjeta&&L(n).l) e.push('<a href="#noticias/'+esc(idNoticia(n))+'">'+U("leerMas")+'</a>');
   if(n.doc) e.push('<a href="'+esc(n.doc)+'" target="_blank" rel="noopener">'+U("verDoc")+'</a>');
+  (n.d||[]).forEach(function(x){ e.push('<a href="'+esc(x[0])+'" download>'+esc(lang==="en"&&x[2]?x[2]:x[1])+'</a>'); });
   if(n.url) e.push('<a href="'+esc(n.url)+'" target="_blank" rel="noopener">'+U("masInfo")+'</a>');
   return e.length?'<p class="enlaces-noticia">'+e.join(" · ")+'</p>':'';
 }

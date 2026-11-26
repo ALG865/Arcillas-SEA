@@ -1,0 +1,48 @@
+name: Probar el actualizador en Windows
+# Solo en la rama auxiliar prueba-actualizador. No toca main ni la web publicada.
+on:
+  push:
+    branches: [prueba-actualizador]
+jobs:
+  probar:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Montar la carpeta como la tendra la SEA
+        shell: bash
+        run: |
+          mkdir -p /c/sea/web
+          cp -r actualizador/* /c/sea/
+          for f in *; do [ "$f" != actualizador ] && cp -r "$f" /c/sea/web/; done
+          mkdir -p /c/sea/ENTRADA/fotos
+          python -c "from PIL import Image" 2>/dev/null || true
+      - name: Instalar (como haria el usuario)
+        shell: cmd
+        run: |
+          cd /d C:\sea
+          echo.| "INSTALAR (una sola vez).bat"
+      - name: Foto de prueba
+        shell: cmd
+        run: |
+          cd /d C:\sea
+          py -3 -c "from PIL import Image; Image.new('RGB',(3000,2000),(120,90,60)).save(r'ENTRADA\fotos\IMG_0001.jpg')"
+      - name: Primera ejecucion (debe pedir completar el Excel)
+        shell: cmd
+        run: |
+          cd /d C:\sea
+          echo.| ACTUALIZAR-WEB.bat --sin-internet
+      - name: Completar el Excel y segunda ejecucion
+        shell: cmd
+        run: |
+          cd /d C:\sea
+          py -3 -c "import openpyxl; p=r'ENTRADA\fotos\fotos.xlsx'; wb=openpyxl.load_workbook(p); ws=wb.active; ws['C2']='Reuniones y asambleas'; ws['D2']=2026; ws['E2']='Socios de la SEA en la Asamblea General celebrada en Madrid'; wb.save(p)"
+          echo.| ACTUALIZAR-WEB.bat --sin-internet
+      - name: Resultado
+        shell: bash
+        run: |
+          cd /c/sea
+          cat ARCHIVOS-PARA-SUBIR.txt || true
+          head -c 600 web/fotos.js
+          ls ENTRADA ENTRADA/hecho/* para-Claude
+          py -3 -c "import sys; sys.path.insert(0,'programa'); import traductor; print(traductor.traducir('Entrega del Premio Jóvenes Investigadores en la Reunión Científica de la SEA en Granada. Los socios visitaron la mina de sepiolita.'))"
