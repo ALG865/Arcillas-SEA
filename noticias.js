@@ -52,16 +52,16 @@ window.NOTICIAS=[
 {
 "tipo": "convocatoria",
 "fecha": "2026-03-19",
-"plazo": "2026-12-18",
+"plazo": "2027-01-17",
 "es": {
-"n": "Premios Martín-Vivaldi y José María Serratosa 2027",
-"t": "Dos premios internacionales de 1000 € para que jóvenes investigadores presenten una comunicación oral en CLAY 2027 (Madrid, 20–26 de junio de 2027). Para menores de 35 años o en los cinco años posteriores a la tesis."
+"n": "Premios Martín-Vivaldi y José María Serratosa 2027: plazo ampliado",
+"t": "El plazo de envío de manuscritos se amplía un mes, hasta el 17 de enero de 2027. Dos premios internacionales de 1000 € para que jóvenes investigadores presenten una comunicación oral en CLAY 2027 (Madrid, 20–26 de junio de 2027). Las bases y el formulario de inscripción están en la página de premios."
 },
 "en": {
-"n": "Martín-Vivaldi and José María Serratosa Awards 2027",
-"t": "Two €1000 international awards for young researchers to give an oral presentation at CLAY 2027 (Madrid, 20–26 June 2027). For applicants under 35 or within five years of their PhD."
+"n": "Martín-Vivaldi and José María Serratosa Awards 2027: deadline extended",
+"t": "The manuscript deadline has been extended by one month, to 17 January 2027. Two €1000 international awards for young researchers to give an oral presentation at CLAY 2027 (Madrid, 20–26 June 2027). The rules and application form are on the awards page."
 },
-"url": "https://sea-arcillas.es/premios/premios-martin-vivaldi-y-jose-maria-serratosa-2027/",
+"url": "#premios",
 "img": ""
 },
 {
