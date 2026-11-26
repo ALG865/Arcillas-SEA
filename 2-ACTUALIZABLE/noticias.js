@@ -30,8 +30,8 @@ window.NOTICIAS=[
 "t": "The meeting was held at the Andalusian Institute of Earth Sciences (IACT-CSIC) on 30 June–2 July 2026, with almost sixty participants, 30% of them students, and 45 contributions. The book of abstracts is now available.",
 "l": "The programme included two lectures, oral and poster sessions and a field trip to the Granada Geopark.\n\nTo mark its 40th anniversary, the IACT prepared a display on critical and strategic minerals for the European economy, in which clay minerals play a prominent role."
 },
-"url": "docs/Libro-de-resumenes-XXVIII-Reunion-Cientifica-de-la-SEA.pdf",
-"img": "img/fotos/2026-granada-grupo.webp",
+"url": "1-FIJO/archivo-historico/Libro-de-resumenes-XXVIII-Reunion-Cientifica-de-la-SEA.pdf",
+"img": "2-ACTUALIZABLE/imagenes/fotos/2026-granada-grupo.webp",
 "doc": ""
 },
 {
@@ -80,7 +80,7 @@ window.NOTICIAS=[
 "l": "SEA Vice-President Pilar Aranda (ICMM-CSIC) gave the lecture “Clays: a sustainable alternative for the development of advanced nanostructured materials”.\n\nThe Assembly proposed Manuel Pozo and Saverio Fiore as honorary members, and the Young Researchers Award was presented to Joab David Guerrero Proaño for his work “Clay-based bionanocomposites for nitric oxide release”."
 },
 "url": "",
-"img": "img/fotos/2025-asamblea-corrala.webp",
+"img": "2-ACTUALIZABLE/imagenes/fotos/2025-asamblea-corrala.webp",
 "doc": ""
 },
 {
@@ -99,7 +99,7 @@ window.NOTICIAS=[
 "l": "It recognises the role of the Spanish Clay Society in the international community. Since 2019 AIPEA’s registered office has been at the Andalusian Institute of Earth Sciences (IACT-CSIC, Granada), which is also the SEA’s headquarters.\n\nAt the same conference, two young members received awards for the best student presentations: Celia Martín Morales and María Tijero Martín."
 },
 "url": "",
-"img": "img/fotos/2025-suarez-presidenta.webp",
+"img": "2-ACTUALIZABLE/imagenes/fotos/2025-suarez-presidenta.webp",
 "doc": ""
 },
 {
@@ -116,7 +116,7 @@ window.NOTICIAS=[
 "t": "The organisers of the last International Clay Conference (Dublin, 2025) handed the AIPEA flag to the SEA as organiser of CLAY 2027, the first conference of the new series, to be held in Madrid on 20–26 June 2027."
 },
 "url": "https://clay.aipea.org/",
-"img": "img/fotos/2025-bandera-aipea.webp",
+"img": "2-ACTUALIZABLE/imagenes/fotos/2025-bandera-aipea.webp",
 "doc": ""
 }
 ];

@@ -15,7 +15,7 @@ def resumen(w):
     inv=w.get("abstract_inverted_index") or {}
     return " ".join(k for p,k in sorted((p,k) for k,v in inv.items() for p in v))
 out={}
-for f,v in [("aportaciones.js","APORTES"),("geo-refs.js","GEO_REFS")]:
+for f,v in [("3-AUTOMATICO/aportaciones.js","APORTES"),("3-AUTOMATICO/geo-refs.js","GEO_REFS")]:
     for sec,L in carga(f,v).items():
         top=sorted([z for z in L if z.get("doi")],key=lambda z:-(z.get("c") or 0))[:3]
         for z in top:

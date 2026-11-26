@@ -1,10 +1,10 @@
 /* Funciona sin conexión: guarda la web y las imágenes que se van viendo. */
-var CACHE = "sea-v127";
-var BASE = ["./","index.html","estilo.css","datos.js","aportaciones.js","tecnicas-nuevas.js","afines.js","geologia.js","geo-refs.js","otras.js","datos-interes.js","evolucion.js","destacados.js","centros.js","fotos.js","juntas.js","palmares.js","datos-mapa.js","datos-mundo.js","sea.js","sea-textos.js","glosario.js","docs.js","vendor-three.min.js","modelos3d.js","app.js","icono-192.png","logo-sea.png","logo-sea-negativo.png","noticias.js","publicaciones.js","manifest.webmanifest","img/lista.json","fuentes-tipo/instrument-sans-latin-400-normal.woff2","fuentes-tipo/instrument-sans-latin-500-normal.woff2","fuentes-tipo/instrument-sans-latin-600-normal.woff2"];
+var CACHE = "sea-v128";
+var BASE = ["./","index.html","1-FIJO/programa/estilo.css","2-ACTUALIZABLE/datos.js","3-AUTOMATICO/aportaciones.js","2-ACTUALIZABLE/tecnicas-nuevas.js","2-ACTUALIZABLE/afines.js","2-ACTUALIZABLE/geologia.js","3-AUTOMATICO/geo-refs.js","3-AUTOMATICO/otras.js","2-ACTUALIZABLE/datos-interes.js","2-ACTUALIZABLE/evolucion.js","2-ACTUALIZABLE/destacados.js","2-ACTUALIZABLE/centros.js","2-ACTUALIZABLE/fotos.js","2-ACTUALIZABLE/juntas.js","2-ACTUALIZABLE/palmares.js","2-ACTUALIZABLE/datos-mapa.js","2-ACTUALIZABLE/datos-mundo.js","2-ACTUALIZABLE/sea.js","2-ACTUALIZABLE/sea-textos.js","2-ACTUALIZABLE/glosario.js","2-ACTUALIZABLE/docs.js","1-FIJO/archivo-historico/archivo.js","1-FIJO/programa/vendor-three.min.js","1-FIJO/programa/modelos3d.js","1-FIJO/programa/app.js","icono-192.png","1-FIJO/programa/logo-sea.png","1-FIJO/programa/logo-sea-negativo.png","2-ACTUALIZABLE/noticias.js","3-AUTOMATICO/publicaciones.js","manifest.webmanifest","2-ACTUALIZABLE/lista-imagenes.json","1-FIJO/programa/fuentes-tipo/instrument-sans-latin-400-normal.woff2","1-FIJO/programa/fuentes-tipo/instrument-sans-latin-500-normal.woff2","1-FIJO/programa/fuentes-tipo/instrument-sans-latin-600-normal.woff2"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) {
     return c.addAll(BASE).then(function () {
-      return fetch("img/lista.json").then(function (r) { return r.json(); }).then(function (l) { return c.addAll(l); }).catch(function () {});
+      return fetch("2-ACTUALIZABLE/lista-imagenes.json").then(function (r) { return r.json(); }).then(function (l) { return c.addAll(l); }).catch(function () {});
     });
   }));
   self.skipWaiting();

@@ -3,9 +3,9 @@
 window.IOC = "https://www.minersoc.org/wp-content/gallery/shimages/";
 
 /* Imágenes de microscopio electrónico del archivo «Images of Clay».
-   La carpeta img/sem/ la rellena el flujo de GitHub «Descargar imágenes». */
+   La carpeta 2-ACTUALIZABLE/imagenes/sem/ la rellena el flujo de GitHub «Descargar imágenes». */
 /* Imágenes de microscopio electrónico con licencia libre (artículos CC BY y Wikimedia Commons).
-   Archivos en img/micro/. c = crédito que se muestra en el pie. */
+   Archivos en 2-ACTUALIZABLE/imagenes/micro/. c = crédito que se muestra en el pie. */
 window.MICRO_LIBRE = {
   dickita:[{f:"dickita-izadifar2020",t:"SEM",u:"https://doi.org/10.1007/s42860-020-00082-w",
     c:{es:"Izadifar et al., Clays and Clay Minerals 68 (2020), CC BY 4.0",en:"Izadifar et al., Clays and Clay Minerals 68 (2020), CC BY 4.0"}}],

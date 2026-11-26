@@ -12,7 +12,7 @@ def get(url):
     return {"results":[]}
 CAMPOS={"Earth and Planetary Sciences","Materials Science","Chemistry","Chemical Engineering","Environmental Science","Engineering","Agricultural and Biological Sciences","Energy","Pharmacology, Toxicology and Pharmaceutics","Physics and Astronomy"}
 TEMA=r"clay|smectit|montmorillon|bentonit|kaolin|illit|sepiolit|palygorsk|attapulg|vermiculit|chlorit|halloysit|hectorit|saponit|stevensit|phyllosilic|mica|zeolit|layered double|hydrotalc|mineral|ceramic|brick|tile|soil|sediment|cement|concrete|geopolym|metakaol|pozzolan|mortar|nanocompos|adsorb"
-txt=open("publicaciones.js",encoding="utf-8").read()
+txt=open("3-AUTOMATICO/publicaciones.js",encoding="utf-8").read()
 D=json.loads(re.search(r"=\s*(\{.*\})\s*;?\s*$",txt,re.S).group(1))
 socios={s["n"]:s for s in json.load(open("tools/socios.json",encoding="utf-8"))}
 obras=D["obras"]; dois=[o["doi"].replace("https://doi.org/","") for o in obras if o.get("doi")]
@@ -45,4 +45,4 @@ for o in obras:
 print("Quedan",len(quedan),"de",len(obras))
 D["obras"]=quedan; D["actualizado"]=datetime.date.today().isoformat()
 import os
-if not os.environ.get("SOLO_VER"): open("publicaciones.js","w",encoding="utf-8").write("/* Generado automáticamente desde OpenAlex por tools/publicaciones.py; no editar a mano. */\nwindow.PUBLICACIONES_SOCIOS="+json.dumps(D,ensure_ascii=False)+";\n")
+if not os.environ.get("SOLO_VER"): open("3-AUTOMATICO/publicaciones.js","w",encoding="utf-8").write("/* Generado automáticamente desde OpenAlex por tools/publicaciones.py; no editar a mano. */\nwindow.PUBLICACIONES_SOCIOS="+json.dumps(D,ensure_ascii=False)+";\n")

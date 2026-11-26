@@ -149,10 +149,10 @@ function hoyISO(){ return new Date().toISOString().slice(0,10); }
 /* ---------------- imágenes ---------------- */
 function semFile(f){ return f.replace(/\.(jpe?g|png|gif)$/i,".webp"); }
 function seaSlug(p){ return p.replace(/\.(jpe?g|png|gif|webp)$/i,"").replace(/[\/]/g,"-"); }
-function seaImg(p,mini){ return "img/sea/"+(mini?"mini/":"")+seaSlug(p)+".webp"; }
+function seaImg(p,mini){ return "2-ACTUALIZABLE/imagenes/sea/"+(mini?"mini/":"")+seaSlug(p)+".webp"; }
 function imgIOC(id){
   return (SEM[id]||[]).map(function(s){ var mm=minById(id), nombre=s.m?L(s.m):(mm?L(mm).n:id);
-    return {src:"img/sem/"+semFile(s.f),mini:"img/sem/mini/"+semFile(s.f),nombre:nombre,m:id,fuente:"ioc",autor:s.a,
+    return {src:"2-ACTUALIZABLE/imagenes/sem/"+semFile(s.f),mini:"2-ACTUALIZABLE/imagenes/sem/mini/"+semFile(s.f),nombre:nombre,m:id,fuente:"ioc",autor:s.a,
       cap:"<b>"+esc(nombre)+"</b>"+(s.t?" ("+s.t+")":"")+". "+U("imagen")+": "+esc(s.a)+". "+U("ioc")+"."}; });
 }
 function imgSEA(id){
@@ -163,7 +163,7 @@ function imgSEA(id){
 function imgLibre(id){
   var L2=window.MICRO_LIBRE||{}, ids=id?[id]:Object.keys(L2), out=[];
   ids.forEach(function(k){ (L2[k]||[]).forEach(function(s){ var mm=minById(k), nombre=mm?L(mm).n:k;
-    out.push({src:"img/micro/"+s.f+".webp",mini:"img/micro/mini/"+s.f+".webp",nombre:nombre,m:k,fuente:"libre",autor:L(s.c),
+    out.push({src:"2-ACTUALIZABLE/imagenes/micro/"+s.f+".webp",mini:"2-ACTUALIZABLE/imagenes/micro/mini/"+s.f+".webp",nombre:nombre,m:k,fuente:"libre",autor:L(s.c),
       cap:"<b>"+esc(nombre)+"</b> ("+s.t+")"+(s.d?": "+esc(L(s.d)):"")+". "+U("imagen")+": <a href=\""+s.u+"\" target=\"_blank\" rel=\"noopener\">"+esc(L(s.c))+"</a>."}); }); });
   return out;
 }
@@ -172,7 +172,7 @@ function propia(c){ return c==="del IACT"||c==="privada"||/Llorens/.test(c||"");
 function colTxt(c){ if(c==="del IACT") return U("colIACT"); if(c==="privada") return U("colPriv"); return c; }
 function imgMano(id){
   return (MANO[id]||[]).map(function(x){ var v=x[lang]||x.es;
-    return {src:"img/mano/"+x.f,mini:"img/mano/mini/"+x.f,nombre:v.alt,cap:"<b>"+esc(v.alt)+"</b>"+(v.cap?". "+esc(v.cap):"")+"."+(propia(v.col)?"":" "+esc(colTxt(v.col))+".")}; });
+    return {src:"2-ACTUALIZABLE/imagenes/mano/"+x.f,mini:"2-ACTUALIZABLE/imagenes/mano/mini/"+x.f,nombre:v.alt,cap:"<b>"+esc(v.alt)+"</b>"+(v.cap?". "+esc(v.cap):"")+"."+(propia(v.col)?"":" "+esc(colTxt(v.col))+".")}; });
 }
 function primeraImg(id){ var a=imgMicro(id); if(a.length) return a[0]; var b=imgMano(id); return b[0]||null; }
 function fig(im,opt){ opt=opt||{};
@@ -637,8 +637,8 @@ P.fotos=function(){ var es=lang==="es", F=window.FOTOS_SEA||[];
   function pinta(){ var Y=anios(); if(Y.indexOf(est.y)<0) est.y=Y[0]; var L=lista(); if(est.i>=L.length) est.i=0; var f=L[est.i];
     var tabs='<div class="fg-tabs" role="tablist">'+G.map(function(g){ return '<button role="tab" aria-selected="'+(g[0]===est.g)+'" data-fg="'+g[0]+'">'+g[1]+'</button>'; }).join("")+'</div>';
     var chips='<div class="fg-anios">'+Y.map(function(y){ var n=F.filter(function(f){ return f.g===est.g&&f.y===y; }).length; return '<button aria-pressed="'+(y===est.y)+'" data-fy="'+y+'">'+(est.g==="historia"&&y%10===0&&y<1990?y+(es?"s":"s"):y)+'<small>'+n+'</small></button>'; }).join("")+'</div>';
-    var src="img/fotos/"+f.f+".webp";
-    var visor='<div class="fg-visor"><div class="fg-marco"><button type="button" class="fg-ampliar" data-ver="'+src+'" data-cap="'+esc(esc(f[lang]))+'" aria-label="'+(es?"Ampliar foto":"Enlarge photo")+'"><img src="'+src+'" alt="'+esc(f[lang])+'"></button>'+(L.length>1?'<button class="fg-flecha ant" data-fd="-1" aria-label="'+(es?"Anterior":"Previous")+'">‹</button><button class="fg-flecha sig" data-fd="1" aria-label="'+(es?"Siguiente":"Next")+'">›</button>':'')+'</div><div class="fg-pie"><p>'+esc(f[lang])+'</p><p class="pequeno">'+(L.length>1?(est.i+1)+' / '+L.length+'. ':'')+(es?"Fuente: ":"Source: ")+esc(f.src)+'. <a href="'+src+'" target="_blank" rel="noopener">'+(es?"Ver a tamaño completo":"View full size")+'</a></p>'+(L.length>1?'<div class="fg-miniaturas">'+L.map(function(x,k){ var m=x.mini?"img/fotos/"+x.mini+".webp":"img/fotos/mini/"+x.f+".webp"; return '<button data-fi="'+k+'" aria-current="'+(k===est.i)+'" aria-label="'+(lang==="es"?"Foto ":"Photo ")+(k+1)+(lang==="es"?" de ":" of ")+L.length+'"><img src="'+m+'" alt="" loading="lazy"></button>'; }).join("")+'</div>':'')+'</div></div>';
+    var src="2-ACTUALIZABLE/imagenes/fotos/"+f.f+".webp";
+    var visor='<div class="fg-visor"><div class="fg-marco"><button type="button" class="fg-ampliar" data-ver="'+src+'" data-cap="'+esc(esc(f[lang]))+'" aria-label="'+(es?"Ampliar foto":"Enlarge photo")+'"><img src="'+src+'" alt="'+esc(f[lang])+'"></button>'+(L.length>1?'<button class="fg-flecha ant" data-fd="-1" aria-label="'+(es?"Anterior":"Previous")+'">‹</button><button class="fg-flecha sig" data-fd="1" aria-label="'+(es?"Siguiente":"Next")+'">›</button>':'')+'</div><div class="fg-pie"><p>'+esc(f[lang])+'</p><p class="pequeno">'+(L.length>1?(est.i+1)+' / '+L.length+'. ':'')+(es?"Fuente: ":"Source: ")+esc(f.src)+'. <a href="'+src+'" target="_blank" rel="noopener">'+(es?"Ver a tamaño completo":"View full size")+'</a></p>'+(L.length>1?'<div class="fg-miniaturas">'+L.map(function(x,k){ var m=x.mini?"2-ACTUALIZABLE/imagenes/fotos/"+x.mini+".webp":"2-ACTUALIZABLE/imagenes/fotos/mini/"+x.f+".webp"; return '<button data-fi="'+k+'" aria-current="'+(k===est.i)+'" aria-label="'+(lang==="es"?"Foto ":"Photo ")+(k+1)+(lang==="es"?" de ":" of ")+L.length+'"><img src="'+m+'" alt="" loading="lazy"></button>'; }).join("")+'</div>':'')+'</div></div>';
     document.getElementById("fg").innerHTML=tabs+chips+visor; }
   main.innerHTML=cabezaPagina(U("nav.sociedad")[10][1],es?"Socios de la SEA en reuniones, entregas de premios y congresos, y algunas imágenes de su historia. Elige un tema y un año.":"SEA members at meetings, award ceremonies and conferences, and some images from its history. Choose a theme and a year.",migaSEA())+'<div class="envoltorio pagina-cuerpo"><div id="fg" class="fg"></div></div>';
   var c=document.getElementById("fg"); pinta();
@@ -680,7 +680,7 @@ P.sociedad=function(){
   var hf=SEA.historiaFotos;
   main.innerHTML=cabezaPagina(U("nav.sociedad")[1][1],U("socE"))+
    '<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h2>'+U("fines")+'</h2><p class="entrada">'+esc(L(SEA.fines))+'</p><p>'+esc(L(SEA.actividades))+'</p><p>'+esc(L(SEA.socios))+'</p></div><div><h2>'+U("campos")+'</h2><ul class="columnas-lista">'+L(SEA.campos).map(function(c){ return '<li>'+esc(c)+'</li>'; }).join("")+'</ul><h3 style="margin-top:2rem">'+U("enRed")+'</h3><p>'+esc(L(SEA.red))+'</p></div></div>'+
-   '<h2 style="margin-top:2.25rem">'+(lang==="es"?"Socios colectivos":"Corporate members")+'</h2><div class="logos-socios">'+[["ciemat","CIEMAT","https://www.ciemat.es/"],["clariant","Clariant","https://www.clariant.com/"],["sepiolsa","Sepiolsa","https://www.sepiolsa.es/"],["tolsa","Tolsa","https://www.tolsa.com/"]].map(function(s){ return '<a href="'+s[2]+'" target="_blank" rel="noopener" title="'+s[1]+'"><img src="img/socios/'+s[0]+'.png" alt="'+s[1]+'"></a>'; }).join("")+'</div><h2 style="margin-top:2.25rem">'+(lang==="es"?"Presencia internacional":"International presence")+'</h2><p class="lectura">'+(lang==="es"?"Socios de la SEA han ocupado y ocupan puestos de responsabilidad en las principales instituciones y revistas internacionales de la ciencia de las arcillas.":"SEA members have held and hold leading positions in the main international institutions and journals of clay science.")+'</p><div class="internac">'+SEA.internacional.map(function(b){ return '<div><h3>'+esc(L(b.g))+'</h3><ul>'+b.it.map(function(x){ return '<li>'+esc(L(x))+'</li>'; }).join("")+'</ul></div>'; }).join("")+'</div></div>'+
+   '<h2 style="margin-top:2.25rem">'+(lang==="es"?"Socios colectivos":"Corporate members")+'</h2><div class="logos-socios">'+[["ciemat","CIEMAT","https://www.ciemat.es/"],["clariant","Clariant","https://www.clariant.com/"],["sepiolsa","Sepiolsa","https://www.sepiolsa.es/"],["tolsa","Tolsa","https://www.tolsa.com/"]].map(function(s){ return '<a href="'+s[2]+'" target="_blank" rel="noopener" title="'+s[1]+'"><img src="2-ACTUALIZABLE/imagenes/socios-institucionales/'+s[0]+'.png" alt="'+s[1]+'"></a>'; }).join("")+'</div><h2 style="margin-top:2.25rem">'+(lang==="es"?"Presencia internacional":"International presence")+'</h2><p class="lectura">'+(lang==="es"?"Socios de la SEA han ocupado y ocupan puestos de responsabilidad en las principales instituciones y revistas internacionales de la ciencia de las arcillas.":"SEA members have held and hold leading positions in the main international institutions and journals of clay science.")+'</p><div class="internac">'+SEA.internacional.map(function(b){ return '<div><h3>'+esc(L(b.g))+'</h3><ul>'+b.it.map(function(x){ return '<li>'+esc(L(x))+'</li>'; }).join("")+'</ul></div>'; }).join("")+'</div></div>'+
    '<section class="bloque arena"><div class="envoltorio"><h2>'+U("hitos")+'</h2><div class="dos-col" style="align-items:start"><div class="linea">'+SEA.hitos.map(function(x){ return '<div class="hito"><b>'+x.a+'</b>'+esc(L(x))+'</div>'; }).join("")+'</div><div>'+
      '<figure><img src="'+seaImg(hf[1])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"><figcaption>'+(lang==="es"?"J. L. Martín-Vivaldi en Estados Unidos, 1950.":"J. L. Martín-Vivaldi in the United States, 1950.")+'</figcaption></figure>'+
      '<figure style="margin-top:1.4rem"><img src="'+seaImg(hf[0])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"></figure></div></div></div></section>'+
@@ -720,7 +720,7 @@ P.reuniones=function(){
   function lista(a){ return '<ul class="lista-simple">'+a.map(function(r){ return '<li><b>'+r[0]+'</b><span>'+esc(tr(r[1]))+'<br><span class="pequeno">'+esc(tr(r[2]))+'</span></span></li>'; }).join("")+'</ul>'; }
   main.innerHTML=cabezaPagina(U("nav.sociedad")[4][1],U("reunE"),migaSEA())+'<div class="envoltorio pagina-cuerpo">'+(clayPendiente()?'<div class="convocatoria" style="margin-bottom:3rem"><span class="fecha">20–26 '+(lang==="es"?"de junio de":"June")+' 2027</span><h2 class="h3">'+U("clayTit")+'</h2><p>'+U("clayTxt")+'</p><a href="https://clay.aipea.org/" target="_blank" rel="noopener">'+U("clayWeb")+'</a></div>':'')+'<div class="dos-col" style="align-items:start"><div><h2>'+U("nac")+'</h2>'+lista(SEA.reunionesNac)+'</div><div><h2>'+U("int")+'</h2>'+lista(SEA.reunionesInt)+'</div></div></div>';
 };
-function docURL(f){ return "docs/"+f; }
+function docURL(f){ return ((window.DOCS_FIJOS||[]).indexOf(f)>=0?"1-FIJO/archivo-historico/":"2-ACTUALIZABLE/documentos/")+f; }
 P.publicaciones=function(){
   var G=[["glosario",U("glosarioPub")],["resumenes",U("resumenes")],["libros",U("libros")],["guias",U("guias")],["cursos",U("cursos")],["informes",U("actividades")]];
   function li(p){ return '<li><a href="'+docURL(p.f)+'" target="_blank" rel="noopener">'+esc(L(p))+'</a> <span class="pequeno">PDF, '+num(p.mb)+' MB</span></li>'; }
@@ -759,7 +759,7 @@ P.estatutos=function(){
 };
 
 /* ---------------- cabecera, pie y rutas ---------------- */
-function marcaSVG(){ return '<img src="logo-sea.png" alt="" width="48" height="48">'; }
+function marcaSVG(){ return '<img src="1-FIJO/programa/logo-sea.png" alt="" width="48" height="48">'; }
 /* ---- Páginas añadidas: CLAY 2027, Aprende con arcillas, Cuestionario, Buscador, Aviso legal ---- */
 var CLAY_INICIO=new Date("2027-06-20T09:00:00+02:00");
 function diasClay(){ return Math.max(0,Math.ceil((CLAY_INICIO-new Date())/864e5)); }
@@ -918,7 +918,7 @@ document.addEventListener("click",function(e){
   var v=e.target.closest("[data-ver]"); if(v){ verImagen(v.getAttribute("data-ver"),v.getAttribute("data-cap")); }
 });
 function pie(){
-  $("#pie").innerHTML='<div class="estratos sobre-oscuro"></div><div class="envoltorio"><div><img src="logo-sea-negativo.png" alt="" width="72" height="72" style="margin-bottom:1rem"><h2 class="pie-h">'+U("sea")+'</h2><p>'+U("sobreSEA")+'</p><p>'+esc(SEA.sede)+'<br><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a></p><p class="pequeno" style="color:#8f897f">'+U("creditos")+'. '+U("credT")+'</p><p class="pequeno"><a href="#legal" style="color:#8f897f">'+(lang==="es"?"Aviso legal y privacidad":"Legal notice and privacy")+'</a> · <a href="#clay2027" style="color:#8f897f">CLAY 2027</a></p></div><div><h2 class="pie-h">'+U("sociedad")+'</h2><ul>'+U("nav.sociedad").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'<li><a href="#socio">'+U("hazte")+'</a></li></ul></div><div><h2 class="pie-h">'+U("arcillas")+'</h2><ul>'+U("nav.arcillas").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'</ul><p class="pequeno" style="margin-top:1rem;color:#8f897f">'+U("pie")+'</p></div></div>';
+  $("#pie").innerHTML='<div class="estratos sobre-oscuro"></div><div class="envoltorio"><div><img src="1-FIJO/programa/logo-sea-negativo.png" alt="" width="72" height="72" style="margin-bottom:1rem"><h2 class="pie-h">'+U("sea")+'</h2><p>'+U("sobreSEA")+'</p><p>'+esc(SEA.sede)+'<br><a href="mailto:'+SEA.correo+'">'+SEA.correo+'</a></p><p class="pequeno" style="color:#8f897f">'+U("creditos")+'. '+U("credT")+'</p><p class="pequeno"><a href="#legal" style="color:#8f897f">'+(lang==="es"?"Aviso legal y privacidad":"Legal notice and privacy")+'</a> · <a href="#clay2027" style="color:#8f897f">CLAY 2027</a></p></div><div><h2 class="pie-h">'+U("sociedad")+'</h2><ul>'+U("nav.sociedad").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'<li><a href="#socio">'+U("hazte")+'</a></li></ul></div><div><h2 class="pie-h">'+U("arcillas")+'</h2><ul>'+U("nav.arcillas").map(function(x){ return '<li><a href="#'+x[0]+'">'+x[1]+'</a></li>'; }).join("")+'</ul><p class="pequeno" style="margin-top:1rem;color:#8f897f">'+U("pie")+'</p></div></div>';
 }
 function ir(){
   var h=(location.hash||"#inicio").slice(1).split("?")[0], partes=h.split("/"), id=partes[0], arg=partes[1];

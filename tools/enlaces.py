@@ -1,6 +1,6 @@
 import re,glob,urllib.parse,concurrent.futures,urllib.request,ssl
 U=set()
-for f in glob.glob("*.js")+["index.html"]:
+for f in glob.glob("2-ACTUALIZABLE/*.js")+glob.glob("3-AUTOMATICO/*.js")+glob.glob("1-FIJO/programa/*.js")+["index.html"]:
     if f.startswith("vendor"): continue
     for u in re.findall(r'https?://[^\s"\'<>)\\]+',open(f,encoding="utf8").read()):
         u=u.rstrip(".,;")

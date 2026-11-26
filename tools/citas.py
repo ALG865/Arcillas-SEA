@@ -5,7 +5,7 @@ import json, os, re, time, urllib.request, urllib.parse
 
 MAIL = "sea.arcillas.web@gmail.com"
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FICHEROS = [("aportaciones.js", "APORTES"), ("geo-refs.js", "GEO_REFS"), ("otras.js", "OTRAS_ES")]
+FICHEROS = [("3-AUTOMATICO/aportaciones.js", "APORTES"), ("3-AUTOMATICO/geo-refs.js", "GEO_REFS"), ("3-AUTOMATICO/otras.js", "OTRAS_ES")]
 
 
 def get(url):

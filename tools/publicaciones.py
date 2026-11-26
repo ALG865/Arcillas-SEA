@@ -96,8 +96,8 @@ print("\nTotal:",len(lista))
 for o in lista[:60]: print(" ",o["y"],"|",o["t"][:90],"|",o["r"][:40],"|",", ".join(o["s"]))
 if not lista: sys.exit(0)
 try:
-    prev=open("publicaciones.js",encoding="utf-8").read()
+    prev=open("3-AUTOMATICO/publicaciones.js",encoding="utf-8").read()
     n0=len(json.loads(prev[prev.index("=")+1:].strip().rstrip(";"))["obras"])
     if len(lista)<0.5*n0: print("Muchos menos artículos que la vez anterior (",len(lista),"frente a",n0,"): posible fallo de conexión; no se cambia publicaciones.js"); sys.exit(0)
 except (FileNotFoundError,ValueError,KeyError): pass
-open("publicaciones.js","w",encoding="utf-8").write("/* Generado automáticamente desde OpenAlex por tools/publicaciones.py; no editar a mano. */\nwindow.PUBLICACIONES_SOCIOS="+json.dumps({"actualizado":datetime.date.today().isoformat(),"desde":desde,"obras":lista},ensure_ascii=False)+";\n")
+open("3-AUTOMATICO/publicaciones.js","w",encoding="utf-8").write("/* Generado automáticamente desde OpenAlex por tools/publicaciones.py; no editar a mano. */\nwindow.PUBLICACIONES_SOCIOS="+json.dumps({"actualizado":datetime.date.today().isoformat(),"desde":desde,"obras":lista},ensure_ascii=False)+";\n")
