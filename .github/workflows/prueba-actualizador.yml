@@ -43,6 +43,7 @@ jobs:
       - name: Resultado
         shell: bash
         run: |
+          set +e +o pipefail
           cd /c/sea
           {
           echo "=== instalar_traductor ==="
