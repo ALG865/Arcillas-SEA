@@ -552,3 +552,6 @@ dl.interes{margin:1.2rem 0 .6rem}dl.interes dt{font-weight:600;margin-top:.9rem}
 .buscador-portada button{font:inherit;font-size:1rem;padding:.75rem 1.3rem;border:1px solid rgba(255,255,255,.75);border-radius:999px;background:transparent;color:#fff;cursor:pointer}
 .buscador-portada button:hover{background:rgba(255,255,255,.15)}
 .buscador-portada input:focus-visible,.buscador-portada button:focus-visible{outline:3px solid #b5542c;outline-offset:2px}
+
+dialog figure img{cursor:zoom-out}
+.fg-ampliar img{cursor:zoom-in}

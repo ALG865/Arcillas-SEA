@@ -181,8 +181,8 @@ function fig(im,opt){ opt=opt||{};
 window.quitaFig=function(img){ var f=img.closest("figure"); if(f) f.remove(); };
 var visor;
 function verImagen(src,cap){
-  if(!visor){ visor=document.createElement("dialog"); document.body.appendChild(visor); visor.addEventListener("click",function(e){ if(e.target===visor||e.target.classList.contains("cerrar")) visor.close(); }); }
-  visor.innerHTML='<button class="cerrar" aria-label="'+U("cerrar")+'">×</button><figure><img src="'+esc(src)+'" alt=""><figcaption>'+cap+'</figcaption></figure>';
+  if(!visor){ visor=document.createElement("dialog"); document.body.appendChild(visor); visor.addEventListener("click",function(e){ if(e.target.closest("a")) return; visor.close(); }); }
+  visor.innerHTML='<button class="cerrar" aria-label="'+U("cerrar")+'">×</button><figure><img src="'+esc(src)+'" alt="" title="'+(lang==="es"?"Pulsa para volver":"Click to go back")+'"><figcaption>'+cap+'</figcaption></figure>';
   if(visor.showModal) visor.showModal(); else visor.setAttribute("open","");
 }
 
