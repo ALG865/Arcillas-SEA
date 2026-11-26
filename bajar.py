@@ -21,6 +21,8 @@ for n in names:
         s=unicodedata.normalize(form,n); vs.append(B+urllib.parse.quote(s))
     vs.append(B+urllib.parse.quote(unicodedata.normalize("NFKD",n).encode("ascii","ignore").decode()))
     vs.append(B+urllib.parse.quote(n.replace(" ","-")))
+    vs.append(B+urllib.parse.quote(n.encode("latin-1"),safe="/"))
+    vs.append(B+urllib.parse.quote(unicodedata.normalize("NFD",n).encode("utf-8").decode("latin-1").encode("utf-8"),safe="/"))
     cands.append((vs,"out/"+os.path.basename(unicodedata.normalize("NFKD",n).encode("ascii","ignore").decode()).replace(" ","-")))
 for u in extra:
     base=u.rsplit("/",1)[0]+"/"; f=u.rsplit("/",1)[1]
