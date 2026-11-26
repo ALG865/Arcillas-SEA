@@ -6,6 +6,8 @@ on:
 jobs:
   probar:
     runs-on: windows-latest
+    permissions:
+      contents: write
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +44,16 @@ jobs:
         shell: bash
         run: |
           cd /c/sea
+          {
           cat ARCHIVOS-PARA-SUBIR.txt || true
           head -c 600 web/fotos.js
           ls ENTRADA ENTRADA/hecho/* para-Claude
           py -3 -c "import sys; sys.path.insert(0,'programa'); import traductor; print(traductor.traducir('Entrega del Premio Jóvenes Investigadores en la Reunión Científica de la SEA en Granada. Los socios visitaron la mina de sepiolita.'))"
+          cat ENTRADA/hecho/registro.txt
+          } > "$GITHUB_WORKSPACE/resultado-windows.txt" 2>&1
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultado-windows.txt
+          git commit -m "Resultado de la prueba en Windows" || exit 0
+          git push origin HEAD:prueba-actualizador

@@ -905,6 +905,9 @@ def kit_claude():
         lj = os.path.join(WEB, "img", "lista.json")
         if os.path.exists(lj):
             zf.write(lj, "img/lista.json")
+        for x in ("noticias.xlsx", "premios.xlsx"):  # nunca socios.xlsx (datos personales)
+            if os.path.exists(os.path.join(ENT, x)):
+                zf.write(os.path.join(ENT, x), "ENTRADA/" + x)
     ins = os.path.join(WEB, "INSTRUCCIONES-PARA-CLAUDE.md")
     if os.path.exists(ins):
         shutil.copy2(ins, os.path.join(d, "INSTRUCCIONES-PARA-CLAUDE.md"))
