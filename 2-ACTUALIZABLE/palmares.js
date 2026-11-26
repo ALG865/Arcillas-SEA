@@ -1,4 +1,4 @@
-/* Palmarés de los premios de la SEA. Fuentes: libro del 50 aniversario (2009) e informes anuales «Activities of the SEA» 2005–2025.
+/* Palmarés de los premios de la SEA. Fuentes: libro del 50 aniversario (2009) e informes anuales «Activities of the SEA» 2005–2025; boletines de la AIPEA (n.º 49, 51 y 53) y noticias del CIEMAT.
    Los años que faltan están pendientes de completar con el archivo de la Sociedad. */
 window.PALMARES = [
  {id:"jovenes", es:"Premio a Jóvenes Investigadores (reuniones científicas de la SEA)", en:"Young Researchers Award (SEA scientific meetings)", l:[
@@ -19,8 +19,8 @@ window.PALMARES = [
  {id:"galan", es:"Premio Emilio Galán (SEA y SEM)", en:"Emilio Galán Award (SEA and SEM)", l:[
   ["2024","Mercedes Suárez"]]},
  {id:"iniciacion", es:"Premio de Iniciación a la Investigación en Arcillas (trabajo fin de máster)", en:"Initiation in Clay Research Award (master’s thesis)", l:[
-  ["2022","Andrea García Vicente"],["2014","Javier García Rivas e Inés Aguilar"],["2013","Cristina Ruiz García"]]},
+  ["2022","Andrea García Vicente"],["2020","Adrián Lorenzo Hernández"],["2018","Yesenia Stephanie Martínez Lama"],["2016","Elisa Laita Florián"],["2014","Javier García Rivas e Inés Aguilar"],["2013","Cristina Ruiz García"]]},
  {id:"foto", es:"Premio de Fotografía Científica", en:"Scientific Photography Award", l:[
-  ["2024","Xabier Arroyo («Talco envuelto en algodón»)"],["2022","Xabier Arroyo"],["2018","Ana M. Fernández-Díaz (IV certamen)"],
+  ["2024","Xabier Arroyo («Talco envuelto en algodón»)"],["2022","Xabier Arroyo"],["2018","Ana M. Fernández-Díaz y Miguel Ángel Labajo («Clorita fractal», IV certamen)"],
   ["2016","M.ª Victoria Villar Galicia (1.er premio) y Xabier Arroyo (2.º premio), III certamen"],["2013","Emilia García-Romero (I certamen)"]]}
 ];
