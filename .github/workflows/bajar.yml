@@ -9,4 +9,4 @@ jobs:
       - run: python3 bajar.py || true
       - run: |
           git config user.name bot; git config user.email bot@x
-          git add out; git commit -m "resultado [skip ci]" || true; git push
+          git add out out2; git commit -m "resultado [skip ci]" || true; git push
