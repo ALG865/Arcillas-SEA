@@ -44,7 +44,9 @@ En la raíz están `index.html`, `sw.js` y otros archivos del servidor: no los t
 | `sea-textos.js` | Textos largos (historia de la SEA…). |
 | `centros.js` | «Dónde se investiga»: SOLO centros, nunca nombres de personas. |
 | `datos.js`, `datos-interes.js`, `datos-mapa.js`, `datos-mundo.js` | Fichas de minerales, sus imágenes SEM/TEM, muestras de mano, microfotografías y datos de interés. |
-| `destacados.js`, `afines.js` | Selección de trabajos destacados y sociedades afines. |
+| `destacados.js` | Comentarios de los trabajos más citados de cada apartado (ver tarea fija, sección 6). |
+| `ajustes-rankings.js` | Correcciones a los rankings automáticos: mover un trabajo de apartado u ocultarlo. |
+| `afines.js` | Sociedades afines. |
 | `glosario.js`, `evolucion.js`, `tecnicas-nuevas.js`, `geologia.js` | Contenidos de divulgación. |
 | `docs.js` | Lista de documentos descargables. |
 | `lista-imagenes.json` | Lista de todas las imágenes, para que la web funcione sin conexión. |
@@ -82,7 +84,26 @@ En la raíz están `index.html`, `sw.js` y otros archivos del servidor: no los t
 - Se actualizan solas cada mes en el servidor (`3-AUTOMATICO/`). No las toques.
 - NUNCA pidas ni guardes la lista de socios: tiene datos personales.
 
-## 6. Reglas de contenido de la SEA (obligatorias)
+## 6. Tarea fija en CADA actualización: comentarios de los más citados
+
+Hazla siempre, además de lo que te pidan, y menciónala en el resumen. Si en esta conversación no puedes consultar internet, dilo y sáltala: se hará la próxima vez.
+
+Cada 6 meses, un programa del servidor actualiza los rankings de trabajos de socios más citados. Tu tarea es que los primeros de cada ranking tengan comentario y estén en el apartado correcto.
+
+1. Descarga los rankings publicados (son públicos):
+   - https://sea-arcillas.es/3-AUTOMATICO/aportaciones.js (aplicaciones, `window.APORTES`)
+   - https://sea-arcillas.es/3-AUTOMATICO/geo-refs.js (geología, `window.GEO_REFS`)
+   Si no responden, usa https://alg865.github.io/Arcillas-SEA/ con las mismas rutas.
+2. Aplica `ajustes-rankings.js`. En cada apartado, toma los **3 trabajos más citados** (campo `c`).
+3. Los que no estén en `destacados.js` (compara por `doi`, en minúsculas) necesitan comentario:
+   - Busca el trabajo por su DOI (https://doi.org/DOI o https://api.openalex.org/works/doi:DOI, que da el resumen) y léelo.
+   - Comprueba que el apartado es correcto. Si no lo es, añade el DOI a `mover` en `ajustes-rankings.js` con el apartado bueno (usa solo apartados que ya existan en los rankings). Si no encaja en ninguno, añádelo a `ocultar`.
+   - Añade el trabajo a `destacados.js` en su apartado, con el mismo formato que los demás: `doi`, `a` (autores, «y otros» si son más de dos), `y`, `r` (revista), `c` (citas) y `es:{t,x}`, `en:{t,x}`.
+   - `t`: un título breve y claro para el público general (no el título del artículo). `x`: 3 a 5 frases con qué aportó el trabajo y por qué se cita tanto, en lenguaje sencillo. Escríbelo con tus palabras: no copies el resumen. Nada que no esté en el artículo.
+4. No borres comentarios existentes ni cambies los rankings de `3-AUTOMATICO/`.
+5. Mete `destacados.js` y `ajustes-rankings.js` en el zip de cambios si los has tocado.
+
+## 7. Reglas de contenido de la SEA (obligatorias)
 
 1. Solo datos verdaderos y comprobados. Si no estás seguro de algo, pregunta; no lo inventes ni lo deduzcas.
 2. Ninguna lista de personas incompleta: es mejor no poner la lista que dejar a alguien fuera.
@@ -95,7 +116,7 @@ En la raíz están `index.html`, `sw.js` y otros archivos del servidor: no los t
 9. Todo texto nuevo va en español y en inglés. El inglés debe ser una traducción correcta y natural.
 10. Tono sobrio e informativo, sin adjetivos promocionales.
 
-## 7. Antes de devolver los archivos
+## 8. Antes de devolver los archivos
 
 - Comprueba que cada `.js` que hayas tocado sigue siendo válido. Si puedes ejecutar código, usa `node --check archivo.js` o lee su contenido con un analizador.
 - No borres ni reordenes nada que no te hayan pedido cambiar.

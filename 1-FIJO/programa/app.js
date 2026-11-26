@@ -1,3 +1,14 @@
+/* Aplica 2-ACTUALIZABLE/ajustes-rankings.js a los rankings automáticos */
+(function(){ var J=window.AJUSTES_RANKINGS||{}, M=J.mover||{}, O=(J.ocultar||[]).map(function(d){return String(d).toLowerCase();}), F=[window.APORTES||{},window.GEO_REFS||{}];
+  function dict(sec){ for(var i=0;i<F.length;i++) if(F[i].hasOwnProperty(sec)) return F[i]; return null; }
+  F.forEach(function(R){ Object.keys(R).forEach(function(sec){ R[sec]=(R[sec]||[]).filter(function(z){ var d=String(z.doi||"").toLowerCase();
+    if(O.indexOf(d)>=0) return false;
+    if(M[d]&&M[d]!==sec){ var T=dict(M[d]); if(T){ (T[M[d]]=T[M[d]]||[]).push(z); return false; } }
+    return true; }); }); });
+  /* citas de los destacados: la cifra más reciente de los rankings */
+  var D=window.DESTACADOS||{}; Object.keys(D).forEach(function(sec){ D[sec]=D[sec].filter(function(z){ return O.indexOf(String(z.doi).toLowerCase())<0; });
+    D[sec].forEach(function(z){ F.forEach(function(R){ Object.keys(R).forEach(function(k){ R[k].forEach(function(x){ if(String(x.doi||"").toLowerCase()===String(z.doi).toLowerCase()&&(x.c||0)>(z.c||0)) z.c=x.c; }); }); }); }); });
+})();
 /* Sociedad Española de Arcillas · web */
 (function(){
 "use strict";
