@@ -2,13 +2,15 @@
 Lee tools/socios.json y escribe publicaciones.js. Se ejecuta en GitHub Actions."""
 import json, urllib.request, urllib.parse, datetime, sys, unicodedata
 MAIL="sea.arcillas.web@gmail.com"
+import os
+CLAVE=os.environ.get("OPENALEX_API_KEY","").strip()  # clave gratuita de OpenAlex (config.ini del actualizador)
 import time
 def get(url):
     sep="&" if "?" in url else "?"
     for intento in range(6):
         try:
             time.sleep(0.4)
-            with urllib.request.urlopen(url+sep+"mailto="+MAIL, timeout=60) as r: return json.load(r)
+            with urllib.request.urlopen(url+sep+"mailto="+MAIL+(("&api_key="+CLAVE) if CLAVE else ""), timeout=60) as r: return json.load(r)
         except Exception as e:
             print("   reintento", intento+1, e); time.sleep(5*(intento+1))
     return {"results":[],"meta":{}}

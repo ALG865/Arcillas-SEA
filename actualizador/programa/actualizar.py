@@ -654,8 +654,7 @@ def openalex_por_orcid(orcid):
     import urllib.request
     o = re.sub(r".*(\d{4}-\d{4}-\d{4}-\d{3}[\dX]).*", r"\1", orcid)
     try:
-        u = "https://api.openalex.org/authors?filter=orcid:%s&mailto=sea@sea-arcillas.es" % o
-        d = json.load(urllib.request.urlopen(u, timeout=30))
+        d = oa("https://api.openalex.org/authors?filter=orcid:%s&mailto=sea@sea-arcillas.es" % o)
         return [a["id"].split("/")[-1] for a in d.get("results", [])]
     except Exception:
         return []
@@ -680,8 +679,32 @@ def socios_guardar_ids(ruta):
     guardar(wb, ruta)
 
 
+def config():
+    cfg = configparser.ConfigParser()
+    cfg.read(os.path.join(RAIZ, "config.ini"), encoding="utf-8")
+    return cfg
+
+
+def clave_openalex():
+    return config().get("openalex", "clave", fallback="").strip()
+
+
+def oa(url):
+    """Consulta a OpenAlex con la clave de config.ini (obligatoria desde febrero de 2026)."""
+    import urllib.request
+    c = clave_openalex()
+    url += ("&api_key=" + c) if c else ""
+    for intento in range(4):
+        try:
+            return json.load(urllib.request.urlopen(url, timeout=60))
+        except Exception as e:
+            ultimo = e
+            time.sleep(5 * (intento + 1))
+    raise ultimo
+
+
 def lanzar(script, *args):
-    env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
+    env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8", OPENALEX_API_KEY=clave_openalex())
     r = subprocess.run([sys.executable, os.path.join("tools", script)] + list(args), cwd=WEB,
                        capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
     lineas = [l for l in ((r.stdout or "") + (r.stderr or "")).splitlines() if l.strip()]
@@ -728,6 +751,21 @@ def buscar_destacados():
     except Exception as e:
         log("  No se pudo preparar la búsqueda de trabajos nuevos:", e)
         return 0
+    try:
+        socios = {x["n"]: x for x in json.load(open(os.path.join(T, "socios.json"), encoding="utf-8"))}
+    except Exception:
+        socios = {}
+    porid = {i: socios[n] for n, v in cache.items() if n in socios for i in v}
+    def firma_socio(w):
+        """El socio debe firmar el trabajo con su centro (evita confundirlo con alguien del mismo nombre)."""
+        for au in w.get("authorships", []):
+            s = porid.get(((au.get("author") or {}).get("id") or "").split("/")[-1])
+            if not s:
+                continue
+            t = norm(" | ".join([(x.get("display_name") or "") for x in (au.get("institutions") or [])] + (au.get("raw_affiliation_strings") or []))).replace("-", " ")
+            if any(norm(c).replace("-", " ") in t for c in s.get("afil", []) if c):
+                return True
+        return False
     excl = set()
     ruta = os.path.join(ENT, "socios.xlsx")
     if os.path.exists(ruta):
@@ -748,9 +786,12 @@ def buscar_destacados():
             u = ("https://api.openalex.org/works?per-page=200&cursor=%s&mailto=sea@sea-arcillas.es&select=doi,title,publication_year,cited_by_count,"
                  "authorships,primary_location,abstract_inverted_index&filter=%s") % (cursor, urllib.parse.quote(filtro, safe=":,|>"))
             try:
-                d = json.load(urllib.request.urlopen(u, timeout=60)); time.sleep(0.3)
+                d = oa(u); time.sleep(0.3)
             except Exception as e:
-                log("  OpenAlex no responde:", e); return 0
+                log("  OpenAlex no responde:", e)
+                if "401" in str(e) or "429" in str(e):
+                    log("  Falta la clave de OpenAlex en config.ini, o se ha agotado la cuota del día.")
+                return 0
             for w in d.get("results", []):
                 if w.get("doi"):
                     obras[w["doi"].lower().replace("https://doi.org/", "")] = w
@@ -770,7 +811,7 @@ def buscar_destacados():
         if doi in ya or doi in excl:
             continue
         t = texto(w)
-        if not re.search(ESTRICTO, t):
+        if not re.search(ESTRICTO, t) or not firma_socio(w):
             continue
         for f, var, temas in ficheros:
             k = clasificar(t, temas)
@@ -837,8 +878,7 @@ def publicar(antes):
         return
     nueva_version_cache()  # para que los navegadores carguen la versión nueva
     cambiados = sorted(set(cambiados) | {"sw.js"})
-    cfg = configparser.ConfigParser()
-    cfg.read(os.path.join(RAIZ, "config.ini"), encoding="utf-8")
+    cfg = config()
     modo = cfg.get("publicar", "modo", fallback="manual").strip().lower()
     lista = os.path.join(RAIZ, "ARCHIVOS-PARA-SUBIR.txt")
     # La lista se acumula hasta que se suben los archivos (por FTP o a mano, borrando después este archivo)

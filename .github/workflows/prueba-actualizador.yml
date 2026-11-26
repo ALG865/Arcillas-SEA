@@ -45,6 +45,10 @@ jobs:
         run: |
           cd /c/sea
           {
+          echo "=== instalar_traductor ==="
+          py -3 programa/instalar_traductor.py 2>&1 || true
+          ls -R programa/modelo-es-en 2>&1 | head -20
+          echo "=== resultado ==="
           cat ARCHIVOS-PARA-SUBIR.txt || true
           head -c 600 web/fotos.js
           ls ENTRADA ENTRADA/hecho/* para-Claude

@@ -4,6 +4,7 @@ Solo cambia el campo de citas; no añade ni quita trabajos. Uso: python tools/ci
 import json, os, re, time, urllib.request, urllib.parse
 
 MAIL = "sea.arcillas.web@gmail.com"
+CLAVE = os.environ.get("OPENALEX_API_KEY", "").strip()  # clave gratuita de OpenAlex
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FICHEROS = [("aportaciones.js", "APORTES"), ("geo-refs.js", "GEO_REFS"), ("otras.js", "OTRAS_ES")]
 
@@ -12,7 +13,7 @@ def get(url):
     for intento in range(5):
         try:
             time.sleep(0.3)
-            with urllib.request.urlopen(url + "&mailto=" + MAIL, timeout=60) as r:
+            with urllib.request.urlopen(url + "&mailto=" + MAIL + (("&api_key=" + CLAVE) if CLAVE else ""), timeout=60) as r:
                 return json.load(r)
         except Exception as e:
             print("   reintento", intento + 1, e)
