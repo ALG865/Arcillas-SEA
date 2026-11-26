@@ -1,4 +1,28 @@
-Archivos de la carpeta «web» que hay que subir al servidor, sustituyendo los antiguos (26/11/2026 10:16):
+=== instalar_traductor ===
+    Descargando https://argos-net.com/v1/translate-es_en-1_9.argosmodel
+Traceback (most recent call last):
+  File "C:\sea\programa\instalar_traductor.py", line 17, in <module>
+    datos = urllib.request.urlopen(url, timeout=600).read()
+            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.15.2\x64\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.15.2\x64\Lib\urllib\request.py", line 495, in open
+    response = meth(req, response)
+  File "C:\hostedtoolcache\windows\Python\3.15.2\x64\Lib\urllib\request.py", line 604, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "C:\hostedtoolcache\windows\Python\3.15.2\x64\Lib\urllib\request.py", line 533, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.15.2\x64\Lib\urllib\request.py", line 466, in _call_chain
+    result = func(*args)
+  File "C:\hostedtoolcache\windows\Python\3.15.2\x64\Lib\urllib\request.py", line 613, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+ls: cannot access 'programa/modelo-es-en': No such file or directory
+=== resultado ===
+Archivos de la carpeta «web» que hay que subir al servidor, sustituyendo los antiguos (26/11/2026 10:28):
 
 fotos.js
 img/fotos/2026-socios-de-la-sea-en-la-asamblea-general.webp
@@ -35,11 +59,12 @@ ENTRADA/hecho/2026-11-26:
 fotos
 
 para-Claude:
+INSTRUCCIONES-PARA-CLAUDE.md
 web-SEA-datos.zip
 None
 
 
-##### 26/11/2026 10:16
+##### 26/11/2026 10:28
 Aviso: el traductor no está instalado; los textos nuevos saldrán en español en la versión inglesa.
 
 ==================================================================
@@ -72,7 +97,7 @@ Aviso: el traductor no está instalado; los textos nuevos saldrán en español e
   - Noticias: actualizadas
   - NO se ha publicado nada: completa el Excel indicado y vuelve a hacer doble clic.
 
-##### 26/11/2026 10:16
+##### 26/11/2026 10:28
 Aviso: el traductor no está instalado; los textos nuevos saldrán en español en la versión inglesa.
 
 ==================================================================
