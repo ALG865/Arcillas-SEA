@@ -7,3 +7,4 @@ tools/socios-top.json
 tools/socios-openalex.json
 ENTRADA/
 *.xlsx
+__pycache__/
