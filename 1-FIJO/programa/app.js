@@ -607,10 +607,10 @@ P.modificadas=function(){ var es=lang==="es";
   paginaMat("modificadas",es?"Arcillas transformadas por intercambio, intercalación, tratamiento químico o térmico, combinación con otros materiales o síntesis, para darles propiedades nuevas.":"Clays transformed by exchange, intercalation, chemical or thermal treatment, combination with other materials or synthesis, to give them new properties.",window.MODIFICADAS||[],true); };
 function modDeMineral(id){ var M=[]; (window.MODIFICADAS||[]).forEach(function(g){ g.items.forEach(function(m){ if(m.m&&m.m.indexOf(id)>=0) M.push(m); }); });
   if(!M.length) return ""; return '<p style="margin-top:1.5rem"><b>'+navI("modificadas")[1]+':</b> '+M.map(function(m){ return '<a href="#modificadas">'+esc(m[lang].n)+'</a>'; }).join(", ")+'</p>'; }
-P.geologia=function(){ var es=lang==="es", G=window.GEOLOGIA||[], R=window.GEO_REFS||{};
+P.geologia=function(arg){ var es=lang==="es", G=window.GEOLOGIA||[], R=window.GEO_REFS||{};
   var ent=es?"Las arcillas guardan la memoria de la Tierra: registran el clima, la temperatura y la edad de las rocas, el movimiento de las fallas y la historia de los suelos, e incluso la presencia de agua en Marte.":"Clays hold the Earth's memory: they record climate, the temperature and age of rocks, fault movement and soil history, and even the presence of water on Mars.";
   main.innerHTML=cabezaPagina(navI("geologia")[1],ent,migaArcillas())+'<div class="envoltorio pagina-cuerpo"><div class="afines">'+G.map(function(b){ var x=b[lang], r=sinDest(b.id,R[b.id]);
-    return '<div class="afin" id="geo-'+b.id+'"><h2 class="h3">'+esc(x.n)+'</h2><p>'+esc(x.t)+'</p>'+(b.id==="marte"?'<p class="apl-min"><a href="#historia/marte">'+esc(L(HISTORIAS[2]).n)+'</a></p>':'')+destacados(b.id)+(r.length?'<details class="aport"><summary>'+U("aportT")+' ('+r.length+')</summary><ul>'+r.map(refLi).join("")+'</ul></details>':'')+otrasES(b.id)+'</div>'; }).join("")+'</div></div>'; };
+    return '<div class="afin" id="geo-'+b.id+'"><h2 class="h3">'+esc(x.n)+'</h2><p>'+esc(x.t)+'</p>'+(b.id==="marte"?'<p class="apl-min"><a href="#historia/marte">'+esc(L(HISTORIAS[2]).n)+'</a></p>':'')+destacados(b.id)+(r.length?'<details class="aport"><summary>'+U("aportT")+' ('+r.length+')</summary><ul>'+r.map(refLi).join("")+'</ul></details>':'')+otrasES(b.id)+'</div>'; }).join("")+'</div></div>'; if(arg){ var c=document.getElementById("geo-"+arg); if(c) setTimeout(function(){ c.scrollIntoView({block:"start"}); },50); } };
 P.galeria=function(){
   var todas=imgSEA().concat([].concat.apply([],Object.keys(SEM).filter(function(k){return minById(k);}).map(imgIOC)),imgLibre().filter(function(i){return minById(i.m);}));
   var mins=[]; todas.forEach(function(i){ if(mins.indexOf(i.m)<0) mins.push(i.m); });
@@ -693,7 +693,7 @@ P.noticias=function(arg){
 P.sociedad=function(){
   var hf=SEA.historiaFotos;
   main.innerHTML=cabezaPagina(U("nav.sociedad")[1][1],U("socE"))+
-   '<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h2>'+U("fines")+'</h2><p class="entrada">'+esc(L(SEA.fines))+'</p><p>'+esc(L(SEA.actividades))+'</p><p>'+esc(L(SEA.socios))+'</p></div><div><h2>'+U("campos")+'</h2><ul class="columnas-lista">'+L(SEA.campos).map(function(c){ return '<li>'+esc(c)+'</li>'; }).join("")+'</ul><h3 style="margin-top:2rem">'+U("enRed")+'</h3><p>'+esc(L(SEA.red))+'</p></div></div>'+
+   '<div class="envoltorio pagina-cuerpo"><div class="dos-col" style="align-items:start"><div><h2>'+U("fines")+'</h2><p class="entrada">'+esc(L(SEA.fines))+'</p><p>'+esc(L(SEA.actividades))+'</p><p>'+esc(L(SEA.socios))+'</p></div><div><h2>'+U("campos")+'</h2><ul class="columnas-lista">'+L(SEA.campos).map(function(c,i){ var d=CAMPOS_IR[i]; return '<li>'+(d?'<a href="#'+d+'">'+esc(c)+'</a>':esc(c))+'</li>'; }).join("")+'</ul><h3 style="margin-top:2rem">'+U("enRed")+'</h3><p>'+esc(L(SEA.red))+'</p></div></div>'+
    '<h2 style="margin-top:2.25rem">'+(lang==="es"?"Socios colectivos":"Corporate members")+'</h2><div class="logos-socios">'+[["ciemat","CIEMAT","https://www.ciemat.es/"],["clariant","Clariant","https://www.clariant.com/"],["sepiolsa","Sepiolsa","https://www.sepiolsa.es/"],["tolsa","Tolsa","https://www.tolsa.com/"]].map(function(s){ return '<a href="'+s[2]+'" target="_blank" rel="noopener" title="'+s[1]+'"><img src="2-ACTUALIZABLE/imagenes/socios-institucionales/'+s[0]+'.png" alt="'+s[1]+'"></a>'; }).join("")+'</div><h2 style="margin-top:2.25rem">'+(lang==="es"?"Presencia internacional":"International presence")+'</h2><p class="lectura">'+(lang==="es"?"Socios de la SEA han ocupado y ocupan puestos de responsabilidad en las principales instituciones y revistas internacionales de la ciencia de las arcillas.":"SEA members have held and hold leading positions in the main international institutions and journals of clay science.")+'</p><div class="internac">'+SEA.internacional.map(function(b){ return '<div><h3>'+esc(L(b.g))+'</h3><ul>'+b.it.map(function(x){ return '<li>'+esc(L(x))+'</li>'; }).join("")+'</ul></div>'; }).join("")+'</div></div>'+
    '<section class="bloque arena"><div class="envoltorio"><h2>'+U("hitos")+'</h2><div class="dos-col" style="align-items:start"><div class="linea">'+SEA.hitos.map(function(x){ return '<div class="hito"><b>'+x.a+'</b>'+esc(L(x))+'</div>'; }).join("")+'</div><div>'+
      '<figure><img src="'+seaImg(hf[1])+'" alt="" onerror="quitaFig(this)" style="aspect-ratio:auto"><figcaption>'+(lang==="es"?"J. L. Martín-Vivaldi en Estados Unidos, 1950.":"J. L. Martín-Vivaldi in the United States, 1950.")+'</figcaption></figure>'+
@@ -910,6 +910,16 @@ function prepGlosario(){ if(GLOS_RE!==null) return GLOS_RE; var NO={"arcilla":1,
     if(t.length<6||NO[t.toLowerCase()]||/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\- ]/.test(t)) return; var k=t.toLowerCase(); if(GLOS_DEF[k]) return; GLOS_DEF[k]=g.d; T.push(t); });
   T.sort(function(a,b){ return b.length-a.length; });
   GLOS_RE=T.length?new RegExp("(^|[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ])("+T.map(function(t){ return t.replace(/[-]/g,"\\-"); }).join("|")+")(?=[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]|$)","i"):false; return GLOS_RE; }
+/* Destinos de los campos de actividad (mismo orden que SEA.campos) */
+var CAMPOS_IR=["geologia","minerales","estructura","propiedades","geologia/suelos","yacimientos","aplicaciones","modificadas","aplicaciones/nanocompuestos","aplicaciones/farmacia","aplicaciones/agricultura","aplicaciones/barreras","geologia/geoarqueologia","aplicaciones/estructural"];
+/* Enlaza a su semblanza los nombres de los socios de honor que la tienen */
+var PERSONAS_RE=[["martin-vivaldi",/J(?:uan|\.)\s?L(?:uis|\.)\s?Mart[ií]n[- ]Vivaldi/],["serratosa",/J(?:os[eé]|\.)\s?M(?:ar[ií]a|\.)\s?Serratosa/],["galan",/E(?:milio|\.)\s?Gal[aá]n(?: Huertos)?/],["rausell",/J(?:os[eé]|\.)\s?A(?:ntonio|\.)\s?Rausell[- ]Colom/],["veniale",/F(?:ernando|\.)\s?Veniale/],["macewan",/D(?:ouglas|\.)\s?(?:M\.\s?C\.\s?)?MacEwan/]];
+function enlazarPersonas(id,arg){ if(/^(buscar|legal|cuestionario|estatutos|semblanzas|glosario)$/.test(id)) return;
+  var w=document.createTreeWalker(main,NodeFilter.SHOW_TEXT,{acceptNode:function(t){ var p=t.parentNode; if(!p||p.closest("a,button,h1,h2,h3,h4,summary,.term,script,style,svg,.miga,label,select,option")) return NodeFilter.FILTER_REJECT; return NodeFilter.FILTER_ACCEPT; }}), T=[], hechos={};
+  while(w.nextNode()) T.push(w.currentNode);
+  T.forEach(function(t){ PERSONAS_RE.forEach(function(q){ if(hechos[q[0]]||(id==="semblanza"&&arg===q[0])||!t.parentNode) return; var m=q[1].exec(t.nodeValue); if(!m) return;
+    if(/(Premio|Prize|Award)\s*$/i.test(t.nodeValue.slice(0,m.index))) return;
+    hechos[q[0]]=1; var r=t.splitText(m.index); r.splitText(m[0].length); var a=document.createElement("a"); a.href="#semblanza/"+q[0]; a.textContent=m[0]; a.title=lang==="es"?"Ver semblanza":"See biography"; r.parentNode.replaceChild(a,r); t=a.nextSibling||t; }); }); }
 function enlazarGlosario(id){ if(lang!=="es"||/^(glosario|buscar|legal|cuestionario|inicio|junta|fotos|pubsocios|estatutos|semblanzas)$/.test(id)) return; var re=prepGlosario(); if(!re) return;
   var usados={}, n=0, MAX=10, w=document.createTreeWalker(main,NodeFilter.SHOW_TEXT,{acceptNode:function(t){ var p=t.parentNode; if(!p||p.closest("a,button,h1,h2,h3,h4,summary,.term,script,style,svg,.miga,label,select,option,table")) return NodeFilter.FILTER_REJECT; return p.closest("p,li,dd")?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT; }}), L=[];
   while(w.nextNode()) L.push(w.currentNode);
@@ -952,6 +962,7 @@ function ir(){
   $$(".grupo-menu").forEach(function(x){ x.classList.remove("abierto"); });
   P[id](arg);
   try{ enlazarGlosario(id); }catch(e){}
+  try{ enlazarPersonas(id,arg); }catch(e){}
   $$("[data-ir]",main).forEach(function(b){ if(b.tagName!=="TR") b.onclick=function(){ location.hash=b.getAttribute("data-ir"); }; });
   $$(".desplegable a").forEach(function(a){ a.setAttribute("aria-current",a.getAttribute("href")==="#"+id?"page":"false"); });
   window.scrollTo(0,0);
