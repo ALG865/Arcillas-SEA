@@ -1,6 +1,9 @@
 /* Aplica 2-ACTUALIZABLE/ajustes-rankings.js a los rankings automáticos */
 (function(){ var J=window.AJUSTES_RANKINGS||{}, M=J.mover||{}, O=(J.ocultar||[]).map(function(d){return String(d).toLowerCase();}), F=[window.APORTES||{},window.GEO_REFS||{}];
   function dict(sec){ for(var i=0;i<F.length;i++) if(F[i].hasOwnProperty(sec)) return F[i]; return null; }
+  var C=window.CANDIDATOS||{}, A=J.anadir||{};
+  Object.keys(A).forEach(function(d){ var z=C[String(d).toLowerCase()], T=dict(A[d]); if(!z||!T) return;
+    (T[A[d]]=T[A[d]]||[]).push({a:z.a,y:z.y,t:z.t,r:z.r,c:z.c,doi:z.doi}); });
   F.forEach(function(R){ Object.keys(R).forEach(function(sec){ R[sec]=(R[sec]||[]).filter(function(z){ var d=String(z.doi||"").toLowerCase();
     if(O.indexOf(d)>=0) return false;
     if(M[d]&&M[d]!==sec){ var T=dict(M[d]); if(T){ (T[M[d]]=T[M[d]]||[]).push(z); return false; } }

@@ -8,7 +8,7 @@ window.PRESIDENTES = [
  {n:"Emilio Galán Huertos", p:{es:"1984–1991",en:"1984–1991"}},
  {n:"Francisco López Aguayo", p:{es:"1991–1994",en:"1991–1994"}},
  {n:"Miguel Ortega Huertas", p:{es:"Diciembre de 1994 (Sevilla) – 1996",en:"December 1994 (Seville) – 1996"}},
- {n:"José Luis Pérez Rodríguez", p:{es:"Presidente en 2001, hasta noviembre de 2002 (inicio por confirmar)",en:"President in 2001, until November 2002 (start to be confirmed)"}},
+ {n:"José Luis Pérez Rodríguez", p:{es:"Presidente en 2001, hasta noviembre de 2002",en:"President in 2001, until November 2002"}},
  {n:"Santiago Leguey Jiménez", p:{es:"Noviembre de 2002 – septiembre de 2006",en:"November 2002 – September 2006"}},
  {n:"Eduardo Ruiz-Hitzky", p:{es:"Septiembre de 2006 (Oviedo) – noviembre de 2010",en:"September 2006 (Oviedo) – November 2010"}},
  {n:"Mercedes Suárez", p:{es:"Noviembre de 2010 (Madrid) – 2014",en:"November 2010 (Madrid) – 2014"}},

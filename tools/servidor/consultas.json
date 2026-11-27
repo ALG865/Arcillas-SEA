@@ -1,0 +1,202 @@
+{
+ "aportaciones": {
+  "ceramica": [
+   "porcelain",
+   "stoneware",
+   "kaolin firing mullite",
+   "ceramic pigment clay",
+   "whiteware kaolin"
+  ],
+  "estructural": [
+   "brick clay",
+   "fired clay brick",
+   "roof tile clay",
+   "clay brick waste",
+   "earthen construction adobe"
+  ],
+  "azulejos": [
+   "ceramic tile clay",
+   "porcelain tile",
+   "ceramic tile body"
+  ],
+  "refractarios": [
+   "refractory clay",
+   "refractory kaolin",
+   "mullite kaolinite",
+   "pyrophyllite"
+  ],
+  "cemento": [
+   "metakaolin",
+   "calcined clay cement",
+   "limestone calcined clay",
+   "geopolymer kaolin",
+   "pozzolan clay"
+  ],
+  "papel": [
+   "kaolin paper coating",
+   "kaolin filler",
+   "kaolin quality brightness",
+   "kaolin deposit"
+  ],
+  "cargas": [
+   "organoclay polymer filler",
+   "sepiolite polymer",
+   "talc filler",
+   "kaolin rubber",
+   "clay paint rheology"
+  ],
+  "perforacion": [
+   "drilling fluid bentonite",
+   "drilling fluid sepiolite",
+   "bentonite rheology suspension",
+   "clay suspension rheology"
+  ],
+  "fundicion": [
+   "foundry bentonite",
+   "green sand bentonite",
+   "foundry sand clay"
+  ],
+  "pelets": [
+   "iron ore pellet bentonite",
+   "binder pelletizing bentonite"
+  ],
+  "ingenieria": [
+   "bentonite slurry",
+   "geosynthetic clay liner",
+   "compacted clay liner",
+   "expansive clay soil",
+   "clay barrier landfill"
+  ],
+  "barreras": [
+   "bentonite radioactive waste",
+   "bentonite repository",
+   "FEBEX bentonite",
+   "bentonite buffer",
+   "compacted bentonite swelling",
+   "bentonite concrete interaction",
+   "clay host rock radionuclide"
+  ],
+  "absorbentes": [
+   "sepiolite sorbent",
+   "sepiolite adsorption",
+   "palygorskite adsorption",
+   "bentonite absorbent",
+   "clay sorption organic"
+  ],
+  "agricultura": [
+   "clay pesticide formulation",
+   "clay herbicide",
+   "organoclay pesticide",
+   "clay soil fertility",
+   "clay fertilizer slow release"
+  ],
+  "pienso": [
+   "clay mycotoxin",
+   "bentonite aflatoxin",
+   "sepiolite feed",
+   "clay feed additive"
+  ],
+  "farmacia": [
+   "clay drug delivery",
+   "clay pharmaceutical",
+   "clay cosmetic",
+   "halloysite drug",
+   "montmorillonite drug",
+   "clay excipient",
+   "peloid",
+   "pelotherapy",
+   "clay health"
+  ],
+  "alimentos": [
+   "bentonite wine",
+   "bentonite protein stabilization",
+   "bleaching clay oil",
+   "sepiolite food"
+  ],
+  "agua": [
+   "clay heavy metal adsorption",
+   "clay pollutant removal",
+   "organoclay water",
+   "clay dye adsorption",
+   "clay emerging contaminants",
+   "clay arsenic"
+  ],
+  "catalisis": [
+   "pillared clay",
+   "clay catalyst",
+   "acid activated clay",
+   "layered double hydroxide catalyst",
+   "clay photocatalyst",
+   "kaolinite zeolite synthesis"
+  ],
+  "nanocompuestos": [
+   "clay nanocomposite",
+   "bionanocomposite clay",
+   "sepiolite nanocomposite",
+   "polymer montmorillonite",
+   "clay hybrid material",
+   "halloysite nanocomposite"
+  ],
+  "aislamiento": [
+   "vermiculite",
+   "exfoliated vermiculite",
+   "sepiolite insulation",
+   "clay thermal insulation"
+  ],
+  "litio": [
+   "lithium clay",
+   "lithium smectite",
+   "hectorite lithium"
+  ],
+  "azulmaya": [
+   "Maya blue",
+   "palygorskite indigo",
+   "clay archaeometry",
+   "archaeological ceramics clay",
+   "historic brick clay",
+   "clay heritage"
+  ]
+ },
+ "geologia": {
+  "paleoclima": [
+   "clay minerals paleoclimate",
+   "clay mineral assemblages provenance",
+   "clay minerals palaeoenvironment"
+  ],
+  "diagenesis": [
+   "illite crystallinity",
+   "Kubler index",
+   "illitization diagenesis",
+   "smectite illite transformation",
+   "very low-grade metamorphism phyllosilicates",
+   "diagenesis clay minerals"
+  ],
+  "datacion": [
+   "K-Ar illite dating",
+   "illite Ar-Ar age"
+  ],
+  "fallas": [
+   "fault gouge clay",
+   "clay minerals fault zone"
+  ],
+  "alteracion": [
+   "hydrothermal alteration clay minerals",
+   "bentonite genesis",
+   "kaolin deposit genesis",
+   "sepiolite genesis",
+   "palygorskite genesis"
+  ],
+  "suelos": [
+   "soil clay mineralogy",
+   "weathering clay minerals"
+  ],
+  "geoarqueologia": [
+   "archaeological ceramics clay provenance",
+   "archaeometry clay"
+  ],
+  "marte": [
+   "Mars clay minerals",
+   "phyllosilicates Mars"
+  ]
+ }
+}

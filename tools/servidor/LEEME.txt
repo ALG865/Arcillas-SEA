@@ -1,0 +1,13 @@
+PROGRAMA DE ACTUALIZACIÓN TRIMESTRAL DE LA WEB DE LA SEA  /  AGGIORNAMENTO TRIMESTRALE DEL SITO SEA
+Ver instrucciones en «Cómo actualizar la web de la SEA.docx», apartado 3.C.
+Vedere le istruzioni in «Cómo actualizar la web de la SEA.docx», sezione 5.
+
+Contenido / Contenuto:
+  actualizar.php                 programa / programma
+  config.php                     configuración (ruta de la web) / configurazione (percorso del sito)
+  consultas.json                 búsquedas de los rankings / ricerche delle classifiche
+  socios.json                    LISTA DE SOCIOS (PRIVADA) / ELENCO SOCI (PRIVATO)
+  socios-openalex.json           perfiles de los socios en OpenAlex / profili OpenAlex
+  ya-revisados.json, pubs-excluidas.json, pubs-incluidas.json, socios-honor-excluidos.json  listas de control
+Se crean solos / Si creano da soli: estado.json, registro.log
+ESTA CARPETA NO DEBE ESTAR DENTRO DE public_html.  QUESTA CARTELLA NON DEVE STARE DENTRO public_html.

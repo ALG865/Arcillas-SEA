@@ -45,7 +45,7 @@ En la raíz están `index.html`, `sw.js`, `404.html`, `.htaccess` (redirecciones
 | `centros.js` | «Dónde se investiga»: SOLO centros, nunca nombres de personas. |
 | `datos.js`, `datos-interes.js`, `datos-mapa.js`, `datos-mundo.js` | Fichas de minerales, sus imágenes SEM/TEM, muestras de mano, microfotografías y datos de interés. |
 | `destacados.js` | Comentarios de los trabajos más citados de cada apartado (ver tarea fija, sección 6). |
-| `ajustes-rankings.js` | Correcciones a los rankings automáticos: mover un trabajo de apartado u ocultarlo. |
+| `ajustes-rankings.js` | Altas y correcciones de los rankings automáticos: candidatos aprobados (`anadir`) y rechazados (`rechazar`), trabajos movidos de apartado (`mover`) u ocultos (`ocultar`). |
 | `afines.js` | Sociedades afines. |
 | `glosario.js`, `evolucion.js`, `tecnicas-nuevas.js`, `geologia.js` | Contenidos de divulgación. |
 | `docs.js` | Lista de documentos descargables. |
@@ -88,24 +88,29 @@ En la raíz están `index.html`, `sw.js`, `404.html`, `.htaccess` (redirecciones
 - Se actualizan solas cada 3 meses en el servidor (`3-AUTOMATICO/`). No las toques.
 - NUNCA pidas ni guardes la lista de socios: tiene datos personales.
 
-## 6. Tarea fija en CADA actualización: comentarios de los más citados
+## 6. Tarea fija en CADA actualización: rankings de los más citados
 
-Hazla siempre, además de lo que te pidan, y menciónala en el resumen. Si en esta conversación no puedes consultar internet, dilo y sáltala: se hará la próxima vez.
+Hazla siempre, además de lo que te pidan, y menciónala en el resumen. Si en esta conversación no puedes consultar internet, dilo y sáltala: se hará la próxima vez. El criterio es estricto: **ante la menor duda, no se añade**. En la web no puede salir un trabajo que no sea de un socio, que no trate de arcillas o atribuido por confusión de nombres.
 
-Cada 3 meses, un programa del servidor actualiza los rankings de trabajos de socios más citados. Tu tarea es que los primeros de cada ranking tengan comentario y estén en el apartado correcto.
+Cada 3 meses, un programa del servidor pone al día las citas de los rankings y deja en `3-AUTOMATICO/candidatos.js` los trabajos de socios con más de 50 citas que aún no están. **La web no muestra los candidatos hasta que tú los apruebas.**
 
-1. Descarga los rankings publicados (son públicos):
-   - https://sea-arcillas.es/3-AUTOMATICO/aportaciones.js (aplicaciones, `window.APORTES`)
-   - https://sea-arcillas.es/3-AUTOMATICO/geo-refs.js (geología, `window.GEO_REFS`)
-   Si no responden, usa https://alg865.github.io/Arcillas-SEA/ con las mismas rutas.
-2. Aplica `ajustes-rankings.js`. En cada apartado, toma los **3 trabajos más citados** (campo `c`).
-3. Los que no estén en `destacados.js` (compara por `doi`, en minúsculas) necesitan comentario:
-   - Busca el trabajo por su DOI (https://doi.org/DOI o https://api.openalex.org/works/doi:DOI, que da el resumen) y léelo.
-   - Comprueba que el apartado es correcto. Si no lo es, añade el DOI a `mover` en `ajustes-rankings.js` con el apartado bueno (usa solo apartados que ya existan en los rankings). Si no encaja en ninguno, añádelo a `ocultar`.
-   - Añade el trabajo a `destacados.js` en su apartado, con el mismo formato que los demás: `doi`, `a` (autores, «y otros» si son más de dos), `y`, `r` (revista), `c` (citas) y `es:{t,x}`, `en:{t,x}`.
-   - `t`: un título breve y claro para el público general (no el título del artículo). `x`: 3 a 5 frases con qué aportó el trabajo y por qué se cita tanto, en lenguaje sencillo. Escríbelo con tus palabras: no copies el resumen. Nada que no esté en el artículo.
-4. No borres comentarios existentes ni cambies los rankings de `3-AUTOMATICO/`.
-5. Mete `destacados.js` y `ajustes-rankings.js` en el zip de cambios si los has tocado.
+**A. Revisar los candidatos**
+1. Descarga https://sea-arcillas.es/3-AUTOMATICO/candidatos.js (si no responde, https://alg865.github.io/Arcillas-SEA/3-AUTOMATICO/candidatos.js). Cada candidato trae `doi`, `k` (aportaciones o geologia), `sec` (apartado propuesto), autores, revista, citas y `socios` (quién firma).
+2. Para cada uno, busca el trabajo por su DOI (https://api.openalex.org/works/doi:DOI da autores, centros y resumen) y comprueba las cuatro cosas:
+   - el socio de `socios` figura como autor con su nombre y apellido, y con un centro en el que ha trabajado (no un homónimo);
+   - es un artículo de investigación o de revisión en una revista;
+   - trata de arcillas, minerales de la arcilla o materiales hechos con ellos (no basta con una mención de pasada);
+   - el apartado es el correcto. Si no, elige el bueno entre los que ya existen en los rankings.
+3. Si cumple todo, añádelo en `ajustes-rankings.js`, en `anadir`: `"doi": "apartado"`. Si no, añade el DOI a `rechazar` para que no se vuelva a proponer. Si dudas, recházalo.
+
+**B. Comentarios de los más citados**
+1. Descarga los rankings publicados:
+   - https://sea-arcillas.es/3-AUTOMATICO/aportaciones.js (`window.APORTES`)
+   - https://sea-arcillas.es/3-AUTOMATICO/geo-refs.js (`window.GEO_REFS`)
+2. Aplica `ajustes-rankings.js` (incluidos los que acabas de aprobar). En cada apartado, toma los **3 trabajos más citados** (campo `c`).
+3. Los que no estén en `destacados.js` (compara por `doi`, en minúsculas) necesitan comentario. Añádelo con el mismo formato que los demás: `doi`, `a`, `y`, `r`, `c` y `es:{t,x}`, `en:{t,x}`. `t` es un título breve y claro para el público general; `x`, de 3 a 5 frases sobre qué aportó y por qué se cita tanto, escritas con tus palabras a partir del resumen (no lo copies) y sin nada que no esté en el artículo.
+4. Si un trabajo ya publicado está en un apartado equivocado, añádelo a `mover`; si no debe estar, a `ocultar`.
+5. No borres comentarios existentes ni toques `3-AUTOMATICO/`. Mete `destacados.js` y `ajustes-rankings.js` en el zip de cambios si los has tocado.
 
 ## 7. Reglas de contenido de la SEA (obligatorias)
 
