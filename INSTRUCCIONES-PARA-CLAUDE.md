@@ -12,7 +12,7 @@ La web es estática (HTML + JavaScript), en español y en inglés, y está en ht
 |---|---|---|
 | `1-FIJO/` | El programa (`programa/`: `app.js`, `estilo.css`, tipos de letra, logotipos) y el archivo histórico de PDF (`archivo-historico/`). | **No.** Solo si te lo piden expresamente y el cambio lo exige. |
 | `2-ACTUALIZABLE/` | Todo el contenido: textos en `.js`, `imagenes/` (fotos, Junta, SEM/TEM, muestras de mano, microfotografías, logotipos de socios institucionales) y `documentos/` (PDF y Word nuevos). | **Sí.** Aquí van todos tus cambios. |
-| `3-AUTOMATICO/` | Publicaciones de los socios y trabajos destacados. Los escribe un programa mensual del servidor. | **Nunca.** Cualquier cambio se perdería en la siguiente ejecución. |
+| `3-AUTOMATICO/` | Publicaciones de los socios y trabajos destacados. Los escribe un programa del servidor cada 3 meses. | **Nunca.** Cualquier cambio se perdería en la siguiente ejecución. |
 
 En la raíz están `index.html`, `sw.js`, `404.html`, `.htaccess` (redirecciones de las direcciones de la web antigua) y otros archivos del servidor: no los toques.
 
@@ -85,14 +85,14 @@ En la raíz están `index.html`, `sw.js`, `404.html`, `.htaccess` (redirecciones
 - Si cambia la Junta entera, añádela también a `juntas.js`.
 
 **Publicaciones de los socios**
-- Se actualizan solas cada mes en el servidor (`3-AUTOMATICO/`). No las toques.
+- Se actualizan solas cada 3 meses en el servidor (`3-AUTOMATICO/`). No las toques.
 - NUNCA pidas ni guardes la lista de socios: tiene datos personales.
 
 ## 6. Tarea fija en CADA actualización: comentarios de los más citados
 
 Hazla siempre, además de lo que te pidan, y menciónala en el resumen. Si en esta conversación no puedes consultar internet, dilo y sáltala: se hará la próxima vez.
 
-Cada 6 meses, un programa del servidor actualiza los rankings de trabajos de socios más citados. Tu tarea es que los primeros de cada ranking tengan comentario y estén en el apartado correcto.
+Cada 3 meses, un programa del servidor actualiza los rankings de trabajos de socios más citados. Tu tarea es que los primeros de cada ranking tengan comentario y estén en el apartado correcto.
 
 1. Descarga los rankings publicados (son públicos):
    - https://sea-arcillas.es/3-AUTOMATICO/aportaciones.js (aplicaciones, `window.APORTES`)
