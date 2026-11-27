@@ -14,7 +14,7 @@ La web es estática (HTML + JavaScript), en español y en inglés, y está en ht
 | `2-ACTUALIZABLE/` | Todo el contenido: textos en `.js`, `imagenes/` (fotos, Junta, SEM/TEM, muestras de mano, microfotografías, logotipos de socios institucionales) y `documentos/` (PDF y Word nuevos). | **Sí.** Aquí van todos tus cambios. |
 | `3-AUTOMATICO/` | Publicaciones de los socios y trabajos destacados. Los escribe un programa mensual del servidor. | **Nunca.** Cualquier cambio se perdería en la siguiente ejecución. |
 
-En la raíz están `index.html`, `sw.js` y otros archivos del servidor: no los toques.
+En la raíz están `index.html`, `sw.js`, `404.html`, `.htaccess` (redirecciones de las direcciones de la web antigua) y otros archivos del servidor: no los toques.
 
 ## 2. Qué recibes
 

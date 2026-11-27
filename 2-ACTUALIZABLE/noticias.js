@@ -46,7 +46,7 @@ window.NOTICIAS=[
 "n": "8th Clay Scientific Photography Contest",
 "t": "The SEA held the 8th edition of its scientific photography contest, open to anyone interested in clays. Prizes were awarded at the Granada meeting."
 },
-"url": "https://sea-arcillas.es/premios/premio-sea-de-fotografia-cientifica/",
+"url": "#premios",
 "img": ""
 },
 {
