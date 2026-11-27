@@ -11,7 +11,7 @@ window.PALMARES = [
   ["2008","Bernd Wicklein"],["2007","Marcial Gabino Mázquez y Almudena Gómez-Avilés"],["2006","Xabier Arroyo"],
   ["2005","Rocío Fernández-Saavedra y Pedro Huerta"]]},
  {id:"mv", es:"Premio Martín Vivaldi (congresos Euroclay)", en:"Martín Vivaldi Award (Euroclay conferences)", l:[
-  ["2019","Ediana P. Rebitski"],["2015","Bernd Wicklein"],["2007","Sadok Letaïef"],["2003","Tomás Undabeytia"],
+  ["2019","Ediana P. Rebitski"],["2015","Bernd Wicklein"],["2011","Desierto"],["2007","Sadok Letaïef"],["2003","Tomás Undabeytia"],
   ["1999","Peter Uhlík; accésit: Patricia Aparicio y Juraj Bujdák"],["1995","Desierto"],["1991","Bella B. Smoliar-Zviagina"],
   ["1988","Matilde Forteza y Esmeralda Morillo; accésit: Inmaculada Palomo"]]},
  {id:"serratosa", es:"Premio José María Serratosa (International Clay Conference)", en:"José María Serratosa Award (International Clay Conference)", l:[
