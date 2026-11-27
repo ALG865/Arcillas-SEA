@@ -15,12 +15,12 @@ window.PALMARES = [
   ["1999","Peter Uhlík; accésit: Patricia Aparicio y Juraj Bujdák"],["1995","Desierto"],["1991","Bella B. Smoliar-Zviagina"],
   ["1988","Matilde Forteza y Esmeralda Morillo; accésit: Inmaculada Palomo"]]},
  {id:"serratosa", es:"Premio José María Serratosa (International Clay Conference)", en:"José María Serratosa Award (International Clay Conference)", l:[
-  ["2017","Marwan Akkari (Universidad de Cartago, Túnez)"]]},
+  ["2017","Marwa Akkari (Universidad de Cartago, Túnez)"]]},
  {id:"galan", es:"Premio Emilio Galán (SEA y SEM)", en:"Emilio Galán Award (SEA and SEM)", l:[
   ["2024","Mercedes Suárez"]]},
  {id:"iniciacion", es:"Premio de Iniciación a la Investigación en Arcillas (trabajo fin de máster)", en:"Initiation in Clay Research Award (master’s thesis)", l:[
   ["2022","Andrea García Vicente"],["2020","Adrián Lorenzo Hernández"],["2018","Yesenia Stephanie Martínez Lama"],["2016","Elisa Laita Florián"],["2014","Javier García Rivas e Inés Aguilar"],["2013","Cristina Ruiz García"]]},
  {id:"foto", es:"Premio de Fotografía Científica", en:"Scientific Photography Award", l:[
-  ["2024","Xabier Arroyo («Talco envuelto en algodón»)"],["2022","Xabier Arroyo"],["2018","Ana M. Fernández-Díaz y Miguel Ángel Labajo («Clorita fractal», IV certamen)"],
+  ["2024","Xabier Arroyo («Talco envuelto en algodón»)"],["2022","Xabier Arroyo («Greenalita en flor», V certamen)"],["2018","Ana M. Fernández-Díaz y Miguel Ángel Labajo («Clorita fractal», IV certamen)"],
   ["2016","M.ª Victoria Villar Galicia (1.er premio) y Xabier Arroyo (2.º premio), III certamen"],["2013","Emilia García-Romero (I certamen)"]]}
 ];
