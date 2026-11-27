@@ -114,6 +114,8 @@ Cada 3 meses, un programa del servidor pone al día las citas de los rankings y 
 
 ## 7. Reglas de contenido de la SEA (obligatorias)
 
+- **Cambia solo lo que te pidan.** No modifiques por tu cuenta fechas, cargos, nombres ni textos ya publicados, aunque encuentres otra fuente que diga algo distinto: propón el cambio, explica de dónde sale y espera a que te lo confirmen.
+
 1. Solo datos verdaderos y comprobados. Si no estás seguro de algo, pregunta; no lo inventes ni lo deduzcas.
 2. Ninguna lista de personas incompleta: es mejor no poner la lista que dejar a alguien fuera.
 3. «Dónde se investiga» muestra centros, nunca nombres de personas.
