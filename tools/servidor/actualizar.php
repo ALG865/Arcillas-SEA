@@ -215,7 +215,12 @@ try {
         foreach (array_keys($aj['anadir'] ?? []) as $x) $ya[doi_limpio($x)] = 1;
         foreach (array_merge($aj['rechazar'] ?? [], $aj['ocultar'] ?? []) as $x) $ya[doi_limpio($x)] = 1;
         $cand = leer_js("$AUTO/candidatos.js") ?? [];
-        foreach ($cand as $doi => $z) if (isset($todos[$doi]) || isset($ya[$doi])) unset($cand[$doi]);
+        $ap = [];   // aprobados: se quedan en candidatos.js, porque la web los toma de ahí
+        foreach (array_keys($aj['anadir'] ?? []) as $x) $ap[doi_limpio($x)] = 1;
+        foreach ($cand as $doi => $z) {
+            if (isset($ap[$doi])) { $cand[$doi]['aprobado'] = true; continue; }
+            if (isset($todos[$doi]) || isset($ya[$doi])) unset($cand[$doi]);
+        }
         $nuevos = 0;
         foreach (['aportaciones', 'geologia'] as $k) {
             foreach ($consultas[$k] ?? [] as $sec => $qs) {
