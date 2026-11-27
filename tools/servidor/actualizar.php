@@ -136,6 +136,8 @@ try {
     foreach ($socios as $s) foreach ($cache[$s['n']] ?? [] as $id) $porid[$id] = $s;
     $ids = array_keys($porid); sort($ids);
     $lotes = array_chunk($ids, 40);
+    $lotesG = array_chunk($ids, 100);   // lotes grandes para las búsquedas de los rankings (menos peticiones)
+    $CAMPOS = 'id,doi,title,publication_year,cited_by_count,type,authorships,primary_location,abstract_inverted_index';
 
     // 2. Publicaciones recientes (24 meses)
     if (!$pendiente || $pendiente === 'publicaciones') {
@@ -218,8 +220,9 @@ try {
         foreach (['aportaciones', 'geologia'] as $k) {
             foreach ($consultas[$k] ?? [] as $sec => $qs) {
                 if (!isset($D[$k][$sec])) continue;
-                foreach ($qs as $q) foreach ($lotes as $lote) {
-                    $d = oa('works', ['per-page' => 25, 'sort' => 'cited_by_count:desc', 'filter' => 'author.id:' . implode('|', $lote) . ",cited_by_count:>50,type:article|review,title_and_abstract.search:$q"]);
+                registro("Rankings: buscando candidatos en $k/$sec");
+                foreach ($qs as $q) foreach ($lotesG as $lote) {
+                    $d = oa('works', ['per-page' => 25, 'sort' => 'cited_by_count:desc', 'select' => $CAMPOS, 'filter' => 'author.id:' . implode('|', $lote) . ",cited_by_count:>50,type:article|review,title_and_abstract.search:$q"]);
                     foreach ($d['results'] as $w) {
                         $doi = doi_limpio($w['doi'] ?? '');
                         if (!$doi || isset($todos[$doi]) || isset($ya[$doi]) || isset($cand[$doi]) || in_array("https://doi.org/$doi", $excl) || in_array($doi, $excl)) continue;
