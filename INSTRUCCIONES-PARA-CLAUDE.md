@@ -64,6 +64,10 @@ En la raíz están `index.html`, `sw.js` y otros archivos del servidor: no los t
 2. Los documentos van en `d`, dentro de `es` y de `en`: `d:[["Bases (PDF)","2-ACTUALIZABLE/documentos/bases.pdf"],["Formulario de inscripción (Word)","2-ACTUALIZABLE/documentos/formulario.docx"]]`.
 3. Si hay una noticia de esa convocatoria en `noticias.js`, actualízala también con el mismo plazo.
 
+**Reunión o jornada de la SEA (o congreso internacional)**
+- En `sea.js`, en `reunionesNac` (o `reunionesInt`), añade al principio: `["AÑO","Nombre","Lugar","AAAA-MM-DD/AAAA-MM-DD",["libro.pdf","guia.pdf"]]`. Si es un solo día, una sola fecha; si no se conoce, `""`. Los PDF van en `documentos/` y también en `publicaciones` (grupo `resumenes` o `guias`), para que salgan en las dos páginas.
+- Las listas van de la más reciente a la más antigua.
+
 **Ganador de un premio**
 - En `palmares.js`, añade `["AÑO","Nombre"]` al principio de la lista `l` de ese premio.
 
